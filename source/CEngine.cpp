@@ -227,7 +227,7 @@ bool  CEngine::Flip()
 	#ifdef _DEBUG
 		settings_.Shaders.UseCash = false;
 	#else
-		settings_.Shaders.UseCash = true;
+		settings_.Shaders.UseCash = false;
 	#endif
 	settings_.Shaders.ShowLogOnFailCompile = true;
 
@@ -479,7 +479,11 @@ axelynx::Engine::Info CEngine::GetInfo()
 
 axelynx::ImageSystem* CEngine::LoadImageSystem(axelynx::File file, int capaticity_, const wchar_t *format)
 {
-	axelynx::PixMap *pm = LoadPixMap(file,format);
+	std::wstring ext = format;
+	if(ext == std::wstring(L""))
+		ext = axelynx::utils::GetExtension(file.GetFilename());
+
+	axelynx::PixMap *pm = LoadPixMap(file,ext.c_str());
 	axelynx::ImageSystem *cis = CreateImageSystem(pm,capaticity_);
 	delete pm;
 
@@ -761,9 +765,13 @@ axelynx::Texture* CEngine::Load3DTexture(axelynx::File file, int width, int heig
 
 axelynx::Texture* CEngine::LoadTextureArray(axelynx::File file, int width, int height, int count_x, int count_y,axelynx::Texture::Desc &desc_,const wchar_t *fformat)
 {
+	std::wstring ext = fformat;
+	if(ext == std::wstring(L""))
+		ext = axelynx::utils::GetExtension(file.GetFilename());
+
 	axelynx::Texture::Desc desc(desc_);
 	desc.TT = axelynx::Texture::TT_ARRAY;
-	axelynx::PixMap *pm = LoadPixMap(file,fformat);
+	axelynx::PixMap *pm = LoadPixMap(file,ext.c_str());
 
 	desc.depth = count_x * count_y;
 	desc.width = pm->Width() / count_x;

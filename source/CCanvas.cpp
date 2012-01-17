@@ -147,6 +147,8 @@ void CCanvas::SetScale(const vec2& scale)
 
 void CCanvas::SetBlendMode(axelynx::BlendMode blend)
 {
+	current_bm_ = blend;
+
 	switch(current_bm_)
 	{
 	case axelynx::BM_NONE:
@@ -165,8 +167,6 @@ void CCanvas::SetBlendMode(axelynx::BlendMode blend)
 		glBlendFunc(GL_SRC_ALPHA,GL_ONE);
 		break;
 	}
-
-	current_bm_ = blend;
 }
 
 void CCanvas::SetFont(const Font *fnt)
