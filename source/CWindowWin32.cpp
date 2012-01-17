@@ -27,6 +27,9 @@ CWindowWin32::~CWindowWin32()
 bool CWindowWin32::Init(axelynx::Window::SystemHandle *handle,int bpp, int samples)
 {
 	timeBeginPeriod(1);
+	SetProcessAffinityMask(GetCurrentProcess(), 2);
+	SetPriorityClass(GetCurrentProcess(), REALTIME_PRIORITY_CLASS);
+	SetProcessPriorityBoost(GetCurrentThread(), true);
 
 	RECT                  rect;
 	HGLRC                 hRCTemp;
@@ -199,6 +202,8 @@ bool CWindowWin32::Init(axelynx::Window::SystemHandle *handle,int bpp, int sampl
 
 	isFullscreen_ = false;
 	Resize(width_,height_);
+
+
 }
 
 
