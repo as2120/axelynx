@@ -1573,6 +1573,7 @@
     <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.h">
       <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\CFile.cpp">
@@ -2820,5 +2821,10 @@
     <ClCompile Include="..\..\source\surfaces\Cube.cpp">
       <Filter>source\surfaces</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="axelynx.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

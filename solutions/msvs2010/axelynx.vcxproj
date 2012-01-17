@@ -1068,6 +1068,7 @@
     <ClInclude Include="..\..\source\StandartSceneGraph.h" />
     <ClInclude Include="..\..\source\StreamFile.h" />
     <ClInclude Include="..\..\source\ZippedFile.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\axelynx.cpp" />
@@ -1641,6 +1642,9 @@
     <ClCompile Include="..\..\source\Timer.cpp" />
     <ClCompile Include="..\..\source\utils\axstring.cpp" />
     <ClCompile Include="..\..\source\ZippedFile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="axelynx.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,7 +4,7 @@
 #include "axelynx/Logger.h"
 #include <iostream>
 
-#ifdef _MSVCRT_
+#ifdef _MSC_VER
 #include <intrin.h>
 #endif
 
@@ -110,7 +110,7 @@ int CTheora::get_data_from_physical_stream(FILE *INFILE_, ogg_sync_state *OGG_SY
 //функция, добавляет завершенные страницы в поток
 int CTheora::push_page_into_logical_stream(ogg_page *page)
 {
-    #ifdef _MSVCRT_
+    #ifdef _MSC_VER
 	if(-1== ogg_stream_pagein(&OGG_STREAM_STATE_THEORA,page) )
 		__nop();// __asm nop;	//означает, что мы пытаемся засунуть в логический поток страничку с другим серийным номером (например в логический поток theora суем пакет vorbis)
     #endif

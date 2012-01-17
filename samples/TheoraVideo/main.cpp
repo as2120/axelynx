@@ -43,8 +43,6 @@ int main()
 		ent->OnUpdate(new Turner());
 	}
 
-	PostEffect *colored = eng->LoadPostEffect(L"../../../../samples/media/colored.fs");
-
 	std::cout<<"trace 1"<<std::endl;
 	Theora *video = eng->LoadTheoraVideo(L"../../../../samples/media/bleach.asf");
 	Texture *tex = video->GetDiffuseTexture();
@@ -68,14 +66,12 @@ int main()
 			video->Update();
 
 		float dt = Timer::Delta()*0.1; //дельтатайм возвращает миллисекунды в флоат виде
-		//cam->Turn(0.1f *dt,-0.3 * dt,0); //поворачиваем камеру
+		cam->Turn(0.1f *dt,-0.3 * dt,0); //поворачиваем камеру
 		eng->GetCanvas()->Clear();
 
 		scene->Update(dt);
 
-		colored->Bind();
 		scene->Render(); //рендерим сцену
-		colored->Draw();
 
 		wchar_t buff[255];
 		swprintf(buff,L"FPS: %d",eng->GetStatistics()->GetFPS());
