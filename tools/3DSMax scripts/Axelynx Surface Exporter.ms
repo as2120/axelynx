@@ -113,13 +113,7 @@
 					WriteFloat f p01.x
 					WriteFloat f p01.y
 				)
-				
-	--axelynx::vec3 *vpos = new axelynx::vec3[v];
-	--axelynx::vec3 *vnorm = new axelynx::vec3[v];
-	
-				--	file.Read(vpos,v*12);
-				--	file.Read(vnorm,v*12);
-				
+							
 				for j=1 to vnum do
 				(
 					local p01=[0,0,0]
