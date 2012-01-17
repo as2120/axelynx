@@ -1,0 +1,20 @@
+﻿Build started 11.01.2012 15:23:34.
+     1>Project "D:\AxelynxSDK\samples\Paralax\Paralax.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "..\objs\Paralax\x64\Release\Paralax.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /ID:\AxelynxSDK\ /Zi /nologo /W1 /WX- /O2 /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\objs\Paralax\x64\Release\\" /Fd"..\objs\Paralax\x64\Release\vc100.pdb" /Gd /TP /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\x64\Release\Paralax.exe" /NOLOGO D:\AxelynxSDK\lib\cl\x64\Release\axelynx64.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\objs\Paralax\x64\Release\Paralax.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /PDB:"D:\AxelynxSDK\bin\cl\x64\Release\Paralax.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\x64\Release\Paralax.lib" /MACHINE:X64 ..\objs\Paralax\x64\Release\main.obj
+         Paralax.vcxproj -> D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\x64\Release\Paralax.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\x64\Release\Paralax.exe;#1" /manifest ..\objs\Paralax\x64\Release\Paralax.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "..\objs\Paralax\x64\Release\Paralax.unsuccessfulbuild".
+         Touching "..\objs\Paralax\x64\Release\Paralax.lastbuildstate".
+     1>Done Building Project "D:\AxelynxSDK\samples\Paralax\Paralax.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.54

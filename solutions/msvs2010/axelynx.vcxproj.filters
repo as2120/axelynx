@@ -1,0 +1,2824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="interface">
+      <UniqueIdentifier>{d0921100-4679-4a4e-80ef-fe6febd359ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source">
+      <UniqueIdentifier>{f6858021-09f3-48af-b52e-7ae901b3f266}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface\math">
+      <UniqueIdentifier>{83ef6896-24d1-49df-a4f3-36cc12832dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="interface\utils">
+      <UniqueIdentifier>{f4bb961f-8c81-488f-ba71-7d79686b4580}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\filesystem">
+      <UniqueIdentifier>{069c8d17-1744-491e-b7ad-d2e72dcf7316}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\gl">
+      <UniqueIdentifier>{65b7117b-16d9-40a6-b53d-eb7f7d073041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\shaders">
+      <UniqueIdentifier>{6b57bf57-f4b7-4884-9347-6f675d001bec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\imageformats">
+      <UniqueIdentifier>{2d8bb683-d2e4-4e24-b552-52cfa6d727de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\utils">
+      <UniqueIdentifier>{15b3a91c-4ce1-4d86-8c1c-5f84d795c39f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs">
+      <UniqueIdentifier>{13265be5-ded5-414b-a544-db4e1369958d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet">
+      <UniqueIdentifier>{783636ff-44b3-49f2-8cfe-61a5e58e5e9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\freetype">
+      <UniqueIdentifier>{38cc910f-7ae2-4703-9794-e8975d7ba89f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\jpeg">
+      <UniqueIdentifier>{c6f16764-1728-4e77-98cc-ec39692fc8cf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\libpng">
+      <UniqueIdentifier>{0eadf4c3-c118-486b-92b9-f1ad56a4859a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\ogg">
+      <UniqueIdentifier>{d3ee7d87-fe2e-4ca2-aa62-b5ae6adac6af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\openal">
+      <UniqueIdentifier>{b26e03be-6d96-4dc3-ac24-ea070d8422c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\opencl">
+      <UniqueIdentifier>{0326c48d-4a54-440e-ab76-048105365afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\theora">
+      <UniqueIdentifier>{e2527df1-d8a2-43a8-a372-6a89d61f1d87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\tinyxml">
+      <UniqueIdentifier>{ddec5b39-8262-41bf-9d88-5ede57d5390d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\unzip">
+      <UniqueIdentifier>{e0babc37-2a56-475c-95c4-8f8a25d3f33e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\zlib">
+      <UniqueIdentifier>{fa118eae-40a3-4254-bcd1-42a1822e38a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\theora\x86">
+      <UniqueIdentifier>{074ffaaf-74e8-4354-ab1a-5f39d88b9756}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\freetype\headers">
+      <UniqueIdentifier>{1d939ee1-5fa2-498d-992c-ea72de44f129}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\freetype\source">
+      <UniqueIdentifier>{0af3d308-5c31-4e47-a198-d6d082d41d31}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\freetype\source\FT_MODULES">
+      <UniqueIdentifier>{6a267719-b588-4cb7-8f77-722181da10fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision">
+      <UniqueIdentifier>{15d9fa38-18d0-4688-a535-98f7cb225ffb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletDynamics">
+      <UniqueIdentifier>{cd629de5-8512-4ca3-b950-bd936f7ad065}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletSoftBody">
+      <UniqueIdentifier>{0ae7ea1a-415c-4c5e-a86d-08685c1c5c05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\LinearMath">
+      <UniqueIdentifier>{30946660-71b4-44dc-90be-da6143faa5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\MiniCL">
+      <UniqueIdentifier>{3da29290-cdf9-4db6-b06c-a3d6bbd22b69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\vectormath">
+      <UniqueIdentifier>{7d104c24-5d35-45a9-a590-87d60eded180}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\vectormath\scalar">
+      <UniqueIdentifier>{fa1f9f3f-d7dd-44ab-b546-7ce2dc58de41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\vectormath\sse">
+      <UniqueIdentifier>{b3146653-dd7c-4c6e-b6b3-7aa1394f6563}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\MiniCL\MiniCLTask">
+      <UniqueIdentifier>{65e0a47a-8b21-4ed2-82a9-e348a4a442c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletMultiThreaded">
+      <UniqueIdentifier>{f6fc8050-93d5-4041-9b4a-6e2869c4a7d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers">
+      <UniqueIdentifier>{b4ed944a-4713-462d-8546-fef95b8c97d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask">
+      <UniqueIdentifier>{09e6d05c-df15-48f5-994a-22b98464aa3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletMultiThreaded\SpuSampletask">
+      <UniqueIdentifier>{ae8ade49-bdeb-47b3-88ef-c3958966126c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision\BroadphaseCollision">
+      <UniqueIdentifier>{b9971d32-c0d6-46e6-9aa5-2927ca81fb44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision\CollisionDispatch">
+      <UniqueIdentifier>{bbe25cd3-d87c-4c6a-b3e8-51bdeade7d48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision\CollisionShapes">
+      <UniqueIdentifier>{091494b4-9bf0-42c8-9018-1c46fcfaabca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision\GImpact">
+      <UniqueIdentifier>{cbe6b793-4cd4-4d4e-88cf-d9ea75dade8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletCollision\NarrowPhaseCollision">
+      <UniqueIdentifier>{d68ce525-5aee-4635-a8c8-4201631cfe2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletDynamics\Character">
+      <UniqueIdentifier>{fe3d441a-683b-4368-808e-3aa5fa4d7043}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletDynamics\ConstraintSolver">
+      <UniqueIdentifier>{7652fffd-be32-4acb-8555-f972b0a89994}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletDynamics\Dynamics">
+      <UniqueIdentifier>{31b7da7b-7f42-49e1-99f4-fddda46779c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\libs\bullet\BulletDynamics\Vehicle">
+      <UniqueIdentifier>{cc10f815-b1af-44d1-8885-44edb8f6a61c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\math">
+      <UniqueIdentifier>{56fe4500-7ec3-43ef-937a-6bc2c9700694}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\surfaces">
+      <UniqueIdentifier>{a9539552-094a-4d15-9081-86b5902a4792}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="..\..\source\libs\bullet\BulletSoftBody\CMakeLists.txt">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </None>
+    <None Include="..\..\source\libs\bullet\BulletSoftBody\premake4.lua">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\axelynx\Anim.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Animation.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\AnimEntity.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\AnimGeometry.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\axelynx.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\AxelynxSystemShaders.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\axlib.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Bone.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\BSPLevel.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Camera.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Canvas.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\cwrap.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Drawable.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Engine.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Entity.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\File.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Font.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Geometry.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\HardwareInfo.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Image.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\ImageFormat.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\ImageSystem.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Input.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Instance.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\InstanceGroup.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Keyboard.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\keystates.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Light.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Logger.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Material.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Mesh.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\MorfedMesh.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\MorfedMeshFactory.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Mouse.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Pak.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\ParticleSystem.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Pivot.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\PixMap.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\plane.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Point3D.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\PostEffect.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\RaySystem.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\RenderTarget.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Scene.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\SceneGraph.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Shader.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Shape.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Shell.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Skeleton.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Skin.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\SkinAnim.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Sprite.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\SpriteSystem.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\StandartSurfaces.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Statistics.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Surface.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\SystemWindowHandler.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Terrain.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\TextCache.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Texture.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Theora.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Timer.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Video.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Window.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\axmath.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\frustum.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\mat2.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\mat3.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\mat3x2.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\mat4.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\mat4x3.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\quat.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\vec2.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\vec3.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\vec4.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\math\vectormath.h">
+      <Filter>interface\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\utils\axstring.h">
+      <Filter>interface\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CZipArchive.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\DiskFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\MemoryFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\PakFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\StreamFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\ZippedFile.h">
+      <Filter>source\filesystem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\gl\axext.h">
+      <Filter>source\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\gl\axgl.h">
+      <Filter>source\gl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\_7BIImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\BMPImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\DDSImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\JPEGImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\PCXImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\PNGImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\imageformats\TGAImageFormat.h">
+      <Filter>source\imageformats</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\anorms.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CAnimEntity.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CCamera.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CCanvas.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CEarlyZ.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CEngine.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CEntity.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CFont.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CFreeTypeFont.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CHardwareInfo.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CHGEFont.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CImage.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CImageGS.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CImageSystem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CImageSystemGS.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CInstance.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CInstanceGroup.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CLight.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CMaterial.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CMD2Factory.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CMorfedMesh.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CMorfedMeshFactory.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CPak.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CParticleSystem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CPivot.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CPixMap.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CPostEffect.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CRaySystem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CRenderTarget.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CScene.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CShader.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CShadowPass.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CShape.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CSprite.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CSpriteSystem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CStatistics.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CSurface.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CTextCache.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CTexture.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CTheora.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CTimer.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CWindowUnix.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CWindowWin32.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\RenderContext.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\RenderContextInfo.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\saSpec.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\StandartSceneGraph.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\crc32.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\deflate.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\gzguts.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\inffast.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\inffixed.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\inflate.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\inftrees.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\trees.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\zconf.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\zlib.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\zlib\zutil.h">
+      <Filter>source\libs\zlib</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\crypt.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\ioapi.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\iowin32.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\mztools.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\unzip.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\unzip\zip.h">
+      <Filter>source\libs\unzip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\tinyxml\tinystr.h">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\tinyxml\tinyxml.h">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\apiwrapper.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\bitpack.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\cpu.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\dct.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\decint.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\dequant.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\encint.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\enquant.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\huffdec.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\huffenc.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\huffman.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\internal.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\mathops.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\modedec.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\ocintrin.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\quant.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\state.h">
+      <Filter>source\libs\theora</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\mmxfrag.h">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\mmxloop.h">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86cpu.h">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86enc.h">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86int.h">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\opencl\opencl.h">
+      <Filter>source\libs\opencl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\al.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\alc.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\efx.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\efx-creative.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\EFX-Util.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\openal\xram.h">
+      <Filter>source\libs\openal</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\png.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngasmrd.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngconf.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngdebug.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngerror.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pnginfo.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pnglibconf.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngpriv.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\libpng\pngstruct.h">
+      <Filter>source\libs\libpng</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\cderror.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\cdjpeg.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JCHUFF.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jconfig.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JDCT.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JDHUFF.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JERROR.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JINCLUDE.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\JMEMSYS.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jmorecfg.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jpeginit.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jpegint.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jpeglib.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\jversion.h">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\jpeg\TRANSUPP.H">
+      <Filter>source\libs\jpeg</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\ft2build.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftconfig.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftheader.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftmodule.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftoption.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftstdlib.h">
+      <Filter>source\libs\freetype\headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\btBulletCollisionCommon.h">
+      <Filter>source\libs\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\btBulletDynamicsCommon.h">
+      <Filter>source\libs\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\Bullet-C-Api.h">
+      <Filter>source\libs\bullet</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\boolInVec.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\floatInVec.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\mat_aos.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\quat_aos.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vec_aos.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vecidx_aos.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vectormath_aos.h">
+      <Filter>source\libs\bullet\vectormath\sse</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\boolInVec.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\floatInVec.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\mat_aos.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\quat_aos.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\vec_aos.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\vectormath_aos.h">
+      <Filter>source\libs\bullet\vectormath\scalar</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\vmInclude.h">
+      <Filter>source\libs\bullet\vectormath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.h">
+      <Filter>source\libs\bullet\MiniCL\MiniCLTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\cl_MiniCL_Defs.h">
+      <Filter>source\libs\bullet\MiniCL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.h">
+      <Filter>source\libs\bullet\MiniCL</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAabbUtil2.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAlignedObjectArray.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btConvexHull.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btDefaultMotionState.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btGeometryUtil.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btGrahamScan2dConvexHull.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btHashMap.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btIDebugDraw.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btList.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMatrix3x3.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMinMax.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMotionState.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btPoolAllocator.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuadWord.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuaternion.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuickprof.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btRandom.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btScalar.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btSerializer.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btStackAlloc.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btTransform.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btTransformUtil.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btVector3.h">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyData.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyInternals.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolvers.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolverVertexBuffer.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSparseSDF.h">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedCode.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedDefs.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedTypes.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuDefines.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedCode.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedDefs.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\HeapManager.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PlatformDefinitions.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PpuAddressSpace.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuDoubleBuffer.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSync.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\TrbDynBody.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\TrbStateVec.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\vectormath2bullet.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverBuffer_OpenCL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCLSIMDAware.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverTriangleData_OpenCL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexBuffer_OpenGL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexData_OpenCL.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\Box.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuConvexPenetrationDepthSolver.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuLocalSupport.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuPreferredPenetrationDirections.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.h">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuSampletask</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionConfiguration.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionMargin.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMaterial.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleInfoMap.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.h">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btBoxCollision.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btClipPolygon.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGeometryOperations.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactMassUtil.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btQuantization.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_array.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_basic_geometry_operations.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_bitset.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_collision.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_clip_polygon.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geom_types.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geometry.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_hash_table.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_linear_math.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_math.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_radixsort.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.h">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPointCollector.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Character\btCharacterControllerInterface.h">
+      <Filter>source\libs\bullet\BulletDynamics\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.h">
+      <Filter>source\libs\bullet\BulletDynamics\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConstraintSolver.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactSolverInfo.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btJacobianEntry.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverBody.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.h">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btActionInterface.h">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDynamicsWorld.h">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.h">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.h">
+      <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btVehicleRaycaster.h">
+      <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.h">
+      <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\CFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CZipArchive.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\DiskFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\File.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MemoryFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Pak.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\PakFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\StreamFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ZippedFile.cpp">
+      <Filter>source\filesystem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\gl\axext.cpp">
+      <Filter>source\gl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\_7BIImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\BMPImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\DDSImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\DDSTextureLoader.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\JPEGImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\PCXImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\PNGImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\imageformats\TGAImageFormat.cpp">
+      <Filter>source\imageformats</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\utils\axstring.cpp">
+      <Filter>source\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shaders\draw\PositionColor.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shaders\draw\PositionColorTexCoord.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shaders\render\BumpMapping.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\shaders\render\Texturing.cpp">
+      <Filter>source\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\axelynx.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CAnimEntity.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CCamera.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CCanvas.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CEarlyZ.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CEngine.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CEntity.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CFont.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CFreeTypeFont.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CHardwareInfo.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CHGEFont.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CImage.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CImageGS.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CImageSystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CImageSystemGS.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CInstance.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CInstanceGroup.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CLight.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CMaterial.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CMD2Factory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CMorfedMesh.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CMorfedMeshFactory.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CPak.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CParticleSystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CPivot.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CPixMap.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CPostEffect.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CRaySystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CRenderTarget.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CScene.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CShader.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CShadowPass.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CShape.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CSprite.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CSpriteSystem.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CStatistics.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CSurface.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CTextCache.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CTexture.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CTheora.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CWindowUnix.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CWindowWin32.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\dllmain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Engine.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ImageFormat.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Input.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Keyboard.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Logger.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Mouse.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\RenderContext.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\saSpec.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Shapes.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\ShellWin32.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\StandartSceneGraph.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Timer.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\adler32.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\compress.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\crc32.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\deflate.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\gzclose.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\gzlib.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\gzread.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\gzwrite.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\infback.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\inffast.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\inflate.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\inftrees.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\trees.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\uncompr.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\zlib\zutil.c">
+      <Filter>source\libs\zlib</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\unzip\ioapi.c">
+      <Filter>source\libs\unzip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\unzip\iowin32.c">
+      <Filter>source\libs\unzip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\unzip\mztools.c">
+      <Filter>source\libs\unzip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\unzip\unzip.c">
+      <Filter>source\libs\unzip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\unzip\zip.c">
+      <Filter>source\libs\unzip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\tinyxml\tinystr.cpp">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxml.cpp">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxmlerror.cpp">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxmlparser.cpp">
+      <Filter>source\libs\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\analyze.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\apiwrapper.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\bitpack.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\cpu.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\decapiwrapper.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\decinfo.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\decode.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\dequant.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\encapiwrapper.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\encfrag.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\encinfo.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\encode.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\enquant.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\fdct.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\fragment.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\huffdec.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\huffenc.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\idct.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\info.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\internal.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\mathops.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\mcenc.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\quant.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\rate.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\state.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\tokenize.c">
+      <Filter>source\libs\theora</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxencfrag.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxfdct.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxfrag.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxidct.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxstate.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86cpu.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86enc.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86state.c">
+      <Filter>source\libs\theora\x86</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\ogg\bitwise.c">
+      <Filter>source\libs\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\ogg\framing.c">
+      <Filter>source\libs\ogg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\png.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngerror.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngget.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngmem.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngpread.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngread.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngrio.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngrtran.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngrutil.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngset.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngtrans.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngwio.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngwrite.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngwtran.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\libpng\pngwutil.c">
+      <Filter>source\libs\libpng</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\cdjpeg.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jaricom.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcapimin.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcapistd.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcarith.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jccoefct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jccolor.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcdctmgr.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jchuff.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcinit.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcmainct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcmarker.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcmaster.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcomapi.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcparam.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcprepct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jcsample.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jctrans.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdapimin.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdapistd.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdarith.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdatadst.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdatasrc.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdcoefct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdcolor.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jddctmgr.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdhuff.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdinput.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdmainct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdmarker.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdmaster.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdmerge.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdpostct.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdsample.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jdtrans.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jerror.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctflt.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctfst.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctint.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jidctflt.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jidctfst.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jidctint.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jmemmgr.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jmemnobs.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jquant1.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jquant2.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\jutils.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdbmp.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdcolmap.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdgif.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdppm.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdrle.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdswitch.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\rdtarga.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\transupp.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\wrbmp.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\wrgif.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\wrppm.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\wrrle.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\jpeg\wrtarga.c">
+      <Filter>source\libs\jpeg</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\autofit\autofit.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\bdf\bdf.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\cff\cff.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbase.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbitmap.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\cache\ftcache.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftdebug.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\gzip\ftgzip.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\lzw\ftlzw.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftgasp.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftglyph.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftfstype.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftinit.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftstroke.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftsystem.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\smooth\smooth.c">
+      <Filter>source\libs\freetype\source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbbox.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftgxval.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftlcdfil.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftmm.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftotval.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftpatent.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftpfr.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftsynth.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\fttype1.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftwinfnt.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftxf86.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\pcf\pcf.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\pfr\pfr.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\psaux\psaux.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\pshinter\pshinter.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\psnames\psmodule.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\raster\raster.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\sfnt\sfnt.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\truetype\truetype.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\type1\type1.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\cid\type1cid.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\type42\type42.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\freetype\src\winfonts\winfnt.c">
+      <Filter>source\libs\freetype\source\FT_MODULES</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.cpp">
+      <Filter>source\libs\bullet\MiniCL\MiniCLTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCL.cpp">
+      <Filter>source\libs\bullet\MiniCL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.cpp">
+      <Filter>source\libs\bullet\MiniCL</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btConvexHull.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btGeometryUtil.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btQuickprof.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btSerializer.cpp">
+      <Filter>source\libs\bullet\LinearMath</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletSoftBody</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\GPUSoftBodySolvers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.cpp">
+      <Filter>source\libs\bullet\BulletMultiThreaded\SpuSampletask</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp">
+      <Filter>source\libs\bullet\BulletCollision\BroadphaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionDispatch</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.cpp">
+      <Filter>source\libs\bullet\BulletCollision\GImpact</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp">
+      <Filter>source\libs\bullet\BulletCollision\NarrowPhaseCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\ConstraintSolver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\Bullet-C-API.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Dynamics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.cpp">
+      <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\axmath.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\frustum.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat2.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat3.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat3x2.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat4.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat4x3.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\quat.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec2.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec3.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec4.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vectormath.cpp">
+      <Filter>source\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\surfaces\Cube.cpp">
+      <Filter>source\surfaces</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

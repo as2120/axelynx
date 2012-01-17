@@ -1,0 +1,21 @@
+﻿Build started 11.01.2012 14:14:18.
+     1>Project "D:\AxelynxSDK\samples\Paralax\Paralax.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "..\objs\Paralax\Win32\Debug\Paralax.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ID:\AxelynxSDK\ /ZI /nologo /W1 /WX- /Od /Oy- /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\objs\Paralax\Win32\Debug\\" /Fd"..\objs\Paralax\Win32\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\Win32\Debug\Paralax.exe" /NOLOGO D:\AxelynxSDK\lib\cl\Win32\Debug\axelynx32_d.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\objs\Paralax\Win32\Debug\Paralax.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\AxelynxSDK\bin\cl\Win32\Debug\Paralax.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\Win32\Debug\Paralax.lib" /MACHINE:X86 ..\objs\Paralax\Win32\Debug\main.obj
+         LINK : D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\Win32\Debug\Paralax.exe not found or not built by the last incremental link; performing full link
+         Paralax.vcxproj -> D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\Win32\Debug\Paralax.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\AxelynxSDK\solutions\msvs2010\\..\..\bin\cl\Win32\Debug\Paralax.exe;#1" /manifest ..\objs\Paralax\Win32\Debug\Paralax.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "..\objs\Paralax\Win32\Debug\Paralax.unsuccessfulbuild".
+         Touching "..\objs\Paralax\Win32\Debug\Paralax.lastbuildstate".
+     1>Done Building Project "D:\AxelynxSDK\samples\Paralax\Paralax.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:06.92

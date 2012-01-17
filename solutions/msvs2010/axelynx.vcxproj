@@ -1,0 +1,1648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugMT|Win32">
+      <Configuration>DebugMT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugMT|x64">
+      <Configuration>DebugMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugMD|Win32">
+      <Configuration>DebugMD</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="DebugMD|x64">
+      <Configuration>DebugMD</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|Win32">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMT|x64">
+      <Configuration>ReleaseMT</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMD|Win32">
+      <Configuration>ReleaseMD</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseMD|x64">
+      <Configuration>ReleaseMD</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{55C623A9-0AB3-4671-B29A-C090F26B99E5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>axelynx</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)$(PlatformArchitecture)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)$(PlatformArchitecture)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
+    <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|x64'">
+    <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(AXELYNX_SDK)\libs\$(PlatformName)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;winmm.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(AXELYNX_SDK)\libs\Win64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;winmm.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CallingConvention>Cdecl</CallingConvention>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Lib>
+    <Lib>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+      <LinkTimeCodeGeneration>true</LinkTimeCodeGeneration>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <CallingConvention>Cdecl</CallingConvention>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(AXELYNX_SDK)\libs\$(PlatformName)\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;winmm.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <CallingConvention>Cdecl</CallingConvention>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(AXELYNX_SDK)\libs\Win64\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>opengl32.lib;winmm.lib;OpenCL.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX86</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_USRDLL;AXELYNX_EXPORTS;AXELYNX_STATIC;FT2_BUILD_LIBRARY;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AXELYNX_SDK);$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet</AdditionalIncludeDirectories>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BufferSecurityCheck>false</BufferSecurityCheck>
+      <EnableEnhancedInstructionSet>StreamingSIMDExtensions2</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Fast</FloatingPointModel>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <CallingConvention>Cdecl</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <TargetMachine>MachineX64</TargetMachine>
+      <SubSystem>Windows</SubSystem>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="..\..\source\libs\bullet\BulletSoftBody\CMakeLists.txt" />
+    <None Include="..\..\source\libs\bullet\BulletSoftBody\premake4.lua" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\axelynx\Anim.h" />
+    <ClInclude Include="..\..\axelynx\Animation.h" />
+    <ClInclude Include="..\..\axelynx\AnimEntity.h" />
+    <ClInclude Include="..\..\axelynx\AnimGeometry.h" />
+    <ClInclude Include="..\..\axelynx\axelynx.h" />
+    <ClInclude Include="..\..\axelynx\AxelynxSystemShaders.h" />
+    <ClInclude Include="..\..\axelynx\axlib.h" />
+    <ClInclude Include="..\..\axelynx\Bone.h" />
+    <ClInclude Include="..\..\axelynx\BSPLevel.h" />
+    <ClInclude Include="..\..\axelynx\Camera.h" />
+    <ClInclude Include="..\..\axelynx\Canvas.h" />
+    <ClInclude Include="..\..\axelynx\cwrap.h" />
+    <ClInclude Include="..\..\axelynx\Drawable.h" />
+    <ClInclude Include="..\..\axelynx\Engine.h" />
+    <ClInclude Include="..\..\axelynx\Entity.h" />
+    <ClInclude Include="..\..\axelynx\File.h" />
+    <ClInclude Include="..\..\axelynx\Font.h" />
+    <ClInclude Include="..\..\axelynx\Geometry.h" />
+    <ClInclude Include="..\..\axelynx\HardwareInfo.h" />
+    <ClInclude Include="..\..\axelynx\Image.h" />
+    <ClInclude Include="..\..\axelynx\ImageFormat.h" />
+    <ClInclude Include="..\..\axelynx\ImageSystem.h" />
+    <ClInclude Include="..\..\axelynx\Input.h" />
+    <ClInclude Include="..\..\axelynx\Instance.h" />
+    <ClInclude Include="..\..\axelynx\InstanceGroup.h" />
+    <ClInclude Include="..\..\axelynx\Keyboard.h" />
+    <ClInclude Include="..\..\axelynx\keystates.h" />
+    <ClInclude Include="..\..\axelynx\Light.h" />
+    <ClInclude Include="..\..\axelynx\Logger.h" />
+    <ClInclude Include="..\..\axelynx\Material.h" />
+    <ClInclude Include="..\..\axelynx\math\axmath.h" />
+    <ClInclude Include="..\..\axelynx\math\frustum.h" />
+    <ClInclude Include="..\..\axelynx\math\mat2.h" />
+    <ClInclude Include="..\..\axelynx\math\mat3.h" />
+    <ClInclude Include="..\..\axelynx\math\mat3x2.h" />
+    <ClInclude Include="..\..\axelynx\math\mat4.h" />
+    <ClInclude Include="..\..\axelynx\math\mat4x3.h" />
+    <ClInclude Include="..\..\axelynx\math\quat.h" />
+    <ClInclude Include="..\..\axelynx\math\vec2.h" />
+    <ClInclude Include="..\..\axelynx\math\vec3.h" />
+    <ClInclude Include="..\..\axelynx\math\vec4.h" />
+    <ClInclude Include="..\..\axelynx\math\vectormath.h" />
+    <ClInclude Include="..\..\axelynx\Mesh.h" />
+    <ClInclude Include="..\..\axelynx\MorfedMesh.h" />
+    <ClInclude Include="..\..\axelynx\MorfedMeshFactory.h" />
+    <ClInclude Include="..\..\axelynx\Mouse.h" />
+    <ClInclude Include="..\..\axelynx\Pak.h" />
+    <ClInclude Include="..\..\axelynx\ParticleSystem.h" />
+    <ClInclude Include="..\..\axelynx\Pivot.h" />
+    <ClInclude Include="..\..\axelynx\PixMap.h" />
+    <ClInclude Include="..\..\axelynx\plane.h" />
+    <ClInclude Include="..\..\axelynx\Point3D.h" />
+    <ClInclude Include="..\..\axelynx\PostEffect.h" />
+    <ClInclude Include="..\..\axelynx\RaySystem.h" />
+    <ClInclude Include="..\..\axelynx\RenderTarget.h" />
+    <ClInclude Include="..\..\axelynx\Scene.h" />
+    <ClInclude Include="..\..\axelynx\SceneGraph.h" />
+    <ClInclude Include="..\..\axelynx\Shader.h" />
+    <ClInclude Include="..\..\axelynx\Shape.h" />
+    <ClInclude Include="..\..\axelynx\Shell.h" />
+    <ClInclude Include="..\..\axelynx\Skeleton.h" />
+    <ClInclude Include="..\..\axelynx\Skin.h" />
+    <ClInclude Include="..\..\axelynx\SkinAnim.h" />
+    <ClInclude Include="..\..\axelynx\Sprite.h" />
+    <ClInclude Include="..\..\axelynx\SpriteSystem.h" />
+    <ClInclude Include="..\..\axelynx\StandartSurfaces.h" />
+    <ClInclude Include="..\..\axelynx\Statistics.h" />
+    <ClInclude Include="..\..\axelynx\Surface.h" />
+    <ClInclude Include="..\..\axelynx\SystemWindowHandler.h" />
+    <ClInclude Include="..\..\axelynx\Terrain.h" />
+    <ClInclude Include="..\..\axelynx\TextCache.h" />
+    <ClInclude Include="..\..\axelynx\Texture.h" />
+    <ClInclude Include="..\..\axelynx\Theora.h" />
+    <ClInclude Include="..\..\axelynx\Timer.h" />
+    <ClInclude Include="..\..\axelynx\utils\axstring.h" />
+    <ClInclude Include="..\..\axelynx\Video.h" />
+    <ClInclude Include="..\..\axelynx\Window.h" />
+    <ClInclude Include="..\..\source\anorms.h" />
+    <ClInclude Include="..\..\source\CAnimEntity.h" />
+    <ClInclude Include="..\..\source\CCamera.h" />
+    <ClInclude Include="..\..\source\CCanvas.h" />
+    <ClInclude Include="..\..\source\CEarlyZ.h" />
+    <ClInclude Include="..\..\source\CEngine.h" />
+    <ClInclude Include="..\..\source\CEntity.h" />
+    <ClInclude Include="..\..\source\CFile.h" />
+    <ClInclude Include="..\..\source\CFont.h" />
+    <ClInclude Include="..\..\source\CFreeTypeFont.h" />
+    <ClInclude Include="..\..\source\CHardwareInfo.h" />
+    <ClInclude Include="..\..\source\CHGEFont.h" />
+    <ClInclude Include="..\..\source\CImage.h" />
+    <ClInclude Include="..\..\source\CImageGS.h" />
+    <ClInclude Include="..\..\source\CImageSystem.h" />
+    <ClInclude Include="..\..\source\CImageSystemGS.h" />
+    <ClInclude Include="..\..\source\CInstance.h" />
+    <ClInclude Include="..\..\source\CInstanceGroup.h" />
+    <ClInclude Include="..\..\source\CLight.h" />
+    <ClInclude Include="..\..\source\CMaterial.h" />
+    <ClInclude Include="..\..\source\CMD2Factory.h" />
+    <ClInclude Include="..\..\source\CMorfedMesh.h" />
+    <ClInclude Include="..\..\source\CMorfedMeshFactory.h" />
+    <ClInclude Include="..\..\source\CPak.h" />
+    <ClInclude Include="..\..\source\CParticleSystem.h" />
+    <ClInclude Include="..\..\source\CPivot.h" />
+    <ClInclude Include="..\..\source\CPixMap.h" />
+    <ClInclude Include="..\..\source\CPostEffect.h" />
+    <ClInclude Include="..\..\source\CRaySystem.h" />
+    <ClInclude Include="..\..\source\CRenderTarget.h" />
+    <ClInclude Include="..\..\source\CScene.h" />
+    <ClInclude Include="..\..\source\CShader.h" />
+    <ClInclude Include="..\..\source\CShadowPass.h" />
+    <ClInclude Include="..\..\source\CShape.h" />
+    <ClInclude Include="..\..\source\CSprite.h" />
+    <ClInclude Include="..\..\source\CSpriteSystem.h" />
+    <ClInclude Include="..\..\source\CStatistics.h" />
+    <ClInclude Include="..\..\source\CSurface.h" />
+    <ClInclude Include="..\..\source\CTextCache.h" />
+    <ClInclude Include="..\..\source\CTexture.h" />
+    <ClInclude Include="..\..\source\CTheora.h" />
+    <ClInclude Include="..\..\source\CTimer.h" />
+    <ClInclude Include="..\..\source\CWindowUnix.h" />
+    <ClInclude Include="..\..\source\CWindowWin32.h" />
+    <ClInclude Include="..\..\source\CZipArchive.h" />
+    <ClInclude Include="..\..\source\DiskFile.h" />
+    <ClInclude Include="..\..\source\gl\axext.h" />
+    <ClInclude Include="..\..\source\gl\axgl.h" />
+    <ClInclude Include="..\..\source\imageformats\BMPImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\DDSImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\JPEGImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\PCXImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\PNGImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\TGAImageFormat.h" />
+    <ClInclude Include="..\..\source\imageformats\_7BIImageFormat.h" />
+    <ClInclude Include="..\..\source\libs\bullet\btBulletCollisionCommon.h" />
+    <ClInclude Include="..\..\source\libs\bullet\btBulletDynamicsCommon.h" />
+    <ClInclude Include="..\..\source\libs\bullet\Bullet-C-Api.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionConfiguration.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionMargin.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMaterial.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleInfoMap.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btBoxCollision.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btClipPolygon.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGeometryOperations.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactMassUtil.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btQuantization.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_array.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_basic_geometry_operations.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_bitset.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_collision.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_clip_polygon.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geometry.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geom_types.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_hash_table.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_linear_math.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_math.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_radixsort.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPointCollector.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Character\btCharacterControllerInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConstraintSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactSolverInfo.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btJacobianEntry.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverBody.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btActionInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDynamicsWorld.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btVehicleRaycaster.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedCode.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedDefs.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedTypes.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuDefines.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedCode.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedDefs.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverBuffer_OpenCL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCLSIMDAware.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverTriangleData_OpenCL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexBuffer_OpenGL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexData_OpenCL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\HeapManager.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PlatformDefinitions.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\PpuAddressSpace.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuDoubleBuffer.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\Box.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuConvexPenetrationDepthSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuLocalSupport.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuPreferredPenetrationDirections.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSync.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\TrbDynBody.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\TrbStateVec.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\vectormath2bullet.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyData.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyInternals.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolvers.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolverVertexBuffer.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.h" />
+    <ClInclude Include="..\..\source\libs\bullet\BulletSoftBody\btSparseSDF.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAabbUtil2.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btAlignedObjectArray.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btConvexHull.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btDefaultMotionState.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btGeometryUtil.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btGrahamScan2dConvexHull.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btHashMap.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btIDebugDraw.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btList.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMatrix3x3.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMinMax.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btMotionState.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btPoolAllocator.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuadWord.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuaternion.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btQuickprof.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btRandom.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btScalar.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btSerializer.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btStackAlloc.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btTransform.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btTransformUtil.h" />
+    <ClInclude Include="..\..\source\libs\bullet\LinearMath\btVector3.h" />
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\cl_MiniCL_Defs.h" />
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.h" />
+    <ClInclude Include="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\boolInVec.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\floatInVec.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\mat_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\quat_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\vectormath_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\scalar\vec_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\boolInVec.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\floatInVec.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\mat_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\quat_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vecidx_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vectormath_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\sse\vec_aos.h" />
+    <ClInclude Include="..\..\source\libs\bullet\vectormath\vmInclude.h" />
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftconfig.h" />
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftheader.h" />
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftmodule.h" />
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftoption.h" />
+    <ClInclude Include="..\..\source\libs\freetype\freetype\config\ftstdlib.h" />
+    <ClInclude Include="..\..\source\libs\freetype\ft2build.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\cderror.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\cdjpeg.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\JCHUFF.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\jconfig.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\JDCT.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\JDHUFF.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\JERROR.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\JINCLUDE.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\JMEMSYS.H" />
+    <ClInclude Include="..\..\source\libs\jpeg\jmorecfg.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\jpeginit.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\jpegint.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\jpeglib.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\jversion.h" />
+    <ClInclude Include="..\..\source\libs\jpeg\TRANSUPP.H" />
+    <ClInclude Include="..\..\source\libs\libpng\png.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngasmrd.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngconf.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngdebug.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngerror.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pnginfo.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pnglibconf.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngpriv.h" />
+    <ClInclude Include="..\..\source\libs\libpng\pngstruct.h" />
+    <ClInclude Include="..\..\source\libs\openal\al.h" />
+    <ClInclude Include="..\..\source\libs\openal\alc.h" />
+    <ClInclude Include="..\..\source\libs\openal\efx-creative.h" />
+    <ClInclude Include="..\..\source\libs\openal\EFX-Util.h" />
+    <ClInclude Include="..\..\source\libs\openal\efx.h" />
+    <ClInclude Include="..\..\source\libs\openal\xram.h" />
+    <ClInclude Include="..\..\source\libs\opencl\opencl.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\apiwrapper.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\bitpack.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\cpu.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\dct.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\decint.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\dequant.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\encint.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\enquant.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\huffdec.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\huffenc.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\huffman.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\internal.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\mathops.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\modedec.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\ocintrin.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\quant.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\state.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\mmxfrag.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\mmxloop.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86cpu.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86enc.h" />
+    <ClInclude Include="..\..\source\libs\theora\source\x86_vc\x86int.h" />
+    <ClInclude Include="..\..\source\libs\tinyxml\tinystr.h" />
+    <ClInclude Include="..\..\source\libs\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\..\source\libs\unzip\crypt.h" />
+    <ClInclude Include="..\..\source\libs\unzip\ioapi.h" />
+    <ClInclude Include="..\..\source\libs\unzip\iowin32.h" />
+    <ClInclude Include="..\..\source\libs\unzip\mztools.h" />
+    <ClInclude Include="..\..\source\libs\unzip\unzip.h" />
+    <ClInclude Include="..\..\source\libs\unzip\zip.h" />
+    <ClInclude Include="..\..\source\libs\zlib\crc32.h" />
+    <ClInclude Include="..\..\source\libs\zlib\deflate.h" />
+    <ClInclude Include="..\..\source\libs\zlib\gzguts.h" />
+    <ClInclude Include="..\..\source\libs\zlib\inffast.h" />
+    <ClInclude Include="..\..\source\libs\zlib\inffixed.h" />
+    <ClInclude Include="..\..\source\libs\zlib\inflate.h" />
+    <ClInclude Include="..\..\source\libs\zlib\inftrees.h" />
+    <ClInclude Include="..\..\source\libs\zlib\trees.h" />
+    <ClInclude Include="..\..\source\libs\zlib\zconf.h" />
+    <ClInclude Include="..\..\source\libs\zlib\zlib.h" />
+    <ClInclude Include="..\..\source\libs\zlib\zutil.h" />
+    <ClInclude Include="..\..\source\MemoryFile.h" />
+    <ClInclude Include="..\..\source\PakFile.h" />
+    <ClInclude Include="..\..\source\RenderContext.h" />
+    <ClInclude Include="..\..\source\RenderContextInfo.h" />
+    <ClInclude Include="..\..\source\saSpec.h" />
+    <ClInclude Include="..\..\source\StandartSceneGraph.h" />
+    <ClInclude Include="..\..\source\StreamFile.h" />
+    <ClInclude Include="..\..\source\ZippedFile.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\source\axelynx.cpp" />
+    <ClCompile Include="..\..\source\CAnimEntity.cpp" />
+    <ClCompile Include="..\..\source\CCamera.cpp" />
+    <ClCompile Include="..\..\source\CCanvas.cpp" />
+    <ClCompile Include="..\..\source\CEarlyZ.cpp" />
+    <ClCompile Include="..\..\source\CEngine.cpp" />
+    <ClCompile Include="..\..\source\CEntity.cpp" />
+    <ClCompile Include="..\..\source\CFile.cpp" />
+    <ClCompile Include="..\..\source\CFont.cpp" />
+    <ClCompile Include="..\..\source\CFreeTypeFont.cpp" />
+    <ClCompile Include="..\..\source\CHardwareInfo.cpp" />
+    <ClCompile Include="..\..\source\CHGEFont.cpp" />
+    <ClCompile Include="..\..\source\CImage.cpp" />
+    <ClCompile Include="..\..\source\CImageGS.cpp" />
+    <ClCompile Include="..\..\source\CImageSystem.cpp" />
+    <ClCompile Include="..\..\source\CImageSystemGS.cpp" />
+    <ClCompile Include="..\..\source\CInstance.cpp" />
+    <ClCompile Include="..\..\source\CInstanceGroup.cpp" />
+    <ClCompile Include="..\..\source\CLight.cpp" />
+    <ClCompile Include="..\..\source\CMaterial.cpp" />
+    <ClCompile Include="..\..\source\CMD2Factory.cpp" />
+    <ClCompile Include="..\..\source\CMorfedMesh.cpp" />
+    <ClCompile Include="..\..\source\CMorfedMeshFactory.cpp" />
+    <ClCompile Include="..\..\source\CPak.cpp" />
+    <ClCompile Include="..\..\source\CParticleSystem.cpp" />
+    <ClCompile Include="..\..\source\CPivot.cpp" />
+    <ClCompile Include="..\..\source\CPixMap.cpp" />
+    <ClCompile Include="..\..\source\CPostEffect.cpp" />
+    <ClCompile Include="..\..\source\CRaySystem.cpp" />
+    <ClCompile Include="..\..\source\CRenderTarget.cpp" />
+    <ClCompile Include="..\..\source\CScene.cpp" />
+    <ClCompile Include="..\..\source\CShader.cpp" />
+    <ClCompile Include="..\..\source\CShadowPass.cpp" />
+    <ClCompile Include="..\..\source\CShape.cpp" />
+    <ClCompile Include="..\..\source\CSprite.cpp" />
+    <ClCompile Include="..\..\source\CSpriteSystem.cpp" />
+    <ClCompile Include="..\..\source\CStatistics.cpp" />
+    <ClCompile Include="..\..\source\CSurface.cpp" />
+    <ClCompile Include="..\..\source\CTextCache.cpp" />
+    <ClCompile Include="..\..\source\CTexture.cpp" />
+    <ClCompile Include="..\..\source\CTheora.cpp" />
+    <ClCompile Include="..\..\source\CWindowUnix.cpp" />
+    <ClCompile Include="..\..\source\CWindowWin32.cpp" />
+    <ClCompile Include="..\..\source\CZipArchive.cpp" />
+    <ClCompile Include="..\..\source\DiskFile.cpp" />
+    <ClCompile Include="..\..\source\dllmain.cpp" />
+    <ClCompile Include="..\..\source\Engine.cpp" />
+    <ClCompile Include="..\..\source\File.cpp" />
+    <ClCompile Include="..\..\source\gl\axext.cpp" />
+    <ClCompile Include="..\..\source\ImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\BMPImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\DDSImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\DDSTextureLoader.cpp" />
+    <ClCompile Include="..\..\source\imageformats\JPEGImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\PCXImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\PNGImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\TGAImageFormat.cpp" />
+    <ClCompile Include="..\..\source\imageformats\_7BIImageFormat.cpp" />
+    <ClCompile Include="..\..\source\Input.cpp" />
+    <ClCompile Include="..\..\source\Keyboard.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Dynamics\Bullet-C-API.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btConvexHull.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btGeometryUtil.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btQuickprof.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\LinearMath\btSerializer.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCL.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.cpp" />
+    <ClCompile Include="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.cpp" />
+    <ClCompile Include="..\..\source\libs\freetype\src\autofit\autofit.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbase.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbbox.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftbitmap.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftdebug.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftfstype.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftgasp.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftglyph.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftgxval.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftinit.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftlcdfil.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftmm.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftotval.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftpatent.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftpfr.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftstroke.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftsynth.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftsystem.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\fttype1.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftwinfnt.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\base\ftxf86.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\bdf\bdf.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\cache\ftcache.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\cff\cff.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\cid\type1cid.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\gzip\ftgzip.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\lzw\ftlzw.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\pcf\pcf.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\pfr\pfr.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\psaux\psaux.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\pshinter\pshinter.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\psnames\psmodule.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\raster\raster.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\sfnt\sfnt.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\smooth\smooth.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\truetype\truetype.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\type1\type1.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\type42\type42.c" />
+    <ClCompile Include="..\..\source\libs\freetype\src\winfonts\winfnt.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\cdjpeg.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jaricom.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcapimin.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcapistd.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcarith.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jccoefct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jccolor.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcdctmgr.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jchuff.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcinit.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcmainct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcmarker.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcmaster.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcomapi.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcparam.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcprepct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jcsample.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jctrans.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdapimin.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdapistd.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdarith.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdatadst.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdatasrc.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdcoefct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdcolor.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jddctmgr.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdhuff.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdinput.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdmainct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdmarker.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdmaster.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdmerge.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdpostct.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdsample.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jdtrans.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jerror.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctflt.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctfst.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jfdctint.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jidctflt.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jidctfst.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jidctint.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jmemmgr.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jmemnobs.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jquant1.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jquant2.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\jutils.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdbmp.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdcolmap.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdgif.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdppm.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdrle.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdswitch.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\rdtarga.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\transupp.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\wrbmp.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\wrgif.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\wrppm.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\wrrle.c" />
+    <ClCompile Include="..\..\source\libs\jpeg\wrtarga.c" />
+    <ClCompile Include="..\..\source\libs\libpng\png.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngerror.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngget.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngmem.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngpread.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngread.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngrio.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngrtran.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngrutil.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngset.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngtrans.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngwio.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngwrite.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngwtran.c" />
+    <ClCompile Include="..\..\source\libs\libpng\pngwutil.c" />
+    <ClCompile Include="..\..\source\libs\ogg\bitwise.c" />
+    <ClCompile Include="..\..\source\libs\ogg\framing.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\analyze.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\apiwrapper.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\bitpack.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\cpu.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\decapiwrapper.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\decinfo.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\decode.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\dequant.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\encapiwrapper.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\encfrag.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\encinfo.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\encode.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\enquant.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\fdct.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\fragment.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\huffdec.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\huffenc.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\idct.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\info.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\internal.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\mathops.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\mcenc.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\quant.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\rate.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\state.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\tokenize.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxencfrag.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxfdct.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxfrag.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxidct.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\mmxstate.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86cpu.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86enc.c" />
+    <ClCompile Include="..\..\source\libs\theora\source\x86_vc\x86state.c" />
+    <ClCompile Include="..\..\source\libs\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\..\source\libs\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\..\source\libs\unzip\ioapi.c" />
+    <ClCompile Include="..\..\source\libs\unzip\iowin32.c" />
+    <ClCompile Include="..\..\source\libs\unzip\mztools.c" />
+    <ClCompile Include="..\..\source\libs\unzip\unzip.c" />
+    <ClCompile Include="..\..\source\libs\unzip\zip.c" />
+    <ClCompile Include="..\..\source\libs\zlib\adler32.c" />
+    <ClCompile Include="..\..\source\libs\zlib\compress.c" />
+    <ClCompile Include="..\..\source\libs\zlib\crc32.c" />
+    <ClCompile Include="..\..\source\libs\zlib\deflate.c" />
+    <ClCompile Include="..\..\source\libs\zlib\gzclose.c" />
+    <ClCompile Include="..\..\source\libs\zlib\gzlib.c" />
+    <ClCompile Include="..\..\source\libs\zlib\gzread.c" />
+    <ClCompile Include="..\..\source\libs\zlib\gzwrite.c" />
+    <ClCompile Include="..\..\source\libs\zlib\infback.c" />
+    <ClCompile Include="..\..\source\libs\zlib\inffast.c" />
+    <ClCompile Include="..\..\source\libs\zlib\inflate.c" />
+    <ClCompile Include="..\..\source\libs\zlib\inftrees.c" />
+    <ClCompile Include="..\..\source\libs\zlib\trees.c" />
+    <ClCompile Include="..\..\source\libs\zlib\uncompr.c" />
+    <ClCompile Include="..\..\source\libs\zlib\zutil.c" />
+    <ClCompile Include="..\..\source\Logger.cpp" />
+    <ClCompile Include="..\..\source\math\axmath.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\frustum.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat2.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat3.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat3x2.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat4.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\mat4x3.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\quat.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec2.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec3.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vec4.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\math\vectormath.cpp">
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">Cdecl</CallingConvention>
+      <CallingConvention Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">Cdecl</CallingConvention>
+    </ClCompile>
+    <ClCompile Include="..\..\source\MemoryFile.cpp" />
+    <ClCompile Include="..\..\source\Mouse.cpp" />
+    <ClCompile Include="..\..\source\Pak.cpp" />
+    <ClCompile Include="..\..\source\PakFile.cpp" />
+    <ClCompile Include="..\..\source\RenderContext.cpp" />
+    <ClCompile Include="..\..\source\saSpec.cpp" />
+    <ClCompile Include="..\..\source\shaders\draw\PositionColor.cpp" />
+    <ClCompile Include="..\..\source\shaders\draw\PositionColorTexCoord.cpp" />
+    <ClCompile Include="..\..\source\shaders\render\BumpMapping.cpp" />
+    <ClCompile Include="..\..\source\shaders\render\Texturing.cpp" />
+    <ClCompile Include="..\..\source\Shapes.cpp" />
+    <ClCompile Include="..\..\source\ShellWin32.cpp" />
+    <ClCompile Include="..\..\source\StandartSceneGraph.cpp" />
+    <ClCompile Include="..\..\source\StreamFile.cpp" />
+    <ClCompile Include="..\..\source\surfaces\Cube.cpp" />
+    <ClCompile Include="..\..\source\Timer.cpp" />
+    <ClCompile Include="..\..\source\utils\axstring.cpp" />
+    <ClCompile Include="..\..\source\ZippedFile.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

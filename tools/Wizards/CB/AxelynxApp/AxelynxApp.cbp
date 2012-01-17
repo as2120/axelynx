@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="AxelynxApp" />
+		<Option platforms="Windows;" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\AxelynxApp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-std=c++0x" />
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="axelynx32_d" />
+					<Add directory="$(AXELYNX_SDK)\lib\mingw\Win32\Debug\" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy &quot;$(AXELYNX_SDK)\bin\mingw\Win32\Debug\axelynx32_d.dll&quot; &quot;$(PROJECT_DIR)\bin\Debug\axelynx32_d.dll&quot;' />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\AxelynxApp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="axelynx32" />
+					<Add directory="$(AXELYNX_SDK)\lib\mingw\Win32\Release\" />
+				</Linker>
+				<ExtraCommands>
+					<Add after='cmd /c copy &quot;$(AXELYNX_SDK)\bin\mingw\Win32\Release\axelynx32.dll&quot; &quot;$(PROJECT_DIR)\bin\Release\axelynx32.dll&quot;' />
+					<Mode after="always" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++0x" />
+			<Add option="-Wall" />
+			<Add option="-fexceptions" />
+			<Add directory="$(AXELYNX_SDK)\" />
+		</Compiler>
+		<Unit filename="main.cpp" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
