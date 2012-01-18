@@ -64,12 +64,11 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Draw::PositionUV()
 						"fragmentuv = texcoord;\n"
 						"}\n";
 
-	const char *fs =	"uniform sampler2D diffuse;\n"	
-						"uniform vec4 ucolor;\n"	
+	const char *fs =	"uniform sampler2D diffuse;\n"		
 						"in vec2 fragmentuv;\n"
 						"out vec4 color;\n"
 						"void main(void) {\n"
-						"color = texture2D(diffuse,fragmentuv)*ucolor;\n"
+						"color = texture2D(diffuse,fragmentuv);\n"
 						"}\n";
 
 	shader->VertexSource(vs);

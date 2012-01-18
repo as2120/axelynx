@@ -41,7 +41,7 @@ class CSurface : public axelynx::Surface
 
 	unsigned __int8 index_size_;
 
-	int _getIndex(int i)
+	inline int _getIndex(int i)
 	{
 		if(index_size_ == 1)
 			return static_cast<unsigned char*>(indices_)[i];
@@ -50,7 +50,7 @@ class CSurface : public axelynx::Surface
 		if(index_size_ == 4)
 			return static_cast<unsigned int*>(indices_)[i];
 
-		//throw std::exception("unkonow index size!");
+		return 0;
 	}
 
 public:

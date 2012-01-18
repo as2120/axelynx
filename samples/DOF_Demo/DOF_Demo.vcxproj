@@ -140,8 +140,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\media\simpleshader.fs" />
-    <None Include="..\media\simpleshader.vs" />
+    <None Include="..\media\vertical_blur.fs" />
+    <None Include="..\media\vertical_blur.vs" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

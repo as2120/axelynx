@@ -11,6 +11,8 @@ int main()
 
         Scene *s = eng->AddScene();
         Camera *cam = s->AddCamera();
+		Canvas *c = eng->GetCanvas();
+
 		//cam->SetDrawMode(Camera::DM_WIREFRAME);
 
         Surface *cube = StandartSurfaces::Grid(256,256,16,16,true);
@@ -51,10 +53,42 @@ int main()
 
 		bool wire = false;
 
-		RenderTarget *rtt = eng->CreateRenderTarget(400,300);
+		RenderTarget *rtt = eng->CreateRenderTarget(800,600);
+		Texture *full_tex = rtt->CreateColorTexture();
+		Texture *full_depth = rtt->CreateDepthTexture();
+
+		StandartShaders::Draw::PositionUV()->Bind();
+		Shape *rect = Shape::Rect(800,600,false);
+		Shape *half_rect = Shape::Rect(400,300,false);
+
+		StandartShaders::Draw::PositionColor()->Bind();
+		Shape *colored_rect = Shape::Rect(800,600,false);
+
+		RenderTarget *half_rtt = eng->CreateRenderTarget(400,300);
+
+		Texture::Desc desc;
+		desc.TexType(Texture::TT_3D).UseMipmaps(false).Size(400,300,8);
+		Texture *dof_tex = eng->CreateTexture(desc);
+
+		for(int i=0;i<8;++i)
+		{
+			half_rtt->Bind3DTexture(dof_tex,i,i);
+		}
+
 
         while(wnd->isRunning())
         {
+			c->SetBlendMode(BM_ALPHA);
+			c->SetColor(0.0,0.0,0.0);
+			c->SetAlpha(0.9);
+			StandartShaders::Draw::PositionColor()->Bind();
+			c->SetScale(1,-1);
+			c->SetPosition(0,600);
+			c->Draw(colored_rect);
+			StandartShaders::Draw::PositionColor()->UnBind();
+			c->SetColor(1.0,1.0,1.0);
+			c->SetBlendMode(BM_NONE);
+
 			if(KeyHit('R'))
 			{
 				wire = ! wire;
@@ -87,7 +121,20 @@ int main()
 
 			cam->Translate(transl * dt * 0.1);
 
-            s->Render();
+			rtt->Bind();
+			s->Render();
+			rtt->UnBind();
+
+
+			full_tex->Bind();
+			c->SetBlendMode(BM_ADD);
+			StandartShaders::Draw::PositionUV()->Bind();
+			c->SetScale(1,-1);
+			c->SetPosition(0,600);
+			c->Draw(rect);
+			StandartShaders::Draw::PositionUV()->UnBind();
+			full_tex->UnBind();
+			c->SetBlendMode(BM_NONE);
             wnd->Flip();
         }
         //TODO: Place your deinitalize code here

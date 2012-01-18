@@ -146,8 +146,6 @@ current_layer_ = 0;
 		break;
 
 	case axelynx::Texture::TT_DEPTH:
-		gl_type_ = GL_TEXTURE_RECTANGLE;
-		break;
 	case axelynx::Texture::TT_2D:
 		gl_type_ = GL_TEXTURE_2D;
 		break;
@@ -177,7 +175,7 @@ current_layer_ = 0;
 
 CTexture::CTexture(GLuint handele, axelynx::Texture::Desc &desc)
 {
-current_layer_ = 0;
+	current_layer_ = 0;
 	axelynx_type_ = desc.TT;
 
 	width_ = desc.width;
@@ -225,18 +223,36 @@ void CTexture::Build(const void* data,GLuint format,GLuint internalFormat,const 
 {
 	OPENGL_CHECK_FOR_ERRORS();
 	glBindTexture(gl_type_,handle_);
-	glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
 	OPENGL_CHECK_FOR_ERRORS();
-	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_T, GL_REPEAT); 
+	if(format == GL_DEPTH_COMPONENT)
+	{
+		glTexParameteri(gl_type_, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(gl_type_, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE); 
+	}
+	else
+	{
+		glTexParameteri(gl_type_, GL_TEXTURE_WRAP_S, GL_REPEAT);
+		glTexParameteri(gl_type_, GL_TEXTURE_WRAP_T, GL_REPEAT); 
+	}
 	OPENGL_CHECK_FOR_ERRORS();
 	if(use_mipmaps_)
 	{
 		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	}
 	else
 	{
-		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		if(format == GL_DEPTH_COMPONENT)
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		}
+		else
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		}
 	}
 
 	if(anisotropic_ > 0.124f)

@@ -13,10 +13,10 @@
     <None Include="ReadMe.txt">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="..\media\simpleshader.fs">
+    <None Include="..\media\vertical_blur.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\simpleshader.vs">
+    <None Include="..\media\vertical_blur.vs">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>
