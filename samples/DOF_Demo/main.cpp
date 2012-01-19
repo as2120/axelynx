@@ -6,6 +6,7 @@ int main()
         Engine *eng = Engine::Init();
 
         Window *wnd = eng->AddWindow(800,600,32,WM_WINDOWED,4);
+		wnd->VSync(false);
 
         //TODO: Place your resource loading and scene creating code here
 
@@ -17,15 +18,16 @@ int main()
 
         Surface *cube = StandartSurfaces::Grid(256,256,16,16,true);
         Entity *body = s->Add(cube);
+		//body->SetScale(256);
 
 		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/rockwall.tga",Texture::Desc().Anisotropic(16.0));
 		Texture *relief = eng->LoadTexture(L"../../../../samples/media/rockwall_relief.tga",Texture::Desc().Anisotropic(16.0));
 
 		Material *paralax  = eng->CreateMaterial();
-		paralax->SetShader(StandartShaders::Render::Texturing());
+		paralax->SetShader(StandartShaders::Render::Paralax());
 		paralax->SetTexture(diffuse,0);
 		paralax->SetTexture(relief,1);
-
+		StandartShaders::Render::Paralax()->SetUniform("numSteps",8.0f);
 		body->SetMaterial(paralax);
 
 		Surface *s_teapot = eng->LoadSurface(L"../../../../samples/media/Teapot_4096.axs");
@@ -35,15 +37,19 @@ int main()
 		const int COUNT_TEAPOTS = 100;
 
 		Entity* ents[COUNT_TEAPOTS];
+		quat rots[COUNT_TEAPOTS];
 
 		for(int i=0;i<COUNT_TEAPOTS;++i)
 		{
 			ents[i] = s->Add(s_teapot);
-			ents[i]->SetShader(StandartShaders::Render::Texturing());
+			ents[i]->SetShader(StandartShaders::Render::TexturingLighting());
 			ents[i]->SetTexture(t_dharmabox);
 			ents[i]->SetPosition(rnd(-128,128),rnd(2,10),rnd(-128,128));
 			ents[i]->SetScale(rnd(1,5));
 			ents[i]->SetOrientation(rnd(360),rnd(360),rnd(360));
+
+			rots[i] = quat(vec3(rnd(-0.1,0.1),rnd(-0.5,0.5),rnd(-0.1,0.1)));
+
 		}
 
 
@@ -78,16 +84,12 @@ int main()
 
         while(wnd->isRunning())
         {
-			c->SetBlendMode(BM_ALPHA);
-			c->SetColor(0.0,0.0,0.0);
-			c->SetAlpha(0.9);
-			StandartShaders::Draw::PositionColor()->Bind();
-			c->SetScale(1,-1);
-			c->SetPosition(0,600);
-			c->Draw(colored_rect);
-			StandartShaders::Draw::PositionColor()->UnBind();
-			c->SetColor(1.0,1.0,1.0);
-			c->SetBlendMode(BM_NONE);
+			
+			for(int i=0;i<COUNT_TEAPOTS;++i)
+			{
+				ents[i]->Turn(rots[i]);
+			}
+			c->Clear();
 
 			if(KeyHit('R'))
 			{
@@ -120,6 +122,10 @@ int main()
 			transl *= 0.9;
 
 			cam->Translate(transl * dt * 0.1);
+
+			StandartShaders::Render::Paralax()->SetUniform(Shader::SU_EYEPOS,cam->GetPosition(false));
+			StandartShaders::Render::Paralax()->SetUniform(Shader::SU_LIGHTPOS,cam->GetPosition(false));
+			StandartShaders::Render::TexturingLighting()->SetUniform(Shader::SU_LIGHTPOS,cam->GetPosition(false));
 
 			rtt->Bind();
 			s->Render();

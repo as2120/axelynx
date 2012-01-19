@@ -173,7 +173,6 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::Grid(float sizex,float
 	int count_vertices = count_quads * 4;
 	int count_indices = count_quads * 6;
 
-
 	CSurface *surf = new CSurface(count_vertices,count_indices);
 	surf->UseLightmap();
 
@@ -201,10 +200,21 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::Grid(float sizex,float
 			surf->SetVertexPosition(vindex + 2,cur_x, 0, dest_z);
 			surf->SetVertexPosition(vindex + 3, dest_x, 0, dest_z);
 
-			surf->SetVertexTexCoord(vindex + 0,vec2(0,1));
-			surf->SetVertexTexCoord(vindex + 1,vec2(1,1));
-			surf->SetVertexTexCoord(vindex + 2,vec2(0,0));
-			surf->SetVertexTexCoord(vindex + 3,vec2(1,0));
+			surf->SetVertexTexCoord(vindex + 0,vec2(0,1),0);
+			surf->SetVertexTexCoord(vindex + 1,vec2(1,1),0);
+			surf->SetVertexTexCoord(vindex + 2,vec2(0,0),0);
+			surf->SetVertexTexCoord(vindex + 3,vec2(1,0),0);
+
+			float global_u_0 = float(i) / float(cellsx);
+			float global_v_0 = float(j) / float(cellsz);
+
+			float global_u_1 = float(i+1) / float(cellsx);
+			float global_v_1 = float(j+1) / float(cellsz);
+
+			surf->SetVertexTexCoord(vindex + 0,vec2(global_u_0,global_v_1),1);
+			surf->SetVertexTexCoord(vindex + 1,vec2(global_u_1,global_v_1),1);
+			surf->SetVertexTexCoord(vindex + 2,vec2(global_u_0,global_v_0),1);
+			surf->SetVertexTexCoord(vindex + 3,vec2(global_u_1,global_v_0),1);
 
 			surf->SetVertexNormal(vindex + 0,0,1,0);
 			surf->SetVertexNormal(vindex + 1,0,1,0);
@@ -216,6 +226,117 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::Grid(float sizex,float
 
 			vindex += 4;
 			triindex += 2;
+		}
+	}
+
+	if(calc_tangents)
+		surf->RecalcTangents();
+
+	surf->UnLock();
+	return surf;
+}
+
+AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::SkyDome(float size, int segments)
+{
+	int count_vertices = segments * segments;
+	int count_indices = ((segments - 1)* (segments*2) + segments - 2) * 3;
+
+
+
+	CSurface *surf = new CSurface(count_vertices,count_indices);
+	surf->UseLightmap();
+	surf->Lock();
+
+	int vindex = 0;
+	int triindex = 0;
+
+	for(int i=0;i<segments;++i)
+	{
+		for(int j=0;j<segments;++j)
+		{
+			float y = sin(float(segments-i)/float(segments) * 1.57) * size - (size*0.5);
+
+			float radius = cos(float(segments-i)/float(segments) * 1.57) * size;
+			float x = sin(float(j)/float(segments) * 2.0 * 3.1415) * radius;
+			float z = cos(float(j)/float(segments) * 2.0 * 3.1415) * radius;
+			
+
+			surf->SetVertexPosition(vindex,x,y,z);
+			surf->SetVertexTexCoord(vindex,0.5 + x / (size * 2.0),0.5 + z / (size * 2.0),0);
+
+			vindex++;
+		}
+	}
+
+	for(int i=0;i<segments-2;++i)
+	{
+		surf->SetTriangle(triindex,0,i+1,i+2);
+		triindex++;
+	}
+
+	for(int i=0;i<segments-1;++i)
+	{
+		for(int j=0;j<segments-1;++j)
+		{
+			surf->SetTriangle(triindex,(i*segments)+1+j,(i*segments)+j,(i*segments)+segments+j);
+			triindex++;
+			surf->SetTriangle(triindex,(i*segments)+1+j,(i*segments)+segments+j,(i*segments)+segments+1+j);
+			triindex++;
+		}
+
+		surf->SetTriangle(triindex,(i*segments)+0,(i*segments)+segments-1,(i*segments)+(segments * 2)-1);
+		triindex++;
+		surf->SetTriangle(triindex,(i*segments)+0,(i*segments)+(segments * 2)-1,(i*segments)+segments);
+		triindex++;
+	}
+	surf->UnLock();
+	return surf;
+}
+
+AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::RegularGrid(int cellsx, int cellsz,bool calc_tangents)
+{
+	int count_vertices = cellsx * cellsz;
+	int count_indices = (cellsx-1) * (cellsz-1) * 6;
+
+	CSurface *surf = new CSurface(count_vertices,count_indices);
+	surf->UseColoredVertices();
+
+	surf->Lock();
+
+	int vindex = 0;
+	int triindex = 0;
+
+	axelynx::vec2 cellsize;
+	axelynx::vec2 startpos(-0.5,-0.5);
+	cellsize.x = 1.0 / cellsx;
+	cellsize.y = 1.0 / cellsz;
+	
+	for(int i = 0;i<cellsx;++i)
+	{
+		for(int j=0;j<cellsz;++j)
+		{
+			float x = startpos.x + (i * cellsize.x);
+			float z = startpos.y + (j * cellsize.y);
+			surf->SetVertexPosition(vindex + 0,x, 0,z);
+
+			float u = float(i) / float(cellsx);
+			float v = float(j) / float(cellsz);
+			surf->SetVertexTexCoord(vindex + 0,vec2(u,v),0);
+
+			surf->SetVertexNormal(vindex + 0,0,1,0);
+
+			vindex ++;
+		}
+	}
+
+	for(int i = 0;i<cellsx-1;++i)
+	{
+		for(int j=0;j<cellsz-1;++j)
+		{
+			surf->SetTriangle(triindex+0,(j*cellsx)+0+i,(j*cellsx)+1+i,(j*cellsx)+(cellsx)+i);
+			surf->SetTriangle(triindex+1,(j*cellsx)+1+i,(j*cellsx)+(cellsx)+i,(j*cellsx)+(cellsx+1)+i);
+
+			triindex +=2;
 		}
 	}
 

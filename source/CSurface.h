@@ -54,6 +54,11 @@ class CSurface : public axelynx::Surface
 	}
 
 public:
+	unsigned __int8 GetIndexSize() const
+	{
+			return index_size_;
+	}
+
 	bool RecalcTangents();
 
 	CSurface(int count_vertices, int count_indices);

@@ -8,6 +8,7 @@
 #include "CFile.h"
 #include "CEngine.h"
 #include "axelynx/Shell.h"
+#include "saSpec.h"
 
 CShader * CShader::current =0;
 std::string shaderprolog = "";
@@ -44,12 +45,12 @@ GLint CShader::ShaderStatus(GLuint shader, GLenum param, const char *source)
 	{
 		glGetShaderInfoLog(shader, 1024, &length, buffer);
 		
-		bool error_line[256] = {false};
+		bool error_line[1024] = {false};
 
 		//highlight lines with errors
 
 		//ATI
-		for(unsigned int i=0;i<strlen(buffer);++i)
+		for(unsigned int i=0;i<length;++i)
 		{
 			if(buffer[i] == ':')
 			{
@@ -62,7 +63,7 @@ GLint CShader::ShaderStatus(GLuint shader, GLenum param, const char *source)
 		}
 
 		//NVIDIA
-		for(unsigned int i=0;i<strlen(buffer);++i)
+		for(unsigned int i=0;i<length;++i)
 		{
 			if(buffer[i] == '(')
 			{
@@ -76,7 +77,7 @@ GLint CShader::ShaderStatus(GLuint shader, GLenum param, const char *source)
 
 		std::string logerror = "";
 
-		for(unsigned int i = 0;i<strlen(buffer);++i)
+		for(unsigned int i = 0;i<length;++i)
 		{
 			if(buffer[i] != 10)
 			{
@@ -235,7 +236,7 @@ bool CShader::Compile()
 		else
 			compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(fragmentshader_)
 	{
 		glCompileShader(fragmentshader_);
@@ -244,7 +245,7 @@ bool CShader::Compile()
 		else
 			compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(geometryshader_)
 	{
 		glCompileShader(geometryshader_);
@@ -253,7 +254,7 @@ bool CShader::Compile()
 		else
 			compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(tesscontrolshader_)
 	{
 		glCompileShader(tesscontrolshader_);
@@ -262,7 +263,7 @@ bool CShader::Compile()
 		else
 			compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(tessevaluationshader_)
 	{
 		glCompileShader(tessevaluationshader_);
@@ -271,11 +272,11 @@ bool CShader::Compile()
 		else
 			compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(CEngine::Instance()->Settings().Shaders.UseCash)
 		if(glProgramParameteri)
 			glProgramParameteri(programm_,GL_PROGRAM_BINARY_RETRIEVABLE_HINT,GL_TRUE);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	glLinkProgram(programm_);
 	if(ShaderProgramStatus(programm_, GL_LINK_STATUS))
 	{
@@ -284,13 +285,14 @@ bool CShader::Compile()
 	{
 		compiled_ = false;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	for(int i = 0;i<32;++i)
 	{
 		stdlocations[i] = -1;
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	Bind();
+	OPENGL_CHECK_FOR_ERRORS();
 	stdlocations[SU_MODEL] = GetUniformLocation("model");
 	stdlocations[SU_MODELVIEW] = GetUniformLocation("modelview");
 	stdlocations[SU_MODELVIEWPROJ] = GetUniformLocation("modelviewproj");
@@ -301,7 +303,7 @@ bool CShader::Compile()
 	stdlocations[SU_LIGHTDIR] = GetUniformLocation("lightdir");
 	stdlocations[SU_ENTITYCOLOR] = GetUniformLocation("entitycolor");
 	stdlocations[SU_EYEPOS] = GetUniformLocation("eyepos");
-
+	OPENGL_CHECK_FOR_ERRORS();
 	for(int i=0;i<8;++i)
 	{
 		char buff[9] = "texture0";
@@ -310,7 +312,7 @@ bool CShader::Compile()
 		if(loc >= 0)
 			SetUniform(loc,i);
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	UnBind();
 	OPENGL_CHECK_FOR_ERRORS();
 	return compiled_;
@@ -773,7 +775,12 @@ int CShader::GetAttribLocation(const char *name)
 
 int CShader::GetUniformLocation(const char *name)
 {
-	return glGetUniformLocation(programm_, name);
+	if(!compiled_)
+		return -1;
+
+	int result = glGetUniformLocation(programm_, name);
+
+	return result;
 }
 
 int CShader::BindAttribLocation(const char* name, int location)
@@ -803,6 +810,18 @@ bool InitShaderVersion()
 	shaderprolog[11] = char(txt[3]);
 
 	shaderprolog += std::string("precision highp float; \n");
+
+	int cnt_va = sizeof(sysattribs) / sizeof(sysattribs[0]);
+
+	for(int i=0;i<cnt_va;++i)
+	{
+		char buff[255];
+		sprintf(buff,"\n#define %s %d",sysattribs[i].definename,i);
+		shaderprolog += buff;
+	}
+
+	shaderprolog += "\n";
+
 	std::cout<<shaderprolog<<std::endl;
 	return true;
 }

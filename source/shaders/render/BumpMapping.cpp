@@ -340,7 +340,7 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 	shader = axelynx::Shader::Create();
 
 	const char *vs =	"uniform mat4 modelviewproj;\n"
-						"uniform mat4 modelview;\n"
+						"uniform mat4 model;\n"
 						"uniform mat3 normalmatrix;\n"
 						"uniform	vec3	lightpos;\n"
 						"uniform	vec3	eyepos;\n"
@@ -354,7 +354,7 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 						"out vec2 fragmentuv;\n"
 						"void main(void)\n"
 						"{\n"
-						"	vec3	p = vec3      ( modelview * vec4(position,1.0) );\n"
+						"	vec3	p = vec3      ( model* vec4(position,1.0) );\n"
 						"	vec3	l = normalize ( vec3 ( lightpos ) - p );\n"
 						"	vec3	e = normalize ( vec3 ( eyepos   ) - p );\n"
 						"	vec3	h = l + e;\n"
@@ -370,6 +370,11 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 
 	const char *fs =	"uniform sampler2D texture0;\n"
 						"uniform sampler2D texture1;\n"
+
+						"uniform float scale;\n"
+						"uniform float specExp;\n"
+						"uniform float numSteps;\n"
+
 						"in	vec3 ldir;\n"
 						"in	vec3 eyedir;\n"
 						"in	vec3 halfdir;\n"
@@ -377,9 +382,6 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 						"out vec4 color;\n"
 						"void main (void)\n"
 						"{\n"
-						"	const float scale = -0.05;\n"
-						"	const float	specExp   = 80.0;\n"
-						"	const float numSteps = 16.0f;\n"
 						"	const float	step   = 1.0 / numSteps;\n"
 						"	vec2	dtex   = eyedir.xy * scale / ( numSteps * eyedir.z );\n"
 						"	float	height = 1.0;\n"
@@ -413,10 +415,14 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 	shader->BindAttribLocation(sysattribs[VA_TANGENT].name,VA_TANGENT);
 	shader->BindAttribLocation(sysattribs[VA_TEXCOORD0].name,VA_TEXCOORD0);
 
+	shader->Compile();
+
 	shader->SetUniform("lightpos",axelynx::vec3(0,0,0));
 	shader->SetUniform("eyepos",axelynx::vec3(0,0,0));
 
-	shader->Compile();
+	shader->SetUniform("scale",-0.05f);
+	shader->SetUniform("specExp",80.0f);
+	shader->SetUniform("numSteps",16.0f);
 
 	shader->SetUniform(axelynx::Shader::SU_LIGHTPOS,axelynx::vec3(-100,200,-400));
 

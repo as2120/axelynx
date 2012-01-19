@@ -1,6 +1,6 @@
 uniform mat4 modelviewproj;
 
-layout(location=0) in vec3 position;
+layout(location=VA_POSITION) in vec3 position;
 
 out	vec3 fragmentuvw;
 

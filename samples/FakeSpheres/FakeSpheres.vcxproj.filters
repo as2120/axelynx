@@ -6,35 +6,23 @@
       <Extensions>txt</Extensions>
     </Filter>
     <Filter Include="shaders">
-      <UniqueIdentifier>{31cc668c-6521-4d2b-b3de-77248d8567dc}</UniqueIdentifier>
+      <UniqueIdentifier>{0df0424a-cccc-4670-81e0-01a9efe307ea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="..\media\bump_mapping.fs">
+    <None Include="..\media\fakespheres.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\bump_mapping.vs">
+    <None Include="..\media\fakespheres.vs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\lighting.fs">
+    <None Include="..\media\zonly.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\lighting.vs">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="..\media\shadowmap.fs">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="..\media\shadowmap.vs">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="..\media\texturing.fs">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="..\media\texturing.vs">
+    <None Include="..\media\zonly.vs">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

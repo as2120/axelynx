@@ -101,7 +101,13 @@ bool CInstanceGroup::Draw() const
 	CStatistics::tris_rendered += (instances_.size()) * surface_->count_tris_;
 	CStatistics::vertices_rendered += (instances_.size()) * surface_->count_vertices_;
 	
-	glDrawElementsInstanced(surface_->draw_mode_,surface_->count_indices_,GL_UNSIGNED_SHORT,0,instances_.size());
+	auto sz = surface_->GetIndexSize();
+	GLenum index_type = GL_UNSIGNED_SHORT;
+	if(sz==1)
+		index_type = GL_UNSIGNED_BYTE;
+	if(sz==4)
+		index_type = GL_UNSIGNED_INT;
+	glDrawElementsInstanced(surface_->draw_mode_,surface_->count_indices_,index_type,0,instances_.size());
 	glBindTexture(GL_TEXTURE_BUFFER,0);
 	glActiveTexture(GL_TEXTURE0);
 	OPENGL_CHECK_FOR_ERRORS();

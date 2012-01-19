@@ -5,10 +5,25 @@
       <UniqueIdentifier>{2a068e5b-78a4-4cf7-9168-fceb751a48df}</UniqueIdentifier>
       <Extensions>txt</Extensions>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{1b2e7c30-6af3-4429-a22f-3d76824f45ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\media\backface.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\backface.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\volumetric.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\volumetric.vs">
+      <Filter>shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

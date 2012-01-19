@@ -140,6 +140,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\media\backface.fs" />
+    <None Include="..\media\backface.vs" />
+    <None Include="..\media\volumetric.fs" />
+    <None Include="..\media\volumetric.vs" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

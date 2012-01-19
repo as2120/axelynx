@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{63F42D79-DEF5-442F-B96B-DC697D6DC144}</ProjectGuid>
+    <ProjectGuid>{440226B4-7873-4D93-A9FD-D997D946ED14}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -140,14 +140,10 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\media\bump_mapping.fs" />
-    <None Include="..\media\bump_mapping.vs" />
-    <None Include="..\media\lighting.fs" />
-    <None Include="..\media\lighting.vs" />
-    <None Include="..\media\shadowmap.fs" />
-    <None Include="..\media\shadowmap.vs" />
-    <None Include="..\media\texturing.fs" />
-    <None Include="..\media\texturing.vs" />
+    <None Include="..\media\fakespheres.fs" />
+    <None Include="..\media\fakespheres.vs" />
+    <None Include="..\media\zonly.fs" />
+    <None Include="..\media\zonly.vs" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>

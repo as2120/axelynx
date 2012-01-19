@@ -91,6 +91,7 @@ axelynx::Window* CEngine::AddWindow_(int width, int height, int bpp, axelynx::Wi
 		InitShaderVersion(); //sader version prolog init (#version 330)
 		syswnd->Free();
 		syswnd->Init(width,height,bpp,wm,samples);
+		AxelynxInitExtensions(); //extension init
 	}
 	else
 	{

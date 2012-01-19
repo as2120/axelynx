@@ -68,13 +68,13 @@ int main()
 
 		cam->Translate(transl * dt);
 
-		back->Bind();
+		//back->Bind();
 		body->SetMaterial(backface);
 		s->Render();
-		back->UnBind();
+		//back->UnBind();
 
 		body->SetMaterial(volumetric);
-		s->Render();
+		//s->Render();
 
 		c->SetBlendMode(BM_ALPHA);
 		wchar_t wbuff[80];

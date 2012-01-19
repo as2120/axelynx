@@ -23,22 +23,23 @@ struct VertexAttribInfo
 	const int components;
 	GLenum format;
 	GLenum normalized;
+	const char *definename;
 };
 
 const VertexAttribInfo sysattribs[] ={
-	{"position",3,GL_FLOAT,GL_FALSE},
-	{"normal",3,GL_BYTE,GL_TRUE},
-	{"tangent",3,GL_BYTE,GL_TRUE},
-	{"color",4,GL_UNSIGNED_BYTE,GL_TRUE},
-	{"texcoord0",2,GL_FLOAT,GL_FALSE},
-	{"texcoord1",2,GL_FLOAT,GL_FALSE},
-	{"boneid",4,GL_UNSIGNED_BYTE,GL_FALSE},
-	{"weight",4,GL_FLOAT,GL_TRUE},
-	{"pointsize",1,GL_FLOAT,GL_FALSE},
-	{"nextposition",3,GL_FLOAT,GL_FALSE},
-{"nextnormal",3,GL_FLOAT,GL_TRUE},
-{"nexttangent",3,GL_FLOAT,GL_TRUE},
-{"nexttexcoord",2,GL_FLOAT,GL_FALSE}};
+	{"position",3,GL_FLOAT,GL_FALSE,"VA_POSITION"},
+	{"normal",3,GL_BYTE,GL_TRUE,"VA_NORMAL"},
+	{"tangent",3,GL_BYTE,GL_TRUE,"VA_TANGENT"},
+	{"color",4,GL_UNSIGNED_BYTE,GL_TRUE,"VA_COLOR"},
+	{"texcoord0",2,GL_FLOAT,GL_FALSE,"VA_TEXCOORD0"},
+	{"texcoord1",2,GL_FLOAT,GL_FALSE,"VA_TEXCOORD1"},
+	{"boneid",4,GL_UNSIGNED_BYTE,GL_FALSE,"VA_BONEID"},
+	{"weight",4,GL_FLOAT,GL_TRUE,"VA_WEIGHT"},
+	{"pointsize",1,GL_FLOAT,GL_FALSE,"VA_POINTSIZE"},
+	{"nextposition",3,GL_FLOAT,GL_FALSE,"VA_NEXTPOSITION"},
+	{"nextnormal",3,GL_FLOAT,GL_TRUE,"VA_NEXTNORMAL"},
+	{"nexttangent",3,GL_FLOAT,GL_TRUE,"VA_NEXTTANGENT"},
+	{"nexttexcoord",2,GL_FLOAT,GL_FALSE,"VA_NEXTTEXCOORD"}};
 
 
 bool SetVertexAttribPointer(int attribut, int position, int stride);
