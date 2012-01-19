@@ -140,6 +140,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="..\media\dof.fs" />
+    <None Include="..\media\dof.vs" />
     <None Include="..\media\vertical_blur.fs" />
     <None Include="..\media\vertical_blur.vs" />
     <None Include="ReadMe.txt" />

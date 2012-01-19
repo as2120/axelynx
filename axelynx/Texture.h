@@ -72,6 +72,7 @@ namespace axelynx
 		
 		virtual bool Grab(int x, int y) = 0;
 
+		virtual void RegenerateMipmaps() = 0;
 		bool Grab()
 		{
 			return Grab(0,0);

@@ -32,7 +32,7 @@ public:
 	virtual int GetWidth() const;
 	virtual int GetHeight() const;
 
-	virtual axelynx::Texture* CreateColorTexture(int channels=3, int channel_size=1, int layer =0);
+	virtual axelynx::Texture* CreateColorTexture(int channels=3, int channel_size=1, int layer =0,bool use_mipmaps=false);
 	virtual axelynx::Texture* CreateDepthTexture();
 
 	virtual axelynx::Texture* GetColorTexture(int layer =0) const;

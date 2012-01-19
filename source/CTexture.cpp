@@ -591,3 +591,9 @@ bool CTexture::Grab(int x, int y)
 	current_[0]->UnBind(true);
 	return true;
 }
+
+void CTexture::RegenerateMipmaps()
+{
+	glBindTexture(gl_type_,handle_);
+	glGenerateMipmap(gl_type_);
+}

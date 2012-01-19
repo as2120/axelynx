@@ -23,7 +23,7 @@ namespace axelynx
 		virtual int GetWidth() const =0;
 		virtual int GetHeight() const =0;
 
-		virtual Texture* CreateColorTexture(int channels=3, int channel_size=1, int layer =0)=0;
+		virtual Texture* CreateColorTexture(int channels=3, int channel_size=1, int layer =0,bool use_mipmaps=false)=0;
 		virtual Texture* CreateDepthTexture()=0;
 
 		virtual Texture* GetColorTexture(int layer =0) const =0;

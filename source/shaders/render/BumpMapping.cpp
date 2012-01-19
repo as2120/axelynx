@@ -382,7 +382,7 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::Paralax()
 						"out vec4 color;\n"
 						"void main (void)\n"
 						"{\n"
-						"	const float	step   = 1.0 / numSteps;\n"
+						"	float	step   = 1.0 / numSteps;\n"
 						"	vec2	dtex   = eyedir.xy * scale / ( numSteps * eyedir.z );\n"
 						"	float	height = 1.0;\n"
 						"	vec2	tex    = fragmentuv;\n"

@@ -152,7 +152,7 @@ int CRenderTarget::GetHeight() const
 	return height_;
 }
 
-axelynx::Texture* CRenderTarget::CreateColorTexture(int channels, int channel_size, int layer)
+axelynx::Texture* CRenderTarget::CreateColorTexture(int channels, int channel_size, int layer,bool use_mipmaps)
 {
 	axelynx::Texture::Desc desc;
 	desc.TT = axelynx::Texture::TT_2D;
@@ -160,7 +160,7 @@ axelynx::Texture* CRenderTarget::CreateColorTexture(int channels, int channel_si
 	desc.height = height_;
 	desc.cpp = channels;
 	desc.bpc = channel_size;
-	desc.use_mipmaps = false;
+	desc.use_mipmaps = use_mipmaps;
 
 	CTexture *tex = new CTexture(desc);
 

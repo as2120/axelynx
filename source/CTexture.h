@@ -76,6 +76,8 @@ public:
 	virtual bool Save(axelynx::File file) const;
 
 	virtual bool Grab(int x, int y);
+
+	virtual void RegenerateMipmaps();
 };
 
 

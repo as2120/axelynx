@@ -60,7 +60,7 @@ int main()
 		bool wire = false;
 
 		RenderTarget *rtt = eng->CreateRenderTarget(800,600);
-		Texture *full_tex = rtt->CreateColorTexture();
+		Texture *full_tex = rtt->CreateColorTexture(4,1,0,true);
 		Texture *full_depth = rtt->CreateDepthTexture();
 
 		StandartShaders::Draw::PositionUV()->Bind();
@@ -81,6 +81,16 @@ int main()
 			half_rtt->Bind3DTexture(dof_tex,i,i);
 		}
 
+		Shader *dof = eng->LoadShader(L"../../../../samples/media/dof");
+		dof->Compile();
+
+		dof->SetUniform("depth",1);
+
+		dof->SetUniform("focal_distance",300.0f);
+		dof->SetUniform("focal_range",600.0f);
+
+		dof->SetUniform("zFar",1000.0f);
+		dof->SetUniform("zNear",1.0f);
 
         while(wnd->isRunning())
         {
@@ -130,15 +140,18 @@ int main()
 			rtt->Bind();
 			s->Render();
 			rtt->UnBind();
+			full_tex->RegenerateMipmaps();
 
 
-			full_tex->Bind();
+			full_tex->Bind(0);
+			full_depth->Bind(1);
 			c->SetBlendMode(BM_ADD);
-			StandartShaders::Draw::PositionUV()->Bind();
+			dof->Bind();
 			c->SetScale(1,-1);
 			c->SetPosition(0,600);
 			c->Draw(rect);
-			StandartShaders::Draw::PositionUV()->UnBind();
+			dof->UnBind();
+			full_depth->UnBind();
 			full_tex->UnBind();
 			c->SetBlendMode(BM_NONE);
             wnd->Flip();
