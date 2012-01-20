@@ -86,8 +86,10 @@ int main()
 
 		dof->SetUniform("depth",1);
 
-		dof->SetUniform("focal_distance",300.0f);
-		dof->SetUniform("focal_range",600.0f);
+		dof->SetUniform("focal_distance",30.0f);
+		dof->SetUniform("focal_range",300.0f);
+
+		cam->Projection(90.0f,800.0f/600.0f,1.0,1000.0);
 
 		dof->SetUniform("zFar",1000.0f);
 		dof->SetUniform("zNear",1.0f);

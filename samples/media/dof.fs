@@ -14,12 +14,18 @@ void main(void)
 {
     float d = texture(depth,fragmentuv).x;
 
-    float zEye     = zFar - (zFar * zNear / ( d * (zFar - zNear) - zFar ));
+    float zEye     = (zFar * zNear / ( zFar - d * (zFar - zNear) ));
+    float dist = zEye - focal_distance;
 
-    float blur = abs(zEye)/focal_range ;
+    float blur = 0;
+    if(dist<0)
+        blur = -dist / focal_distance;
+    else
+        blur = dist / focal_range;
+    blur = clamp(blur,0.0,1.0);
 
-    vec4 diffuse = textureLod(diffuse,fragmentuv,blur * 5.0);
+    vec4 diffuse = textureLod(diffuse,fragmentuv,blur * 8.0);
 
-	color = vec4(blur,blur,blur,1.0);
-    //color = diffuse;
+	//color = vec4(blur,blur,blur,1.0);
+    color = diffuse;
 }
