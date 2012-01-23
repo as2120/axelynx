@@ -126,25 +126,113 @@ void CEngine::InitOpenGL()
 	glClampColor(GL_CLAMP_READ_COLOR,GL_FALSE);
 	OPENGL_CHECK_FOR_ERRORS();
 
-	wchar_t *buff=0;
+	{
+		wchar_t *buff=0;
 
-	LOG_WRITE(L"<table border = 1 <caption>videocard info</caption><tr><td>Vendor</td><td>");
-	buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
-	LOG_WRITE(buff);
-	delete[] buff;
-	LOG_WRITE(L"</td></tr><td>Renderer</td><td>");
-	buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
-	LOG_WRITE(buff);
-	delete[] buff;
-	LOG_WRITE(L"</td></tr><td>Driver version</td><td>");
-	buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
-	LOG_WRITE(buff);
-	delete[] buff;
-	LOG_WRITE(L"</td></tr><td>glsl compiler</td><td>");
-	buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
-	LOG_WRITE(buff);
-	delete[] buff;
-	LOG_WRITE(L"</td></tr></table>");
+		LOG_WRITE(L"<table border = 1 <caption>videocard info</caption><tr><td>Vendor</td><td>");
+		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
+		LOG_WRITE(buff);
+		delete[] buff;
+		LOG_WRITE(L"</td></tr><td>Renderer</td><td>");
+		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
+		LOG_WRITE(buff);
+		delete[] buff;
+		LOG_WRITE(L"</td></tr><td>Driver version</td><td>");
+		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
+		LOG_WRITE(buff);
+		delete[] buff;
+		LOG_WRITE(L"</td></tr><td>glsl compiler</td><td>");
+		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
+		LOG_WRITE(buff);
+		delete[] buff;
+		LOG_WRITE(L"</td></tr></table>");
+	}
+
+	{
+		GLint ints[16];
+		wchar_t buff[256];
+		
+		LOG_WRITE(L"<table border = 1 <caption>opengl renderer info</caption><tr><td>max clipplanes</td><td>");
+		glGetIntegerv(GL_MAX_CLIP_PLANES,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max texture cooods</td><td>");
+		glGetIntegerv(GL_MAX_TEXTURE_COORDS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max texture image units</td><td>");
+		glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max texture size</td><td>");
+		glGetIntegerv(GL_MAX_TEXTURE_SIZE,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max 3d texture size</td><td>");
+		glGetIntegerv(GL_MAX_3D_TEXTURE_SIZE,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max cubemap texture size</td><td>");
+		glGetIntegerv(GL_MAX_CUBE_MAP_TEXTURE_SIZE,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max texture units</td><td>");
+		glGetIntegerv(GL_MAX_TEXTURE_UNITS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>MRT buffers</td><td>");
+		glGetIntegerv(GL_MAX_DRAW_BUFFERS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max indices</td><td>");
+		glGetIntegerv(GL_MAX_ELEMENTS_INDICES,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max verices</td><td>");
+		glGetIntegerv(GL_MAX_ELEMENTS_VERTICES,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max vertext uniforms</td><td>");
+		glGetIntegerv(GL_MAX_VERTEX_UNIFORM_COMPONENTS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max fragment uniforms</td><td>");
+		glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max varyings floats</td><td>");
+		glGetIntegerv(GL_MAX_VARYING_FLOATS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max vertex attribs</td><td>");
+		glGetIntegerv(GL_MAX_VERTEX_ATTRIBS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max vertex textures units</td><td>");
+		glGetIntegerv(GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+
+		LOG_WRITE(L"</td></tr><td>max viewport dims</td><td>");
+		glGetIntegerv(GL_MAX_VIEWPORT_DIMS,ints);
+		wsprintf(buff,L"%d",ints[0]);
+		LOG_WRITE(buff);
+		LOG_WRITE(L"</td></tr></table>");
+	}
 
 	InitTimer();
 	srand(axelynx::Timer::Millisecs());
@@ -223,6 +311,7 @@ bool  CEngine::Flip()
 	settings_.Renderer.AlphaSortingThresold = 100;
 	settings_.Renderer.MaxUnpackedVertices = 1024;
 	settings_.Renderer.UseMaterialSorting = true;
+	settings_.Renderer.MinimumIndexSize = 4;
 
 	//Default shaders settings
 	#ifdef _DEBUG

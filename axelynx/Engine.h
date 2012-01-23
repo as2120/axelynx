@@ -33,7 +33,7 @@
 
 namespace axelynx
 {
-	const int AXELYNX_VERSION = 1020;
+	const int AXELYNX_VERSION = 1060;
 
 	class Engine
 	{
@@ -62,6 +62,7 @@ namespace axelynx
 				bool UseMaterialSorting;
 				int AlphaSortingThresold;
 				int MaxUnpackedVertices;
+				int MinimumIndexSize;
 			};
 
 			struct FileSystemSettings

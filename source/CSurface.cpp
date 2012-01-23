@@ -1,5 +1,6 @@
 
 #include "CSurface.h"
+#include <axelynx/Engine.h>
 #include "CFile.h"
 #include "CShader.h"
 #include "saSpec.h"
@@ -22,9 +23,11 @@ CSurface::CSurface(int count_vertices, int count_indices)
 	uv1 = new axelynx::vec2[count_vertices_];
 	colors= new axelynx::vec4[count_vertices_];
 
-	index_size_ = 4;
-	if(count_vertices>255)
+	index_size_ = axelynx::Engine::Instance()->Settings().Renderer.MinimumIndexSize;
+	
+	if(count_vertices>255 && index_size_<2)
 		index_size_ = 2;
+
 	if(count_vertices>65535)
 		index_size_ = 4;
 
@@ -359,7 +362,7 @@ CSurface* CSurface::LoadAXS(axelynx::File file) //axelynx surface
 	
 
 	s->use_lightmap_ = true;
-	s->RecalcTangents();
+	//s->RecalcTangents();
 	s->MakeVBO();
 	return s;
 }
@@ -763,6 +766,7 @@ float CSurface::GetRadius() const
 bool CSurface::SetVertexPackMode(const axelynx::Surface::VertexPackMode &pm)
 {
 	packmode_ = pm;
+	MakeVBO();
 	return true;
 }
 
