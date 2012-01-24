@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "AxelynxSDK"
-#define MyAppVersion "1.02"
+#define MyAppVersion "1.04"
 #define MyAppPublisher "likosoft, Inc."
 #define MyAppURL "http://www.code.google.com/p/axelynx"
 
@@ -67,10 +67,12 @@ Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vsz";       
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "likosoft\{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
-Name: "likosoft\{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
-Name: "likosoft\{group}\solutions\msvs2010.sln"; Filename: "{app}\solutions\msvs2010\axelynx.sln"
-Name: "likosoft\{group}\solutions\codeblocks.cbp"; Filename: "{app}\solutions\cb\axelynx.cbp"
+Name: "{group}\{cm:ProgramOnTheWeb,{#MyAppName}}"; Filename: "{#MyAppURL}"
+Name: "{group}\{cm:UninstallProgram,{#MyAppName}}"; Filename: "{uninstallexe}"
+Name: "{group}\solutions\msvs2010.sln"; Filename: "{app}\solutions\msvs2010\axelynx.sln"
+Name: "{group}\solutions\codeblocks.cbp"; Filename: "{app}\solutions\cb\axelynx.cbp"
+Name: "{group}\help\axelynx engine.chm"; Filename: "{app}\documentation\axelynx engine.chm"
+Name: "{group}\help\axelynx shaders.pdf"; Filename: "{app}\documentation\axelynx shaders.pdf"
 
 [Registry]
 Root: HKCU; Subkey: "Environment"; ValueType: string; ValueName: "AXELYNX_SDK"; ValueData: "{app}\"; Flags: createvalueifdoesntexist
