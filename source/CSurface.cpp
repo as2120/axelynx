@@ -260,14 +260,32 @@ CSurface* CSurface::LoadSBS(axelynx::File file) //sigel binary surface
 		s->colors[i]= axelynx::vec4(v[i].r,v[i].g,v[i].b,v[i].a);
 	}
 
-	for(int i=0;i<ci;++i)
+	if(s->index_size_==1)
 	{
-		static_cast<unsigned short*>(s->indices_)[i] = inds[i];
+		for(int i=0;i<ci;++i)
+		{
+			static_cast<unsigned char*>(s->indices_)[i] = inds[i];
+		}
 	}
 
+	if(s->index_size_==2)
+	{
+		for(int i=0;i<ci;++i)
+		{
+			static_cast<unsigned short int*>(s->indices_)[i] = inds[i];
+		}
+	}
+
+	if(s->index_size_==4)
+	{
+		for(int i=0;i<ci;++i)
+		{
+			static_cast<unsigned int*>(s->indices_)[i] = inds[i];
+		}
+	}
 	file.Close();
 	s->use_lightmap_ = false;
-	s->RecalcTangents();
+	//s->_recalcTangents();
 	s->MakeVBO();
 
 
@@ -668,7 +686,7 @@ axelynx::vec3 Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 )
 	return res;
 }
 
-bool CSurface::RecalcTangents()
+bool CSurface::_recalcTangents()
 {
 	using namespace axelynx; //for vec3
 
@@ -864,4 +882,14 @@ int CSurface::RestoreFromBinary(axelynx::File file)
 
 	MakeVBO();
 	return 0;
+}
+
+bool CSurface::RecalcTangents()
+{
+	bool recalced = _recalcTangents();
+
+	if(recalced)
+		MakeVBO();
+
+	return recalced;
 }

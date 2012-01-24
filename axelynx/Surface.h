@@ -93,5 +93,7 @@ namespace axelynx
 		virtual void UseLightmap()=0;
 		virtual void UseColoredVertices()=0;
 		virtual ~Surface(){};
+
+		virtual bool RecalcTangents()=0;
 	};
 }

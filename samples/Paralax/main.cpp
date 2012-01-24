@@ -22,6 +22,8 @@ int main()
 		paralax->SetTexture(relief,1);
 
 		Surface *cube = eng->LoadSurface(L"../../../../samples/media/Teapot_256.axs");
+		cube->RecalcTangents();
+
         Entity *body = s->Add(cube);
         body->SetMaterial(paralax);
 
@@ -64,7 +66,7 @@ int main()
                         dy += 1.0;
                 //TODO: Place your rendering code here
                 float dt = Timer::Delta() * 0.01;
-
+				dt = 0.1;
                 dx *= 0.95;
                 dy *= 0.95;
                 body->Turn(dt*dy,dt*dx,0);

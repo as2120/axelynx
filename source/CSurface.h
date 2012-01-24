@@ -59,7 +59,7 @@ public:
 			return index_size_;
 	}
 
-	bool RecalcTangents();
+	virtual bool _recalcTangents();
 
 	CSurface(int count_vertices, int count_indices);
 	CSurface(); //using for restore from binary only!
@@ -134,4 +134,6 @@ public:
 	{
 		return L"surface";
 	}
+
+	virtual bool RecalcTangents();
 };

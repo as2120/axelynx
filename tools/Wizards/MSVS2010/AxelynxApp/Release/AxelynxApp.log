@@ -1,9 +1,7 @@
-﻿Build started 19.01.2012 2:59:00.
+﻿Build started 24.01.2012 23:44:56.
      1>Project "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Release\AxelynxApp.lastbuildstate".
-       PrepareForBuild:
-         Creating directory "C:\AxelynxSDK\solutions\msvs2010\Release\".
        InitializeBuildStatus:
          Creating "Release\AxelynxApp.unsuccessfulbuild" because "AlwaysCreate" was specified.
        FinalizeBuildStatus:
