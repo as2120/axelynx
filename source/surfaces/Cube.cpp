@@ -1,6 +1,7 @@
 #include <axelynx/StandartSurfaces.h>
 #include "../CSurface.h"
 
+#include <cmath>
 AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::Cube(float size)
 {
 	using namespace axelynx;
@@ -185,7 +186,7 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::Grid(float sizex,float
 	axelynx::vec2 startpos(sizex*(-0.5),sizez*(-0.5));
 	cellsize.x = sizex / cellsx;
 	cellsize.y = sizez / cellsz;
-	
+
 	for(int i = 0;i<cellsx;++i)
 	{
 		for(int j=0;j<cellsz;++j)
@@ -259,7 +260,7 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::SkyDome(float size, in
 			float radius = cos(float(segments-i)/float(segments) * 1.57) * size;
 			float x = sin(float(j)/float(segments) * 2.0 * 3.1415) * radius;
 			float z = cos(float(j)/float(segments) * 2.0 * 3.1415) * radius;
-			
+
 
 			surf->SetVertexPosition(vindex,x,y,z);
 			surf->SetVertexTexCoord(vindex,0.5 + x / (size * 2.0),0.5 + z / (size * 2.0),0);
@@ -310,7 +311,7 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::RegularGrid(int cellsx
 	axelynx::vec2 startpos(-0.5,-0.5);
 	cellsize.x = 1.0 / cellsx;
 	cellsize.y = 1.0 / cellsz;
-	
+
 	for(int i = 0;i<cellsx;++i)
 	{
 		for(int j=0;j<cellsz;++j)
