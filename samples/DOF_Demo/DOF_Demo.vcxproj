@@ -144,8 +144,8 @@
     <None Include="..\media\dof.vs" />
     <None Include="..\media\fake_dof.fs" />
     <None Include="..\media\fake_dof.vs" />
-    <None Include="..\media\hotizontal_blur.fs" />
-    <None Include="..\media\hotizontal_blur.vs" />
+    <None Include="..\media\horizontal_blur.fs" />
+    <None Include="..\media\horizontal_blur.vs" />
     <None Include="..\media\vertical_blur.fs" />
     <None Include="..\media\vertical_blur.vs" />
     <None Include="ClassDiagram1.cd" />

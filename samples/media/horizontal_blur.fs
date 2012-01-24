@@ -17,10 +17,10 @@ void main(void)
 
 	color0 = texture(diffuse,vec3(fragmentuv,0));
     color1 = (texture(diffuse,vec3(fragmentuv + vec2(delta,0),step * 1.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta,0),step *  1.0)) + color0) / 3.0;
-    color2 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 2.0,0),step * 2.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 2.0,0),step * 2.0)) + color1 + color0) / 4.0;
-    color3 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 3.0,0),step * 3.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 3.0,0),step * 3.0)) + color2 + color1 + color0) / 5.0;
-    color4 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 4.0,0),step * 4.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 4.0,0),step * 4.0)) + color3 + color2 + color1 + color0) / 6.0;
-    color5 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 5.0,0),step * 5.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 5.0,0),step * 5.0)) + color4 + color3 + color2 + color1 + color0) / 7.0;
-    color6 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 6.0,0),step * 6.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 6.0,0),step * 6.0)) + color5 + color4 + color3 + color2 + color1 + color0) / 8.0;
-    color7 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 7.0,0),step * 7.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 7.0,0),step * 7.0)) + color6 + color5 + color4 + color3 + color2 + color1 + color0) / 9.0;
+    color2 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 2.0,0),step * 2.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 2.0,0),step * 2.0)) + color1 * 3.0) / 5.0;
+    color3 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 3.0,0),step * 3.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 3.0,0),step * 3.0)) + color2 * 5.0) / 7.0;
+    color4 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 4.0,0),step * 4.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 4.0,0),step * 4.0)) + color3 * 7.0) / 9.0;
+    color5 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 5.0,0),step * 5.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 5.0,0),step * 5.0)) + color4 * 9.0) / 11.0;
+    color6 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 6.0,0),step * 6.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 6.0,0),step * 6.0)) + color5 * 11.0) / 13.0;
+    color7 = (texture(diffuse,vec3(fragmentuv + vec2(delta * 7.0,0),step * 7.0)) + texture(diffuse,vec3(fragmentuv - vec2(delta * 7.0,0),step * 7.0)) + color6 * 13.0) / 15.0;
 }

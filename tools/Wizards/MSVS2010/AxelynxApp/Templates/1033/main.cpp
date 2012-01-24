@@ -24,6 +24,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
 	
 	Engine *eng = Engine::Init();
     Window *wnd = eng->AddWindow(800,800);
+	wnd->SetText(L"PROJECT_NAME");
     //TODO: Place your resource loading and scene creating code here
 
     Scene *s = eng->AddScene();
