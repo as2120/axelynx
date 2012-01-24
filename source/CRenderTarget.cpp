@@ -9,7 +9,7 @@ const CRenderTarget * CRenderTarget::current_ = 0;
 
 CRenderTarget::CRenderTarget(int width, int height)
 {
-	for(int i=0;i<32;++i)
+	for(int i=0;i<16;++i)
 	{
 		color_[i] = 0;
 		used_layer_[i] = false;
@@ -50,9 +50,9 @@ bool CRenderTarget::Bind() const
 		glBindFramebuffer(GL_FRAMEBUFFER, fbo_);
 	}
 
-	unsigned int buffers[32];
+	unsigned int buffers[16];
 	int c=0;
-	for(int i=0;i<32;++i)
+	for(int i=0;i<16;++i)
 	{
 		if(used_layer_[i])
 		{
