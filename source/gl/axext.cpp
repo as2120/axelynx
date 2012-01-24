@@ -148,6 +148,7 @@ PFNGLCHECKFRAMEBUFFERSTATUSPROC glCheckFramebufferStatus = 0;
 PFNGLFRAMEBUFFERTEXTUREPROC     glFramebufferTexture     = 0;
 PFNGLFRAMEBUFFERTEXTURE3DPROC   glFramebufferTexture3D = 0;
 PFNGLFRAMEBUFFERTEXTURE2DPROC	glFramebufferTexture2D = 0;
+PFNGLDRAWBUFFERSPROC			glDrawBuffers = 0;
 // Instancing
 PFNGLDRAWARRAYSINSTANCEDPROC   glDrawArraysInstanced=0;
 PFNGLDRAWELEMENTSINSTANCEDPROC glDrawElementsInstanced=0;
@@ -316,6 +317,7 @@ void AxelynxInitExtensions()
 	OPENGL_GET_PROC(glFramebufferTexture);
 	OPENGL_GET_PROC(glFramebufferTexture3D);
 	OPENGL_GET_PROC(glFramebufferTexture2D);
+	OPENGL_GET_PROC(glDrawBuffers);
 	// Instancing
 	OPENGL_GET_PROC(glDrawArraysInstanced);
 	OPENGL_GET_PROC(glDrawElementsInstanced);
@@ -406,7 +408,6 @@ void AxelynxInitExtensions()
 #ifdef WIN32
 	OPENGL_GET_PROC(wglSwapInterval);
 	OPENGL_GET_PROC(wglChoosePixelFormat);
-
 	//wglGetProcAddress("wglSwapIntervalEXT");
 #endif
 }

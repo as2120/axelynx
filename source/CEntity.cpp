@@ -130,7 +130,7 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 	{
 		if(CEarlyZ::InEarlyZPass() && material_->GetBlendMode() != axelynx::BM_NONE)
 			return false;
-
+			OPENGL_CHECK_FOR_ERRORS();
 		material_->Bind(camera);
 		if(material_->GetLocationModelViewProj()>=0)
 			material_->GetShader()->SetUniform(material_->GetLocationModelViewProj(),this->GetTransformMatrix(false) * camera->GetViewProjectionMatrix());
@@ -138,7 +138,7 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 			material_->GetShader()->SetUniform(material_->GetLocationModelView(),this->GetTransformMatrix(false) * camera->GetViewMatrix());
 		if(material_->GetLocationModel()>=0)
 			material_->GetShader()->SetUniform(material_->GetLocationModel(),this->GetTransformMatrix(false));
-
+			OPENGL_CHECK_FOR_ERRORS();
 		if(material_->GetLocationNormal()>=0)
 		{
 			axelynx::mat3 normalmatrix = this->GetTransformMatrix(false).ToMat3();
@@ -147,12 +147,12 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 			//std::cout<<normalmatrix(2,0)<<" "<<normalmatrix(2,1)<<" "<<normalmatrix(2,2)<<std::endl;
 			material_->GetShader()->SetUniform(material_->GetLocationNormal(),normalmatrix);
 		}
-
+			OPENGL_CHECK_FOR_ERRORS();
 		if(material_->GetShader()->GetStandartUniformLocation(axelynx::Shader::SU_EYEPOS)>=0)
 			material_->GetShader()->SetUniform(axelynx::Shader::SU_EYEPOS,camera->GetPosition());
-
+			OPENGL_CHECK_FOR_ERRORS();
 		material_->GetShader()->SetUniform("modelview",this->GetTransformMatrix(false) * camera->GetViewMatrix());
-
+			OPENGL_CHECK_FOR_ERRORS();
 		//using
 		if(material_->isUsingEntityTextures())
 		{
@@ -161,6 +161,7 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 				textures_[i]->Bind(i);
 			}
 		}
+			OPENGL_CHECK_FOR_ERRORS();
 	}
 	else
 	{
@@ -172,18 +173,19 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 
 
 		axelynx::Shader *shader = shader_;
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(CShadowPass::inShadowPass())
 		{
 			shader = CShadowPass::GetShader();
 		}
-
+	OPENGL_CHECK_FOR_ERRORS();
 		shader->Bind();
 		//shader_->SetUniform("model",this->GetTransformMatrix());
 		//shader_->SetUniform("proj",camera->GetProjectionMatrix());
 		//shader_->SetUniform("view",camera->GetViewMatrix());
+			OPENGL_CHECK_FOR_ERRORS();
 		int location = shader->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEWPROJ);
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(location>=0)
 		{
 			const axelynx::mat4 & modelviewproj = this->GetTransformMatrix() * camera->GetViewProjectionMatrix();
@@ -192,31 +194,32 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 
 			shader->SetUniform(location,modelviewproj);
 		}
+			OPENGL_CHECK_FOR_ERRORS();
 		if(shader->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEW)>=0)
 			shader->SetUniform(axelynx::Shader::SU_MODELVIEW,this->GetTransformMatrix() * camera->GetViewMatrix());
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(shader->GetStandartUniformLocation(axelynx::Shader::SU_MODEL)>=0)
 			shader->SetUniform(axelynx::Shader::SU_MODEL,this->GetTransformMatrix());
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(shader->GetStandartUniformLocation(axelynx::Shader::SU_ENTITYCOLOR)>=0)
 			shader->SetUniform(axelynx::Shader::SU_ENTITYCOLOR,entitycolor_);
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(shader->GetStandartUniformLocation(axelynx::Shader::SU_EYEPOS)>=0)
 			shader->SetUniform(axelynx::Shader::SU_EYEPOS,camera->GetPosition());
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(shader->GetStandartUniformLocation(axelynx::Shader::SU_NORMALMATRIX)>=0)
 		{
 			axelynx::mat3 normalmatrix = this->GetTransformMatrix(false).ToMat3();
 			shader->SetUniform(axelynx::Shader::SU_NORMALMATRIX,normalmatrix);
 		}
-
+	OPENGL_CHECK_FOR_ERRORS();
 		for(int i=0;i<num_textures_;++i)
 		{
 			textures_[i]->Bind(i);
 		}
-
+	OPENGL_CHECK_FOR_ERRORS();
 		CCanvas::Instance()->SetBlendMode(bm_);
-
+	OPENGL_CHECK_FOR_ERRORS();
 		if(!CEarlyZ::OnEarlyZPass())
 		{
 			if(dw_mode_ == axelynx::DW_AUTO)
@@ -235,12 +238,13 @@ bool CEntity::PreparePipeline(const axelynx::Camera *camera)
 			}
 		}
 	}
-
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
 bool CEntity::Draw(const axelynx::Camera *camera)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	PreparePipeline(camera);
 
 	OPENGL_CHECK_FOR_ERRORS();

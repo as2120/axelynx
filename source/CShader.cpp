@@ -38,13 +38,13 @@ GLint CShader::ShaderStatus(GLuint shader, GLenum param, const char *source)
 {
 	GLint status, length;
 	GLchar buffer[1024];
-
+	OPENGL_CHECK_FOR_ERRORS();
 	glGetShaderiv(shader, param, &status);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if (status != GL_TRUE)
 	{
 		glGetShaderInfoLog(shader, 1024, &length, buffer);
-		
+		OPENGL_CHECK_FOR_ERRORS();
 		bool error_line[1024] = {false};
 
 		//highlight lines with errors
@@ -226,13 +226,20 @@ bool CShader::TesselationSource(const char *control, const char *evaluation)
 
 bool CShader::Compile()
 {
+	if(compiled_)
+		return true;
+
 	compiled_ = true;
 
 	if(vertexshader_)
 	{
 		glCompileShader(vertexshader_);
+			OPENGL_CHECK_FOR_ERRORS();
 		if(ShaderStatus(vertexshader_, GL_COMPILE_STATUS,vertexsource_.c_str()))
+		{
+			OPENGL_CHECK_FOR_ERRORS();
 			glAttachShader(programm_,vertexshader_);
+		}			
 		else
 			compiled_ = false;
 	}
@@ -240,8 +247,12 @@ bool CShader::Compile()
 	if(fragmentshader_)
 	{
 		glCompileShader(fragmentshader_);
+			OPENGL_CHECK_FOR_ERRORS();
 		if(ShaderStatus(fragmentshader_, GL_COMPILE_STATUS,fragmentsource_.c_str()))
+		{
+			OPENGL_CHECK_FOR_ERRORS();
 			glAttachShader(programm_,fragmentshader_);
+		}
 		else
 			compiled_ = false;
 	}
@@ -766,6 +777,7 @@ CShader::CShader()
 {
 	programm_ = glCreateProgram();
 	restored_ = 0;
+	OPENGL_CHECK_FOR_ERRORS();
 }
 
 int CShader::GetAttribLocation(const char *name)

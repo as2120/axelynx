@@ -33,14 +33,16 @@ bool CScene::Render()
 	std::list<axelynx::Camera *>::const_iterator ci = camlist.begin();
 	std::list<axelynx::Camera *>::const_iterator ei = camlist.end();
 
-
+	OPENGL_CHECK_FOR_ERRORS();
 	for(;ci!=ei;++ci)
 	{
 		if((*ci)->isEnabled())
 		{
 			frame_++;
 			(*ci)->Bind(zpassed?-1:0);
+			OPENGL_CHECK_FOR_ERRORS();
 			CMaterial::Free(); //материал зависит от камеры
+			OPENGL_CHECK_FOR_ERRORS();
 			if(zpassed)
 			{
 				CEarlyZ::StartRenderPass();
@@ -50,12 +52,14 @@ bool CScene::Render()
 				glDepthFunc(GL_LESS);
 				glDepthMask(GL_TRUE);
 			}
+			OPENGL_CHECK_FOR_ERRORS();
 			scenegraph_->Render(*ci);
 			(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры
 		}
 	}
 
+	OPENGL_CHECK_FOR_ERRORS();
 	CShader *cs = CShader::Current();
 
 	if(cs)
@@ -68,13 +72,15 @@ bool CScene::Render()
 			ct->UnBind();
 	}
 
+	OPENGL_CHECK_FOR_ERRORS();
 	if(zpassed)
 		CEarlyZ::EndRenderPass();
-
+	OPENGL_CHECK_FOR_ERRORS();
 	zpassed = false;
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
 	glDepthMask(GL_TRUE);
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
@@ -91,6 +97,7 @@ bool CScene::ZPassRender()
 			frame_++;
 			(*ci)->Bind();
 			CMaterial::Free(); //материал зависит от камеры
+			OPENGL_CHECK_FOR_ERRORS();
 			scenegraph_->Render(*ci);
 						(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры

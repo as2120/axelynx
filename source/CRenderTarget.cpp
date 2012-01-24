@@ -9,9 +9,10 @@ const CRenderTarget * CRenderTarget::current_ = 0;
 
 CRenderTarget::CRenderTarget(int width, int height)
 {
-	for(int i=0;i<16;++i)
+	for(int i=0;i<32;++i)
 	{
 		color_[i] = 0;
+		used_layer_[i] = false;
 	}
 	depth_ = 0;
 	fbo_=0;
@@ -30,6 +31,7 @@ CRenderTarget::CRenderTarget(int width, int height)
 
 bool CRenderTarget::Bind() const
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	old_width_ = CCanvas::Instance()->GetWidth();
 	old_height_ = CCanvas::Instance()->GetHeight();
 
@@ -48,13 +50,27 @@ bool CRenderTarget::Bind() const
 		glBindFramebuffer(GL_FRAMEBUFFER, fbo_);
 	}
 
-	current_ = this;
+	unsigned int buffers[32];
+	int c=0;
+	for(int i=0;i<32;++i)
+	{
+		if(used_layer_[i])
+		{
+			buffers[c] = GL_COLOR_ATTACHMENT0 + i;
+			c++;
+		}
+	}
 
+	glDrawBuffers(c,buffers);
+
+	current_ = this;
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
 bool CRenderTarget::UnBind(bool restore) const
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	CCanvas::ResizeCanvas(old_width_,old_height_);
 	if(restore)
 		if(restored_)
@@ -64,17 +80,28 @@ bool CRenderTarget::UnBind(bool restore) const
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
 	current_ = 0;
-
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
 bool CRenderTarget::BindColorTexture(axelynx::Texture* tex, int layer)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	// указываем для текущего FBO текстуру, куда следует производить рендер глубины
-	CTexture *ctex = dynamic_cast<CTexture*>(tex);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo_); 
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + layer, ctex->GetHandle(), 0);
-	//glEnable(GL_FRAMEBUFFER_SRGB);
+
+	if(tex)
+	{
+		CTexture *ctex = dynamic_cast<CTexture*>(tex);
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + layer, ctex->GetHandle(), 0);
+		used_layer_[layer] = true;
+	}
+	else
+	{
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + layer, 0, 0);
+		used_layer_[layer] = false;
+	}
+
 	if(current_)
 		current_->Bind();
 	else
@@ -85,27 +112,55 @@ bool CRenderTarget::BindColorTexture(axelynx::Texture* tex, int layer)
 
 bool CRenderTarget::Bind3DTexture(axelynx::Texture* tex, int texlayer, int rendertargetlayer)
 {
-	// указываем для текущего FBO текстуру, куда следует производить рендер глубины
-	CTexture *ctex = dynamic_cast<CTexture*>(tex);
+	OPENGL_CHECK_FOR_ERRORS();
+	
+
+
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo_); 
-	glFramebufferTexture3D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_3D, ctex->GetHandle(), 0, texlayer);
+	OPENGL_CHECK_FOR_ERRORS();
+
+	if(tex)
+	{
+		CTexture *ctex = dynamic_cast<CTexture*>(tex);
+		glFramebufferTexture3D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_3D, ctex->GetHandle(), 0, texlayer);
+		used_layer_[rendertargetlayer] = true;
+	}
+	else
+	{
+		glFramebufferTexture3D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_3D, 0, 0, texlayer);
+		used_layer_[rendertargetlayer] = false;
+	}
+
+	OPENGL_CHECK_FOR_ERRORS();
 
 	if(current_)
 		current_->Bind();
 	else
 		glBindFramebuffer(GL_FRAMEBUFFER, 0); 
 
+	
 	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
 bool CRenderTarget::BindCubemap(axelynx::Texture* tex, int side, int rendertargetlayer)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	// указываем для текущего FBO текстуру, куда следует производить рендер глубины
-	CTexture *ctex = dynamic_cast<CTexture*>(tex);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo_); 
-	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_CUBE_MAP_POSITIVE_X + side, ctex->GetHandle(), 0);
-	
+
+	if(tex)
+	{
+		CTexture *ctex = dynamic_cast<CTexture*>(tex);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_CUBE_MAP_POSITIVE_X + side, ctex->GetHandle(), 0);
+		used_layer_[rendertargetlayer] = true;
+	}
+	else
+	{
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0 + rendertargetlayer, GL_TEXTURE_CUBE_MAP_POSITIVE_X + side, 0, 0);
+		used_layer_[rendertargetlayer] = false;
+	}
+
 	if(current_)
 		current_->Bind();
 	else
@@ -117,10 +172,19 @@ bool CRenderTarget::BindCubemap(axelynx::Texture* tex, int side, int rendertarge
 
 bool CRenderTarget::BindDepthTexture(axelynx::Texture* tex)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	// указываем для текущего FBO текстуру, куда следует производить рендер глубины
-	CTexture *ctex = dynamic_cast<CTexture*>(tex);
 	glBindFramebuffer(GL_FRAMEBUFFER, fbo_);
-	glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, ctex->GetHandle(), 0);
+
+	if(tex)
+	{
+		CTexture *ctex = dynamic_cast<CTexture*>(tex);
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, ctex->GetHandle(), 0);
+	}
+	else
+	{
+		glFramebufferTexture(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, 0, 0);
+	}
 
 	if(current_)
 		current_->Bind();
@@ -138,7 +202,9 @@ bool CRenderTarget::ClearTextures()
 
 bool CRenderTarget::Clear() const
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	OPENGL_CHECK_FOR_ERRORS();
 	return false;
 }
 
@@ -154,6 +220,7 @@ int CRenderTarget::GetHeight() const
 
 axelynx::Texture* CRenderTarget::CreateColorTexture(int channels, int channel_size, int layer,bool use_mipmaps)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	axelynx::Texture::Desc desc;
 	desc.TT = axelynx::Texture::TT_2D;
 	desc.width = width_;
@@ -168,14 +235,15 @@ axelynx::Texture* CRenderTarget::CreateColorTexture(int channels, int channel_si
 	GLenum internalformat;
 	GetGLTextures(format,internalformat,channels,channel_size);
 	tex->Build(0,format,internalformat);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	BindColorTexture(tex,layer);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	return tex;
 }
 
 axelynx::Texture* CRenderTarget::CreateDepthTexture()
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	axelynx::Texture::Desc desc;
 	desc.TT = axelynx::Texture::TT_DEPTH;
 	desc.width = width_;
@@ -190,9 +258,9 @@ axelynx::Texture* CRenderTarget::CreateDepthTexture()
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 	//tex->UnBind();
 	tex->Build(0,GL_DEPTH_COMPONENT,GL_DEPTH_COMPONENT32);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	BindDepthTexture(tex);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	return tex;
 }
 

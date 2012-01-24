@@ -5,7 +5,7 @@
 
 class CRenderTarget : public axelynx::RenderTarget
 {
-	axelynx::Texture* color_[16];
+	axelynx::Texture* color_[32];
 	axelynx::Texture* depth_;
 	GLuint fbo_;
 	
@@ -16,6 +16,8 @@ class CRenderTarget : public axelynx::RenderTarget
 	mutable const CRenderTarget *restored_;
 
 	mutable int old_width_,old_height_;
+
+	bool used_layer_[32];
 public:
 	CRenderTarget(int width, int height);
 

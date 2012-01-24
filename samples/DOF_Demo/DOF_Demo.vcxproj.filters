@@ -25,6 +25,19 @@
     <None Include="..\media\dof.vs">
       <Filter>shaders</Filter>
     </None>
+    <None Include="..\media\fake_dof.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\fake_dof.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\hotizontal_blur.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\hotizontal_blur.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

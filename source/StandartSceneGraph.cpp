@@ -1,4 +1,5 @@
 #include "StandartSceneGraph.h"
+#include "gl/axgl.h"
 
 bool StandartSceneGraph::AddEntity(axelynx::Entity *entity)
 {
@@ -29,6 +30,7 @@ bool StandartSceneGraph::Remove(axelynx::Entity *entity)
 
 void StandartSceneGraph:: Render(const axelynx::Camera *cam)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	const axelynx::frustum &frustum = cam->GetFrustum();
 
 	Entites::const_iterator ci = list.begin();
@@ -38,6 +40,7 @@ void StandartSceneGraph:: Render(const axelynx::Camera *cam)
 		if((*ci)->inFrustum(frustum))
 			(*ci)->Draw(cam);
 	}
+	OPENGL_CHECK_FOR_ERRORS();
 }
 
 void StandartSceneGraph:: Update(float twin)

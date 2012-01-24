@@ -37,6 +37,8 @@ axelynx::Texture::TextureType CTexture::GetType() const
 		
 bool CTexture::Bind(int layer)
 {
+	OPENGL_CHECK_FOR_ERRORS();
+
 	restored_ = current_[current_layer_];
 	restored_layer_ = current_layer_;
 
@@ -54,6 +56,8 @@ bool CTexture::Bind(int layer)
 
 		CStatistics::textures++;
 	}
+
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 
 
@@ -61,6 +65,8 @@ bool CTexture::Bind(int layer)
 
 bool CTexture::UnBind(bool restore)
 {
+	OPENGL_CHECK_FOR_ERRORS();
+
 	if(restore)
 		if(restored_)
 			restored_->Bind(restored_layer_);
@@ -76,11 +82,14 @@ bool CTexture::UnBind(bool restore)
 			current_layer_ = -1;
 		}
 	}
+
+	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 }
 
 void CTexture::init(axelynx::Texture::Desc &desc)
 {
+	OPENGL_CHECK_FOR_ERRORS();
 	current_layer_ = 0;
 	axelynx_type_ = desc.TT;
 
@@ -122,6 +131,7 @@ void CTexture::init(axelynx::Texture::Desc &desc)
 	restored_layer_=0;
 
 	inner_tex_ = 0;
+	OPENGL_CHECK_FOR_ERRORS();
 }
 
 CTexture::CTexture(axelynx::Texture::Desc &desc)

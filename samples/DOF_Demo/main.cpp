@@ -71,32 +71,70 @@ int main()
 		Shape *colored_rect = Shape::Rect(800,600,false);
 
 		RenderTarget *half_rtt = eng->CreateRenderTarget(400,300);
+		RenderTarget *half_rtt_result = eng->CreateRenderTarget(400,300);
 
 		Texture::Desc desc;
 		desc.TexType(Texture::TT_3D).UseMipmaps(false).Size(400,300,8);
-		Texture *dof_tex = eng->CreateTexture(desc);
+		desc.cpp = 4;
+		desc.bpc = 1;
+
+		Texture *dof_tex_vert = eng->CreateTexture(desc);
+		Texture *dof_tex_result = eng->CreateTexture(desc);
 
 		for(int i=0;i<8;++i)
 		{
-			half_rtt->Bind3DTexture(dof_tex,i,i);
+			half_rtt->Bind3DTexture(dof_tex_vert,i,i);
+		}
+
+		for(int i=0;i<8;++i)
+		{
+			half_rtt_result->Bind3DTexture(dof_tex_result,i,i);
 		}
 
 		Shader *dof = eng->LoadShader(L"../../../../samples/media/dof");
 		dof->Compile();
 
+		Shader *fake_dof = eng->LoadShader(L"../../../../samples/media/fake_dof");
+		fake_dof->Compile();
+
+		Shader *vertical_blur = eng->LoadShader(L"../../../../samples/media/vertical_blur");
+		vertical_blur->Compile();
+
+		Shader *horizontal_blur = eng->LoadShader(L"../../../../samples/media/horizontal_blur");
+		horizontal_blur->Compile();
+
+		fake_dof->SetUniform("depth",1);
+
+		fake_dof->SetUniform("focal_distance",30.0f);
+		fake_dof->SetUniform("focal_range",300.0f);
+
+		fake_dof->SetUniform("zFar",1000.0f);
+		fake_dof->SetUniform("zNear",1.0f);
+
 		dof->SetUniform("depth",1);
+		dof->SetUniform("dof_tex",2);
 
 		dof->SetUniform("focal_distance",30.0f);
 		dof->SetUniform("focal_range",300.0f);
 
-		cam->Projection(90.0f,800.0f/600.0f,1.0,1000.0);
-
 		dof->SetUniform("zFar",1000.0f);
 		dof->SetUniform("zNear",1.0f);
 
+		cam->Projection(90.0f,800.0f/600.0f,1.0,1000.0);
+
+
+		vertical_blur->SetUniform("delta",1.0f / 300.0f);
+		horizontal_blur->SetUniform("delta",1.0f / 400.0f);
+
+		bool fake = true;
+
         while(wnd->isRunning())
         {
-			
+			if(KeyHit('F'))
+			{
+				fake = !fake;
+			}
+
 			for(int i=0;i<COUNT_TEAPOTS;++i)
 			{
 				ents[i]->Turn(rots[i]);
@@ -142,19 +180,60 @@ int main()
 			rtt->Bind();
 			s->Render();
 			rtt->UnBind();
+
 			full_tex->RegenerateMipmaps();
 
+			if(fake)
+			{
 
-			full_tex->Bind(0);
-			full_depth->Bind(1);
-			c->SetBlendMode(BM_ADD);
-			dof->Bind();
-			c->SetScale(1,-1);
-			c->SetPosition(0,600);
-			c->Draw(rect);
-			dof->UnBind();
-			full_depth->UnBind();
-			full_tex->UnBind();
+				full_tex->Bind(0);
+				full_depth->Bind(1);
+				fake_dof->Bind();
+				c->SetScale(1,-1);
+				c->SetPosition(0,600);
+				c->Draw(rect);
+				fake_dof->UnBind();
+				full_depth->UnBind();
+				full_tex->UnBind();
+			}
+			else
+			{
+				half_rtt->Bind();
+				full_tex->Bind(0);
+				vertical_blur->Bind();				
+				c->Clear();
+				c->SetScale(1,-1);
+				c->SetPosition(0,300);
+				c->Draw(half_rect);
+				vertical_blur->UnBind();
+				full_tex->UnBind();
+				half_rtt->UnBind();
+
+				half_rtt_result->Bind();
+				dof_tex_vert->Bind(0);
+				horizontal_blur->Bind();
+				c->SetScale(1,-1);
+				c->SetPosition(0,300);
+				c->Draw(half_rect);
+				horizontal_blur->UnBind();
+				dof_tex_vert->UnBind();
+				half_rtt_result->UnBind();
+
+				full_tex->Bind(0);
+				full_depth->Bind(1);
+				dof_tex_vert->Bind(2);
+				dof->Bind();
+				c->SetScale(1,-1);
+				c->SetPosition(0,600);
+				c->Draw(rect);
+				dof->UnBind();
+
+				dof_tex_vert->UnBind();
+				full_depth->UnBind();
+				full_tex->UnBind();
+
+			}
+
 			c->SetBlendMode(BM_NONE);
             wnd->Flip();
         }

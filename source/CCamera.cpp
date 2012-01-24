@@ -238,18 +238,18 @@ void CCamera::FOV(float fov)
 bool CCamera::Bind(int force_clear_depth) const
 {
 	//std::cout<<"x1:"<<x1_<<"y1:"<<y1_<<"x2:"<<x2_<<"y2:"<<y2_<<std::endl;
-
+	OPENGL_CHECK_FOR_ERRORS();
 	glViewport(x1_,y1_,x2_-x1_,y2_-y1_);
 	glEnable(GL_SCISSOR_TEST);
 	glScissor(x1_,y1_,x2_-x1_,y2_-y1_);
-	
+	OPENGL_CHECK_FOR_ERRORS();	
 	glClearColor(ccr_, ccg_, ccb_,cca_);
 	glClearDepth(1.0f);
 	glDepthRange(0.0f,1.0f);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	glEnable(GL_DEPTH_TEST);
 	glEnable(GL_CULL_FACE);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	bool cdm = cdm_;
 	if(force_clear_depth<0)
 		cdm = false;
@@ -257,14 +257,15 @@ bool CCamera::Bind(int force_clear_depth) const
 		cdm = true;
 	if(cdm)
 		glDepthMask(true);
-
+	OPENGL_CHECK_FOR_ERRORS();
 	if(ccm_ || cdm)
 		glClear((GL_COLOR_BUFFER_BIT * ccm_) | (GL_DEPTH_BUFFER_BIT * cdm));
-
+	OPENGL_CHECK_FOR_ERRORS();
 	glDisable(GL_SCISSOR_TEST);
 	need_recalc_ = true;
-
-	glEnable(GL_POLYGON_MODE);
+	OPENGL_CHECK_FOR_ERRORS();
+	//glEnable(GL_POLYGON_MODE);
+	//OPENGL_CHECK_FOR_ERRORS();
 	switch(drawmode_)
 	{
 	case axelynx::Camera::DM_SOLID:
@@ -279,7 +280,7 @@ bool CCamera::Bind(int force_clear_depth) const
 	default:
 		assert(!"unknow mode");
 	};
-
+	OPENGL_CHECK_FOR_ERRORS();
 	current_ = this;
 	return true;
 }

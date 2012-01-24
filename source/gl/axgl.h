@@ -136,6 +136,8 @@ extern PFNGLCHECKFRAMEBUFFERSTATUSPROC glCheckFramebufferStatus;
 extern PFNGLFRAMEBUFFERTEXTUREPROC     glFramebufferTexture;
 extern PFNGLFRAMEBUFFERTEXTURE3DPROC   glFramebufferTexture3D;
 extern PFNGLFRAMEBUFFERTEXTURE2DPROC   glFramebufferTexture2D;
+extern PFNGLDRAWBUFFERSPROC			   glDrawBuffers;
+
 // Instancing
 extern PFNGLDRAWARRAYSINSTANCEDPROC   glDrawArraysInstanced;
 extern PFNGLDRAWELEMENTSINSTANCEDPROC glDrawElementsInstanced;
