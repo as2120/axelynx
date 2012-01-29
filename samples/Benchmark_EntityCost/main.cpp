@@ -61,14 +61,14 @@ int main()
 		c->Clear();
 		s->Render();
 	
-		/*wchar_t wbuff[80];
+		wchar_t wbuff[80];
 		swprintf(wbuff,L"FPS: %d",eng->GetStatistics()->GetFPS());
 
 		c->SetBlendMode(BM_ALPHA);
 		c->SetRotate(0);
 		c->SetColor(1,1,1);
 
-		c->Text(10,10,wbuff);*/
+		c->Text(10,10,wbuff);
 
 		wnd->Flip();
     }

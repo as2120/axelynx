@@ -20,7 +20,7 @@ void main(void)
 
     float blur = 0;
     if(dist<0)
-        blur = -dist / focal_distance;
+        blur = pow(-dist / focal_distance,3.0);
     else
         blur = dist / focal_range;
     blur = clamp(blur,0.0,1.0);

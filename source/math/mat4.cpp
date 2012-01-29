@@ -1,5 +1,6 @@
 #include <axelynx/math/mat4.h>
 #include <cmath>
+#include <intrin.h>
 
 AXELYNX_API axelynx::mat4 axelynx::mat4::Identity()
 {
@@ -125,27 +126,76 @@ AXELYNX_API axelynx::mat4 axelynx::mat4::Ortho(float left, float right, float to
 	return m;
 }
 
+void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat4* m3)
+{
+    __m128 rowW = *((__m128*)(&m1->m0));
+    __m128 rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
+    __m128 rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
+    __m128 rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
+    rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
+ 
+    rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
+    rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
+    rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
+    rowW = _mm_mul_ps(rowW,*((__m128*)(&m2->m12)));
+    rowX = _mm_add_ps(rowX,rowZ);
+    rowY = _mm_add_ps(rowY,rowW);
+    rowX = _mm_add_ps(rowX,rowY);
+    *((__m128*)(&m3->m0)) = rowX;
+    rowW = *((__m128*)(&m1->m4));
+ 
+    rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
+    rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
+    rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
+    rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
+ 
+    rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
+    rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
+    rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
+    rowW = _mm_mul_ps(rowW,*((__m128*)(&m2->m12)));
+    rowX = _mm_add_ps(rowX,rowZ);
+    rowY = _mm_add_ps(rowY,rowW);
+    rowX = _mm_add_ps(rowX,rowY);
+    *((__m128*)(&m3->m4)) = rowX;
+    rowW = *((__m128*)(&m1->m8));
+ 
+    rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
+    rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
+    rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
+    rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
+ 
+    rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
+    rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
+    rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
+    rowW = _mm_mul_ps(rowW,*((__m128*)(&m2->m12)));
+    rowX = _mm_add_ps(rowX,rowZ);
+    rowY = _mm_add_ps(rowY,rowW);
+    rowX = _mm_add_ps(rowX,rowY);
+    *((__m128*)(&m3->m8)) = rowX;
+    rowW = *((__m128*)(&m1->m12));
+ 
+    rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
+    rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
+    rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
+    rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
+ 
+    rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
+    rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
+    rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
+    rowW = _mm_mul_ps(rowW,*((__m128*)(&m2->m12)));
+    rowX = _mm_add_ps(rowX,rowZ);
+    rowY = _mm_add_ps(rowY,rowW);
+    rowX = _mm_add_ps(rowX,rowY);
+    *((__m128*)(&m3->m12)) = rowX;
+}
+
 AXELYNX_API axelynx::mat4 axelynx::mat4::operator*(const mat4& B) const
 {
-	//axelynx::mat4 m;
-
-	//m[ 0] = (*this)[ 0] * B[ 0] + (*this)[ 1] * B[ 4] + (*this)[ 2] * B[ 8] + (*this)[ 3] * B[12];
-	//m[ 1] = (*this)[ 0] * B[ 1] + (*this)[ 1] * B[ 5] + (*this)[ 2] * B[ 9] + (*this)[ 3] * B[13];
-	//m[ 2] = (*this)[ 0] * B[ 2] + (*this)[ 1] * B[ 6] + (*this)[ 2] * B[10] + (*this)[ 3] * B[14];
-	//m[ 3] = (*this)[ 0] * B[ 3] + (*this)[ 1] * B[ 7] + (*this)[ 2] * B[11] + (*this)[ 3] * B[15];
-	//m[ 4] = (*this)[ 4] * B[ 0] + (*this)[ 5] * B[ 4] + (*this)[ 6] * B[ 8] + (*this)[ 7] * B[12];
-	//m[ 5] = (*this)[ 4] * B[ 1] + (*this)[ 5] * B[ 5] + (*this)[ 6] * B[ 9] + (*this)[ 7] * B[13];
-	//m[ 6] = (*this)[ 4] * B[ 2] + (*this)[ 5] * B[ 6] + (*this)[ 6] * B[10] + (*this)[ 7] * B[14];
-	//m[ 7] = (*this)[ 4] * B[ 3] + (*this)[ 5] * B[ 7] + (*this)[ 6] * B[11] + (*this)[ 7] * B[15];
-	//m[ 8] = (*this)[ 8] * B[ 0] + (*this)[ 9] * B[ 4] + (*this)[10] * B[ 8] + (*this)[11] * B[12];
-	//m[ 9] = (*this)[ 8] * B[ 1] + (*this)[ 9] * B[ 5] + (*this)[10] * B[ 9] + (*this)[11] * B[13];
-	//m[10] = (*this)[ 8] * B[ 2] + (*this)[ 9] * B[ 6] + (*this)[10] * B[10] + (*this)[11] * B[14];
-	//m[11] = (*this)[ 8] * B[ 3] + (*this)[ 9] * B[ 7] + (*this)[10] * B[11] + (*this)[11] * B[15];
-	//m[12] = (*this)[12] * B[ 0] + (*this)[13] * B[ 4] + (*this)[14] * B[ 8] + (*this)[15] * B[12];
-	//m[13] = (*this)[12] * B[ 1] + (*this)[13] * B[ 5] + (*this)[14] * B[ 9] + (*this)[15] * B[13];
-	//m[14] = (*this)[12] * B[ 2] + (*this)[13] * B[ 6] + (*this)[14] * B[10] + (*this)[15] * B[14];
-	//m[15] = (*this)[12] * B[ 3] + (*this)[13] * B[ 7] + (*this)[14] * B[11] + (*this)[15] * B[15];
-
+#ifdef _MSC_VER_
+	axelynx::mat4 result;
+	Mat4x4MulSSE(this,&B,&result);
+	return result;
+#else
 	return axelynx::mat4(m0 * B.m0 + m1 * B.m4 + m2 * B.m8 + m3 * B.m12
 						,m0 * B.m1 + m1 * B.m5 + m2 * B.m9 + m3 * B.m13
 						,m0 * B.m2 + m1 * B.m6 + m2 * B.m10+ m3 * B.m14
@@ -162,7 +212,10 @@ AXELYNX_API axelynx::mat4 axelynx::mat4::operator*(const mat4& B) const
 						,m12* B.m1 + m13* B.m5 + m14* B.m9 + m15* B.m13
 						,m12* B.m2 + m13* B.m6 + m14* B.m10+ m15* B.m14
 						,m12* B.m3 + m13* B.m7 + m14* B.m11+ m15* B.m15);
+#endif
 }
+
+
 
 AXELYNX_API axelynx::mat4 axelynx::mat4::operator*=(const mat4& B)
 {

@@ -128,6 +128,8 @@ int main()
 
 		bool fake = true;
 
+
+
         while(wnd->isRunning())
         {
 			if(KeyHit('F'))
