@@ -49,24 +49,28 @@ namespace axelynx
 			std::string glsl;
 		};
 
-		struct Settings
+		class TSettings
 		{
-			struct ShadersSettings
+		public:
+			class ShadersSettings
 			{
+				public:
 				bool UseCash;
 				bool ShowLogOnFailCompile;
 			};
 
-			struct RendererSettings
+			class RendererSettings
 			{
+				public:
 				bool UseMaterialSorting;
 				int AlphaSortingThresold;
 				int MaxUnpackedVertices;
 				int MinimumIndexSize;
 			};
 
-			struct FileSystemSettings
+			class FileSystemSettings
 			{
+				public:
 				enum FileExistsLevel_Enum
 				{
 					FEL_NO_WARNINGS
@@ -78,14 +82,16 @@ namespace axelynx
 				FileExistsLevel_Enum FileExistsLevel; //0 - no warnings, 1 - log warning, 2 - message warning, 3 - log warning + message error
 			};
 
-			struct DebugSettings
+			class DebugSettings
 			{
+				public:
 				int html_log;
 				bool UseRunTimeProfiler;
 			};
 
-			struct SystemSettings
+			class SystemSettings
 			{
+				public:
 				bool LowMemoryMode;
 				bool LowVideoMemoryMode;
 			};
@@ -250,7 +256,7 @@ namespace axelynx
 
 		AXELYNX_API static axelynx::Engine * Instance();
 
-		virtual struct Settings& Settings()=0;
+		virtual struct TSettings& Settings()=0;
 		virtual ~Engine(){};
 	};
 }

@@ -31,52 +31,52 @@ public:
 		}
 
 
-		virtual Entity* Show(bool value = true)
+		virtual axelynx::Entity* Show(bool value = true)
 		{
 			return CEntity::Show(value);
 		}
 
-		virtual Entity* SetMaterial(const axelynx::Material * material, bool by_hierarhy = true)
+		virtual axelynx::Entity* SetMaterial(const axelynx::Material * material, bool by_hierarhy = true)
 		{
 			return CEntity::SetMaterial(material, by_hierarhy);
 		}
-		virtual Entity* SetTexture(axelynx::Texture* texture, int layer=0, bool by_hierarhy = true)
+		virtual axelynx::Entity* SetTexture(axelynx::Texture* texture, int layer=0, bool by_hierarhy = true)
 		{
 			return CEntity::SetTexture(texture, layer, by_hierarhy);
 		}
 
-		virtual Entity* SetShader(axelynx::Shader* shader, bool by_hierarhy = true)
+		virtual axelynx::Entity* SetShader(axelynx::Shader* shader, bool by_hierarhy = true)
 		{
 					return CEntity::SetShader(shader, by_hierarhy);
 		}
-		virtual Entity* SetBlend(axelynx::BlendMode bm, bool by_hierarhy = true)
+		virtual axelynx::Entity* SetBlend(axelynx::BlendMode bm, bool by_hierarhy = true)
 		{
 					return CEntity::SetBlend(bm, by_hierarhy);
 		}
-		virtual Entity* SetName(std::wstring name)
+		virtual axelynx::Entity* SetName(std::wstring name)
 		{
 			return CEntity::SetName(name);
 		}
-		virtual Entity* ReciveShadows(bool value, bool by_hierarhy = true)
+		virtual axelynx::Entity* ReciveShadows(bool value, bool by_hierarhy = true)
 		{
 		return CEntity::ReciveShadows(value, by_hierarhy);
 		}
-		virtual Entity* CastShadows(bool value, bool by_hierarhy = true)
+		virtual axelynx::Entity* CastShadows(bool value, bool by_hierarhy = true)
 		{
 		return CEntity::CastShadows(value, by_hierarhy);
 		}
-		virtual Entity* OnUpdate(Action *action)
+		virtual axelynx::Entity* OnUpdate(Action *action)
 		{
 			return CEntity::OnUpdate(action);
 		}
 
-		virtual Entity* FindByName(const std::wstring &name, bool by_hierarhy = true)
+		virtual axelynx::Entity* FindByName(const std::wstring &name, bool by_hierarhy = true)
 		{
 			return CEntity::FindByName(name,by_hierarhy);
 		}
-		Entity* Hide() { return Show(false); }
+		axelynx::Entity* Hide() { return Show(false); }
 
-		virtual Entity* SetColor(const axelynx::vec4& color)
+		virtual axelynx::Entity* SetColor(const axelynx::vec4& color)
 		{
 			return CEntity::SetColor(color);
 		}

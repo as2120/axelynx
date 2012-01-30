@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_PIVOT_H
+#define AXELYNX_PIVOT_H
 
 #include "axelynx/math/vectormath.h"
 #include "axelynx/File.h"
@@ -105,3 +107,5 @@ namespace axelynx
 		virtual ~Pivot();
 	};
 }
+
+#endif

@@ -6,6 +6,7 @@
 #include <cmath>
 #include <iostream>
 #include "CScene.h"
+#include <math.h>
 
 const CCamera * CCamera::current_ =0;
 
@@ -106,7 +107,7 @@ axelynx::frustum CCamera::GetFrustum() const
    frustum(0,3) = clip[15] - clip[12];
 
    /* ѕриводим уравнение плоскости к нормальному виду */
-   t = sqrt( frustum(0,0) * frustum(0,0) + frustum(0,1) * frustum(0,1) + frustum(0,2) * frustum(0,2) );
+   t = sqrt( frustum(0,0) * frustum(0,0) + frustum(0,1) * frustum(0,1) + frustum(0,2) * frustum(0,2));
    frustum(0,0) /= t;
    frustum(0,1) /= t;
    frustum(0,2) /= t;
@@ -394,11 +395,11 @@ void MultiplyMatrices4by4OpenGL_FLOAT(float *result, const float *matrix1, const
       r3[2] = MAT(m, 3, 2), r3[3] = MAT(m, 3, 3),
       r3[7] = 1.0, r3[4] = r3[5] = r3[6] = 0.0;
    /* choose pivot - or die */
-   if (fabsf(r3[0]) > fabsf(r2[0]))
+   if (fabs(r3[0]) > fabs(r2[0]))
       SWAP_ROWS_FLOAT(r3, r2);
-   if (fabsf(r2[0]) > fabsf(r1[0]))
+   if (fabs(r2[0]) > fabs(r1[0]))
       SWAP_ROWS_FLOAT(r2, r1);
-   if (fabsf(r1[0]) > fabsf(r0[0]))
+   if (fabs(r1[0]) > fabs(r0[0]))
       SWAP_ROWS_FLOAT(r1, r0);
    if (0.0 == r0[0])
       return 0;
@@ -443,9 +444,9 @@ void MultiplyMatrices4by4OpenGL_FLOAT(float *result, const float *matrix1, const
       r3[7] -= m3 * s;
    }
    /* choose pivot - or die */
-   if (fabsf(r3[1]) > fabsf(r2[1]))
+   if (fabs(r3[1]) > fabs(r2[1]))
       SWAP_ROWS_FLOAT(r3, r2);
-   if (fabsf(r2[1]) > fabsf(r1[1]))
+   if (fabs(r2[1]) > fabs(r1[1]))
       SWAP_ROWS_FLOAT(r2, r1);
    if (0.0 == r1[1])
       return 0;
@@ -477,7 +478,7 @@ void MultiplyMatrices4by4OpenGL_FLOAT(float *result, const float *matrix1, const
       r3[7] -= m3 * s;
    }
    /* choose pivot - or die */
-   if (fabsf(r3[2]) > fabsf(r2[2]))
+   if (fabs(r3[2]) > fabs(r2[2]))
       SWAP_ROWS_FLOAT(r3, r2);
    if (0.0 == r2[2])
       return 0;

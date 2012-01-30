@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_VEC4_H
+#define AXELYNX_VEC4_H
 #include "../axlib.h"
 #include "vec3.h"
 
@@ -50,3 +51,4 @@ namespace axelynx
 
 	};
 }
+#endif

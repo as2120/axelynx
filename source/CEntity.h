@@ -61,7 +61,7 @@ public:
 	virtual axelynx::Entity* Show(bool value = true);
 	virtual bool PreparePipeline(const axelynx::Camera *camera);
 
-	virtual Entity* Copy() const;
+	virtual axelynx::Entity* Copy() const;
 	virtual axelynx::Entity* ReciveShadows(bool value, bool by_hierarhy = true);
 	virtual axelynx::Entity* CastShadows(bool value, bool by_hierarhy = true);
 

@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_QUAT_H
+#define AXELYNX_QUAT_H
 #include "../axlib.h"
 #include "mat3.h"
 //#include "mat4.h"
@@ -28,3 +29,4 @@ namespace axelynx
 		//AXELYNX_API void ToTransformMatrix(mat4& matrix);
 	};
 }
+#endif

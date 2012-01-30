@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_AXSTRING_H
+#define AXELYNX_AXSTRING_H
 #include "../axlib.h"
 #include <string>
 
@@ -36,3 +37,4 @@ namespace axelynx
 		static AXELYNX_API std::wstring FromDouble(double value);
 	};
 }
+#endif

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_AXGL_H
+#define AXELYNX_AXGL_H
 
 //#include <windows.h>
 #ifdef WIN32
@@ -230,3 +232,5 @@ extern PFNWGLCHOOSEPIXELFORMATARBPROC wglChoosePixelFormat;
 #endif
 
 void AxelynxInitExtensions();
+
+#endif

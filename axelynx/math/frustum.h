@@ -1,4 +1,7 @@
 #pragma once
+#ifndef AXELYNX_FRUSTUM_H
+#define AXELYNX_FRUSTUM_H
+
 #include "../axlib.h"
 #include "vec3.h"
 
@@ -24,3 +27,5 @@ namespace axelynx
 		}
 	};
 }
+
+#endif

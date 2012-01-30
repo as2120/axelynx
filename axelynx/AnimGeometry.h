@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_ANIMGEOMETRY_H
+#define AXELYNX_ANIMGEOMETRY_H
 
 #include "Geometry.h"
 
@@ -22,3 +24,4 @@ namespace axelynx
 		}
 	};
 }
+#endif

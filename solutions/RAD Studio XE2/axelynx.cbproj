@@ -1,0 +1,1127 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{B740B794-0D20-49F7-B911-CEC3899BF62F}</ProjectGuid>
+			<ProjectVersion>13.4</ProjectVersion>
+			<FrameworkType>None</FrameworkType>
+			<Base>True</Base>
+			<Config Condition="'$(Config)'==''">Debug</Config>
+			<Platform Condition="'$(Platform)'==''">Win32</Platform>
+			<TargetedPlatforms>5</TargetedPlatforms>
+			<AppType>Library</AppType>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+			<Base_OSX32>true</Base_OSX32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+			<Base_Win32>true</Base_Win32>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+			<Cfg_1>true</Cfg_1>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Cfg_1)'=='true') or '$(Cfg_1_OSX32)'!=''">
+			<Cfg_1_OSX32>true</Cfg_1_OSX32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+			<Cfg_1_Win32>true</Cfg_1_Win32>
+			<CfgParent>Cfg_1</CfgParent>
+			<Cfg_1>true</Cfg_1>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+			<Cfg_2>true</Cfg_2>
+			<CfgParent>Base</CfgParent>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX32)'!=''">
+			<Cfg_2_OSX32>true</Cfg_2_OSX32>
+			<CfgParent>Cfg_2</CfgParent>
+			<Cfg_2>true</Cfg_2>
+			<Base>true</Base>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base)'!=''">
+			<UsingDelphiRTL>true</UsingDelphiRTL>
+			<AllPackageLibs>rtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;vcl.lib;FmxTeeUI.lib;FMXTee.lib;fmx.lib;fmxobj.lib;fmxdae.lib;fmxase.lib</AllPackageLibs>
+			<ProjectType>CppDynamicLibrary</ProjectType>
+			<PackageImports>IPIndyImpl;bindcompfmx;fmx;rtl;dbrtl;IndySystem;DbxClientDriver;bindcomp;inetdb;DBXInterBaseDriver;DataSnapCommon;DataSnapClient;DataSnapServer;DataSnapProviderClient;xmlrtl;ibxpress;DbxCommonDriver;IndyProtocols;DBXMySQLDriver;dbxcds;FMXTee;bindengine;soaprtl;DBXOracleDriver;dsnap;DBXInformixDriver;IndyCore;fmxase;CloudService;FmxTeeUI;DBXFirebirdDriver;inet;fmxobj;inetdbxpress;DBXSybaseASADriver;fmxdae;dbexpress;DataSnapIndy10ServerTransport;$(PackageImports)</PackageImports>
+			<Multithreaded>true</Multithreaded>
+			<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
+			<IncludePath>..\..\source\shaders\render\;..\..\source\shaders\draw\;..\..\source\imageformats\;..\..\source\gl\;..\..\source\;..\..\axelynx\utils\;..\..\axelynx\math\;..\..\axelynx\;C:\AxelynxSDK\solutions\RAD Studio XE2\;$(AXELYNX_SDK);$(IncludePath)</IncludePath>
+			<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
+			<ILINK_LibraryPath>..\..\source\shaders\render\;..\..\source\shaders\draw\;..\..\source\imageformats\;..\..\source\gl\;..\..\source\;..\..\axelynx\utils\;..\..\axelynx\math\;..\..\axelynx\;C:\AxelynxSDK\solutions\RAD Studio XE2\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<_TCHARMapping>wchar_t</_TCHARMapping>
+			<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
+			<DynamicRTL>true</DynamicRTL>
+			<IntermediateOutputDir>.\$(Platform)\$(Config)</IntermediateOutputDir>
+			<FinalOutputDir>.\$(Platform)\$(Config)</FinalOutputDir>
+			<BCC_wpar>false</BCC_wpar>
+			<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
+			<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_OSX32)'!=''">
+			<VerInfo_Keys>CFBundleName=$(MSBuildProjectName);CFBundleDisplayName=$(MSBuildProjectName);CFBundleIdentifier=$(MSBuildProjectName);CFBundleVersion=1.0.0.0;CFBundlePackageType=APPL;CFBundleSignature=????;CFBundleAllowMixedLocalizations=YES;CFBundleExecutable=$(MSBuildProjectName)</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Base_Win32)'!=''">
+			<Manifest_File>None</Manifest_File>
+			<PackageImports>vcldbx;frx16;TeeDB;Rave100VCL;vclib;Tee;inetdbbde;DBXOdbcDriver;DBXSybaseASEDriver;vclimg;frxDB16;intrawebdb_120_160;fs16;TeeUI;vclactnband;vcldb;vcldsnap;bindcompvcl;vclie;vcltouch;Intraweb_120_160;DBXDb2Driver;bcbsmp;websnap;vclribbon;frxe16;VclSmp;fsDB16;vcl;DataSnapConnectors;DBXMSSQLDriver;CodeSiteExpressPkg;dsnapcon;vclx;webdsnap;bdertl;adortl;bcbie;$(PackageImports)</PackageImports>
+			<DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<VerInfo_Locale>1033</VerInfo_Locale>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1)'!=''">
+			<Manifest_File>None</Manifest_File>
+			<VerInfo_Locale>1049</VerInfo_Locale>
+			<VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0</VerInfo_Keys>
+			<BCC_OptimizeForSpeed>false</BCC_OptimizeForSpeed>
+			<BCC_DisableOptimizations>true</BCC_DisableOptimizations>
+			<DCC_Optimize>false</DCC_Optimize>
+			<DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+			<Defines>_DEBUG;AXELYNX_EXPORTS;WIN32;$(Defines)</Defines>
+			<BCC_InlineFunctionExpansion>false</BCC_InlineFunctionExpansion>
+			<BCC_UseRegisterVariables>None</BCC_UseRegisterVariables>
+			<DCC_Define>DEBUG</DCC_Define>
+			<BCC_DebugLineNumbers>true</BCC_DebugLineNumbers>
+			<TASM_DisplaySourceLines>true</TASM_DisplaySourceLines>
+			<BCC_StackFrames>true</BCC_StackFrames>
+			<ILINK_FullDebugInfo>true</ILINK_FullDebugInfo>
+			<TASM_Debugging>Full</TASM_Debugging>
+			<BCC_SourceDebuggingOn>true</BCC_SourceDebuggingOn>
+			<ILINK_LibraryPath>$(BDSLIB)\$(PLATFORM)\debug;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+			<ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\debug\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_OSX32)'!=''">
+			<DCC_RemoteDebug>true</DCC_RemoteDebug>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+			<VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+			<IncludePath>$(AXELYNX_SDK)source\libs\libpng;$(AXELYNX_SDK)source\libs\theora;$(AXELYNX_SDK)source\libs\ogg;$(AXELYNX_SDK)source\libs\zlib;$(AXELYNX_SDK)source\libs\opencl;$(AXELYNX_SDK)source\libs\freetype;$(AXELYNX_SDK)source\libs\bullet;$(IncludePath)</IncludePath>
+			<Defines>FT2_BUILD_LIBRARY;_LIB;UNICODE;$(Defines)</Defines>
+			<LinkPackageStatics>rtl.lib;xmlrtl.lib;vclactnband.lib;vclx.lib;vcl.lib;FmxTeeUI.lib;FMXTee.lib;fmx.lib;fmxobj.lib;fmxdae.lib;fmxase.lib</LinkPackageStatics>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2)'!=''">
+			<Defines>NDEBUG;$(Defines)</Defines>
+			<TASM_Debugging>None</TASM_Debugging>
+		</PropertyGroup>
+		<PropertyGroup Condition="'$(Cfg_2_OSX32)'!=''">
+			<DCC_RemoteDebug>true</DCC_RemoteDebug>
+		</PropertyGroup>
+		<ItemGroup>
+			<None Include="..\..\axelynx\Anim.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>0</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Animation.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>1</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\AnimEntity.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>2</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\AnimGeometry.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>3</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\axelynx.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>4</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\AxelynxSystemShaders.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>5</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\axlib.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>6</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Bone.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>7</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\BSPLevel.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>8</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Camera.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>9</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Canvas.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>10</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\cwrap.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>11</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Drawable.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>12</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Engine.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>13</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Entity.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>14</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\File.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>15</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Font.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>16</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Geometry.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>17</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\HardwareInfo.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>18</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Image.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>19</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\ImageFormat.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>20</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\ImageSystem.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>21</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Input.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>22</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Instance.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>23</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\InstanceGroup.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>24</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Keyboard.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>25</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\keystates.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>26</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Light.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>27</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Logger.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>28</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Material.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>29</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\axmath.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>64</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\frustum.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>65</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\mat2.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>66</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\mat3.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>67</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\mat3x2.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>68</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\mat4.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>69</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\mat4x3.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>70</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\quat.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>71</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\vec2.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>72</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\vec3.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>73</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\vec4.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>74</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\math\vectormath.h">
+				<VirtualFolder>{D56C314F-9C80-4C2F-B199-71BFC56C7835}</VirtualFolder>
+				<BuildOrder>75</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Mesh.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>30</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\MorfedMesh.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>31</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\MorfedMeshFactory.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>32</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Mouse.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>33</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Pak.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>34</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\ParticleSystem.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>35</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Pivot.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>36</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\PixMap.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>37</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\plane.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>38</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Point3D.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>39</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\PostEffect.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>40</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\RaySystem.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>41</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\RenderTarget.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>42</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Scene.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>43</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\SceneGraph.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>44</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Shader.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>45</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Shape.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>46</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Shell.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>47</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Skeleton.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>48</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Skin.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>49</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\SkinAnim.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>50</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Sprite.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>51</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\SpriteSystem.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>52</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\StandartSurfaces.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>53</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Statistics.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>54</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Surface.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>55</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\SystemWindowHandler.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>56</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Terrain.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>57</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\TextCache.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>58</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Texture.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>59</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Theora.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>60</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Timer.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>61</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\utils\axstring.h">
+				<VirtualFolder>{D4774E7E-F114-4588-B51E-A27F6F042AAE}</VirtualFolder>
+				<BuildOrder>76</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Video.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>62</BuildOrder>
+			</None>
+			<None Include="..\..\axelynx\Window.h">
+				<VirtualFolder>{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}</VirtualFolder>
+				<BuildOrder>63</BuildOrder>
+			</None>
+			<None Include="..\..\source\anorms.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>110</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\axelynx.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>111</BuildOrder>
+			</CppCompile>
+			<ResourceCompile Include="..\..\source\axelynx.rc">
+				<ModuleName>axelynx.rc</ModuleName>
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<Form>axelynx.res</Form>
+				<BuildOrder>112</BuildOrder>
+			</ResourceCompile>
+			<CppCompile Include="..\..\source\CAnimEntity.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>113</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CAnimEntity.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>114</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CCamera.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>115</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CCamera.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>116</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CCanvas.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>117</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CCanvas.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>118</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CEarlyZ.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>119</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CEarlyZ.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>120</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CEngine.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>121</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CEngine.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>122</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CEntity.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>123</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CEntity.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>124</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>125</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>126</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CFont.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>127</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CFont.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>128</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CFreeTypeFont.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>129</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CFreeTypeFont.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>130</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CHardwareInfo.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>131</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CHardwareInfo.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>132</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CHGEFont.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>133</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CHGEFont.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>134</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CImage.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>135</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CImage.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>136</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CImageGS.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>137</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CImageGS.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>138</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CImageSystem.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>139</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CImageSystem.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>140</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CImageSystemGS.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>141</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CImageSystemGS.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>142</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CInstance.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>143</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CInstance.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>144</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CInstanceGroup.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>145</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CInstanceGroup.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>146</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CLight.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>147</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CLight.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>148</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CMaterial.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>149</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CMaterial.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>150</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CMD2Factory.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>151</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CMD2Factory.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>152</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CMorfedMesh.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>153</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CMorfedMesh.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>154</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CMorfedMeshFactory.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>155</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CMorfedMeshFactory.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>156</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CPak.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>157</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CPak.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>158</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CParticleSystem.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>159</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CParticleSystem.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>160</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CPivot.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>161</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CPivot.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>162</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CPixMap.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>163</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CPixMap.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>164</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CPostEffect.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>165</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CPostEffect.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>166</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CRaySystem.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>167</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CRaySystem.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>168</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CRenderTarget.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>169</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CRenderTarget.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>170</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CScene.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>171</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CScene.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>172</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CShader.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>173</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CShader.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>174</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CShadowPass.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>175</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CShadowPass.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>176</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CShape.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>177</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CShape.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>178</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CSprite.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>179</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CSprite.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>180</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CSpriteSystem.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>181</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CSpriteSystem.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>182</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CStatistics.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>183</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CStatistics.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>184</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CSurface.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>185</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CSurface.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>186</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CTextCache.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>187</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CTextCache.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>188</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CTexture.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>189</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CTexture.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>190</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CTheora.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>191</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CTheora.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>192</BuildOrder>
+			</None>
+			<None Include="..\..\source\CTimer.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>193</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CWindowUnix.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>194</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CWindowUnix.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>195</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\CWindowWin32.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>196</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CWindowWin32.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>197</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\cwrap.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>198</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\CZipArchive.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>199</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\CZipArchive.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>200</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\DiskFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>201</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\DiskFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>202</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\dllmain.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>203</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\Engine.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>204</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\File.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>205</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\gl\axext.cpp">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>143</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\gl\axext.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>144</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\axgl.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>145</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\gl.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>146</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\gl2.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>147</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\gl2ext.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>148</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\gl2platform.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>149</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\gl3.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>150</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\glext.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>151</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\glx.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>152</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\glxext.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>153</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\khrplatform.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>154</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\wglext.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>155</BuildOrder>
+			</None>
+			<None Include="..\..\source\gl\_gl.h">
+				<VirtualFolder>{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}</VirtualFolder>
+				<BuildOrder>142</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\ImageFormat.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>206</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\imageformats\BMPImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>151</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\BMPImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>152</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\DDSImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>153</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\DDSImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>154</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\DDSTextureLoader.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>155</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\imageformats\JPEGImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>156</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\JPEGImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>157</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\PCXImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>158</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\PCXImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>159</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\PNGImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>160</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\PNGImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>161</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\TGAImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>162</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\TGAImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>163</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\imageformats\_7BIImageFormat.cpp">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>149</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\imageformats\_7BIImageFormat.h">
+				<VirtualFolder>{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}</VirtualFolder>
+				<BuildOrder>150</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\Input.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>207</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\Keyboard.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>208</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\Logger.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>209</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\MemoryFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>210</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\MemoryFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>211</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\Mouse.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>212</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\Pak.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>213</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\PakFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>214</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\PakFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>215</BuildOrder>
+			</None>
+			<None Include="..\..\source\RCa01404">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+			</None>
+			<CppCompile Include="..\..\source\RenderContext.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>217</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\RenderContext.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>218</BuildOrder>
+			</None>
+			<None Include="..\..\source\RenderContextInfo.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>219</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\saSpec.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>220</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\saSpec.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>221</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\shaders\draw\PositionColor.cpp">
+				<VirtualFolder>{036B06AA-8580-4954-BA51-0A7053EAA27B}</VirtualFolder>
+				<BuildOrder>151</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\shaders\draw\PositionColorTexCoord.cpp">
+				<VirtualFolder>{036B06AA-8580-4954-BA51-0A7053EAA27B}</VirtualFolder>
+				<BuildOrder>152</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\shaders\render\BumpMapping.cpp">
+				<VirtualFolder>{036B06AA-8580-4954-BA51-0A7053EAA27B}</VirtualFolder>
+				<BuildOrder>153</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\shaders\render\Texturing.cpp">
+				<VirtualFolder>{036B06AA-8580-4954-BA51-0A7053EAA27B}</VirtualFolder>
+				<BuildOrder>154</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\Shapes.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>222</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\ShellWin32.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>223</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\StandartSceneGraph.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>224</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\StandartSceneGraph.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>225</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\StreamFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>226</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\StreamFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>227</BuildOrder>
+			</None>
+			<CppCompile Include="..\..\source\Timer.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>228</BuildOrder>
+			</CppCompile>
+			<CppCompile Include="..\..\source\ZippedFile.cpp">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>229</BuildOrder>
+			</CppCompile>
+			<None Include="..\..\source\ZippedFile.h">
+				<VirtualFolder>{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}</VirtualFolder>
+				<BuildOrder>230</BuildOrder>
+			</None>
+			<BuildConfiguration Include="Release">
+				<Key>Cfg_2</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Base">
+				<Key>Base</Key>
+			</BuildConfiguration>
+			<BuildConfiguration Include="Debug">
+				<Key>Cfg_1</Key>
+				<CfgParent>Base</CfgParent>
+			</BuildConfiguration>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
+			<Borland.ProjectType>CppDynamicLibrary</Borland.ProjectType>
+			<BorlandProject>
+				<CPlusPlusBuilder.Personality>
+					<VersionInfo>
+						<VersionInfo Name="IncludeVerInfo">False</VersionInfo>
+						<VersionInfo Name="AutoIncBuild">False</VersionInfo>
+						<VersionInfo Name="MajorVer">1</VersionInfo>
+						<VersionInfo Name="MinorVer">0</VersionInfo>
+						<VersionInfo Name="Release">0</VersionInfo>
+						<VersionInfo Name="Build">0</VersionInfo>
+						<VersionInfo Name="Debug">False</VersionInfo>
+						<VersionInfo Name="PreRelease">False</VersionInfo>
+						<VersionInfo Name="Special">False</VersionInfo>
+						<VersionInfo Name="Private">False</VersionInfo>
+						<VersionInfo Name="DLL">False</VersionInfo>
+						<VersionInfo Name="Locale">1049</VersionInfo>
+						<VersionInfo Name="CodePage">1251</VersionInfo>
+					</VersionInfo>
+					<VersionInfoKeys>
+						<VersionInfoKeys Name="CompanyName"/>
+						<VersionInfoKeys Name="FileDescription"/>
+						<VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="InternalName"/>
+						<VersionInfoKeys Name="LegalCopyright"/>
+						<VersionInfoKeys Name="LegalTrademarks"/>
+						<VersionInfoKeys Name="OriginalFilename"/>
+						<VersionInfoKeys Name="ProductName"/>
+						<VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys>
+						<VersionInfoKeys Name="Comments"/>
+					</VersionInfoKeys>
+					<ProjectProperties>
+						<ProjectProperties Name="AutoShowDeps">False</ProjectProperties>
+						<ProjectProperties Name="ManagePaths">True</ProjectProperties>
+						<ProjectProperties Name="VerifyPackages">True</ProjectProperties>
+					</ProjectProperties>
+					<VFOLDERS>
+						<VFOLDER name="interface" ID="{7DF2E7D9-F3B7-4B93-9D23-47AD43A0A749}">
+							<VFOLDER name="math" ID="{D56C314F-9C80-4C2F-B199-71BFC56C7835}"/>
+							<VFOLDER name="utils" ID="{D4774E7E-F114-4588-B51E-A27F6F042AAE}"/>
+						</VFOLDER>
+						<VFOLDER name="source" ID="{FA21CC89-F2A3-4328-83EC-E8C6045DD1A2}">
+							<VFOLDER name="gl" ID="{64A32CB8-2FFD-4620-A44E-9808A7E6F8DE}"/>
+							<VFOLDER name="imageformats" ID="{18CE67BD-EC79-43AC-A80F-A0BEDDB68C11}"/>
+							<VFOLDER name="libs" ID="{0FB8D20A-766B-4DC7-9432-454D62A228F8}"/>
+							<VFOLDER name="shaders" ID="{036B06AA-8580-4954-BA51-0A7053EAA27B}"/>
+							<VFOLDER name="surfaces" ID="{02FE3683-0833-40FE-9134-84C3853C3604}"/>
+							<VFOLDER name="utils" ID="{7CE82B74-4DBA-4034-B997-C0EB91392559}"/>
+						</VFOLDER>
+					</VFOLDERS>
+					<Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcboffice2k160.bpl">Embarcadero C++Builder Office 2000 Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\bcbofficexp160.bpl">Embarcadero C++Builder Office XP Servers Package</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dcloffice2k160.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+						<Excluded_Packages Name="$(BDSBIN)\dclofficexp160.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+					</Excluded_Packages>
+				</CPlusPlusBuilder.Personality>
+				<Deployment/>
+				<Platforms>
+					<Platform value="OSX32">True</Platform>
+					<Platform value="Win32">True</Platform>
+				</Platforms>
+			</BorlandProject>
+			<ProjectFileVersion>12</ProjectFileVersion>
+		</ProjectExtensions>
+		<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+		<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
+	</Project>

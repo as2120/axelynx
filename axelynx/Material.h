@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_MATERIAL_H
+#define AXELYNX_MATERIAL_H
 
 #include "Shader.h"
 #include "Texture.h"
@@ -55,3 +57,5 @@ namespace axelynx
 		virtual void SetCullingMode(CullingMode cm) = 0;
 	};
 }
+
+#endif

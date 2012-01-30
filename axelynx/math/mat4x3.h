@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_MAT4x3_H
+#define AXELYNX_MAT4x3_H
 
 #include "../axlib.h"
 #include <cassert>
@@ -49,3 +51,4 @@ namespace axelynx
 		void FAST_CALL Transform(vec3 *p, int cnt);
 	};
 }
+#endif

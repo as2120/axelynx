@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_SHADER_H
+#define AXELYNX_SHADER_H
 
 #include "axlib.h"
 #include "math/vectormath.h"
@@ -88,3 +90,5 @@ namespace axelynx
 		virtual bool SaveFile(const wchar_t* filename) const =0;
 	};
 }
+
+#endif

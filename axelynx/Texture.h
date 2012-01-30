@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_TEXTURE_H
+#define AXELYNX_TEXTURE_H
 
 #include "axlib.h"
 #include "File.h"
@@ -82,3 +84,5 @@ namespace axelynx
 		virtual ~Texture(){};
 	};
 }
+
+#endif

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_SHAPE_H
+#define AXELYNX_SHAPE_H
 
 #include "math/vectormath.h"
 #include "axlib.h"
@@ -32,3 +34,5 @@ namespace axelynx
 		virtual ~Shape(){};
 	};
 }
+
+#endif

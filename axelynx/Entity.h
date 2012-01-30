@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_ENTITY_H
+#define AXELYNX_ENTITY_H
 
 #include "Pivot.h"
 #include "Geometry.h"
@@ -193,3 +195,4 @@ namespace axelynx
 		int tag;
 	};
 }
+#endif

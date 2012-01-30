@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_SCENEGRAPH_H
+#define AXELYNX_SCENEGRAPH_H
 
 #include "Pivot.h"
 #include "Camera.h"
@@ -21,3 +23,4 @@ namespace axelynx
 		virtual ~SceneGraph(){}
 	};
 }
+#endif

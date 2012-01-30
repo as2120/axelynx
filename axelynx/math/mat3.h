@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_MAT3_H
+#define AXELYNX_MAT3_H
 
 #include "../axlib.h"
 #include "vec3.h"
@@ -69,3 +71,4 @@ namespace axelynx
 		vec3 ztransform(float zvalue);
 	};
 }
+#endif

@@ -29,25 +29,25 @@ FILE* axReadFile(const wchar_t *filename)
 
     if (!f)
     {
-		axelynx::Engine::Settings::FileSystemSettings::FileExistsLevel_Enum level = axelynx::Engine::Instance()->Settings().FileSystem.FileExistsLevel;
+		axelynx::Engine::TSettings::FileSystemSettings::FileExistsLevel_Enum level = axelynx::Engine::Instance()->Settings().FileSystem.FileExistsLevel;
 
 		std::wstring errinfo = L"File not found:";
 		errinfo+= std::wstring(filename);
 
-		if(level == axelynx::Engine::Settings::FileSystemSettings::FEL_LOG_WARNING ||
-			level == axelynx::Engine::Settings::FileSystemSettings::FEL_FATAL)
+		if(level == axelynx::Engine::TSettings::FileSystemSettings::FEL_LOG_WARNING ||
+			level == axelynx::Engine::TSettings::FileSystemSettings::FEL_FATAL)
 		{
 			LOG_ERROR(errinfo.c_str());
 		}
 
-		if(level == axelynx::Engine::Settings::FileSystemSettings::FEL_MESSAGE_WARNING ||
-			level == axelynx::Engine::Settings::FileSystemSettings::FEL_FATAL)
+		if(level == axelynx::Engine::TSettings::FileSystemSettings::FEL_MESSAGE_WARNING ||
+			level == axelynx::Engine::TSettings::FileSystemSettings::FEL_FATAL)
 		{
 			axelynx::shell::ShowError(errinfo.c_str());
 		}
 
 
-		if(level == axelynx::Engine::Settings::FileSystemSettings::FEL_FATAL)
+		if(level == axelynx::Engine::TSettings::FileSystemSettings::FEL_FATAL)
 		{
 			exit(0);
 		}

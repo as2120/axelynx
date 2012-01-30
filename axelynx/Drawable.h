@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_AXDRAWABLE_H
+#define AXELYNX_AXDRAWABLE_H
 
 namespace axelynx
 {
@@ -12,3 +13,5 @@ namespace axelynx
 		virtual ~axDrawable(){};
 	};
 }
+
+#endif

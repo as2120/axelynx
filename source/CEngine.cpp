@@ -305,7 +305,7 @@ bool  CEngine::Flip()
 	settings_.Debug.UseRunTimeProfiler = false;
 
 	//Default filesystem settings
-	settings_.FileSystem.FileExistsLevel = axelynx::Engine::Settings::FileSystemSettings::FEL_FATAL;
+	settings_.FileSystem.FileExistsLevel = axelynx::Engine::TSettings::FileSystemSettings::FEL_FATAL;
 
 	//Default renderer settings
 	settings_.Renderer.AlphaSortingThresold = 100;

@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_VEC2_H
+#define AXELYNX_VEC2_H
 #include "../axlib.h"
 
 namespace axelynx
@@ -48,3 +49,5 @@ namespace axelynx
 
 
 }
+
+#endif

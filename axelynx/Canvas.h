@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_CANVAS_H
+#define AXELYNX_CANVAS_H
 
 #include "Shape.h"
 #include "Drawable.h"
@@ -96,3 +98,5 @@ namespace axelynx
 		virtual ~Canvas(){};
 	};
 }
+
+#endif

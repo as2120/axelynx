@@ -16,7 +16,7 @@ class CEngine : public axelynx::Engine
 	axelynx::Window *syswnd;
 	axelynx::Canvas *canvas_;
 
-	struct axelynx::Engine::Settings settings_;
+	axelynx::Engine::TSettings settings_;
 	
 	
 	struct ASyncTextureLoadData
@@ -129,7 +129,7 @@ public:
 	virtual axelynx::Surface* RestoreSurface(axelynx::File file);
 
 	virtual axelynx::MorfedMesh* LoadMorfedMesh(axelynx::File file, const wchar_t* format);
-	virtual struct axelynx::Engine::Settings& Settings()
+	virtual axelynx::Engine::TSettings& Settings()
 	{
 		return settings_;
 	}

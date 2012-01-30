@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_GEOMETRY_H
+#define AXELYNX_GEOMETRY_H
 
 #include "File.h"
 #include <string>
@@ -39,3 +41,4 @@ namespace axelynx
 		//virtual void Bind() const = 0; //for instancing
 	};
 }
+#endif

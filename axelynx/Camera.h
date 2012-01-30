@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_CAMERA_H
+#define AXELYNX_CAMERA_H
 
 #include "Pivot.h"
 #include "math/vectormath.h"
@@ -67,3 +69,5 @@ namespace axelynx
 virtual ~Camera(){};
 	};
 }
+
+#endif

@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_MAT3x2_H
+#define AXELYNX_MAT3x2_H
 
 #include "../axlib.h"
 
@@ -70,3 +72,4 @@ namespace axelynx
 
 	};
 }
+#endif

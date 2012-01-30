@@ -1,4 +1,6 @@
 #pragma once
+#ifndef AXELYNX_LOGGER_H
+#define AXELYNX_LOGGER_H
 
 #include "axlib.h"
 
@@ -58,4 +60,6 @@ namespace axelynx
 #define LOG_HINT(a) {axelynx::Logger::Instance()->Hint(a);}
 
 #define LOG_SOURCE_ERROR(a,errcode) axelynx::Logger::Instance()->SourceError(__FILE__,__LINE__,a,errcode);
+#endif
+
 #endif

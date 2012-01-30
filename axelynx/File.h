@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_FILE_H
+#define AXELYNX_FILE_H
 #include "axlib.h"
 
 #include <string>
@@ -180,3 +181,4 @@ namespace axelynx
 		~File(){}
 	};
 }
+#endif

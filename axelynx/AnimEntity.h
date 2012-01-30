@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef AXELYNX_ANIMENTITY_H
+#define AXELYNX_ANIMENTITY_H
 #include "AnimGeometry.h"
 #include "Entity.h"
 
@@ -18,3 +19,4 @@ namespace axelynx
 
 	};
 }
+#endif
