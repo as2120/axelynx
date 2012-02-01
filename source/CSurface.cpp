@@ -688,17 +688,27 @@ axelynx::vec3 Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 )
 
 bool CSurface::_recalcTangents()
 {
+	if(index_size_ == 1)
+		return _recalcTangents8();
+	if(index_size_ == 2)
+		return _recalcTangents16();
+	if(index_size_ == 4)
+		return _recalcTangents32();
+}
+
+bool CSurface::_recalcTangents8()
+{
 	using namespace axelynx; //for vec3
 
 	register int i, j;
 	std::vector<vec3> ntangents;	// касательные вектора к треугольнику
  
-	// проходимся по всем треугольникам, и для каждого считаем базис
+	unsigned char *raw_indices = static_cast<unsigned char*>(indices_);
 	for ( i = 0; i < count_indices_; i+=3 )
 	{
-		int ind0 = _getIndex( i + 0);
-		int ind1 = _getIndex(i + 1);
-		int ind2 = _getIndex(i + 2);
+		int ind0 = raw_indices[ i + 0];
+		int ind1 = raw_indices[i + 1];
+		int ind2 = raw_indices[i + 2];
  
 		vec3 v1 = positions[ind0];
 		vec3 v2 = positions[ind1];
@@ -716,26 +726,19 @@ bool CSurface::_recalcTangents()
 
 		ntangents.push_back( t );
 	}
- 
-	// теперь пройдемся по всем вершинам, для каждой из них найдем
-	// грани ее содержащие, и запишем все это хозяйство на будущее =)
-	
+ 	
 	for ( i = 0; i < count_vertices_; i++ )
 	{
 		std::vector<vec3> rt;
 
 		for ( j = 0; j < count_indices_; j+=3 )
 		{
-			if ( _getIndex( j + 0 ) == i || _getIndex( j + 1) == i || _getIndex( j + 2 ) == i )
+			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
 			{
-				// нашли грань которой эта вершина принадлежит.
-				// добавим вектора этой грани в наш массив
 				rt.push_back( ntangents[ j / 3 ] );
 			}
 		}
  
-		// все прилежащие вектора нашли, теперь просуммируем их
-		// и разделим на их количество, т.е. усредним.
 		vec3 tangentRes( 0, 0, 0 );
 		for ( j = 0; j < static_cast<int>(rt.size()); j++ )
 		{
@@ -743,18 +746,124 @@ bool CSurface::_recalcTangents()
 		}
 
 		tangentRes *= (1.0f/float( rt.size() ));
- 
-		// а теперь то, о чем многие забывают. Как мы помним,
-		// TBN базис представляет собой всего-навсего систему координат.
-		// поэтому все три направляющие вектора этого базиса
-		// обязаны быть попарно перпендикулярны. Вот об этом мы
-		// сейчас и побеспокоимся, выполнив ортогонализацию
-		// векторов методом Грама-Шмидта
- 
 		tangentRes = Ortogonalize( normals[ i ], tangentRes );
+		tangents[i] =  tangentRes;
+	}
+
+	return true;
+}
+
+bool CSurface::_recalcTangents16()
+{
+	using namespace axelynx; //for vec3
+
+	register int i, j;
+	std::vector<vec3> ntangents;	// касательные вектора к треугольнику
  
-		// вот и все, теперь просто запишем результат
+	unsigned short *raw_indices = static_cast<unsigned short*>(indices_);
+	for ( i = 0; i < count_indices_; i+=3 )
+	{
+		int ind0 = raw_indices[ i + 0];
+		int ind1 = raw_indices[i + 1];
+		int ind2 = raw_indices[i + 2];
  
+		vec3 v1 = positions[ind0];
+		vec3 v2 = positions[ind1];
+		vec3 v3 = positions[ind2];
+
+		float s1      = uv0[ind0].x;
+		float t1      = uv0[ind0].y;
+		float s2      = uv0[ind1].x;
+		float t2      = uv0[ind1].y;
+		float s3      = uv0[ind2].x;
+		float t3      = uv0[ind2].y;
+ 
+		vec3  t, b;
+		CalcTriangleBasis( v1, v2, v3, s1, t1, s2, t2, s3, t3, t, b );
+
+		ntangents.push_back( t );
+	}
+ 	
+	for ( i = 0; i < count_vertices_; i++ )
+	{
+		std::vector<vec3> rt;
+
+		for ( j = 0; j < count_indices_; j+=3 )
+		{
+			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
+			{
+				rt.push_back( ntangents[ j / 3 ] );
+			}
+		}
+ 
+		vec3 tangentRes( 0, 0, 0 );
+		for ( j = 0; j < static_cast<int>(rt.size()); j++ )
+		{
+			tangentRes += rt[ j ];
+		}
+
+		tangentRes *= (1.0f/float( rt.size() ));
+		tangentRes = Ortogonalize( normals[ i ], tangentRes );
+		tangents[i] =  tangentRes;
+	}
+
+	return true;
+}
+
+bool CSurface::_recalcTangents32()
+{
+	using namespace axelynx; //for vec3
+
+	register int i, j;
+	std::vector<vec3> ntangents;	// касательные вектора к треугольнику
+ 
+	unsigned int *raw_indices = static_cast<unsigned int*>(indices_);
+	for ( i = 0; i < count_indices_; i+=3 )
+	{
+		int ind0 = raw_indices[ i + 0];
+		int ind1 = raw_indices[i + 1];
+		int ind2 = raw_indices[i + 2];
+ 
+		vec3 v1 = positions[ind0];
+		vec3 v2 = positions[ind1];
+		vec3 v3 = positions[ind2];
+
+		float s1      = uv0[ind0].x;
+		float t1      = uv0[ind0].y;
+		float s2      = uv0[ind1].x;
+		float t2      = uv0[ind1].y;
+		float s3      = uv0[ind2].x;
+		float t3      = uv0[ind2].y;
+ 
+		vec3  t, b;
+		CalcTriangleBasis( v1, v2, v3, s1, t1, s2, t2, s3, t3, t, b );
+
+		ntangents.push_back( t );
+	}
+ 	
+	std::vector<vec3> rt;
+	rt.reserve(128);
+	for ( i = 0; i < count_vertices_; i++ )
+	{
+		
+		rt.clear();
+
+		for ( j = 0; j < count_indices_; j+=3 )
+		{
+			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
+			{
+				rt.push_back( ntangents[ j / 3 ] );
+			}
+		}
+ 
+		vec3 tangentRes( 0, 0, 0 );
+		for ( j = 0; j < static_cast<int>(rt.size()); j++ )
+		{
+			tangentRes += rt[ j ];
+		}
+
+		tangentRes *= (1.0f/float( rt.size() ));
+		tangentRes = Ortogonalize( normals[ i ], tangentRes );
 		tangents[i] =  tangentRes;
 	}
 

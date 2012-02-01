@@ -60,6 +60,9 @@ public:
 	}
 
 	virtual bool _recalcTangents();
+	bool _recalcTangents8();
+	bool _recalcTangents16();
+	bool _recalcTangents32();
 
 	CSurface(int count_vertices, int count_indices);
 	CSurface(); //using for restore from binary only!
