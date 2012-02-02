@@ -134,7 +134,7 @@ public:
 		return settings_;
 	}
 
-
+	virtual axelynx::SceneGraph* GetDefaultSceneGraph();
 	CEngine();
 	~CEngine();
 };

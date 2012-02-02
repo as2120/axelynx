@@ -50,6 +50,8 @@ CEntity::CEntity(axelynx::Scene *scene, const axelynx::Geometry * geom)
 	entitycolor_ = vec4(1,1,1,1);
 
 	is_visible_ = true;
+
+	on_render_event_ = 0;
 }
 
 axelynx::Entity* CEntity::SetName(std::wstring name)
@@ -247,9 +249,22 @@ bool CEntity::Draw(const axelynx::Camera *camera)
 	OPENGL_CHECK_FOR_ERRORS();
 	PreparePipeline(camera);
 
-	OPENGL_CHECK_FOR_ERRORS();
-	geometry_->Draw();
-	OPENGL_CHECK_FOR_ERRORS();
+	if(on_render_event_)
+	{
+		if(on_render_event_(this))
+		{
+			OPENGL_CHECK_FOR_ERRORS();
+			geometry_->Draw();
+			OPENGL_CHECK_FOR_ERRORS();
+		}
+	}
+	else
+	{
+		OPENGL_CHECK_FOR_ERRORS();
+		geometry_->Draw();
+		OPENGL_CHECK_FOR_ERRORS();
+	}
+
 	return true;
 }
 

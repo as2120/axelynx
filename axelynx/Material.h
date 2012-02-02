@@ -55,6 +55,8 @@ namespace axelynx
 		virtual void SetDepthWriteMode(DepthWriteMode dwm) = 0;
 		virtual void SetDepthTestMode(DepthTestMode dwm) = 0;
 		virtual void SetCullingMode(CullingMode cm) = 0;
+
+		virtual void SetZEarlyPassShader(Shader *sh)=0;
 	};
 }
 

@@ -5,6 +5,7 @@
 class CMaterial : public axelynx::Material
 {
 	axelynx::Shader *shader_;
+	axelynx::Shader *zerlypass_shader_;
 	axelynx::Texture *textures_[8];
 	axelynx::BlendMode blend_;
 	mutable int modellocation_;
@@ -51,4 +52,6 @@ public:
 	virtual void SetDepthWriteMode(axelynx::DepthWriteMode dwm);
 	virtual void SetDepthTestMode(axelynx::DepthTestMode dwm);
 	virtual void SetCullingMode(axelynx::CullingMode cm);
+
+	virtual void SetZEarlyPassShader(axelynx::Shader *sh);
 };

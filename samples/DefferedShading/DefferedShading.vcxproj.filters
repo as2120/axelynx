@@ -19,6 +19,18 @@
     <None Include="..\media\specular_bump_mapping.vs">
       <Filter>shaders</Filter>
     </None>
+    <None Include="..\media\specular_bump_mapping_deffered.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\specular_bump_mapping_deffered.vs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\defered_lighting.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\defered_lighting.vs">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />

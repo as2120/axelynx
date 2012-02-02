@@ -54,6 +54,7 @@ namespace axelynx
 		virtual Entity* ReciveShadows(bool value, bool by_hierarhy = true) = 0;
 		virtual Entity* CastShadows(bool value, bool by_hierarhy = true) = 0;
 		virtual Entity* OnUpdate(Action *action)=0;
+		virtual Entity* OnRender(bool (*)(Entity*))=0;
 
 		virtual Entity* FindByName(const std::wstring &name, bool by_hierarhy = true) = 0;
 		Entity* Hide() { return Show(false); }

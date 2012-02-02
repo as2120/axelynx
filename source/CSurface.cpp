@@ -841,28 +841,23 @@ bool CSurface::_recalcTangents32()
 		ntangents.push_back( t );
 	}
  	
-	std::vector<vec3> rt;
-	rt.reserve(128);
 	for ( i = 0; i < count_vertices_; i++ )
 	{
 		
-		rt.clear();
+		vec3 tangentRes( 0, 0, 0 );
+		float cnt = 0;
 
 		for ( j = 0; j < count_indices_; j+=3 )
 		{
 			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
 			{
-				rt.push_back( ntangents[ j / 3 ] );
+				tangentRes += ntangents[ j / 3 ];
+				cnt += 1.0f;
 			}
 		}
  
-		vec3 tangentRes( 0, 0, 0 );
-		for ( j = 0; j < static_cast<int>(rt.size()); j++ )
-		{
-			tangentRes += rt[ j ];
-		}
 
-		tangentRes *= (1.0f/float( rt.size() ));
+		tangentRes *= (1.0f/cnt);
 		tangentRes = Ortogonalize( normals[ i ], tangentRes );
 		tangents[i] =  tangentRes;
 	}

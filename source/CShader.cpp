@@ -1074,3 +1074,8 @@ bool CShader::SaveFile(const wchar_t* filename_s) const
 
 	return true;
 }
+
+axelynx::Shader* axelynx::Shader::GetCurrent()
+{
+	return CShader::Current();
+}

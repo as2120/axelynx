@@ -18,6 +18,6 @@ vec4 base = texture(texture0, fragmentuv);
 vec3 bump = normalize( texture2D(texture1, fragmentuv).xyz * 2.0 - 1.0);
 float diffuse = max( dot(lVec, bump), 0.0 );
 float specular = pow(clamp(dot(reflect(-lVec, bump), vVec), 0.0, 1.0), texture2D(texture1, fragmentuv).a * 12.0);
-color = ((diffuse + specular)*base) * att;
+color = vec4(1.0,1.0,1.0,1.0);
 }
  

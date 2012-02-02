@@ -1067,3 +1067,8 @@ axelynx::Texture* CEngine::LoadTextureFromResource(int ID, int type)
 
 	return 0;
 }
+
+axelynx::SceneGraph* CEngine::GetDefaultSceneGraph()
+{
+	return new StandartSceneGraph();
+}

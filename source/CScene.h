@@ -11,7 +11,9 @@ class CScene : public axelynx::Scene
 	int cnt_ent_;
 	int max_ent_;
 
-	axelynx::SceneGraph *scenegraph_;
+	axelynx::SceneGraph *scenegraph_[256];
+	bool visible_groups_[256];
+
 	std::list<axelynx::Camera *> camlist;
 	std::list<axelynx::Light *> lightlist;
 
@@ -21,6 +23,9 @@ class CScene : public axelynx::Scene
 	bool zpassed;
 	
 	axelynx::Shader *defShader_;
+
+
+
 public:
 
 	CScene(axelynx::SceneGraph *scenegrah);
@@ -33,13 +38,13 @@ public:
 	virtual axelynx::Pivot* AddPivot();
 	virtual axelynx::Camera* AddCamera();
 	virtual axelynx::Light* CreateLight(axelynx::Light::Mode mode = axelynx::Light::LM_SPOT);
-	virtual axelynx::Entity* Add(const axelynx::Geometry *geometry);
-	virtual axelynx::AnimEntity* Add(const axelynx::AnimGeometry *animgeometry);
+	virtual axelynx::Entity* Add(const axelynx::Geometry *geometry, int entity_group_id=0);
+	virtual axelynx::AnimEntity* Add(const axelynx::AnimGeometry *animgeometry, int entity_group_id=0);
 	virtual bool Remove(axelynx::Pivot *pivot);
 
-	virtual axelynx::SceneGraph * GetSceneGraph() const
+	virtual axelynx::SceneGraph * GetSceneGraph(int index) const
 	{
-		return scenegraph_;
+		return scenegraph_[index];
 	}
 
 	static int GetFrame()
@@ -48,11 +53,11 @@ public:
 	}
 
 	virtual axelynx::Scene* Shared(axelynx::Camera* shared);
-	virtual axelynx::Scene* Shared(axelynx::Entity* shared);
+	virtual axelynx::Scene* Shared(axelynx::Entity* shared, int group_id);
 	virtual axelynx::Scene* Shared(axelynx::Light* shared);
 
-	virtual axelynx::Entity* LoadEntity(axelynx::File file);
-	virtual axelynx::Entity* RestoreEntity(axelynx::File file);
+	virtual axelynx::Entity* LoadEntity(axelynx::File file, int entity_group_id=0);
+	virtual axelynx::Entity* RestoreEntity(axelynx::File file, int entity_group_id=0);
 
 	bool EntityPickMode(CEntity* ent, axelynx::PickMode pm);
 	axelynx::PickResult Pick(axelynx::vec3 start, axelynx::vec3 end);
@@ -64,6 +69,10 @@ public:
 	virtual unsigned int CountCameres() const;
 	virtual unsigned int CountLights() const;
 
+	virtual bool GetVisibleGroup(int entity_group_id);
+	virtual void SetVisibleGroup(int entity_group_id, bool visible);
+
+	virtual bool SetSceneGraph(int entity_group_id, axelynx::SceneGraph *sg=0);
 	virtual ~CScene(){};
 	
 

@@ -88,6 +88,8 @@ namespace axelynx
 		virtual ~Shader(){};
 
 		virtual bool SaveFile(const wchar_t* filename) const =0;
+
+		static AXELYNX_API Shader* GetCurrent();
 	};
 }
 

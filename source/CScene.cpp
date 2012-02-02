@@ -20,11 +20,19 @@
 #include "axelynx/math/axmath.h"
 #include "CShadowPass.h"
 #include "CAnimEntity.h"
+#include "StandartSceneGraph.h"
 
 int CScene::frame_ = 0;
 CScene::CScene(axelynx::SceneGraph *scenegraph)
 {
-	scenegraph_ = scenegraph;
+	for(int i=0;i<256;++i)
+	{
+		scenegraph_[i] = 0;
+		visible_groups_[i] = false;
+	}
+
+	scenegraph_[0] = scenegraph;
+	visible_groups_[0] = true;
 	zpassed = false;
 }
 
@@ -53,7 +61,13 @@ bool CScene::Render()
 				glDepthMask(GL_TRUE);
 			}
 			OPENGL_CHECK_FOR_ERRORS();
-			scenegraph_->Render(*ci);
+
+			for(int i=0;i<256;++i)
+			{
+				if(visible_groups_[i])
+					scenegraph_[i]->Render(*ci);
+			}
+			
 			(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры
 		}
@@ -98,7 +112,11 @@ bool CScene::ZPassRender()
 			(*ci)->Bind();
 			CMaterial::Free(); //материал зависит от камеры
 			OPENGL_CHECK_FOR_ERRORS();
-			scenegraph_->Render(*ci);
+			for(int i=0;i<256;++i)
+			{
+				if(visible_groups_[i])
+					scenegraph_[i]->Render(*ci);
+			}
 						(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры
 		}
@@ -123,7 +141,12 @@ bool CScene::ZPassRender()
 
 bool CScene::Update(float twin)
 {
-	scenegraph_->Update(twin);
+	for(int i=0;i<256;++i)
+	{
+		if(visible_groups_[i])
+			scenegraph_[i]->Update(twin);
+	}
+
 //	scenegraph_->Update();
 	return true;
 }
@@ -146,18 +169,32 @@ axelynx::Camera* CScene::AddCamera()
 	return cam;
 }
 
-axelynx::Entity* CScene::Add(const axelynx::Geometry *geometry)
+axelynx::Entity* CScene::Add(const axelynx::Geometry *geometry,int entity_group_id)
 {
-	CEntity *ent = new CEntity(this, geometry);
-	scenegraph_ -> AddEntity(ent);
-	return ent;
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	if(scenegraph_[entity_group_id])
+	{
+		CEntity *ent = new CEntity(this, geometry);
+		scenegraph_[entity_group_id] -> AddEntity(ent);
+		return ent;
+	}
+
+	return 0;
 }
 
-axelynx::AnimEntity* CScene::Add(const axelynx::AnimGeometry *geometry)
+axelynx::AnimEntity* CScene::Add(const axelynx::AnimGeometry *geometry,int entity_group_id)
 {
-	CAnimEntity *ent = new CAnimEntity(this, geometry);
-	scenegraph_ -> AddEntity(ent);
-	return ent;
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	if(scenegraph_[entity_group_id])
+	{
+		CAnimEntity *ent = new CAnimEntity(this, geometry);
+		scenegraph_[entity_group_id] -> AddEntity(ent);
+		return ent;
+	}
+
+	return 0;
 }
 
 bool CScene::Remove(axelynx::Pivot *pivot)
@@ -166,7 +203,13 @@ bool CScene::Remove(axelynx::Pivot *pivot)
 
 	if(ent)
 	{
-		scenegraph_ -> Remove(ent);
+		for(int i=0;i<256;++i)
+		{
+			if(scenegraph_[i])
+				scenegraph_[i] -> Remove(ent);
+		}
+
+		
 	}
 	else
 	{
@@ -197,9 +240,13 @@ axelynx::Scene* CScene::Shared(axelynx::Camera* shared)
 	return this;
 }
 
-axelynx::Scene* CScene::Shared(axelynx::Entity* shared)
+axelynx::Scene* CScene::Shared(axelynx::Entity* shared, int entity_group_id)
 {
-	scenegraph_->AddEntity(shared);
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	if(scenegraph_[entity_group_id])
+		scenegraph_[entity_group_id]->AddEntity(shared);
+
 	return this;
 }
 
@@ -216,8 +263,10 @@ public:
     CSurface *surface;
 };
 
-axelynx::Entity* CScene::LoadEntity(axelynx::File file)
+axelynx::Entity* CScene::LoadEntity(axelynx::File file,int entity_group_id)
 {
+	assert(entity_group_id >=0 && entity_group_id<256);
+
 	axelynx::Entity* root_node = new CEntity(this,0);
 
 	class VertexAttribute
@@ -432,7 +481,7 @@ axelynx::Entity* CScene::LoadEntity(axelynx::File file)
 	class ProcessNodeEntity
 	{
 	public:
-		static void Process(TiXmlElement *entities, axelynx::Entity *parent_node,CScene* scene, std::vector<SurfaceLib>& surfaces)
+		static void Process(TiXmlElement *entities, axelynx::Entity *parent_node,CScene* scene, std::vector<SurfaceLib>& surfaces,int entity_group_id)
 		{
 			std::string id = entities->Attribute("id");
 
@@ -455,7 +504,7 @@ axelynx::Entity* CScene::LoadEntity(axelynx::File file)
 
 			if(geom)
 			{
-				node = scene->Add(geom);
+				node = scene->Add(geom,entity_group_id);
 			}
 			else
 			{
@@ -487,13 +536,13 @@ axelynx::Entity* CScene::LoadEntity(axelynx::File file)
 			parent_node->AddChild(node);
 			TiXmlElement *node_element = entities->FirstChildElement("node");
 			if(node_element)
-				Process(node_element,node,scene,surfaces);
+				Process(node_element,node,scene,surfaces,entity_group_id);
 		}
 	};
 
 	while(entities)
 	{
-		ProcessNodeEntity::Process(entities,root_node,this,surfaces);
+		ProcessNodeEntity::Process(entities,root_node,this,surfaces,entity_group_id);
 
 		entities = entities->NextSiblingElement("node");
 	}
@@ -511,8 +560,10 @@ axelynx::Entity* CScene::LoadEntity(axelynx::File file)
 }
 
 
-axelynx::Entity* CScene::RestoreEntity(axelynx::File file)
+axelynx::Entity* CScene::RestoreEntity(axelynx::File file,int entity_group_id)
 {
+	assert(entity_group_id >=0 && entity_group_id<256);
+
 	file.Open();
 
 	file.Close();
@@ -589,8 +640,12 @@ bool CScene::RenderShadow()
 				glDepthFunc(GL_LESS);
 				glDepthMask(GL_TRUE);
 			}
-			scenegraph_->Render(*ci);
-						(*ci)->UnBind();
+			for(int i=0;i<256;++i)
+			{
+				if(visible_groups_[i])
+					scenegraph_[i]->Render(*ci);
+			}
+			(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры
 		}
 	}
@@ -622,7 +677,15 @@ bool CScene::RenderShadow()
 
 unsigned int CScene::CountEntities() const
 {
-	return scenegraph_->CountEntities();
+	int cnt_entities = 0;
+
+	for(int i=0;i<256;++i)
+	{
+		if(scenegraph_[i])
+			cnt_entities += scenegraph_[i]->CountEntities();
+	}
+
+	return cnt_entities;
 }
 
 unsigned int CScene::CountCameres() const
@@ -633,4 +696,31 @@ unsigned int CScene::CountCameres() const
 unsigned int CScene::CountLights() const
 {
 	return lightlist.size();
+}
+
+bool CScene::GetVisibleGroup(int entity_group_id)
+{
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	return visible_groups_[entity_group_id];
+}
+
+void CScene::SetVisibleGroup(int entity_group_id, bool visible)
+{
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	if(scenegraph_[entity_group_id])
+		visible_groups_[entity_group_id] = visible;
+}
+
+bool CScene::SetSceneGraph(int entity_group_id, axelynx::SceneGraph *sg)
+{
+	assert(entity_group_id >=0 && entity_group_id<256);
+
+	if(sg == nullptr)
+		sg = new StandartSceneGraph();
+
+	scenegraph_[entity_group_id] = sg;
+
+	return true;
 }

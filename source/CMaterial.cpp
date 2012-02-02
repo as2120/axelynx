@@ -12,6 +12,7 @@ CMaterial const *CMaterial::current_ =0;
 CMaterial::CMaterial()
 {
 	shader_ = 0;
+	zerlypass_shader_ = 0;
 
 	for(int i=0;i<8;++i)
 		textures_[i] = 0;
@@ -70,11 +71,14 @@ void CMaterial::Bind(const axelynx::Camera *cam) const
 		break;
 	};
 	CStatistics::materials++;
-	shader_->Bind();
-	modellocation_ = shader_->GetStandartUniformLocation(axelynx::Shader::SU_MODEL);
-	modelviewlocation_ = shader_->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEW);
-	modelviewprojlocation_ = shader_->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEWPROJ);
-	normallocation_ = shader_->GetStandartUniformLocation(axelynx::Shader::SU_NORMALMATRIX);
+
+	axelynx::Shader *shader = (zerlypass_shader_ && CEarlyZ::OnEarlyZPass())?zerlypass_shader_:shader_;
+
+	shader->Bind();
+	modellocation_ = shader->GetStandartUniformLocation(axelynx::Shader::SU_MODEL);
+	modelviewlocation_ = shader->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEW);
+	modelviewprojlocation_ = shader->GetStandartUniformLocation(axelynx::Shader::SU_MODELVIEWPROJ);
+	normallocation_ = shader->GetStandartUniformLocation(axelynx::Shader::SU_NORMALMATRIX);
 
 	if(!using_entity_textures_)
 	{
@@ -104,7 +108,10 @@ void CMaterial::Bind(const axelynx::Camera *cam) const
 }
 void CMaterial::UnBind() const
 {
-	shader_->UnBind();
+	if(zerlypass_shader_ && CEarlyZ::OnEarlyZPass())
+		zerlypass_shader_->UnBind();
+	else
+		shader_->UnBind();
 
 	for(int i=0;i<8;++i)
 	{
@@ -170,3 +177,7 @@ void CMaterial::SetCullingMode(axelynx::CullingMode dtm)
 	c_mode_  =dtm;
 }
 
+void CMaterial::SetZEarlyPassShader(axelynx::Shader *sh)
+{
+	zerlypass_shader_  =sh;
+}

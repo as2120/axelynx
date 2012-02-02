@@ -34,7 +34,7 @@ class CEntity : public virtual axelynx::Entity
 	bool is_visible_;
 
 	axelynx::vec4 entitycolor_;//
-
+	bool (*on_render_event_)(axelynx::Entity*);
 
 public:
 	CEntity(axelynx::Scene *scene_, const axelynx::Geometry * geom);
@@ -66,6 +66,12 @@ public:
 	virtual axelynx::Entity* CastShadows(bool value, bool by_hierarhy = true);
 
 	virtual axelynx::Entity* OnUpdate(Action *action);
+
+	virtual axelynx::Entity* OnRender(bool (*evt)(axelynx::Entity*))
+	{
+		on_render_event_ = evt;
+		return this;
+	}
 
 	virtual bool Save(axelynx::File file) const;
 

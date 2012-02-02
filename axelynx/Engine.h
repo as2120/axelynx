@@ -254,6 +254,8 @@ namespace axelynx
 		virtual HardwareInfo* GetHardwareInfo()=0;
 		virtual void VSync(bool enabled)=0;
 
+		virtual SceneGraph* GetDefaultSceneGraph()=0;
+
 		AXELYNX_API static axelynx::Engine * Instance();
 
 		virtual struct TSettings& Settings()=0;
