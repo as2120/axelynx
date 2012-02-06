@@ -91,7 +91,7 @@ GLint CShader::ShaderStatus(GLuint shader, GLenum param, const char *source)
 
 		wchar_t * result = axelynx::utils::MultiByteToWideChar(logerror.c_str());
 
-		LOG_ERROR(result);
+		axelynx::Logger::Instance()->Error(result);
 		delete[] result;
 
 		LOG_WRITE(L"<br><table border = 1><tr><td><font color = black>");

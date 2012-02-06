@@ -94,6 +94,8 @@ namespace axelynx
 		virtual void UseColoredVertices()=0;
 		virtual ~Surface(){};
 
+		virtual bool AutoCenter() = 0;
+
 		virtual bool RecalcTangents()=0;
 	};
 }

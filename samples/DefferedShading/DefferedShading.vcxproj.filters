@@ -25,10 +25,10 @@
     <None Include="..\media\specular_bump_mapping_deffered.vs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\defered_lighting.fs">
+    <None Include="..\media\deffered_lighting.fs">
       <Filter>shaders</Filter>
     </None>
-    <None Include="..\media\defered_lighting.vs">
+    <None Include="..\media\deffered_lighting.vs">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

@@ -138,5 +138,6 @@ public:
 		return L"surface";
 	}
 
+	virtual bool AutoCenter();
 	virtual bool RecalcTangents();
 };

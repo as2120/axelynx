@@ -14,17 +14,20 @@ public:
 	{
 		auto shader = Shader::GetCurrent();
 		if(shader)
+		{
+			shader->SetUniform("lightpos",ent->GetPosition(false));
 			shader->SetUniform("lightsize",float(ent->tag / 256.0f));
+		}
 		return true;
 	}
 
 	void initialize()
 	{
-		ent_ -> SetPosition(rnd(-300,300),rnd(200,500),rnd(-300,300));
-		size_ = rnd(5,150);
-		spd_ = 0.1 / sqrt(size_);
+		ent_ -> SetPosition(rnd(-500,350),rnd(200,500),rnd(-500,500));
+		size_ = rnd(15,150);
+		spd_ = 0.61 / sqrt(size_);
 
-		ent_ -> SetScale(size_  /158.0);
+		ent_ -> SetScale(size_);
 		ent_->tag = size_ * 256.0f;
 	}
 
@@ -74,6 +77,7 @@ int main()
 	//cashed->Save(L"../../../../samples/media/pipes.axe");
 
 	Surface *light_sphere = eng->LoadSurface(L"../../../../samples/media/geosphere.axs");
+	light_sphere->AutoCenter();
 
 	Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/rusted_metal.png");
 	Texture *normalspecularmap = eng->LoadTexture(L"../../../../samples/media/rusted_metal_nsm.png");
@@ -107,6 +111,8 @@ int main()
 		world->SetPosition(rnd(-200,200),rnd(-200,200),rnd(-200,200));
 		world->SetScale(rnd(0.1,3.0));
 		world->SetOrientation(rnd(360),rnd(360),rnd(360));
+
+		//world->SetScale(9.1,9.1,9.1);
 	}
 
 	vec3 transl;
@@ -115,22 +121,30 @@ int main()
 
 	Texture *depth_tex = rtt->CreateDepthTexture();
 
-	Texture *position_tex = rtt->CreateColorTexture(4,4,2);
+
 	Texture *color_tex = rtt->CreateColorTexture(4,2,0);
 	Texture *normal_tex = rtt->CreateColorTexture(4,2,1);
+	Texture *position_tex = rtt->CreateColorTexture(4,4,2);
 
 	StandartShaders::Draw::PositionUV()->Bind();
 	Shape *screensize_rect = Shape::Rect(wnd->GetWidth(),wnd->GetHeight(),false);
 
-	int cnt_lights = 10;
+	int cnt_lights = 100;
 	std::list<DefferedLight*> def_lights;
+
+	float rad = light_sphere->GetRadius();
 
 	for(int i=0;i<cnt_lights;++i)
 	{
 		Entity *ent = s->Add(light_sphere,LIGHT_GROUP);
 		ent->SetShader(deffered_lighting);
-
+		//ent->SetShader(StandartShaders::Render::OnlyNormals());
+		ent->SetTexture(color_tex,0);
+		ent->SetTexture(normal_tex,1);
+		ent->SetTexture(position_tex,2);
 		def_lights.push_back(new DefferedLight(ent));
+
+		ent->SetBlend(BM_ADD);
 	}
 
     while(wnd->isRunning())
@@ -173,8 +187,6 @@ int main()
 		specularbump->SetUniform(Shader::SU_EYEPOS,cam->GetPosition(false));
 		specularbump->SetUniform(Shader::SU_LIGHTPOS,vec3(0,0,0));
 
-		//specularbump->SetUniform(Shader::SU_LIGHTPOS,cam->GetPosition(false));
-
 		s->SetVisibleGroup(GEOMETRY_GROUP,true);
 		s->SetVisibleGroup(LIGHT_GROUP,false);
 
@@ -192,14 +204,17 @@ int main()
 
 		s->Render();
 
-		wchar_t wbuff[80];
-		swprintf(wbuff,L"FPS: %d",eng->GetStatistics()->GetFPS());
+		//s->SetVisibleGroup(GEOMETRY_GROUP,true);
+		//s->SetVisibleGroup(LIGHT_GROUP,false);
+		//s->Render();
 
 		c->SetBlendMode(BM_ALPHA);
 		c->SetRotate(0);
 		c->SetColor(1,1,1);
+		c->SetPosition(10,10);
+		vec3 campos = cam->GetPosition(false);
 
-		c->Text(10,10,wbuff);
+		c->Print(L"FPS: %d campos(%f , %f , %f)",eng->GetStatistics()->GetFPS(),campos.x,campos.y,campos.z);
 
 		wnd->Flip();
     }

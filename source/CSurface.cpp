@@ -885,6 +885,48 @@ float CSurface::GetRadius() const
 	return radius_;
 }
 
+bool CSurface::AutoCenter()
+{
+	radius_ =0; //must recalc
+
+	float min_x = positions[0].x,max_x = positions[0].x;
+	float min_y = positions[0].y,max_y = positions[0].y;
+	float min_z = positions[0].z,max_z = positions[0].z;
+
+	for(int i=1;i<count_vertices_;++i)
+	{
+		const axelynx::vec3 &pos= positions[i];
+
+		if(pos.x<min_x)
+			min_x = pos.x;
+		if(pos.x>max_x)
+			max_x = pos.x;
+
+		if(pos.y<min_y)
+			min_y = pos.y;
+		if(pos.y>max_y)
+			max_y = pos.y;
+
+		if(pos.z<min_z)
+			min_z = pos.z;
+		if(pos.z>max_z)
+			max_z = pos.z;
+	}
+
+	float dx = -(min_x + max_x) * 0.5f;
+	float dy = -(min_y + max_y) * 0.5f;
+	float dz = -(min_z + max_z) * 0.5f;
+	axelynx::vec3 delta = axelynx::vec3(dx,dy,dz);
+
+	for(int i=0;i<count_vertices_;++i)
+	{
+		positions[i] += delta;
+	}
+
+	MakeVBO();
+
+	return true;
+}
 bool CSurface::SetVertexPackMode(const axelynx::Surface::VertexPackMode &pm)
 {
 	packmode_ = pm;
