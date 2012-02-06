@@ -820,7 +820,7 @@ bool CSurface::_recalcTangents32()
 	unsigned int *raw_indices = static_cast<unsigned int*>(indices_);
 	for ( i = 0; i < count_indices_; i+=3 )
 	{
-		int ind0 = raw_indices[ i + 0];
+		int ind0 = raw_indices[i + 0];
 		int ind1 = raw_indices[i + 1];
 		int ind2 = raw_indices[i + 2];
  
@@ -847,7 +847,7 @@ bool CSurface::_recalcTangents32()
 		vec3 tangentRes( 0, 0, 0 );
 		float cnt = 0;
 
-		for ( j = 0; j < count_indices_; j+=3 )
+		for (j = 0; j < count_indices_; j+=3 )
 		{
 			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
 			{

@@ -6,6 +6,9 @@
 #include "axelynx/utils/axstring.h"
 #include <iostream>
 #include <windows.h>
+#include <axelynx\Engine.h>
+
+extern bool AxelynxEngineSettingsFailOnError;
 
 #if defined(_MSC_VER) && _MSC_VER > 1310
 
@@ -187,6 +190,7 @@ bool axelynx::Logger::Error(const wchar_t * message,...)
 	bool result = Write(message);
 	Write(L"\n");
 	Write(L"</font><br>");
+
 	return result;
 }
 
@@ -245,4 +249,9 @@ bool axelynx::Logger::Warning(const std::wstring &message)
 bool axelynx::Logger::Hint(const std::wstring &message)
 {
 	return axelynx::Logger::Hint(message.c_str());
+}
+
+bool axelynx::Logger::FailOnEngineError()
+{
+	return axelynx::Engine::Instance()->Settings().Debug.FailOnEngineError;
 }

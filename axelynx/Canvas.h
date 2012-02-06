@@ -68,7 +68,7 @@ namespace axelynx
 		virtual void Text(const wchar_t *text, bool xcenter = false)=0;
 		virtual void Text(const char *text, bool xcenter = false)=0;
 
-		virtual void Text(vec2 pos,const wchar_t *text, bool xcenter = false)
+		void Text(vec2 pos,const wchar_t *text, bool xcenter = false)
 		{
 			vec2 oldpos = GetPosition();
 			SetPosition(pos);
@@ -76,14 +76,13 @@ namespace axelynx
 			SetPosition(oldpos);
 		}
 
-		virtual void Text(vec2 pos,const char *text, bool xcenter = false)
+		void Text(vec2 pos,const char *text, bool xcenter = false)
 		{
 			vec2 oldpos = GetPosition();
 			SetPosition(pos);
 			Text(text,xcenter);
 			SetPosition(oldpos);
 		}
-
 
 		virtual void Text(float x, float y,const wchar_t *text, bool xcenter = false)
 		{
@@ -94,6 +93,9 @@ namespace axelynx
 		{
 			Text(vec2(x,y),text,xcenter);
 		}
+
+		virtual void Print(const wchar_t *text,...)=0;
+		virtual void Print(const char *text,...)=0;
 
 		virtual ~Canvas(){};
 	};

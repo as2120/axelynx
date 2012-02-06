@@ -21,7 +21,10 @@ namespace axelynx
 		std::wstring filename_;
 		Logger(const char*		filename);
 
+		
 	public:
+		bool FailOnEngineError();
+
 		AXELYNX_API bool Init(const wchar_t *application);
 		AXELYNX_API bool Free();
 
@@ -55,7 +58,7 @@ namespace axelynx
 #else
 
 #define LOG_WRITE(a) {axelynx::Logger::Instance()->Write(a);}
-#define LOG_ERROR(a) {axelynx::Logger::Instance()->Error(a);}
+#define LOG_ERROR(a) {axelynx::Logger::Instance()->Error(a);{if(axelynx::Logger::Instance()->FailOnEngineError())assert(!"Engine Error!");}}
 #define LOG_WARNING(a) {axelynx::Logger::Instance()->Warning(a);}
 #define LOG_HINT(a) {axelynx::Logger::Instance()->Hint(a);}
 

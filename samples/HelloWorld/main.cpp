@@ -16,6 +16,8 @@ int main()
     {
 		c->Clear();
 		c->SetBlendMode(BM_ALPHA);
+
+
 		c->Text(10,10,L"Hello from axelynx");
 		
 		wnd->Flip();

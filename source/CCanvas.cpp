@@ -7,6 +7,8 @@
 #include "axelynx/Logger.h"
 #include "axelynx/Font.h"
 
+#include <cstdarg>
+
 #include <iostream>
 
 CCanvas * CCanvas::instance_=0;
@@ -187,4 +189,40 @@ void CCanvas::Text(const char *text, bool xcenter)
 axelynx::vec4 CCanvas::GetColor() const
 {
 	return axelynx::vec4(red_,green_,blue_,alpha_);
+}
+
+void CCanvas::Print(const wchar_t *format,...)
+{
+	if(!font_)
+	{
+		#ifdef _DEBUG
+				LOG_ERROR(L"font not binding to canvas!");
+		#endif
+		return;
+	}
+
+	va_list va;
+	va_start(va,format);
+	wchar_t buffer[1024];
+	vswprintf_s(buffer,format,va);
+	va_end(va);
+	font_->Draw(this,buffer);
+}
+
+void CCanvas::Print(const char *format,...)
+{
+	if(!font_)
+	{
+		#ifdef _DEBUG
+				LOG_ERROR(L"font not binding to canvas!");
+		#endif
+		return;
+	}
+
+	va_list va;
+	va_start(va,format);
+	char buffer[1024];
+	vsprintf_s(buffer,format,va);
+	va_end(va);
+	font_->Draw(this,buffer);
 }

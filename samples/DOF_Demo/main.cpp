@@ -236,6 +236,9 @@ int main()
 
 			}
 
+			c->SetPosition(10,10);
+			c->Print("FPS:%d",eng->GetStatistics()->GetFPS());
+
 			c->SetBlendMode(BM_NONE);
             wnd->Flip();
         }

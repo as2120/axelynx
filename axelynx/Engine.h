@@ -33,7 +33,7 @@
 
 namespace axelynx
 {
-	const int AXELYNX_VERSION = 1060;
+	const int AXELYNX_VERSION = 1070;
 
 	class Engine
 	{
@@ -87,6 +87,9 @@ namespace axelynx
 				public:
 				int html_log;
 				bool UseRunTimeProfiler;
+				bool FailOnOpenGLError;
+				bool FailOnEngineError;
+
 			};
 
 			class SystemSettings

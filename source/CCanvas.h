@@ -93,4 +93,7 @@ public:
 	virtual ~CCanvas()
 	{
 	}
+
+	virtual void Print(const wchar_t *text,...);
+	virtual void Print(const char *text,...);
 };

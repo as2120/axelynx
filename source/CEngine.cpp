@@ -119,6 +119,9 @@ void CEngine::InitOpenGL()
     CCanvas * cc = CCanvas::Create(syswnd->GetWidth(),syswnd->GetHeight());
     cc->Recalc();
 
+	CFreeTypeFont *def_font = new CFreeTypeFont(axelynx::Font::Desc());
+	cc->SetFont(def_font);
+
 	canvas_ = cc;
 	OPENGL_CHECK_FOR_ERRORS();
 	glClearColor(0,0,0,1);
@@ -133,18 +136,22 @@ void CEngine::InitOpenGL()
 		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VENDOR)));
 		LOG_WRITE(buff);
 		delete[] buff;
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>Renderer</td><td>");
 		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_RENDERER)));
 		LOG_WRITE(buff);
 		delete[] buff;
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>Driver version</td><td>");
 		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_VERSION)));
 		LOG_WRITE(buff);
 		delete[] buff;
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>glsl compiler</td><td>");
 		buff = utils::MultiByteToWideChar(reinterpret_cast<const char*>(glGetString(GL_SHADING_LANGUAGE_VERSION)));
 		LOG_WRITE(buff);
 		delete[] buff;
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr></table>");
 	}
 
@@ -156,77 +163,67 @@ void CEngine::InitOpenGL()
 		glGetIntegerv(GL_MAX_CLIP_PLANES,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
-		LOG_WRITE(L"</td></tr><td>max texture cooods</td><td>");
-		glGetIntegerv(GL_MAX_TEXTURE_COORDS,ints);
-		wsprintf(buff,L"%d",ints[0]);
-		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max texture image units</td><td>");
 		glGetIntegerv(GL_MAX_TEXTURE_IMAGE_UNITS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max texture size</td><td>");
 		glGetIntegerv(GL_MAX_TEXTURE_SIZE,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max 3d texture size</td><td>");
 		glGetIntegerv(GL_MAX_3D_TEXTURE_SIZE,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max cubemap texture size</td><td>");
 		glGetIntegerv(GL_MAX_CUBE_MAP_TEXTURE_SIZE,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
-		LOG_WRITE(L"</td></tr><td>max texture units</td><td>");
-		glGetIntegerv(GL_MAX_TEXTURE_UNITS,ints);
-		wsprintf(buff,L"%d",ints[0]);
-		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>MRT buffers</td><td>");
 		glGetIntegerv(GL_MAX_DRAW_BUFFERS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max indices</td><td>");
 		glGetIntegerv(GL_MAX_ELEMENTS_INDICES,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max verices</td><td>");
 		glGetIntegerv(GL_MAX_ELEMENTS_VERTICES,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max vertext uniforms</td><td>");
 		glGetIntegerv(GL_MAX_VERTEX_UNIFORM_COMPONENTS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max fragment uniforms</td><td>");
 		glGetIntegerv(GL_MAX_FRAGMENT_UNIFORM_COMPONENTS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max varyings floats</td><td>");
 		glGetIntegerv(GL_MAX_VARYING_FLOATS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max vertex attribs</td><td>");
 		glGetIntegerv(GL_MAX_VERTEX_ATTRIBS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max vertex textures units</td><td>");
 		glGetIntegerv(GL_MAX_VERTEX_TEXTURE_IMAGE_UNITS,ints);
 		wsprintf(buff,L"%d",ints[0]);
 		LOG_WRITE(buff);
-
+		OPENGL_CHECK_FOR_ERRORS();
 		LOG_WRITE(L"</td></tr><td>max viewport dims</td><td>");
 		glGetIntegerv(GL_MAX_VIEWPORT_DIMS,ints);
 		wsprintf(buff,L"%d",ints[0]);
@@ -303,6 +300,14 @@ bool  CEngine::Flip()
 	//Default debug settings
 	settings_.Debug.html_log = true;
 	settings_.Debug.UseRunTimeProfiler = false;
+
+	#ifdef _DEBUG
+		settings_.Debug.FailOnOpenGLError = true;
+		settings_.Debug.FailOnEngineError = true;
+	#else
+		settings_.Debug.FailOnOpenGLError = false;
+		settings_.Debug.FailOnEngineError = false;
+	#endif
 
 	//Default filesystem settings
 	settings_.FileSystem.FileExistsLevel = axelynx::Engine::TSettings::FileSystemSettings::FEL_FATAL;
