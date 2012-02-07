@@ -23,8 +23,11 @@ public:
 
 	void initialize()
 	{
-		ent_ -> SetPosition(rnd(-500,350),rnd(200,500),rnd(-500,500));
-		size_ = rnd(15,150);
+		
+		size_ = rnd(15,100);
+
+		ent_ -> SetPosition(rnd(-500,350),rnd(400,500)+size_,rnd(-500,500));
+
 		spd_ = 0.61 / sqrt(size_);
 
 		ent_ -> SetScale(size_);
