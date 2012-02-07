@@ -140,7 +140,7 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::QuadSprite()
 						"void main(void)\n"
 						"{\n"
 						"gl_Position  = modelviewproj * vec4( position, 1.0 );\n"
-						"size         = pointsize;\n"
+						"size         = pointsize * 0.5;\n"
 						"vcolor         = color;\n"
 						"}\n";
 	//triangle_strip

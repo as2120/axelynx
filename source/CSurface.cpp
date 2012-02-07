@@ -818,6 +818,12 @@ bool CSurface::_recalcTangents32()
 	std::vector<vec3> ntangents;	// касательные вектора к треугольнику
  
 	unsigned int *raw_indices = static_cast<unsigned int*>(indices_);
+
+	for ( i = 0; i < count_vertices_; i++ )
+	{
+		tangents[i] =  vec3(0);
+	}
+
 	for ( i = 0; i < count_indices_; i+=3 )
 	{
 		int ind0 = raw_indices[i + 0];
@@ -838,28 +844,15 @@ bool CSurface::_recalcTangents32()
 		vec3  t, b;
 		CalcTriangleBasis( v1, v2, v3, s1, t1, s2, t2, s3, t3, t, b );
 
-		ntangents.push_back( t );
+		tangents[ind0] += t;
+		tangents[ind1] += t;
+		tangents[ind2] += t;
 	}
  	
-	for ( i = 0; i < count_vertices_; i++ )
+	for(int i=0 ; i< count_vertices_;++i)
 	{
-		
-		vec3 tangentRes( 0, 0, 0 );
-		float cnt = 0;
-
-		for (j = 0; j < count_indices_; j+=3 )
-		{
-			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
-			{
-				tangentRes += ntangents[ j / 3 ];
-				cnt += 1.0f;
-			}
-		}
- 
-
-		tangentRes *= (1.0f/cnt);
-		tangentRes = Ortogonalize( normals[ i ], tangentRes );
-		tangents[i] =  tangentRes;
+		tangents[i].normalize();
+		tangents[i] = Ortogonalize( normals[ i ], tangents[i] );
 	}
 
 	return true;

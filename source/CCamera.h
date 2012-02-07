@@ -25,11 +25,18 @@ class CCamera : public axelynx::Camera
 	bool enabled_;
 
 	axelynx::Camera::DrawMode drawmode_;
+
+	float aspect_ratio_;
 public:
 	bool SetScene(axelynx::Scene *scene)
 	{
 		my_scene_ = scene;
 		return true;
+	}
+
+	virtual float GetAspectRatio() const
+	{
+		return aspect_ratio_;
 	}
 
 	CCamera();

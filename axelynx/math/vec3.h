@@ -74,7 +74,7 @@ namespace axelynx
 		}
 		float FAST_CALL length() const;
 		vec3 FAST_CALL normalize();
-		vec3 FAST_CALL normalize() const
+		vec3 FAST_CALL normalizedCopy() const
 		{
 			vec3 result(x,y,z);
 			result.normalize();

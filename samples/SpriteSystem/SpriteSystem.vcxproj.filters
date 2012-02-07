@@ -5,10 +5,19 @@
       <UniqueIdentifier>{2a068e5b-78a4-4cf7-9168-fceb751a48df}</UniqueIdentifier>
       <Extensions>txt</Extensions>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{b8762f9d-36b4-411f-be2f-698d3ba7a548}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="ReadMe.txt">
       <Filter>Source Files</Filter>
+    </None>
+    <None Include="..\media\booms_array.fs">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="..\media\booms_array.vs">
+      <Filter>shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

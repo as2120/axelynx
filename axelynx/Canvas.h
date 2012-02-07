@@ -97,6 +97,20 @@ namespace axelynx
 		virtual void Print(const wchar_t *text,...)=0;
 		virtual void Print(const char *text,...)=0;
 
+		void Reset()
+		{
+			SetPosition(0,0);
+			SetScale(1,1);
+			SetRotate(0);
+		}
+
+		void ResetPos(float x, float y)
+		{
+			SetPosition(x,y);
+			SetScale(1,1);
+			SetRotate(0);
+		}
+
 		virtual ~Canvas(){};
 	};
 }

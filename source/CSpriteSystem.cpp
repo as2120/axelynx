@@ -155,7 +155,8 @@ bool CSpriteSystem::Draw() const
 
 	axelynx::mat3 orient = cam->GetOrientationMatrix();
 	axelynx::vec3 viewup = axelynx::vec3(0,1,0);
-	axelynx::vec3 viewright = axelynx::vec3(600.0f / 800.0f,0,0);
+
+	axelynx::vec3 viewright = axelynx::vec3(1.0 / cam->GetAspectRatio(),0,0);
 	axelynx::Shader *sh = CShader::Current();
 
 	if(sh)

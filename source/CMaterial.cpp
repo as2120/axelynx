@@ -93,15 +93,39 @@ void CMaterial::Bind(const axelynx::Camera *cam) const
 
 	CCanvas::Instance()->SetBlendMode(blend_);
 	
+
 	if(!CEarlyZ::OnEarlyZPass())
 	{
-		if(blend_ != axelynx::BM_NONE)
+		if(dw_mode_ == axelynx::DW_NONE)
 		{
 			glDepthMask(GL_FALSE);
 		}
+
+		if(dw_mode_ == axelynx::DW_WRITE)
+		{
+				glDepthMask(GL_TRUE);
+		}
+
+		if(dw_mode_ == axelynx::DW_AUTO)
+		{
+			if(blend_ != axelynx::BM_NONE)
+			{
+			
+				glDepthMask(GL_FALSE);
+			}
+			else
+			{
+				glDepthMask(GL_TRUE);
+			}
+		}
+
+		if(dt_mode_ == axelynx::DT_NONE)
+		{
+			glDisable(GL_DEPTH_TEST);
+		}
 		else
 		{
-			glDepthMask(GL_TRUE);
+			glEnable(GL_DEPTH_TEST);
 		}
 	}
 	current_ = this;

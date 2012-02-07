@@ -196,11 +196,15 @@ void CCamera::Projection(float fov, float aspect, float znear, float zfar)
 {
 	fov = fov / 180.0f * 3.1415f;
 	projection_ = axelynx::mat4::Perspective(fov,aspect,znear,zfar);
+
+	aspect_ratio_ = aspect;
 }
 
 void CCamera::Ortho(float xnear,float xfar, float ynear, float yfar, float znear, float zfar)
 {
 	projection_ = axelynx::mat4::Ortho(xnear,xfar,ynear,yfar,znear,zfar);
+
+	aspect_ratio_ = abs((xfar  -xnear) / (yfar - ynear));
 }
 
 CCamera::~CCamera()

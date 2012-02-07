@@ -66,6 +66,8 @@ namespace axelynx
 		virtual bool isEnabled() const = 0;
 
 		virtual void SetDrawMode(DrawMode mode) = 0;
+
+		virtual float GetAspectRatio() const = 0;
 virtual ~Camera(){};
 	};
 }
