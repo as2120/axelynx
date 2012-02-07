@@ -17,11 +17,13 @@ vec2 screen_uv = gl_FragCoord.xy /vec2(800.0,600.0);
     vec3 f_wpos = texture(texture2,screen_uv).xyz;
 
     vec4 diff = texture(texture0,screen_uv);
-    float nDotL = max(dot(texture(texture1,screen_uv).xyz,-normalize(l_dir)),0.0);
+    vec3 f_wnormal = (texture(texture1,screen_uv).xyz * 0.5) - vec3(0.5);
+
+    float nDotL = max(dot(f_wnormal,normalize(l_dir)),0.0);
 
     float att = clamp((lightsize - length(l_pos - f_wpos))/lightsize,0.0,1.0);
 
-    color = diff * att * nDotL;
+    color = diff * ((att+0.1) * (nDotL+0.1));
    // color = diff * length(clamp(lightsize/(l_pos - f_wpos),0.0,1.0));
 }
  

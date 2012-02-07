@@ -24,7 +24,7 @@ public:
 	void initialize()
 	{
 		
-		size_ = rnd(15,100);
+		size_ = rnd(45,150);
 
 		ent_ -> SetPosition(rnd(-500,350),rnd(400,500)+size_,rnd(-500,500));
 
@@ -73,6 +73,7 @@ int main()
 	s->SetSceneGraph(LIGHT_GROUP,eng->GetDefaultSceneGraph()); //создаем ценеграйф для сфер света
 
 	Camera *cam = s->AddCamera();
+	cam->Projection(80.0f,800.0f/600.0f,5.0f,10000.0f);
 
 	Surface *pipes = eng->LoadSurface(L"../../../../samples/media/pipes.axs");
 	//pipes->RecalcTangents();
@@ -132,7 +133,7 @@ int main()
 	StandartShaders::Draw::PositionUV()->Bind();
 	Shape *screensize_rect = Shape::Rect(wnd->GetWidth(),wnd->GetHeight(),false);
 
-	int cnt_lights = 100;
+	int cnt_lights = 200;
 	std::list<DefferedLight*> def_lights;
 
 	float rad = light_sphere->GetRadius();
