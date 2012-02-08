@@ -127,6 +127,7 @@ void CEngine::InitOpenGL()
 	glClearColor(0,0,0,1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClampColor(GL_CLAMP_READ_COLOR,GL_FALSE);
+
 	OPENGL_CHECK_FOR_ERRORS();
 
 	{

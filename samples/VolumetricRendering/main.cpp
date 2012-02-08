@@ -16,19 +16,15 @@ int main()
 	body->SetScale(100);
 	Material *backface = eng->CreateMaterial();
 	Material *volumetric = eng->CreateMaterial();
-	backface->SetShader(eng->LoadShader(L"../../../../samples/media/backface.vs"));
-	volumetric->SetShader(eng->LoadShader(L"../../../../samples/media/volumetric.fs"));
+	backface->SetShader(eng->LoadShader(L"../../../../samples/media/backface"));
+	volumetric->SetShader(eng->LoadShader(L"../../../../samples/media/volumetric"));
 	backface->SetCullingMode(CM_FRONT);
 
 	float dx=0,dy=0;
 
 	body->SetMaterial(backface);
 
-
-
 	Font *fnt = eng->LoadFreeTypeFont(L"../../../../samples/media/font.ttf");
-
-
 
 	Canvas *c = eng->GetCanvas();
 	
@@ -68,13 +64,13 @@ int main()
 
 		cam->Translate(transl * dt);
 
-		//back->Bind();
+		back->Bind();
 		body->SetMaterial(backface);
 		s->Render();
-		//back->UnBind();
+		back->UnBind();
 
 		body->SetMaterial(volumetric);
-		//s->Render();
+		s->Render();
 
 		c->SetBlendMode(BM_ALPHA);
 		wchar_t wbuff[80];

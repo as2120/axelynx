@@ -36,7 +36,7 @@ public:
 			return CEntity::Show(value);
 		}
 
-		virtual axelynx::Entity* SetMaterial(const axelynx::Material * material, bool by_hierarhy = true)
+		virtual axelynx::Entity* SetMaterial(axelynx::Material * material, bool by_hierarhy = true)
 		{
 			return CEntity::SetMaterial(material, by_hierarhy);
 		}

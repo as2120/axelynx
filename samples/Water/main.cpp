@@ -4,7 +4,7 @@ using namespace axelynx;
 int main()
 {
 	Engine *eng = Engine::Init();
-    Window *wnd = eng->AddWindow();
+    Window *wnd = eng->AddWindow(800,600);
 	wnd->VSync(true);
 
 	Canvas *c = eng->GetCanvas();
@@ -68,11 +68,31 @@ int main()
 
 	int water_index  =0;
 
-	RenderTarget *rtt = eng->CreateRenderTarget();
-	Texture *reflection = rtt->CreateColorTexture();
+	RenderTarget *rtt_refl = eng->CreateRenderTarget();
+	rtt_refl->CreateDepthTexture();
+	Texture *reflection = rtt_refl->CreateColorTexture();
+
+	RenderTarget *rtt_refr = eng->CreateRenderTarget();
+	Texture *world_z = rtt_refr->CreateDepthTexture();
+	Texture *refraction = rtt_refr->CreateColorTexture();
+
+
 	water->SetTexture(water_nm,0);
 
 	water->SetTexture(sky_tex,1);
+	water->SetTexture(refraction,2);
+	water->SetTexture(reflection,3);
+	water->SetTexture(world_z,4);
+
+	cam->SetPosition(0,50,0);
+
+	water_shader->Compile();
+	water_shader->SetUniform("screen_size",vec2(c->GetWidth(),c->GetHeight()));
+
+	cam->Projection(75,float(c->GetWidth())/float(c->GetHeight()),1,1000);
+
+	water_shader->SetUniform("zNear",1.0f);
+	water_shader->SetUniform("zFar",1000.0f);
 
     while(wnd->isRunning())
     {
@@ -122,8 +142,13 @@ int main()
 
 		sky->SetPosition(cam->GetPosition(false));
 
+		water->SetVisible(false);
+		rtt_refr->Bind();
+		s->Render();
+		rtt_refr->UnBind();
+		water->SetVisible(true);
 
-        s->Render();
+		s->Render();
 
 		wchar_t wbuff[80];
 		swprintf(wbuff,L"FPS: %d",eng->GetStatistics()->GetFPS());

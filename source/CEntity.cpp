@@ -289,7 +289,7 @@ axelynx::Entity* CEntity::SetBlend(axelynx::BlendMode bm, bool by_hierarhy)
 	return this;
 }
 
-axelynx::Entity* CEntity::SetMaterial(const axelynx::Material * material, bool by_hierarhy)
+axelynx::Entity* CEntity::SetMaterial(axelynx::Material * material, bool by_hierarhy)
 {
 
 	if(by_hierarhy && ChildsList())

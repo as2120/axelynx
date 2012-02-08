@@ -21,7 +21,7 @@ int main()
 		paralax->SetTexture(diffuse,0);
 		paralax->SetTexture(relief,1);
 
-		Surface *cube = eng->LoadSurface(L"../../../../samples/media/Teapot_256.axs");
+		Surface *cube = eng->LoadSurface(L"../../../../samples/media/Teapot_4096.axs");
 		cube->RecalcTangents();
 
         Entity *body = s->Add(cube);

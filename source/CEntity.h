@@ -17,7 +17,7 @@ class CEntity : public virtual axelynx::Entity
 	const axelynx::Geometry *geometry_;//
 
 	axelynx::BlendMode bm_;//
-	const axelynx::Material *material_;//
+	axelynx::Material *material_;//
 
 	float radius_;//
 	bool show_;//
@@ -54,7 +54,7 @@ public:
 	virtual bool Draw(const axelynx::Camera *camera);
 	virtual bool Update(float twin = 1.0f);
 
-	virtual axelynx::Entity* SetMaterial(const axelynx::Material * material, bool by_hierarhy = true);
+	virtual axelynx::Entity* SetMaterial(axelynx::Material * material, bool by_hierarhy = true);
 
 	virtual bool inFrustum(const axelynx::frustum &f);
 
@@ -79,5 +79,10 @@ public:
 
 	virtual axelynx::Entity* SetPickMode(axelynx::PickMode pm);
 	virtual axelynx::Entity* SetVisible(bool visible);
+
+	virtual axelynx::Material* GetMaterial()
+	{
+		return material_;
+	}
 
 };

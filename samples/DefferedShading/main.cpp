@@ -36,9 +36,9 @@ public:
 	void initialize()
 	{
 		
-		size_ = rnd(45,150);
+		size_ = rnd(45,120);
 
-		ent_ -> SetPosition(rnd(-500,350),rnd(500,600)+size_,rnd(-500,500));
+		ent_ -> SetPosition(rnd(-500,350),rnd(500,900)+size_,rnd(-500,500));
 
 		spd_ = 0.61 / sqrt(size_);
 
@@ -52,7 +52,7 @@ public:
 		ent_ = ent;
 		s_ = s;
 		initialize();
-		ent_ -> SetPosition(rnd(-500,350),rnd(-500,600)+size_,rnd(-500,500));
+		ent_ -> SetPosition(rnd(-500,350),rnd(-500,900)+size_,rnd(-500,500));
 		ent_->OnRender(DefferedLight::OnRender);
 	}
 
@@ -74,7 +74,7 @@ public:
 int main()
 {
 	Engine *eng = Engine::Init();
-    Window *wnd = eng->AddWindow();
+    Window *wnd = eng->AddWindow(1280,720);
 	//Window *wnd = eng->AddWindow(640,480);
 
 	wnd->VSync(false);
@@ -165,7 +165,7 @@ int main()
 	StandartShaders::Draw::PositionUV()->Bind();
 	Shape *screensize_rect = Shape::Rect(wnd->GetWidth(),wnd->GetHeight(),false);
 
-	int cnt_lights = 200;
+	int cnt_lights = 1000;
 	std::list<DefferedLight*> def_lights;
 
 	float rad = light_sphere->GetRadius();

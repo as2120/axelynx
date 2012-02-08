@@ -257,7 +257,7 @@ axelynx::Texture* CRenderTarget::CreateDepthTexture()
 	//tex->Bind();
 	//glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_COMPARE_MODE, GL_COMPARE_REF_TO_TEXTURE);
 	//tex->UnBind();
-	tex->Build(0,GL_DEPTH_COMPONENT,GL_DEPTH_COMPONENT32);
+	tex->Build(0,GL_DEPTH_COMPONENT,GL_DEPTH_COMPONENT32F);
 	OPENGL_CHECK_FOR_ERRORS();
 	BindDepthTexture(tex);
 	OPENGL_CHECK_FOR_ERRORS();

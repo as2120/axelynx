@@ -46,7 +46,7 @@ namespace axelynx
 
 		virtual axelynx::Entity* Copy() const = 0;
 		virtual Entity* Show(bool value = true) = 0;
-		virtual Entity* SetMaterial(const Material *, bool by_hierarhy = true)=0;
+		virtual Entity* SetMaterial(Material *, bool by_hierarhy = true)=0;
 		virtual Entity* SetTexture(Texture* texture, int layer=0, bool by_hierarhy = true)=0;
 		virtual Entity* SetShader(Shader* shader, bool by_hierarhy = true)=0;
 		virtual Entity* SetBlend(BlendMode bm, bool by_hierarhy = true)=0;
@@ -131,7 +131,6 @@ namespace axelynx
 			return this;
 		}
 
-
 		Entity* SetPosition(const Pivot* pivot)
 		{
 			return SetPosition(pivot->GetPosition());
@@ -146,6 +145,7 @@ namespace axelynx
 		{
 			return SetScale(vec3(x,y,z));
 		}
+
 		Entity* SetScale(float value)
 		{
 			return SetScale(vec3(value,value,value));
@@ -192,6 +192,8 @@ namespace axelynx
 		virtual Entity* SetDepthTestMode(DepthTestMode dwm) = 0;
 
 		virtual Entity* SetVisible(bool visible) = 0;
+
+		virtual Material* GetMaterial() = 0;
 
 		int tag;
 	};
