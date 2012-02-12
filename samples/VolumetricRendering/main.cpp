@@ -1,11 +1,19 @@
 ﻿#include <axelynx\axelynx.h>
 using namespace axelynx;
 
+#include <Windows.h>
 int main()
 {
 	Engine *eng = Engine::Init();
 	Window *wnd = eng->AddWindow(800,600);
 	//TODO: Place your resource loading and scene creating code here
+
+	HWND hwnd;
+	wnd->GetSystemHandle(&hwnd);
+	LONG lExStyle = GetWindowLong(hwnd, GWL_EXSTYLE);
+	lExStyle ^= WS_EX_LAYERED;
+	SetWindowLong(hwnd, GWL_EXSTYLE, lExStyle);
+	SetLayeredWindowAttributes(hwnd, 0, 228, LWA_ALPHA);
 
 	Scene *s = eng->AddScene();
 	Camera *cam = s->AddCamera();

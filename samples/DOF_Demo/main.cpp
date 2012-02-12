@@ -1,4 +1,6 @@
 ﻿#include <axelynx/axelynx.h>
+
+
 using namespace axelynx;
 
 int main()
@@ -6,6 +8,7 @@ int main()
         Engine *eng = Engine::Init();
 
         Window *wnd = eng->AddWindow(800,600,32,WM_WINDOWED,4);
+
 		wnd->VSync(false);
 
         //TODO: Place your resource loading and scene creating code here

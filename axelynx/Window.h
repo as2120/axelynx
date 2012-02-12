@@ -46,5 +46,7 @@ namespace axelynx
 		virtual int GetWidth() =0;
 
 		virtual int VSync(bool enabled)=0;
+
+		virtual void GetSystemHandle(void *ptr)=0;
 	};
 }

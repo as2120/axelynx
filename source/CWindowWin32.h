@@ -77,4 +77,10 @@ public:
 
 	int GetFreeLoadingRC();
 	bool FreeLoadingRC(int rc);
+
+
+	virtual void GetSystemHandle(void *ptr)
+	{
+		memcpy(ptr,&wnd_,sizeof(wnd_));
+	}
 };
