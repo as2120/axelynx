@@ -140,4 +140,13 @@ public:
 
 	virtual bool AutoCenter();
 	virtual bool RecalcTangents();
+
+	virtual int GetVertexPosition(int index, axelynx::vec3& position);
+	virtual int GetVertexNormal(int index, axelynx::vec3& normal);
+	virtual int GetVertexTangent(int index, axelynx::vec3& tangent);
+	virtual int GetVertexTexCoord(int index, axelynx::vec2& uv, int layer = 0);
+	virtual int GetVertexColor(int index, axelynx::vec4& color);
+
+	virtual int GetTriangle(int index, int& index0,int& index1, int& index2);
+
 };

@@ -1,4 +1,5 @@
 ﻿#include <axelynx/axelynx.h>
+#include <iostream>
 
 using namespace axelynx;
 
@@ -53,6 +54,39 @@ int main()
         turret->SetPosition(1.25,0,0);
 
         float dx=0,dy=0;
+
+		for(int i=0;i<cube->CountTriangles();++i)
+		{
+			int index0,index1,index2;
+			cube->GetTriangle(i,index0,index1,index2);
+			std::cout<<"tris "<<i<<" ("<<index0<<","<<index1<<","<<index2<<")"<<std::endl;
+		}
+
+		for(int i=0;i<cube->CountVertices();++i)
+		{
+			vec2 uv0;
+			vec2 uv1;
+
+			vec3 position;
+			vec3 normal;
+			vec3 tangent;
+			vec4 color;
+
+			cube->GetVertexPosition(i,position);
+			cube->GetVertexNormal(i,normal);
+			cube->GetVertexTangent(i,tangent);
+			cube->GetVertexColor(i,color);
+			cube->GetVertexTexCoord(i,uv0,0);
+			cube->GetVertexTexCoord(i,uv1,1);
+			std::cout<<"vertex "<<i<<std::endl;
+			std::cout<<"    position ("<<position.x<<","<<position.y<<","<<position.z<<")"<<std::endl;
+			std::cout<<"    normal   ("<<normal.x<<","<<normal.y<<","<<normal.z<<")"<<std::endl;
+			std::cout<<"    tangent  ("<<tangent.x<<","<<tangent.y<<","<<tangent.z<<")"<<std::endl;
+			std::cout<<"    color    ("<<color.x<<","<<color.y<<","<<color.z<<")"<<std::endl;
+
+			std::cout<<"    uv0      ("<<uv0.x<<","<<uv0.y<<")"<<std::endl;
+			std::cout<<"    uv1      ("<<uv1.x<<","<<uv1.y<<")"<<std::endl;
+		}
 
         while(wnd->isRunning())
         {

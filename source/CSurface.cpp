@@ -85,12 +85,12 @@ bool CSurface::Draw() const
 
 int CSurface::CountTriangles()const
 {
-	return 0;
+	return count_tris_;
 }
 
 int CSurface::CountVertices() const
 {
-	return 0;
+	return count_vertices_;
 }
 
 
@@ -1031,4 +1031,80 @@ bool CSurface::RecalcTangents()
 		MakeVBO();
 
 	return recalced;
+}
+
+int CSurface::GetVertexPosition(int index, axelynx::vec3& position)
+{
+	position.x = positions[index].x;
+	position.y = positions[index].y;
+	position.z = positions[index].z;
+	return 0;
+}
+
+int CSurface::GetVertexNormal(int index, axelynx::vec3& normal)
+{
+	normal.x = normals[index].x;
+	normal.y = normals[index].y;
+	normal.z = normals[index].z;
+
+	return 0;
+}
+
+int CSurface::GetVertexTangent(int index, axelynx::vec3& tangent)
+{
+	tangent.x = tangents[index].x;
+	tangent.y = tangents[index].y;
+	tangent.z = tangents[index].z;
+
+	return 0;
+}
+
+int CSurface::GetVertexTexCoord(int index, axelynx::vec2& uv, int layer)
+{
+	if(layer == 1)
+	{
+		uv.x = uv1[index].x;
+		uv.y = uv1[index].y;
+	}
+	else
+	{
+		uv.x = uv0[index].x;
+		uv.y = uv0[index].y;
+	}
+
+	return 0;
+}
+
+int CSurface::GetVertexColor(int index, axelynx::vec4& color)
+{
+	color.x = colors[index].x;
+	color.y = colors[index].y;
+	color.z = colors[index].z;
+	color.w = colors[index].w;
+
+	return 0;
+}
+
+int CSurface::GetTriangle(int index, int& index0,int& index1, int& index2)
+{
+	if(index_size_==1)
+	{
+		index0 = static_cast<unsigned char*>(indices_)[index*3 + 0];
+		index1 = static_cast<unsigned char*>(indices_)[index*3 + 1];
+		index2 = static_cast<unsigned char*>(indices_)[index*3 + 2];
+	}
+	if(index_size_==2)
+	{
+		index0 = static_cast<unsigned short*>(indices_)[index*3 + 0];
+		index1 = static_cast<unsigned short*>(indices_)[index*3 + 1];
+		index2 = static_cast<unsigned short*>(indices_)[index*3 + 2];
+	}
+	if(index_size_==4)
+	{
+		index0 = static_cast<unsigned int*>(indices_)[index*3 + 0];
+		index1 = static_cast<unsigned int*>(indices_)[index*3 + 1];
+		index2 = static_cast<unsigned int*>(indices_)[index*3 + 2];
+	}
+
+	return 0;
 }

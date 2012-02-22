@@ -85,6 +85,15 @@ namespace axelynx
 		virtual int SetVertexColor(int index, float r, float g, float b, float a=1.0f) =0;
 
 		virtual int SetTriangle(int index, int index0,int index1, int index2) =0;
+
+		virtual int GetVertexPosition(int index, vec3& position) =0;
+		virtual int GetVertexNormal(int index, vec3& normal) =0;
+		virtual int GetVertexTangent(int index, vec3& tangent) =0;
+		virtual int GetVertexTexCoord(int index, vec2& uv, int layer = 0) =0;
+		virtual int GetVertexColor(int index, vec4& color) =0;
+
+		virtual int GetTriangle(int index, int& index0,int& index1, int& index2) =0;
+
 		virtual bool Lock()=0;
 		virtual bool UnLock()=0;
 
