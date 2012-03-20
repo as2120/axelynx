@@ -1175,7 +1175,7 @@ void CSurface::Attach(axelynx::Surface *other)
 	
 	if(surf)
 	{
-		resize
+
 	}
 }
 
