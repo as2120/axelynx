@@ -1,3 +1,4 @@
+#undef __STRICT_ANSI__
 
 #include "CCanvas.h"
 #include "gl/axgl.h"
@@ -10,6 +11,8 @@
 #include <cstdarg>
 
 #include <iostream>
+
+#include <cstdio>
 
 CCanvas * CCanvas::instance_=0;
 axelynx::Shader * CCanvas::current_shader_ =0;
@@ -204,7 +207,8 @@ void CCanvas::Print(const wchar_t *format,...)
 	va_list va;
 	va_start(va,format);
 	wchar_t buffer[1024];
-	vswprintf_s(buffer,format,va);
+
+	vswprintf(buffer,format,va);
 	va_end(va);
 	font_->Draw(this,buffer);
 }
@@ -222,7 +226,7 @@ void CCanvas::Print(const char *format,...)
 	va_list va;
 	va_start(va,format);
 	char buffer[1024];
-	vsprintf_s(buffer,format,va);
+	vsprintf(buffer,format,va);
 	va_end(va);
 	font_->Draw(this,buffer);
 }

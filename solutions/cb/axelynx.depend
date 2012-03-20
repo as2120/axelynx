@@ -10,29 +10,29 @@
 	<iostream>
 	"CScene.h"
 
-1326831239 c:\axelynxsdk\source\canimentity.h
+1328731143 c:\axelynxsdk\source\canimentity.h
 	"axelynx/AnimEntity.h"
 	"CEntity.h"
 
-1326831275 c:\axelynxsdk\\axelynx\animentity.h
+1327959194 c:\axelynxsdk\\axelynx\animentity.h
 	"AnimGeometry.h"
 	"Entity.h"
 
-1326831275 c:\axelynxsdk\\axelynx\animgeometry.h
+1327959160 c:\axelynxsdk\\axelynx\animgeometry.h
 	"Geometry.h"
 
-1326831275 c:\axelynxsdk\\axelynx\geometry.h
+1327959036 c:\axelynxsdk\\axelynx\geometry.h
 	"File.h"
 	<string>
 
-1326831275 c:\axelynxsdk\\axelynx\file.h
+1327957436 c:\axelynxsdk\\axelynx\file.h
 	"axlib.h"
 	<string>
 	<fstream>
 
 1326831275 c:\axelynxsdk\\axelynx\axlib.h
 
-1326831275 c:\axelynxsdk\\axelynx\entity.h
+1328731144 c:\axelynxsdk\\axelynx\entity.h
 	"Pivot.h"
 	"Geometry.h"
 	"Texture.h"
@@ -42,7 +42,7 @@
 	"Material.h"
 	<string>
 
-1326831275 c:\axelynxsdk\\axelynx\pivot.h
+1327958952 c:\axelynxsdk\\axelynx\pivot.h
 	"axelynx/math/vectormath.h"
 	"axelynx/File.h"
 	<list>
@@ -58,95 +58,95 @@
 	"mat4x3.h"
 	"quat.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\vec2.h
+1327957128 c:\axelynxsdk\\axelynx\math\vec2.h
 	"../axlib.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\vec3.h
+1328642081 c:\axelynxsdk\\axelynx\math\vec3.h
 	"../axlib.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\vec4.h
+1327958352 c:\axelynxsdk\\axelynx\math\vec4.h
 	"../axlib.h"
 	"vec3.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\mat2.h
+1327957326 c:\axelynxsdk\\axelynx\math\mat2.h
 	"../axlib.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\math\mat3.h
+1327957340 c:\axelynxsdk\\axelynx\math\mat3.h
 	"../axlib.h"
 	"vec3.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\math\mat4.h
+1327957368 c:\axelynxsdk\\axelynx\math\mat4.h
 	"../axlib.h"
 	<cassert>
 	"mat3.h"
 	"vec3.h"
 	"quat.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\quat.h
+1327957356 c:\axelynxsdk\\axelynx\math\quat.h
 	"../axlib.h"
 	"mat3.h"
 	"vec3.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\mat3x2.h
+1327957386 c:\axelynxsdk\\axelynx\math\mat3x2.h
 	"../axlib.h"
 	"vec2.h"
 	"mat4.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\math\mat4x3.h
+1327957406 c:\axelynxsdk\\axelynx\math\mat4x3.h
 	"../axlib.h"
 	<cassert>
 	"vec3.h"
 
-1327001533 c:\axelynxsdk\\axelynx\texture.h
+1327959060 c:\axelynxsdk\\axelynx\texture.h
 	"axlib.h"
 	"File.h"
 
-1326831275 c:\axelynxsdk\\axelynx\shader.h
+1328304133 c:\axelynxsdk\\axelynx\shader.h
 	"axlib.h"
 	"math/vectormath.h"
 	"File.h"
 
-1326831275 c:\axelynxsdk\\axelynx\canvas.h
+1328642081 c:\axelynxsdk\\axelynx\canvas.h
 	"Shape.h"
 	"Drawable.h"
 	"math/mat3x2.h"
 	"Shader.h"
 
-1326831275 c:\axelynxsdk\\axelynx\shape.h
+1327957894 c:\axelynxsdk\\axelynx\shape.h
 	"math/vectormath.h"
 	"axlib.h"
 	"Drawable.h"
 
-1326831275 c:\axelynxsdk\\axelynx\drawable.h
+1327957866 c:\axelynxsdk\\axelynx\drawable.h
 
-1326831275 c:\axelynxsdk\\axelynx\camera.h
+1328642081 c:\axelynxsdk\\axelynx\camera.h
 	"Pivot.h"
 	"math/vectormath.h"
 	"math/frustum.h"
 
-1326831275 c:\axelynxsdk\\axelynx\math\frustum.h
+1327958976 c:\axelynxsdk\\axelynx\math\frustum.h
 	"../axlib.h"
 	"vec3.h"
 
-1326831275 c:\axelynxsdk\\axelynx\material.h
+1328304133 c:\axelynxsdk\\axelynx\material.h
 	"Shader.h"
 	"Texture.h"
 	"Canvas.h"
 	"Camera.h"
 
-1326831239 c:\axelynxsdk\source\centity.h
+1328731143 c:\axelynxsdk\source\centity.h
 	"axelynx/Entity.h"
 	"axelynx/Scene.h"
 	"axelynx/math/frustum.h"
 
-1326831275 c:\axelynxsdk\\axelynx\scene.h
+1328304133 c:\axelynxsdk\\axelynx\scene.h
 	"SceneGraph.h"
 	"Light.h"
 
-1326831275 c:\axelynxsdk\\axelynx\scenegraph.h
+1327959222 c:\axelynxsdk\\axelynx\scenegraph.h
 	"Pivot.h"
 	"Camera.h"
 	"Geometry.h"
@@ -156,7 +156,7 @@
 1326831275 c:\axelynxsdk\\axelynx\light.h
 	"Pivot.h"
 
-1327432641 c:\axelynxsdk\source\gl\axgl.h
+1327957754 c:\axelynxsdk\source\gl\axgl.h
 	<windows.h>
 	<gl/GL.h>
 	"wglext.h"
@@ -214,7 +214,7 @@
 
 1326831238 c:\axelynxsdk\source\gl\gl2ext.h
 
-1326831275 c:\axelynxsdk\\axelynx\logger.h
+1328560296 c:\axelynxsdk\\axelynx\logger.h
 	"axlib.h"
 	<cstdio>
 	<string>
@@ -226,7 +226,7 @@
 1326831186 c:\axelynxsdk\source\cshadowpass.h
 	"axelynx/Shader.h"
 
-1326831238 c:\axelynxsdk\source\ccanvas.h
+1328515999 c:\axelynxsdk\source\ccanvas.h
 	"axelynx/Canvas.h"
 	"axelynx/math/vectormath.h"
 	"axelynx/Shader.h"
@@ -234,20 +234,21 @@
 1326831275 c:\axelynxsdk\\axelynx\shell.h
 	"axlib.h"
 
-1326831239 c:\axelynxsdk\source\cscene.h
+1328304132 c:\axelynxsdk\source\cscene.h
 	"axelynx/Scene.h"
 	<list>
 	"CEntity.h"
 
-1327432642 source:c:\axelynxsdk\source\ccamera.cpp
+1328642079 source:c:\axelynxsdk\source\ccamera.cpp
 	"CCamera.h"
 	"CCanvas.h"
 	"gl/axgl.h"
 	<cmath>
 	<iostream>
 	"CScene.h"
+	<math.h>
 
-1326831239 c:\axelynxsdk\source\ccamera.h
+1328642079 c:\axelynxsdk\source\ccamera.h
 	"axelynx/Camera.h"
 	"axelynx/Scene.h"
 	"CPivot.h"
@@ -255,14 +256,16 @@
 1326831185 c:\axelynxsdk\source\cpivot.h
 	"axelynx/Pivot.h"
 
-1326834470 source:c:\axelynxsdk\source\ccanvas.cpp
+1329085391 source:c:\axelynxsdk\source\ccanvas.cpp
 	"CCanvas.h"
 	"gl/axgl.h"
 	"CShader.h"
 	"axelynx/AxelynxSystemShaders.h"
 	"axelynx/Logger.h"
 	"axelynx/Font.h"
+	<cstdarg>
 	<iostream>
+	<cstdio>
 
 1326831185 c:\axelynxsdk\source\cshader.h
 	"axelynx/Shader.h"
@@ -283,7 +286,7 @@
 	"CEarlyZ.h"
 	"gl/axgl.h"
 
-1327233192 source:c:\axelynxsdk\source\cengine.cpp
+1328731143 source:c:\axelynxsdk\source\cengine.cpp
 	"CEngine.h"
 	"gl/axgl.h"
 	"CCanvas.h"
@@ -324,7 +327,7 @@
 	"CWindowWin32.h"
 	"CWindowUnix.h"
 
-1326831238 c:\axelynxsdk\source\cengine.h
+1328304132 c:\axelynxsdk\source\cengine.h
 	"axelynx/Engine.h"
 	"axelynx/Logger.h"
 	"axelynx/Window.h"
@@ -332,7 +335,7 @@
 	"CTexture.h"
 	<list>
 
-1327147955 c:\axelynxsdk\\axelynx\engine.h
+1328559900 c:\axelynxsdk\\axelynx\engine.h
 	"axlib.h"
 	"File.h"
 	"Logger.h"
@@ -373,7 +376,7 @@
 	"axlib.h"
 	"math/vec2.h"
 
-1327435204 c:\axelynxsdk\\axelynx\surface.h
+1328563906 c:\axelynxsdk\\axelynx\surface.h
 	"Geometry.h"
 	"math\vectormath.h"
 	"File.h"
@@ -403,7 +406,7 @@
 	"Texture.h"
 	"Canvas.h"
 
-1326831275 c:\axelynxsdk\\axelynx\window.h
+1328731500 c:\axelynxsdk\\axelynx\window.h
 
 1326831275 c:\axelynxsdk\\axelynx\theora.h
 	"Texture.h"
@@ -414,7 +417,7 @@
 	"Drawable.h"
 	"math/vec4.h"
 
-1326831275 c:\axelynxsdk\\axelynx\utils\axstring.h
+1327959262 c:\axelynxsdk\\axelynx\utils\axstring.h
 	"../axlib.h"
 	<string>
 
@@ -486,11 +489,11 @@
 	<vector>
 	<list>
 
-1327435295 c:\axelynxsdk\source\csurface.h
+1328563956 c:\axelynxsdk\source\csurface.h
 	"axelynx/Surface.h"
 	"gl/axgl.h"
 
-1326831185 c:\axelynxsdk\source\cmaterial.h
+1328304132 c:\axelynxsdk\source\cmaterial.h
 	"axelynx/Material.h"
 
 1327432642 c:\axelynxsdk\source\crendertarget.h
@@ -616,7 +619,7 @@
 	<list>
 	<vector>
 
-1326831185 c:\axelynxsdk\source\cwindowwin32.h
+1328731492 c:\axelynxsdk\source\cwindowwin32.h
 	"axelynx/Window.h"
 	<windows.h>
 	"gl/axgl.h"
@@ -637,7 +640,7 @@
 	<iostream>
 	"CScene.h"
 
-1326831238 source:c:\axelynxsdk\source\cfile.cpp
+1327958653 source:c:\axelynxsdk\source\cfile.cpp
 	"axelynx/Shell.h"
 	"axelynx/Engine.h"
 	"axelynx/File.h"
@@ -763,7 +766,7 @@
 
 1326831239 c:\axelynxsdk\source\anorms.h
 
-1326831186 source:c:\axelynxsdk\source\cmaterial.cpp
+1328642079 source:c:\axelynxsdk\source\cmaterial.cpp
 	"CMaterial.h"
 	"CCanvas.h"
 	"gl/axgl.h"
@@ -836,7 +839,7 @@
 	"CTexture.h"
 	"CCanvas.h"
 
-1327432642 source:c:\axelynxsdk\source\cscene.cpp
+1329084999 source:c:\axelynxsdk\source\cscene.cpp
 	"CScene.h"
 	"CCamera.h"
 	"CEntity.h"
@@ -857,6 +860,7 @@
 	"axelynx/math/axmath.h"
 	"CShadowPass.h"
 	"CAnimEntity.h"
+	"StandartSceneGraph.h"
 
 1326831201 c:\axelynxsdk\source\libs\tinyxml\tinyxml.h
 	<ctype.h>
@@ -881,7 +885,7 @@
 	"../axlib.h"
 	"vectormath.h"
 
-1327432642 source:c:\axelynxsdk\source\cshader.cpp
+1328565458 source:c:\axelynxsdk\source\cshader.cpp
 	"CShader.h"
 	"axelynx//Logger.h"
 	"axelynx/utils/axstring.h"
@@ -893,7 +897,7 @@
 	"axelynx/Shell.h"
 	"saSpec.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\logger.h
+1328560296 c:\axelynxsdk\\axelynx\\logger.h
 	"axlib.h"
 	<cstdio>
 	<string>
@@ -913,44 +917,44 @@
 	"mat4x3.h"
 	"quat.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\vec2.h
+1327957128 c:\axelynxsdk\\axelynx\\math\vec2.h
 	"../axlib.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\vec3.h
+1328642081 c:\axelynxsdk\\axelynx\\math\vec3.h
 	"../axlib.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\vec4.h
+1327958352 c:\axelynxsdk\\axelynx\\math\vec4.h
 	"../axlib.h"
 	"vec3.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\mat2.h
+1327957326 c:\axelynxsdk\\axelynx\\math\mat2.h
 	"../axlib.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\\math\mat3.h
+1327957340 c:\axelynxsdk\\axelynx\\math\mat3.h
 	"../axlib.h"
 	"vec3.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\\math\mat4.h
+1327957368 c:\axelynxsdk\\axelynx\\math\mat4.h
 	"../axlib.h"
 	<cassert>
 	"mat3.h"
 	"vec3.h"
 	"quat.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\quat.h
+1327957356 c:\axelynxsdk\\axelynx\\math\quat.h
 	"../axlib.h"
 	"mat3.h"
 	"vec3.h"
 
-1326831275 c:\axelynxsdk\\axelynx\\math\mat3x2.h
+1327957386 c:\axelynxsdk\\axelynx\\math\mat3x2.h
 	"../axlib.h"
 	"vec2.h"
 	"mat4.h"
 	<cassert>
 
-1326831275 c:\axelynxsdk\\axelynx\\math\mat4x3.h
+1327957406 c:\axelynxsdk\\axelynx\\math\mat4x3.h
 	"../axlib.h"
 	<cassert>
 	"vec3.h"
@@ -976,7 +980,7 @@
 1326831238 c:\axelynxsdk\source\csprite.h
 	"axelynx/Sprite.h"
 
-1326831239 source:c:\axelynxsdk\source\cspritesystem.cpp
+1328642079 source:c:\axelynxsdk\source\cspritesystem.cpp
 	"CSpriteSystem.h"
 	"CStatistics.h"
 	"CPivot.h"
@@ -991,8 +995,9 @@
 	"CStatistics.h"
 	"axelynx/Timer.h"
 
-1324838306 source:c:\axelynxsdk\source\csurface.cpp
+1328642079 source:c:\axelynxsdk\source\csurface.cpp
 	"CSurface.h"
+	<axelynx/Engine.h>
 	"CFile.h"
 	"CShader.h"
 	"saSpec.h"
@@ -1113,7 +1118,7 @@
 
 1326831275 c:\axelynxsdk\\axelynx\keystates.h
 
-1326831239 source:c:\axelynxsdk\source\logger.cpp
+1328560329 source:c:\axelynxsdk\source\logger.cpp
 	<axelynx\Logger.h>
 	<string>
 	<ctime>
@@ -1122,6 +1127,7 @@
 	"axelynx/utils/axstring.h"
 	<iostream>
 	<windows.h>
+	<axelynx\Engine.h>
 
 1326831239 source:c:\axelynxsdk\source\memoryfile.cpp
 	"MemoryFile.h"
@@ -1178,8 +1184,8 @@
 	"CZipArchive.h"
 	"axelynx/utils/axstring.h"
 
-1326831239 source:c:\axelynxsdk\source\axelynx.cpp
-	"axelynx/axelynx.h"
+1327956480 source:c:\axelynxsdk\source\axelynx.cpp
+	<axelynx/axelynx.h>
 
 1326831275 c:\axelynxsdk\\axelynx\axelynx.h
 	"axlib.h"
@@ -6032,7 +6038,7 @@
 	"../../saSpec.h"
 	<axelynx/Logger.h>
 
-1326831237 source:c:\axelynxsdk\source\shaders\render\texturing.cpp
+1328642079 source:c:\axelynxsdk\source\shaders\render\texturing.cpp
 	<axelynx/AxelynxSystemShaders.h>
 	"../../saSpec.h"
 	<axelynx/Logger.h>

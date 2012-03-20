@@ -46,7 +46,7 @@ bool CMorfedMesh::Resize(int frames_count)
 	frames_ = new CMorfedFrame[frames_count];
 	count_frames_ = frames_count;
 
-	for(int i=0;i<10;++i)
+	for(int i=0;i<count_frames_;++i)
 	{
 		frames_[i].Resize(count_vertices_,count_faces_);
 	}

@@ -1,6 +1,9 @@
 #include <axelynx/math/mat4.h>
 #include <cmath>
+
+#ifdef _MSC_VER_
 #include <intrin.h>
+#endif
 
 AXELYNX_API axelynx::mat4 axelynx::mat4::Identity()
 {
@@ -54,7 +57,7 @@ AXELYNX_API axelynx::mat4 Make(const axelynx::quat& orient, const axelynx::vec3&
 AXELYNX_API axelynx::mat4 axelynx::mat4::Make(const axelynx::quat& orient, const axelynx::vec3& position, const axelynx::vec3& scale)
 {
 	axelynx::mat4 mat= axelynx::mat4::Identity();
-	axelynx::mat4::Make(mat,orient,position,scale);	
+	axelynx::mat4::Make(mat,orient,position,scale);
 	return mat;
 }
 
@@ -95,7 +98,7 @@ AXELYNX_API axelynx::mat4 axelynx::mat4::Perspective(float fov, float aspect, fl
 	float f = 1 / tanf(fov / 2.0f);
 	float A = (zfar + znear) / (znear - zfar);
 	float B = (2 * zfar * znear) / (znear - zfar);
-	
+
 	axelynx::mat4 m= axelynx::mat4::Identity();
 
 	m[0] = f / aspect;
@@ -113,7 +116,7 @@ AXELYNX_API axelynx::mat4 axelynx::mat4::Ortho(float left, float right, float to
 	float tx = - (right + left) / (right - left);
 	float ty = - (top + bottom) / (top - bottom);
 	float tz = - (zfar + znear) / (zfar - znear);
-	
+
 	axelynx::mat4 m= axelynx::mat4::Identity();
 
 	m[0] = 2.0f / (right - left);
@@ -128,12 +131,13 @@ AXELYNX_API axelynx::mat4 axelynx::mat4::Ortho(float left, float right, float to
 
 void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat4* m3)
 {
+    #ifdef _MSC_VER_
     __m128 rowW = *((__m128*)(&m1->m0));
     __m128 rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
     __m128 rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
     __m128 rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
     rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
- 
+
     rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
     rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
     rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
@@ -143,12 +147,12 @@ void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat
     rowX = _mm_add_ps(rowX,rowY);
     *((__m128*)(&m3->m0)) = rowX;
     rowW = *((__m128*)(&m1->m4));
- 
+
     rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
     rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
     rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
     rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
- 
+
     rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
     rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
     rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
@@ -158,12 +162,12 @@ void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat
     rowX = _mm_add_ps(rowX,rowY);
     *((__m128*)(&m3->m4)) = rowX;
     rowW = *((__m128*)(&m1->m8));
- 
+
     rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
     rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
     rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
     rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
- 
+
     rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
     rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
     rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
@@ -173,12 +177,12 @@ void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat
     rowX = _mm_add_ps(rowX,rowY);
     *((__m128*)(&m3->m8)) = rowX;
     rowW = *((__m128*)(&m1->m12));
- 
+
     rowX = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(0,0,0,0)));
     rowY = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(1,1,1,1)));
     rowZ = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(2,2,2,2)));
     rowW = _mm_castsi128_ps(_mm_shuffle_epi32(_mm_castps_si128(rowW),_MM_SHUFFLE(3,3,3,3)));
- 
+
     rowX = _mm_mul_ps(rowX,*((__m128*)(&m2->m0)));
     rowY = _mm_mul_ps(rowY,*((__m128*)(&m2->m4)));
     rowZ = _mm_mul_ps(rowZ,*((__m128*)(&m2->m8)));
@@ -187,6 +191,8 @@ void Mat4x4MulSSE(const axelynx::mat4* m1, const axelynx::mat4* m2, axelynx::mat
     rowY = _mm_add_ps(rowY,rowW);
     rowX = _mm_add_ps(rowX,rowY);
     *((__m128*)(&m3->m12)) = rowX;
+
+    #endif
 }
 
 AXELYNX_API axelynx::mat4 axelynx::mat4::operator*(const mat4& B) const

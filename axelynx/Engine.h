@@ -261,7 +261,7 @@ namespace axelynx
 
 		AXELYNX_API static axelynx::Engine * Instance();
 
-		virtual struct TSettings& Settings()=0;
+		virtual TSettings& Settings()=0;
 		virtual ~Engine(){};
 	};
 }

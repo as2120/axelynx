@@ -21,6 +21,13 @@ namespace axelynx
 	class Surface : public Geometry
 	{
 	public:
+		enum RecalcNormalsMode
+		{
+			RNM_GEOMETRY
+			,RNM_SPHERE
+			,RNM_CUBE
+		};
+
 		struct VertexInfo
 		{
 			vec3 position;
@@ -47,6 +54,11 @@ namespace axelynx
 		virtual void Translate(const vec3& translate)=0;
 		virtual void Rotate(const quat& rotate)=0;
 		virtual void Scale(const vec3& scale)=0;
+
+		virtual void Attach(Surface *other)=0;
+
+		virtual void FitBox(vec3 size, vec3 position = vec3(0))=0;
+		virtual void FitSphere(float radius, vec3 position = vec3(0))=0;
 
 		/// Binding user vertex attributes to surface
 		/// example:	somesurface->UserVertexAttribs("wing_intensity",1)
@@ -106,5 +118,7 @@ namespace axelynx
 		virtual bool AutoCenter() = 0;
 
 		virtual bool RecalcTangents()=0;
+
+		virtual bool RecalcNormals(RecalcNormalsMode rnm = RNM_GEOMETRY)=0;
 	};
 }

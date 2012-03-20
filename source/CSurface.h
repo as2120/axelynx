@@ -1,6 +1,6 @@
 #pragma once
 
-#include "axelynx/Surface.h"
+#include <axelynx/Surface.h>
 #include "gl/axgl.h"
 //#include <exception>
 
@@ -53,6 +53,9 @@ class CSurface : public axelynx::Surface
 		return 0;
 	}
 
+	bool recalcNormalsGeometry();
+	bool recalcNormalsSphere();
+	bool recalcNormalsCube();
 public:
 	unsigned __int8 GetIndexSize() const
 	{
@@ -148,5 +151,11 @@ public:
 	virtual int GetVertexColor(int index, axelynx::vec4& color);
 
 	virtual int GetTriangle(int index, int& index0,int& index1, int& index2);
+	virtual void Attach(axelynx::Surface *other);
+
+	virtual void FitBox(axelynx::vec3 size, axelynx::vec3 position = axelynx::vec3(0));
+	virtual void FitSphere(float radius, axelynx::vec3 position = axelynx::vec3(0));
+
+	virtual bool RecalcNormals(axelynx::Surface::RecalcNormalsMode rnm = axelynx::Surface::RNM_GEOMETRY);
 
 };

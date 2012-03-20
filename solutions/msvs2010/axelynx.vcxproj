@@ -183,52 +183,77 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|Win32'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
@@ -253,6 +278,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -279,6 +305,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -305,6 +332,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -334,6 +362,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -364,6 +393,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -391,6 +421,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -421,6 +452,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <CallingConvention>Cdecl</CallingConvention>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -452,6 +484,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <CallingConvention>Cdecl</CallingConvention>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -482,6 +515,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -515,6 +549,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -549,6 +584,7 @@
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>Cdecl</CallingConvention>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -580,6 +616,7 @@
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>Cdecl</CallingConvention>
+      <EnablePREfast>true</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

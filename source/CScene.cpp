@@ -67,7 +67,7 @@ bool CScene::Render()
 				if(visible_groups_[i])
 					scenegraph_[i]->Render(*ci);
 			}
-			
+
 			(*ci)->UnBind();
 			CMaterial::Free(); //материал зависит от камеры
 		}
@@ -209,7 +209,7 @@ bool CScene::Remove(axelynx::Pivot *pivot)
 				scenegraph_[i] -> Remove(ent);
 		}
 
-		
+
 	}
 	else
 	{
@@ -717,7 +717,7 @@ bool CScene::SetSceneGraph(int entity_group_id, axelynx::SceneGraph *sg)
 {
 	assert(entity_group_id >=0 && entity_group_id<256);
 
-	if(sg == nullptr)
+	if(sg == 0)
 		sg = new StandartSceneGraph();
 
 	scenegraph_[entity_group_id] = sg;

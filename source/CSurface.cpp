@@ -1108,3 +1108,48 @@ int CSurface::GetTriangle(int index, int& index0,int& index1, int& index2)
 
 	return 0;
 }
+void CSurface::Attach(axelynx::Surface *other)
+{
+}
+
+void CSurface::FitBox(axelynx::vec3 size, axelynx::vec3 position)
+{
+}
+
+void CSurface::FitSphere(float radius, axelynx::vec3 position)
+{
+}
+
+bool CSurface::recalcNormalsGeometry()
+{
+	return true;
+}
+
+bool CSurface::recalcNormalsSphere()
+{
+	return true;
+}
+
+bool CSurface::recalcNormalsCube()
+{
+	return true;
+}
+
+bool CSurface::RecalcNormals(axelynx::Surface::RecalcNormalsMode rnm)
+{
+	switch(rnm)
+	{
+	case RNM_GEOMETRY:
+		return recalcNormalsGeometry();
+	case RNM_SPHERE:
+		return recalcNormalsSphere();
+	case RNM_CUBE:
+		return recalcNormalsCube();
+	default:
+		assert(!"unknow recalc normals mode");
+		recalcNormalsGeometry();
+	};
+	return false;
+
+
+}
