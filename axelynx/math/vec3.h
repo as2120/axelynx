@@ -63,6 +63,14 @@ namespace axelynx
 			return (*this);
 		}
 
+		const vec3& operator *= (const vec3& value) 
+		{
+			x *= value.x;
+			y *= value.y;
+			z *= value.z;
+			return (*this);
+		}
+
 		vec3 FAST_CALL cross(const vec3& other) const
 		{
 			return vec3(y*other.z-z*other.y, z*other.x-x*other.z, x*other.y-y*other.x);

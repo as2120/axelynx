@@ -11,8 +11,8 @@
 
 static unsigned int gl_index_type[5] = {0,GL_UNSIGNED_BYTE,GL_UNSIGNED_SHORT,0,GL_UNSIGNED_INT};
 
-CSurface::CSurface(int count_vertices, int count_indices)
-	:count_vertices_(count_vertices),count_indices_(count_indices),RemakeVBO(true)
+
+void CSurface::_initialize()
 {
 	draw_mode_ = GL_TRIANGLES;
 
@@ -25,10 +25,10 @@ CSurface::CSurface(int count_vertices, int count_indices)
 
 	index_size_ = axelynx::Engine::Instance()->Settings().Renderer.MinimumIndexSize;
 	
-	if(count_vertices>255 && index_size_<2)
+	if(count_vertices_>255 && index_size_<2)
 		index_size_ = 2;
 
-	if(count_vertices>65535)
+	if(count_vertices_>65535)
 		index_size_ = 4;
 
 	indices_ = new unsigned char[count_indices_*index_size_];
@@ -44,6 +44,31 @@ CSurface::CSurface(int count_vertices, int count_indices)
 	count_tris_ = 0;
 
 	packmode_ = axelynx::Surface::VP_AUTO;
+}
+
+void CSurface::_free()
+{
+	delete[] positions;
+	delete[] normals;
+	delete[] tangents;
+	delete[] uv0;
+	delete[] uv1;
+	delete[] colors;
+	delete[] indices_;
+
+	positions=0;
+	normals=0;
+	tangents=0;
+	uv0=0;
+	uv1=0;
+	colors=0;
+	indices_=0;
+}
+
+CSurface::CSurface(int count_vertices, int count_indices)
+	:count_vertices_(count_vertices),count_indices_(count_indices),RemakeVBO(true)
+{
+	_initialize();
 }
 
 CSurface::CSurface()
@@ -96,19 +121,37 @@ int CSurface::CountVertices() const
 
 void CSurface::Translate(const axelynx::vec3& translate)
 {
-
+	for(int i=0;i<count_vertices_;++i)
+	{
+		positions[i] += translate;
+	}
 }
 
 void CSurface::Rotate(const axelynx::quat& rotate)
 {
+	axelynx::mat3 rot = rotate.ToMat3();
 
+	for(int i=0;i<count_vertices_;++i)
+	{
+		positions[i] = rot * positions[i];
+	}
 }
 
 void CSurface::Scale(const axelynx::vec3& scale)
 {
+	for(int i=0;i<count_vertices_;++i)
+	{
+		positions[i] *= scale;
+	}
 }
 
-
+void CSurface::Scale(float scale)
+{
+	for(int i=0;i<count_vertices_;++i)
+	{
+		positions[i] *= scale;
+	}
+}
 
 void CSurface::UserVertexAttribs(const char* name,signed char components,axelynx::VertexType vt, bool normalized)
 {
@@ -195,6 +238,8 @@ bool CSurface::UnLock()
 
 CSurface::~CSurface()
 {
+	_free();
+	_freeVBO();
 }
 
 CSurface* CSurface::LoadSBS(axelynx::File file) //sigel binary surface
@@ -383,6 +428,21 @@ CSurface* CSurface::LoadAXS(axelynx::File file) //axelynx surface
 	//s->RecalcTangents();
 	s->MakeVBO();
 	return s;
+}
+
+void CSurface::_freeVBO()
+{
+	if(!vao_)
+		glDeleteVertexArrays(1,&vao_);
+
+	if(!ibo_)
+		glDeleteBuffers(1,&ibo_);
+
+	if(!vbo_)
+		glDeleteBuffers(1,&vbo_);
+
+	if(!uabo_)
+		glDeleteBuffers(1,&uabo_);
 }
 
 bool CSurface::MakeVBO()
@@ -1108,8 +1168,15 @@ int CSurface::GetTriangle(int index, int& index0,int& index1, int& index2)
 
 	return 0;
 }
+
 void CSurface::Attach(axelynx::Surface *other)
 {
+	CSurface *surf = dynamic_cast<CSurface*>(other);
+	
+	if(surf)
+	{
+		resize
+	}
 }
 
 void CSurface::FitBox(axelynx::vec3 size, axelynx::vec3 position)

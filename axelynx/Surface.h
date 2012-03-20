@@ -54,6 +54,7 @@ namespace axelynx
 		virtual void Translate(const vec3& translate)=0;
 		virtual void Rotate(const quat& rotate)=0;
 		virtual void Scale(const vec3& scale)=0;
+		virtual void Scale(float scale)=0;
 
 		virtual void Attach(Surface *other)=0;
 

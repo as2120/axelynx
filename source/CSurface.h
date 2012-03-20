@@ -56,6 +56,11 @@ class CSurface : public axelynx::Surface
 	bool recalcNormalsGeometry();
 	bool recalcNormalsSphere();
 	bool recalcNormalsCube();
+
+	void _initialize();
+	void _free();
+	void _freeVBO();
+
 public:
 	unsigned __int8 GetIndexSize() const
 	{
@@ -77,7 +82,7 @@ public:
 	virtual void Translate(const axelynx::vec3& translate);
 	virtual void Rotate(const axelynx::quat& rotate);
 	virtual void Scale(const axelynx::vec3& scale);
-
+	virtual void Scale(float scale);
 	virtual void UserVertexAttribs(const char* name,signed char components = 3,axelynx::VertexType vt = axelynx::VT_FLOAT, bool normalized = true);
 
 	virtual int GetUserAttributeLocation(const char* name) const;
