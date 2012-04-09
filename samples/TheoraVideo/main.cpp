@@ -6,6 +6,7 @@ int main()
 {
 	Engine *eng = Engine::Init();			//инициалищация движка
 	Window *wnd = eng->AddWindow(800,600);	//инициализация окна
+	wnd->VSync(false);
 
 	Scene *scene = eng->AddScene();			//добавляем сцену
 	Camera *cam = scene->AddCamera();		//добавляем камеру
@@ -47,7 +48,7 @@ int main()
 	Theora *video = eng->LoadTheoraVideo(L"../../../../samples/media/bleach.asf");
 	Texture *tex = video->GetDiffuseTexture();
 	
-	eng->VSync(true);
+	//eng->VSync(true);
 
 	Texture *tex2 = eng->LoadTexture(L"../../../../samples/media/hypercube.jpg");
 	cube_material->SetTexture(tex);
