@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "AxelynxSDK"
-#define MyAppVersion "1.04"
+#define MyAppVersion "1.07"
 #define MyAppPublisher "likosoft, Inc."
 #define MyAppURL "http://www.code.google.com/p/axelynx"
 
@@ -58,10 +58,15 @@ Source: "C:\AxelynxSDK\tools\*";          DestDir: "{app}\tools\";          Comp
 ;CB
 Source: "C:\AxelynxSDK\tools\Wizards\CB\*";          DestDir: "{userappdata}\codeblocks\UserTemplates\";          Components: SDK;      Flags: ignoreversion recursesubdirs createallsubdirs
 
-;MSVS
+;MSVS 2010
 Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.ico";          DestDir: "{userdocs}\Visual Studio 2010\Wizards\";          Components: SDK; Flags: ignoreversion
 Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vsdir";          DestDir: "{userdocs}\Visual Studio 2010\Wizards\";          Components: SDK;Flags: ignoreversion
 Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vsz";          DestDir: "{userdocs}\Visual Studio 2010\Wizards\";          Components: SDK; Flags: ignoreversion
+
+;MSVS 11
+Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.ico";          DestDir: "{userdocs}\Visual Studio 11\Wizards\";          Components: SDK; Flags: ignoreversion
+Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vsdir";          DestDir: "{userdocs}\Visual Studio 11\Wizards\";          Components: SDK;Flags: ignoreversion
+Source: "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vsz";          DestDir: "{userdocs}\Visual Studio 11\Wizards\";          Components: SDK; Flags: ignoreversion
 
 
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
