@@ -14,7 +14,7 @@
 	#endif
 #endif
 
-#ifdef _MSC_VER
+#if _MSC_VER == 1600 //MSVS 2010
 #define AXELYNX_MEMALIGN(a) __declspec(align(a))
 #define FAST_CALL __fastcall
 #else
