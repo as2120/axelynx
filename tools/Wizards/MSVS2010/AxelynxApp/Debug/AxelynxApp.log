@@ -1,15 +1,13 @@
-﻿Build started 12.02.2012 22:49:18.
-     1>Project "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vcxproj" on node 3 (rebuild target(s)).
+﻿Build started 16.04.2012 18:40:01.
+     1>Project "D:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vcxproj" on node 3 (Rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Debug\AxelynxApp.lastbuildstate".
-       PrepareForBuild:
-         Creating directory "C:\AxelynxSDK\solutions\msvs2010\Debug\".
        InitializeBuildStatus:
          Creating "Debug\AxelynxApp.unsuccessfulbuild" because "AlwaysCreate" was specified.
        FinalizeBuildStatus:
          Deleting file "Debug\AxelynxApp.unsuccessfulbuild".
          Touching "Debug\AxelynxApp.lastbuildstate".
-     1>Done Building Project "C:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vcxproj" (rebuild target(s)).
+     1>Done Building Project "D:\AxelynxSDK\tools\Wizards\MSVS2010\AxelynxApp\AxelynxApp.vcxproj" (Rebuild target(s)).
 
 Build succeeded.
 
