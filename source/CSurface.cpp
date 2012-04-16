@@ -423,10 +423,21 @@ CSurface* CSurface::LoadAXS(axelynx::File file) //axelynx surface
 			s->SetVertexTexCoord(vid,uv1[tfaces1[id+2]],1);
 	}
 	
+	delete[] faces;
+	if(tfaces0) delete[] tfaces0;
+	if(tfaces1) delete[] tfaces1;
+
+	if(uv0) delete[] uv0;
+	if(uv1) delete[] uv1;
+	delete[] vpos;
+	delete[] vnorm;
 
 	s->use_lightmap_ = true;
 	//s->RecalcTangents();
 	s->MakeVBO();
+
+
+
 	return s;
 }
 

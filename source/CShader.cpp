@@ -849,7 +849,7 @@ bool CShader::LoadVertexSource(axelynx::File file)
 
 	long size = file.Size();
 
-	char buff[SHADER_SOURCE_MAX_SIZE];
+	char buff[SHADER_SOURCE_MAX_SIZE+1];
 	if(size>SHADER_SOURCE_MAX_SIZE)
 		size = SHADER_SOURCE_MAX_SIZE;
 	file.Read(buff,size);

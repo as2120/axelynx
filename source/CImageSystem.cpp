@@ -152,6 +152,7 @@ CImageSystem::CImageSystem(axelynx::Texture *tex, int maximages)
 		glEnableVertexAttribArray(location);
 	}
 
+	delete[] indices;
 	//std::cout<<"RectData size:"<<sizeof(RectData)<<std::endl;
 }
 
