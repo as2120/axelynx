@@ -28,7 +28,7 @@ subject to the following restrictions:
 #include <float.h>
 
 /* SVN $Revision$ on $Date$ from http://bullet.googlecode.com*/
-#define BT_BULLET_VERSION 279
+#define BT_BULLET_VERSION 280
 
 inline int	btGetVersion()
 {
@@ -42,7 +42,7 @@ inline int	btGetVersion()
 
 #ifdef _WIN32
 
-		#if defined(__MINGW32__) || defined(__CYGWIN__) || (defined (_MSC_VER) && _MSC_VER < 1300) || _MSC_VER > 1600
+		#if defined(__MINGW32__) || defined(__CYGWIN__) || (defined (_MSC_VER) && _MSC_VER < 1300)
 
 			#define SIMD_FORCE_INLINE inline
 			#define ATTRIBUTE_ALIGNED16(a) a
@@ -519,4 +519,21 @@ struct btTypedObject
 		return m_objectType;
 	}
 };
+
+
+///align a pointer to the provided alignment, upwards
+template <typename T>T* btAlignPointer(T* unalignedPtr, size_t alignment)
+{
+        union
+        {
+                T* ptr;
+                size_t integer;
+        };
+        const size_t bit_mask = ~(alignment - 1);
+        ptr = unalignedPtr;
+		integer += alignment-1;
+        integer &= bit_mask;
+        return ptr;
+}
+
 #endif //BT_SCALAR_H
