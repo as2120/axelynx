@@ -78,6 +78,8 @@ public:
 	virtual bool Grab(int x, int y);
 
 	virtual void RegenerateMipmaps();
+
+	virtual void SetRepeatMode(axelynx::Texture::RepeatMode repeat_mode);
 };
 
 

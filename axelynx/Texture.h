@@ -7,9 +7,18 @@
 
 namespace axelynx
 {
+
 	class Texture
 	{
 	public:
+		enum RepeatMode
+		{
+			RM_CLAMP_TO_EDGRE
+			,RM_CLAMP_TO_BORDER
+			,RM_REPEAR
+			,RM_MIRROR
+		};
+
 		enum TextureType
 		{
 			TT_1D
@@ -79,6 +88,8 @@ namespace axelynx
 		{
 			return Grab(0,0);
 		}
+
+		virtual void SetRepeatMode(RepeatMode repeat_mode) = 0;
 
 		static AXELYNX_API Texture * Current();
 		virtual ~Texture(){};

@@ -607,3 +607,31 @@ void CTexture::RegenerateMipmaps()
 	glBindTexture(gl_type_,handle_);
 	glGenerateMipmap(gl_type_);
 }
+
+void CTexture::SetRepeatMode(axelynx::Texture::RepeatMode repeat_mode)
+{
+	glBindTexture(gl_type_,handle_);
+
+	GLint gl_repeat_mode = 0;
+
+	switch(repeat_mode)
+	{
+	case RM_CLAMP_TO_EDGRE:
+		gl_repeat_mode = GL_CLAMP_TO_EDGE;
+		break;
+	case RM_CLAMP_TO_BORDER:
+		gl_repeat_mode = GL_CLAMP_TO_BORDER;
+		break;
+	case RM_REPEAR:
+		gl_repeat_mode = GL_REPEAT;
+		break;
+	case RM_MIRROR:
+		gl_repeat_mode = GL_MIRRORED_REPEAT;
+		break;
+	};
+
+
+	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_S, gl_repeat_mode);
+	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_T, gl_repeat_mode); 
+	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_R, gl_repeat_mode); 
+}
