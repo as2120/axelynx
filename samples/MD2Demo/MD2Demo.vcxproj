@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{63F42D79-DEF5-442F-B96B-DC697D6DC144}</ProjectGuid>
+    <ProjectGuid>{3778E053-529F-43B7-BC9D-C14B2B647DE7}</ProjectGuid>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <VCTargetsPath Condition="'$(VCTargetsPath11)' != '' and '$(VSVersion)' == '' and $(VisualStudioVersion) == ''">$(VCTargetsPath11)</VCTargetsPath>
   </PropertyGroup>
@@ -149,14 +149,15 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\media\bump_mapping.fs" />
-    <None Include="..\media\bump_mapping.vs" />
-    <None Include="..\media\lighting.fs" />
-    <None Include="..\media\lighting.vs" />
-    <None Include="..\media\shadowmap.fs" />
-    <None Include="..\media\shadowmap.vs" />
-    <None Include="..\media\texturing.fs" />
-    <None Include="..\media\texturing.vs" />
+    <None Include="..\media\dof.fs" />
+    <None Include="..\media\dof.vs" />
+    <None Include="..\media\fake_dof.fs" />
+    <None Include="..\media\fake_dof.vs" />
+    <None Include="..\media\horizontal_blur.fs" />
+    <None Include="..\media\horizontal_blur.vs" />
+    <None Include="..\media\vertical_blur.fs" />
+    <None Include="..\media\vertical_blur.vs" />
+    <None Include="ClassDiagram1.cd" />
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
