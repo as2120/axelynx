@@ -140,12 +140,6 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\wrappers\axelynxclr\axelynxclr.vcxproj">
-      <Project>{DA6D9F5C-7587-4EC4-A72E-BE5A431AA02B}</Project>
-      <Name>axelynxclr</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
