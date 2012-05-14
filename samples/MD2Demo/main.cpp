@@ -28,7 +28,7 @@ int main()
 		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/solider.pcx",Texture::Desc().Anisotropic(16.0));
 		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/solider.md2");
 
-		//Shader *Shader = StandartShaders::Render::MD2Shader();
+		Shader *shader = StandartShaders::Render::MorfedMeshTexturing();
 
 		const int COUNT_TEAPOTS = 1000;
 
@@ -38,7 +38,7 @@ int main()
 		for(int i=0;i<COUNT_TEAPOTS;++i)
 		{
 			ents[i] = s->Add(mesh);
-			ents[i]->SetShader(StandartShaders::Render::TexturingLighting());
+			ents[i]->SetShader(shader);
 			ents[i]->SetTexture(diffuse);
 			ents[i]->SetPosition(rnd(-128,128),rnd(2,2),rnd(-128,128));
 			ents[i]->SetOrientation(0,rnd(360),0);

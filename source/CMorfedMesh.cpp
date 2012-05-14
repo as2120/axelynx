@@ -101,7 +101,7 @@ bool CMorfedMesh::MakeVBO()
 
 		const int framesize = count_vertices_ * sizeof(axelynx::MorfedMesh::Frame::Vertex);
 
-		glBufferData(GL_ARRAY_BUFFER, count_vertices_ * sizeof(axelynx::MorfedMesh::Frame::Vertex) * count_frames_, gpu, GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, framesize * count_frames_, gpu, GL_STATIC_DRAW);
 
 		glVertexAttribPointer(VA_POSITION, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(0));
 		glEnableVertexAttribArray(VA_POSITION);

@@ -44,6 +44,8 @@ namespace axelynx
 			static AXELYNX_API Shader * VolumetricRendering();
 
 			static AXELYNX_API Shader * Paralax();
+
+			static AXELYNX_API Shader * MorfedMeshTexturing();
 		};
 
 		static AXELYNX_API Shader * FindByName(const char *shadername);
