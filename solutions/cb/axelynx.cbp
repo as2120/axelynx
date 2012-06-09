@@ -3,15 +3,15 @@
 	<FileVersion major="1" minor="6" />
 	<Project>
 		<Option title="axelynx" />
-		<Option platforms="Windows;" />
+		<Option platforms="Windows;Unix;" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
-		<Option virtualFolders="interface\;source\;" />
+		<Option virtualFolders="interface/;source/;" />
 		<Build>
 			<Target title="DebugWin32">
 				<Option platforms="Windows;" />
-				<Option output="..\..\bin\mingw\Win32\Debug\axelynx32_d" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\DebugWin32" />
+				<Option output="../../bin/mingw/Win32/Debug/axelynx32_d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/DebugWin32" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -38,8 +38,8 @@
 			</Target>
 			<Target title="ReleaseWin32">
 				<Option platforms="Windows;" />
-				<Option output="..\..\bin\mingw\Win32\Release\axelynx32" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj\ReleaseWin32" />
+				<Option output="../../bin/mingw/Win32/Release/axelynx32" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/ReleaseWin32" />
 				<Option type="3" />
 				<Option compiler="gcc" />
 				<Option createDefFile="1" />
@@ -72,1526 +72,1580 @@
 					<Add library="user32" />
 				</Linker>
 			</Target>
+			<Target title="DebugLinux32">
+				<Option platforms="Unix;" />
+				<Option output="../../bin/gcc/Linux32/Debug/axelynx32_d" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/DebugLinux32" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-std=c++0x" />
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DLINUX" />
+					<Add option="-D_DEBUG" />
+					<Add option="-DAXELYNX_EXPORTS" />
+					<Add option="-DFT2_BUILD_LIBRARY" />
+					<Add option="-D_LIB" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DUNICODE" />
+				</Compiler>
+			</Target>
+			<Target title="ReleaseLinux32">
+				<Option platforms="Unix;" />
+				<Option output="../../bin/gcc/Linux32/Release/axelynx32" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/ReleaseLinux32" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-march=core2" />
+					<Add option="-fomit-frame-pointer" />
+					<Add option="-fexpensive-optimizations" />
+					<Add option="-Os" />
+					<Add option="-O3" />
+					<Add option="-O2" />
+					<Add option="-O1" />
+					<Add option="-O" />
+					<Add option="-std=c++0x" />
+					<Add option="-Wall" />
+					<Add option="-DLINUX" />
+					<Add option="-DNDEBUG" />
+					<Add option="-DAXELYNX_EXPORTS" />
+					<Add option="-DFT2_BUILD_LIBRARY" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D_LIB" />
+					<Add option="-D_UNICODE" />
+					<Add option="-DUNICODE" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
 		</Build>
 		<Compiler>
 			<Add option="-std=c++0x" />
 			<Add option="-Wfatal-errors" />
-			<Add directory="..\..\" />
-			<Add directory="..\..\source\libs\bullet" />
-			<Add directory="..\..\source\libs\freetype" />
-			<Add directory="..\..\source\libs\ogg" />
-			<Add directory="..\..\source\libs\theora" />
-			<Add directory="..\..\source\libs\libpng" />
-			<Add directory="..\..\source\libs\opencl" />
-			<Add directory="..\..\source\libs\zlib" />
+			<Add directory="../../" />
+			<Add directory="../../source/libs/bullet" />
+			<Add directory="../../source/libs/freetype" />
+			<Add directory="../../source/libs/ogg" />
+			<Add directory="../../source/libs/theora" />
+			<Add directory="../../source/libs/libpng" />
+			<Add directory="../../source/libs/opencl" />
+			<Add directory="../../source/libs/zlib" />
 		</Compiler>
 		<Linker>
-			<Add library="..\..\libs\Win32\OpenCL.lib" />
+			<Add library="../../libs/Win32/OpenCL.lib" />
 			<Add library="libwinmm.a" />
 			<Add library="libopengl32.a" />
 			<Add library="libgdi32.a" />
 		</Linker>
-		<Unit filename="..\..\axelynx\Anim.h" />
-		<Unit filename="..\..\axelynx\AnimEntity.h" />
-		<Unit filename="..\..\axelynx\AnimGeometry.h" />
-		<Unit filename="..\..\axelynx\Animation.h" />
-		<Unit filename="..\..\axelynx\AxelynxSystemShaders.h" />
-		<Unit filename="..\..\axelynx\BSPLevel.h" />
-		<Unit filename="..\..\axelynx\Bone.h" />
-		<Unit filename="..\..\axelynx\Camera.h" />
-		<Unit filename="..\..\axelynx\Canvas.h" />
-		<Unit filename="..\..\axelynx\Drawable.h" />
-		<Unit filename="..\..\axelynx\Engine.h" />
-		<Unit filename="..\..\axelynx\Entity.h" />
-		<Unit filename="..\..\axelynx\File.h" />
-		<Unit filename="..\..\axelynx\Font.h" />
-		<Unit filename="..\..\axelynx\Geometry.h" />
-		<Unit filename="..\..\axelynx\HardwareInfo.h" />
-		<Unit filename="..\..\axelynx\Image.h" />
-		<Unit filename="..\..\axelynx\ImageFormat.h" />
-		<Unit filename="..\..\axelynx\ImageSystem.h" />
-		<Unit filename="..\..\axelynx\Input.h" />
-		<Unit filename="..\..\axelynx\Instance.h" />
-		<Unit filename="..\..\axelynx\InstanceGroup.h" />
-		<Unit filename="..\..\axelynx\Keyboard.h" />
-		<Unit filename="..\..\axelynx\Light.h" />
-		<Unit filename="..\..\axelynx\Logger.h" />
-		<Unit filename="..\..\axelynx\Material.h" />
-		<Unit filename="..\..\axelynx\Mesh.h" />
-		<Unit filename="..\..\axelynx\MorfedMesh.h" />
-		<Unit filename="..\..\axelynx\MorfedMeshFactory.h" />
-		<Unit filename="..\..\axelynx\Mouse.h" />
-		<Unit filename="..\..\axelynx\Pak.h" />
-		<Unit filename="..\..\axelynx\ParticleSystem.h" />
-		<Unit filename="..\..\axelynx\Pivot.h" />
-		<Unit filename="..\..\axelynx\PixMap.h" />
-		<Unit filename="..\..\axelynx\Point3D.h" />
-		<Unit filename="..\..\axelynx\PostEffect.h" />
-		<Unit filename="..\..\axelynx\RaySystem.h" />
-		<Unit filename="..\..\axelynx\RenderTarget.h" />
-		<Unit filename="..\..\axelynx\Scene.h" />
-		<Unit filename="..\..\axelynx\SceneGraph.h" />
-		<Unit filename="..\..\axelynx\Shader.h" />
-		<Unit filename="..\..\axelynx\Shape.h" />
-		<Unit filename="..\..\axelynx\Shell.h" />
-		<Unit filename="..\..\axelynx\Skeleton.h" />
-		<Unit filename="..\..\axelynx\Skin.h" />
-		<Unit filename="..\..\axelynx\SkinAnim.h" />
-		<Unit filename="..\..\axelynx\Sprite.h" />
-		<Unit filename="..\..\axelynx\SpriteSystem.h" />
-		<Unit filename="..\..\axelynx\StandartSurfaces.h" />
-		<Unit filename="..\..\axelynx\Statistics.h" />
-		<Unit filename="..\..\axelynx\Surface.h" />
-		<Unit filename="..\..\axelynx\SystemWindowHandler.h" />
-		<Unit filename="..\..\axelynx\Terrain.h" />
-		<Unit filename="..\..\axelynx\TextCache.h" />
-		<Unit filename="..\..\axelynx\Texture.h" />
-		<Unit filename="..\..\axelynx\Theora.h" />
-		<Unit filename="..\..\axelynx\Timer.h" />
-		<Unit filename="..\..\axelynx\Video.h" />
-		<Unit filename="..\..\axelynx\Window.h" />
-		<Unit filename="..\..\axelynx\axelynx.h" />
-		<Unit filename="..\..\axelynx\axlib.h" />
-		<Unit filename="..\..\axelynx\cwrap.h" />
-		<Unit filename="..\..\axelynx\keystates.h" />
-		<Unit filename="..\..\axelynx\math\axmath.h" />
-		<Unit filename="..\..\axelynx\math\frustum.h" />
-		<Unit filename="..\..\axelynx\math\mat2.h" />
-		<Unit filename="..\..\axelynx\math\mat3.h" />
-		<Unit filename="..\..\axelynx\math\mat3x2.h" />
-		<Unit filename="..\..\axelynx\math\mat4.h" />
-		<Unit filename="..\..\axelynx\math\mat4x3.h" />
-		<Unit filename="..\..\axelynx\math\quat.h" />
-		<Unit filename="..\..\axelynx\math\vec2.h" />
-		<Unit filename="..\..\axelynx\math\vec3.h" />
-		<Unit filename="..\..\axelynx\math\vec4.h" />
-		<Unit filename="..\..\axelynx\math\vectormath.h" />
-		<Unit filename="..\..\axelynx\plane.h" />
-		<Unit filename="..\..\axelynx\utils\axstring.h" />
-		<Unit filename="..\..\source\CAnimEntity.cpp" />
-		<Unit filename="..\..\source\CAnimEntity.h" />
-		<Unit filename="..\..\source\CCamera.cpp" />
-		<Unit filename="..\..\source\CCamera.h" />
-		<Unit filename="..\..\source\CCanvas.cpp" />
-		<Unit filename="..\..\source\CCanvas.h" />
-		<Unit filename="..\..\source\CEarlyZ.cpp" />
-		<Unit filename="..\..\source\CEarlyZ.h" />
-		<Unit filename="..\..\source\CEngine.cpp" />
-		<Unit filename="..\..\source\CEngine.h" />
-		<Unit filename="..\..\source\CEntity.cpp" />
-		<Unit filename="..\..\source\CEntity.h" />
-		<Unit filename="..\..\source\CFile.cpp" />
-		<Unit filename="..\..\source\CFile.h" />
-		<Unit filename="..\..\source\CFont.cpp" />
-		<Unit filename="..\..\source\CFont.h" />
-		<Unit filename="..\..\source\CFreeTypeFont.cpp" />
-		<Unit filename="..\..\source\CFreeTypeFont.h" />
-		<Unit filename="..\..\source\CHGEFont.cpp" />
-		<Unit filename="..\..\source\CHGEFont.h" />
-		<Unit filename="..\..\source\CHardwareInfo.cpp" />
-		<Unit filename="..\..\source\CHardwareInfo.h" />
-		<Unit filename="..\..\source\CImage.cpp" />
-		<Unit filename="..\..\source\CImage.h" />
-		<Unit filename="..\..\source\CImageGS.cpp" />
-		<Unit filename="..\..\source\CImageGS.h" />
-		<Unit filename="..\..\source\CImageSystem.cpp" />
-		<Unit filename="..\..\source\CImageSystem.h" />
-		<Unit filename="..\..\source\CImageSystemGS.cpp" />
-		<Unit filename="..\..\source\CImageSystemGS.h" />
-		<Unit filename="..\..\source\CInstance.cpp" />
-		<Unit filename="..\..\source\CInstance.h" />
-		<Unit filename="..\..\source\CInstanceGroup.cpp" />
-		<Unit filename="..\..\source\CInstanceGroup.h" />
-		<Unit filename="..\..\source\CLight.cpp" />
-		<Unit filename="..\..\source\CLight.h" />
-		<Unit filename="..\..\source\CMD2Factory.cpp" />
-		<Unit filename="..\..\source\CMD2Factory.h" />
-		<Unit filename="..\..\source\CMaterial.cpp" />
-		<Unit filename="..\..\source\CMaterial.h" />
-		<Unit filename="..\..\source\CMorfedMesh.cpp" />
-		<Unit filename="..\..\source\CMorfedMesh.h" />
-		<Unit filename="..\..\source\CMorfedMeshFactory.cpp" />
-		<Unit filename="..\..\source\CMorfedMeshFactory.h" />
-		<Unit filename="..\..\source\CPak.cpp" />
-		<Unit filename="..\..\source\CPak.h" />
-		<Unit filename="..\..\source\CParticleSystem.cpp" />
-		<Unit filename="..\..\source\CParticleSystem.h" />
-		<Unit filename="..\..\source\CPivot.cpp" />
-		<Unit filename="..\..\source\CPivot.h" />
-		<Unit filename="..\..\source\CPixMap.cpp" />
-		<Unit filename="..\..\source\CPixMap.h" />
-		<Unit filename="..\..\source\CPostEffect.cpp" />
-		<Unit filename="..\..\source\CPostEffect.h" />
-		<Unit filename="..\..\source\CRaySystem.cpp" />
-		<Unit filename="..\..\source\CRaySystem.h" />
-		<Unit filename="..\..\source\CRenderTarget.cpp" />
-		<Unit filename="..\..\source\CRenderTarget.h" />
-		<Unit filename="..\..\source\CScene.cpp" />
-		<Unit filename="..\..\source\CScene.h" />
-		<Unit filename="..\..\source\CShader.cpp" />
-		<Unit filename="..\..\source\CShader.h" />
-		<Unit filename="..\..\source\CShadowPass.cpp" />
-		<Unit filename="..\..\source\CShadowPass.h" />
-		<Unit filename="..\..\source\CShape.cpp" />
-		<Unit filename="..\..\source\CShape.h" />
-		<Unit filename="..\..\source\CSprite.cpp" />
-		<Unit filename="..\..\source\CSprite.h" />
-		<Unit filename="..\..\source\CSpriteSystem.cpp" />
-		<Unit filename="..\..\source\CSpriteSystem.h" />
-		<Unit filename="..\..\source\CStatistics.cpp" />
-		<Unit filename="..\..\source\CStatistics.h" />
-		<Unit filename="..\..\source\CSurface.cpp" />
-		<Unit filename="..\..\source\CSurface.h" />
-		<Unit filename="..\..\source\CTextCache.cpp" />
-		<Unit filename="..\..\source\CTextCache.h" />
-		<Unit filename="..\..\source\CTexture.cpp" />
-		<Unit filename="..\..\source\CTexture.h" />
-		<Unit filename="..\..\source\CTheora.cpp" />
-		<Unit filename="..\..\source\CTheora.h" />
-		<Unit filename="..\..\source\CTimer.h" />
-		<Unit filename="..\..\source\CWindowUnix.cpp" />
-		<Unit filename="..\..\source\CWindowUnix.h" />
-		<Unit filename="..\..\source\CWindowWin32.cpp" />
-		<Unit filename="..\..\source\CWindowWin32.h" />
-		<Unit filename="..\..\source\CZipArchive.cpp" />
-		<Unit filename="..\..\source\CZipArchive.h" />
-		<Unit filename="..\..\source\DiskFile.cpp" />
-		<Unit filename="..\..\source\DiskFile.h" />
-		<Unit filename="..\..\source\Engine.cpp" />
-		<Unit filename="..\..\source\File.cpp" />
-		<Unit filename="..\..\source\ImageFormat.cpp" />
-		<Unit filename="..\..\source\Input.cpp" />
-		<Unit filename="..\..\source\Keyboard.cpp" />
-		<Unit filename="..\..\source\Logger.cpp" />
-		<Unit filename="..\..\source\MemoryFile.cpp" />
-		<Unit filename="..\..\source\MemoryFile.h" />
-		<Unit filename="..\..\source\Mouse.cpp" />
-		<Unit filename="..\..\source\Pak.cpp" />
-		<Unit filename="..\..\source\PakFile.cpp" />
-		<Unit filename="..\..\source\PakFile.h" />
-		<Unit filename="..\..\source\RenderContext.cpp" />
-		<Unit filename="..\..\source\RenderContext.h" />
-		<Unit filename="..\..\source\RenderContextInfo.h" />
-		<Unit filename="..\..\source\Shapes.cpp" />
-		<Unit filename="..\..\source\ShellWin32.cpp" />
-		<Unit filename="..\..\source\StandartSceneGraph.cpp" />
-		<Unit filename="..\..\source\StandartSceneGraph.h" />
-		<Unit filename="..\..\source\StreamFile.cpp" />
-		<Unit filename="..\..\source\StreamFile.h" />
-		<Unit filename="..\..\source\Timer.cpp" />
-		<Unit filename="..\..\source\ZippedFile.cpp" />
-		<Unit filename="..\..\source\ZippedFile.h" />
-		<Unit filename="..\..\source\anorms.h" />
-		<Unit filename="..\..\source\axelynx.cpp" />
-		<Unit filename="..\..\source\cwrap.cpp" />
-		<Unit filename="..\..\source\dllmain.cpp" />
-		<Unit filename="..\..\source\gl\_gl.h" />
-		<Unit filename="..\..\source\gl\axext.cpp" />
-		<Unit filename="..\..\source\gl\axext.h" />
-		<Unit filename="..\..\source\gl\axgl.h" />
-		<Unit filename="..\..\source\gl\gl.h" />
-		<Unit filename="..\..\source\gl\gl2.h" />
-		<Unit filename="..\..\source\gl\gl2ext.h" />
-		<Unit filename="..\..\source\gl\gl2platform.h" />
-		<Unit filename="..\..\source\gl\gl3.h" />
-		<Unit filename="..\..\source\gl\glext.h" />
-		<Unit filename="..\..\source\gl\glx.h" />
-		<Unit filename="..\..\source\gl\glxext.h" />
-		<Unit filename="..\..\source\gl\khrplatform.h" />
-		<Unit filename="..\..\source\gl\wglext.h" />
-		<Unit filename="..\..\source\imageformats\BMPImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\BMPImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\DDSImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\DDSImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\DDSTextureLoader.cpp" />
-		<Unit filename="..\..\source\imageformats\JPEGImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\JPEGImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\PCXImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\PCXImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\PNGImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\PNGImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\TGAImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\TGAImageFormat.h" />
-		<Unit filename="..\..\source\imageformats\_7BIImageFormat.cpp" />
-		<Unit filename="..\..\source\imageformats\_7BIImageFormat.h" />
-		<Unit filename="..\..\source\libs\bullet\Bullet-C-Api.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btAxisSweep3.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btBroadphaseProxy.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvt.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDbvtBroadphase.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btDispatcher.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btMultiSapBroadphase.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCache.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btOverlappingPairCallback.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btQuantizedBvh.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\BroadphaseCollision\btSimpleBroadphase.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\SphereTriangleDetector.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btActivatingCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBox2dBox2dCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btBoxBoxDetector.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionConfiguration.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionCreateFunc.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionDispatcher.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionObject.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCollisionWorld.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btCompoundCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvex2dConvex2dAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConcaveCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexConvexAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btConvexPlaneCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btDefaultCollisionConfiguration.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btEmptyCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btGhostObject.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btInternalEdgeUtility.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btManifoldResult.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSimulationIslandManager.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereBoxCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereSphereCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btSphereTriangleCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionDispatch\btUnionFind.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBox2dShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBoxShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btBvhTriangleMeshShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCapsuleShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionMargin.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCollisionShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCompoundShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConcaveShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConeShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvex2dShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexHullShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexInternalShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPointCloudShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexPolyhedron.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btConvexTriangleMeshShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btCylinderShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btEmptyShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btHeightfieldTerrainShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMaterial.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMinkowskiSumShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultiSphereShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btMultimaterialTriangleMeshShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btOptimizedBvh.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btPolyhedralConvexShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btScaledBvhTriangleMeshShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btShapeHull.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btSphereShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStaticPlaneShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btStridingMeshInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTetrahedronShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleBuffer.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleCallback.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexArray.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleIndexVertexMaterialArray.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleInfoMap.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMesh.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleMeshShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btTriangleShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\CollisionShapes\btUniformScalingShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btBoxCollision.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btClipPolygon.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btContactProcessing.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactBvh.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactMassUtil.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactQuantizedBvh.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGImpactShape.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGenericPoolAllocator.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btGeometryOperations.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btQuantization.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\btTriangleShapeEx.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_array.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_basic_geometry_operations.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_bitset.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_collision.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_box_set.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_clip_polygon.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_contact.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geom_types.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_geometry.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_hash_table.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_linear_math.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_math.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_memory.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_radixsort.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\Gimpact\gim_tri_collision.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btContinuousConvexCollision.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexCast.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btConvexPenetrationDepthSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btDiscreteCollisionDetectorInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkConvexCast.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpa2.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkEpaPenetrationDepthSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btGjkPairDetector.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btManifoldPoint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btMinkowskiPenetrationDepthSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPersistentManifold.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPointCollector.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btPolyhedralContactClipping.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btRaycastCallback.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSimplexSolverInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btSubSimplexConvexCast.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletCollision\NarrowPhaseCollision\btVoronoiSimplexSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Character\btCharacterControllerInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Character\btKinematicCharacterController.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConeTwistConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btConstraintSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btContactSolverInfo.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btGeneric6DofSpringConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHinge2Constraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btHingeConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btJacobianEntry.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btPoint2PointConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSequentialImpulseConstraintSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSliderConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolve2LinearConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverBody.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btSolverConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btTypedConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\ConstraintSolver\btUniversalConstraint.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\Bullet-C-API.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btActionInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDiscreteDynamicsWorld.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btDynamicsWorld.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btRigidBody.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Dynamics\btSimpleDynamicsWorld.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Vehicle\btRaycastVehicle.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Vehicle\btVehicleRaycaster.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletDynamics\Vehicle\btWheelInfo.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\CPU\btSoftBodySolverData.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\CPU\btSoftBodySolver_CPU.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverBuffer_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverLinkData_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverLinkData_DX11SIMDAware.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverTriangleData_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverVertexBuffer_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverVertexData_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolver_DX11.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolver_DX11SIMDAware.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\MiniCL\MiniCLTaskWrap.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverBuffer_OpenCL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverLinkData_OpenCLSIMDAware.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverOutputCLtoGL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverTriangleData_OpenCL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexBuffer_OpenGL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverVertexData_OpenCL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCL.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolver_OpenCLSIMDAware.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\HeapManager.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\PlatformDefinitions.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\PosixThreadSupport.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\PpuAddressSpace.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SequentialThreadSupport.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionObjectWrapper.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuCollisionTaskProcess.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuContactManifoldCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuDoubleBuffer.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuFakeDma.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuGatheringCollisionDispatcher.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuLibspe2Support.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\Box.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuCollisionShapes.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuContactResult.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuConvexPenetrationDepthSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuGatheringCollisionTask.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuLocalSupport.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuMinkowskiPenetrationDepthSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\SpuPreferredPenetrationDirections.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuNarrowPhaseCollisionTask\boxBoxDistance.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTaskProcess.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\SpuSync.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\TrbDynBody.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\TrbStateVec.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\Win32ThreadSupport.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphase.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedCode.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedDefs.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpu3DGridBroadphaseSharedTypes.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpuDefines.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedCode.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btGpuUtilsSharedDefs.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btParallelConstraintSolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\btThreadSupportInterface.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletMultiThreaded\vectormath2bullet.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btDefaultSoftBodySolver.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBody.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyConcaveCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyData.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyHelpers.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyInternals.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodyRigidBodyCollisionConfiguration.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolverVertexBuffer.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftBodySolvers.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftRigidDynamicsWorld.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.cpp" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSoftSoftCollisionAlgorithm.h" />
-		<Unit filename="..\..\source\libs\bullet\BulletSoftBody\btSparseSDF.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btAabbUtil2.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btAlignedAllocator.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btAlignedObjectArray.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btConvexHull.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btConvexHull.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btConvexHullComputer.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btDefaultMotionState.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btGeometryUtil.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btGeometryUtil.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btGrahamScan2dConvexHull.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btHashMap.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btIDebugDraw.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btList.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btMatrix3x3.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btMinMax.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btMotionState.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btPoolAllocator.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btQuadWord.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btQuaternion.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btQuickprof.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btQuickprof.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btRandom.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btScalar.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btSerializer.cpp" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btSerializer.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btStackAlloc.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btTransform.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btTransformUtil.h" />
-		<Unit filename="..\..\source\libs\bullet\LinearMath\btVector3.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\MiniCL.cpp" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.cpp" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\MiniCLTaskScheduler.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.cpp" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\MiniCLTask\MiniCLTask.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\cl.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\cl_MiniCL_Defs.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\cl_gl.h" />
-		<Unit filename="..\..\source\libs\bullet\MiniCL\cl_platform.h" />
-		<Unit filename="..\..\source\libs\bullet\btBulletCollisionCommon.h" />
-		<Unit filename="..\..\source\libs\bullet\btBulletDynamicsCommon.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\boolInVec.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\floatInVec.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\mat_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\quat_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\vec_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\scalar\vectormath_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\boolInVec.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\floatInVec.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\mat_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\quat_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\vec_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\vecidx_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\sse\vectormath_aos.h" />
-		<Unit filename="..\..\source\libs\bullet\vectormath\vmInclude.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\config\ftconfig.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\config\ftheader.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\config\ftmodule.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\config\ftoption.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\config\ftstdlib.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\freetype.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftadvanc.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftbbox.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftbdf.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftbitmap.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftbzip2.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftcache.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftchapters.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftcid.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\fterrdef.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\fterrors.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftgasp.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftglyph.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftgxval.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftgzip.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftimage.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftincrem.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftlcdfil.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftlist.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftlzw.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftmac.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftmm.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftmodapi.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftmoderr.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftotval.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftoutln.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftpfr.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftrender.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftsizes.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftsnames.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftstroke.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftsynth.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftsystem.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\fttrigon.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\fttypes.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftwinfnt.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ftxf86.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\autohint.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftcalc.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftdebug.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftdriver.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftgloadr.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftmemory.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftpic.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftrfork.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftserv.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftstream.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\fttrace.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\ftvalid.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\internal.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\pcftypes.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\psaux.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\pshints.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svbdf.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svcid.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svgldict.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svgxval.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svkern.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svmm.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svotval.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svpfr.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svpostnm.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svpscmap.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svpsinfo.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svsfnt.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svttcmap.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svtteng.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svttglyf.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svwinfnt.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\services\svxf86nm.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\sfnt.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\t1types.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\internal\tttypes.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\t1tables.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ttnameid.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\tttables.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\tttags.h" />
-		<Unit filename="..\..\source\libs\freetype\freetype\ttunpat.h" />
-		<Unit filename="..\..\source\libs\freetype\ft2build.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afangles.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afcjk.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afdummy.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\aferrors.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afglobal.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afhints.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afindic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\aflatin.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\aflatin2.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afloader.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afmodule.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\aftypes.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\afwarp.h" />
-		<Unit filename="..\..\source\libs\freetype\src\autofit\autofit.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\basepic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\base\ftbase.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftbase.h" />
-		<Unit filename="..\..\source\libs\freetype\src\base\ftbbox.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftbitmap.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftdebug.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftfstype.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftgasp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftglyph.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftgxval.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftinit.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftlcdfil.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftmm.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftotval.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftpatent.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftpfr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftstroke.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftsynth.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftsystem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\fttype1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftwinfnt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\base\ftxf86.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\bdf\bdf.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\bdf\bdf.h" />
-		<Unit filename="..\..\source\libs\freetype\src\bdf\bdfdrivr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\bdf\bdferror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcache.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftccache.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftccback.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcerror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcglyph.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcimage.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcmanag.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcmru.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cache\ftcsbits.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cff.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffcmap.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffdrivr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cfferrs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffgload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffparse.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cffpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cfftoken.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cff\cfftypes.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\ciderrs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidgload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidparse.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidriver.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\cidtoken.h" />
-		<Unit filename="..\..\source\libs\freetype\src\cid\type1cid.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvalid.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvcommn.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxverror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvfeat.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvmod.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvmort.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gxvalid\gxvmorx.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\ftgzip.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\gzip\infblock.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\infcodes.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\inffixed.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\inftrees.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\infutil.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\zconf.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\zlib.h" />
-		<Unit filename="..\..\source\libs\freetype\src\gzip\zutil.h" />
-		<Unit filename="..\..\source\libs\freetype\src\lzw\ftlzw.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\lzw\ftzopen.h" />
-		<Unit filename="..\..\source\libs\freetype\src\otvalid\otvalid.h" />
-		<Unit filename="..\..\source\libs\freetype\src\otvalid\otvcommn.h" />
-		<Unit filename="..\..\source\libs\freetype\src\otvalid\otverror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\otvalid\otvgpos.h" />
-		<Unit filename="..\..\source\libs\freetype\src\otvalid\otvmod.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcf.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcf.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcfdrivr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcferror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcfread.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pcf\pcfutil.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrcmap.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrdrivr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrerror.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrgload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrsbit.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pfr\pfrtypes.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\afmparse.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\psaux.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\psaux\psauxerr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\psauxmod.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\psconv.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\psobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\t1cmap.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psaux\t1decode.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshalgo.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshglob.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshinter.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshmod.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshnterr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\pshinter\pshrec.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psnames\psmodule.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\psnames\psmodule.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psnames\psnamerr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psnames\pspic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\psnames\pstables.h" />
-		<Unit filename="..\..\source\libs\freetype\src\raster\ftmisc.h" />
-		<Unit filename="..\..\source\libs\freetype\src\raster\ftraster.h" />
-		<Unit filename="..\..\source\libs\freetype\src\raster\ftrend1.h" />
-		<Unit filename="..\..\source\libs\freetype\src\raster\raster.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\raster\rasterrs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\raster\rastpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\sfdriver.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\sferrors.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\sfnt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\sfntpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\sfobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttbdf.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttcmap.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttcmapc.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttkern.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttmtx.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttpost.h" />
-		<Unit filename="..\..\source\libs\freetype\src\sfnt\ttsbit.h" />
-		<Unit filename="..\..\source\libs\freetype\src\smooth\ftgrays.h" />
-		<Unit filename="..\..\source\libs\freetype\src\smooth\ftsmerrs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\smooth\ftsmooth.h" />
-		<Unit filename="..\..\source\libs\freetype\src\smooth\ftspic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\smooth\smooth.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\truetype\truetype.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttdriver.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\tterrors.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttgload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttgxvar.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttinterp.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttobjs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttpic.h" />
-		<Unit filename="..\..\source\libs\freetype\src\truetype\ttpload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1afm.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1driver.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1errors.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1gload.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1load.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1objs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1parse.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\t1tokens.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type1\type1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\type42\t42drivr.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type42\t42error.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type42\t42objs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type42\t42parse.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type42\t42types.h" />
-		<Unit filename="..\..\source\libs\freetype\src\type42\type42.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\winfonts\fnterrs.h" />
-		<Unit filename="..\..\source\libs\freetype\src\winfonts\winfnt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\freetype\src\winfonts\winfnt.h" />
-		<Unit filename="..\..\source\libs\jpeg\JCHUFF.H" />
-		<Unit filename="..\..\source\libs\jpeg\JDCT.H" />
-		<Unit filename="..\..\source\libs\jpeg\JDHUFF.H" />
-		<Unit filename="..\..\source\libs\jpeg\JERROR.H" />
-		<Unit filename="..\..\source\libs\jpeg\JINCLUDE.H" />
-		<Unit filename="..\..\source\libs\jpeg\JMEMSYS.H" />
-		<Unit filename="..\..\source\libs\jpeg\TRANSUPP.H" />
-		<Unit filename="..\..\source\libs\jpeg\cderror.h" />
-		<Unit filename="..\..\source\libs\jpeg\cdjpeg.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\cdjpeg.h" />
-		<Unit filename="..\..\source\libs\jpeg\jaricom.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcapimin.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcapistd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcarith.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jccoefct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jccolor.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcdctmgr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jchuff.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcinit.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcmainct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcmarker.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcmaster.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcomapi.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jconfig.h" />
-		<Unit filename="..\..\source\libs\jpeg\jcparam.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcprepct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jcsample.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jctrans.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdapimin.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdapistd.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdarith.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdatadst.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdatasrc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdcoefct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdcolor.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jddctmgr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdhuff.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdinput.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdmainct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdmarker.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdmaster.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdmerge.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdpostct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdsample.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jdtrans.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jerror.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jfdctflt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jfdctfst.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jfdctint.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jidctflt.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jidctfst.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jidctint.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jmemmgr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jmemnobs.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jmorecfg.h" />
-		<Unit filename="..\..\source\libs\jpeg\jpeginit.h" />
-		<Unit filename="..\..\source\libs\jpeg\jpegint.h" />
-		<Unit filename="..\..\source\libs\jpeg\jpeglib.h" />
-		<Unit filename="..\..\source\libs\jpeg\jpegtran.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jquant1.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jquant2.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jutils.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\jversion.h" />
-		<Unit filename="..\..\source\libs\jpeg\rdbmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdcolmap.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdgif.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdppm.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdrle.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdswitch.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\rdtarga.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\transupp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\wrbmp.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\wrgif.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\wrppm.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\wrrle.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\jpeg\wrtarga.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\png.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\png.h" />
-		<Unit filename="..\..\source\libs\libpng\pngasmrd.h" />
-		<Unit filename="..\..\source\libs\libpng\pngconf.h" />
-		<Unit filename="..\..\source\libs\libpng\pngdebug.h" />
-		<Unit filename="..\..\source\libs\libpng\pngerror.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngerror.h" />
-		<Unit filename="..\..\source\libs\libpng\pngget.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pnginfo.h" />
-		<Unit filename="..\..\source\libs\libpng\pnglibconf.h" />
-		<Unit filename="..\..\source\libs\libpng\pngmem.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngpread.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngpriv.h" />
-		<Unit filename="..\..\source\libs\libpng\pngread.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngrio.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngrtran.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngrutil.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngset.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngstruct.h" />
-		<Unit filename="..\..\source\libs\libpng\pngtrans.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngwio.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngwrite.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngwtran.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\libpng\pngwutil.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\ogg\bitwise.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\ogg\framing.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\ogg\ogg\ogg.h" />
-		<Unit filename="..\..\source\libs\ogg\ogg\os_types.h" />
-		<Unit filename="..\..\source\libs\openal\EFX-Util.h" />
-		<Unit filename="..\..\source\libs\openal\al.h" />
-		<Unit filename="..\..\source\libs\openal\alc.h" />
-		<Unit filename="..\..\source\libs\openal\efx-creative.h" />
-		<Unit filename="..\..\source\libs\openal\efx.h" />
-		<Unit filename="..\..\source\libs\openal\xram.h" />
-		<Unit filename="..\..\source\libs\opencl\CL\cl.h" />
-		<Unit filename="..\..\source\libs\opencl\CL\cl_ext.h" />
-		<Unit filename="..\..\source\libs\opencl\CL\cl_gl.h" />
-		<Unit filename="..\..\source\libs\opencl\CL\cl_gl_ext.h" />
-		<Unit filename="..\..\source\libs\opencl\CL\cl_platform.h" />
-		<Unit filename="..\..\source\libs\opencl\opencl.h" />
-		<Unit filename="..\..\source\libs\theora\source\analyze.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\apiwrapper.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\apiwrapper.h" />
-		<Unit filename="..\..\source\libs\theora\source\bitpack.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\bitpack.h" />
-		<Unit filename="..\..\source\libs\theora\source\cpu.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\cpu.h" />
-		<Unit filename="..\..\source\libs\theora\source\dct.h" />
-		<Unit filename="..\..\source\libs\theora\source\decapiwrapper.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\decinfo.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\decint.h" />
-		<Unit filename="..\..\source\libs\theora\source\decode.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\dequant.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\dequant.h" />
-		<Unit filename="..\..\source\libs\theora\source\encapiwrapper.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\encfrag.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\encinfo.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\encint.h" />
-		<Unit filename="..\..\source\libs\theora\source\encode.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\enquant.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\enquant.h" />
-		<Unit filename="..\..\source\libs\theora\source\fdct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\fragment.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\huffdec.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\huffdec.h" />
-		<Unit filename="..\..\source\libs\theora\source\huffenc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\huffenc.h" />
-		<Unit filename="..\..\source\libs\theora\source\huffman.h" />
-		<Unit filename="..\..\source\libs\theora\source\idct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\info.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\internal.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\internal.h" />
-		<Unit filename="..\..\source\libs\theora\source\mathops.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\mathops.h" />
-		<Unit filename="..\..\source\libs\theora\source\mcenc.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\modedec.h" />
-		<Unit filename="..\..\source\libs\theora\source\ocintrin.h" />
-		<Unit filename="..\..\source\libs\theora\source\quant.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\quant.h" />
-		<Unit filename="..\..\source\libs\theora\source\rate.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\state.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\state.h" />
-		<Unit filename="..\..\source\libs\theora\source\tokenize.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxencfrag.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxfdct.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxfrag.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxfrag.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxidct.c">
+		<Unit filename="../../axelynx/Anim.h" />
+		<Unit filename="../../axelynx/AnimEntity.h" />
+		<Unit filename="../../axelynx/AnimGeometry.h" />
+		<Unit filename="../../axelynx/Animation.h" />
+		<Unit filename="../../axelynx/AxelynxSystemShaders.h" />
+		<Unit filename="../../axelynx/BSPLevel.h" />
+		<Unit filename="../../axelynx/Bone.h" />
+		<Unit filename="../../axelynx/Camera.h" />
+		<Unit filename="../../axelynx/Canvas.h" />
+		<Unit filename="../../axelynx/Drawable.h" />
+		<Unit filename="../../axelynx/Engine.h" />
+		<Unit filename="../../axelynx/Entity.h" />
+		<Unit filename="../../axelynx/File.h" />
+		<Unit filename="../../axelynx/Font.h" />
+		<Unit filename="../../axelynx/Geometry.h" />
+		<Unit filename="../../axelynx/HardwareInfo.h" />
+		<Unit filename="../../axelynx/Image.h" />
+		<Unit filename="../../axelynx/ImageFormat.h" />
+		<Unit filename="../../axelynx/ImageSystem.h" />
+		<Unit filename="../../axelynx/Input.h" />
+		<Unit filename="../../axelynx/Instance.h" />
+		<Unit filename="../../axelynx/InstanceGroup.h" />
+		<Unit filename="../../axelynx/Keyboard.h" />
+		<Unit filename="../../axelynx/Light.h" />
+		<Unit filename="../../axelynx/Logger.h" />
+		<Unit filename="../../axelynx/Material.h" />
+		<Unit filename="../../axelynx/Mesh.h" />
+		<Unit filename="../../axelynx/MorfedMesh.h" />
+		<Unit filename="../../axelynx/MorfedMeshFactory.h" />
+		<Unit filename="../../axelynx/Mouse.h" />
+		<Unit filename="../../axelynx/Pak.h" />
+		<Unit filename="../../axelynx/ParticleSystem.h" />
+		<Unit filename="../../axelynx/Pivot.h" />
+		<Unit filename="../../axelynx/PixMap.h" />
+		<Unit filename="../../axelynx/Point3D.h" />
+		<Unit filename="../../axelynx/PostEffect.h" />
+		<Unit filename="../../axelynx/RaySystem.h" />
+		<Unit filename="../../axelynx/RenderTarget.h" />
+		<Unit filename="../../axelynx/Scene.h" />
+		<Unit filename="../../axelynx/SceneGraph.h" />
+		<Unit filename="../../axelynx/Shader.h" />
+		<Unit filename="../../axelynx/Shape.h" />
+		<Unit filename="../../axelynx/Shell.h" />
+		<Unit filename="../../axelynx/Skeleton.h" />
+		<Unit filename="../../axelynx/Skin.h" />
+		<Unit filename="../../axelynx/SkinAnim.h" />
+		<Unit filename="../../axelynx/Sprite.h" />
+		<Unit filename="../../axelynx/SpriteSystem.h" />
+		<Unit filename="../../axelynx/StandartSurfaces.h" />
+		<Unit filename="../../axelynx/Statistics.h" />
+		<Unit filename="../../axelynx/Surface.h" />
+		<Unit filename="../../axelynx/SystemWindowHandler.h" />
+		<Unit filename="../../axelynx/Terrain.h" />
+		<Unit filename="../../axelynx/TextCache.h" />
+		<Unit filename="../../axelynx/Texture.h" />
+		<Unit filename="../../axelynx/Theora.h" />
+		<Unit filename="../../axelynx/Timer.h" />
+		<Unit filename="../../axelynx/Video.h" />
+		<Unit filename="../../axelynx/Window.h" />
+		<Unit filename="../../axelynx/axelynx.h" />
+		<Unit filename="../../axelynx/axlib.h" />
+		<Unit filename="../../axelynx/cwrap.h" />
+		<Unit filename="../../axelynx/keystates.h" />
+		<Unit filename="../../axelynx/math/axmath.h" />
+		<Unit filename="../../axelynx/math/frustum.h" />
+		<Unit filename="../../axelynx/math/mat2.h" />
+		<Unit filename="../../axelynx/math/mat3.h" />
+		<Unit filename="../../axelynx/math/mat3x2.h" />
+		<Unit filename="../../axelynx/math/mat4.h" />
+		<Unit filename="../../axelynx/math/mat4x3.h" />
+		<Unit filename="../../axelynx/math/quat.h" />
+		<Unit filename="../../axelynx/math/vec2.h" />
+		<Unit filename="../../axelynx/math/vec3.h" />
+		<Unit filename="../../axelynx/math/vec4.h" />
+		<Unit filename="../../axelynx/math/vectormath.h" />
+		<Unit filename="../../axelynx/plane.h" />
+		<Unit filename="../../axelynx/utils/axstring.h" />
+		<Unit filename="../../source/CAnimEntity.cpp" />
+		<Unit filename="../../source/CAnimEntity.h" />
+		<Unit filename="../../source/CCamera.cpp" />
+		<Unit filename="../../source/CCamera.h" />
+		<Unit filename="../../source/CCanvas.cpp" />
+		<Unit filename="../../source/CCanvas.h" />
+		<Unit filename="../../source/CEarlyZ.cpp" />
+		<Unit filename="../../source/CEarlyZ.h" />
+		<Unit filename="../../source/CEngine.cpp" />
+		<Unit filename="../../source/CEngine.h" />
+		<Unit filename="../../source/CEntity.cpp" />
+		<Unit filename="../../source/CEntity.h" />
+		<Unit filename="../../source/CFile.cpp" />
+		<Unit filename="../../source/CFile.h" />
+		<Unit filename="../../source/CFont.cpp" />
+		<Unit filename="../../source/CFont.h" />
+		<Unit filename="../../source/CFreeTypeFont.cpp" />
+		<Unit filename="../../source/CFreeTypeFont.h" />
+		<Unit filename="../../source/CHGEFont.cpp" />
+		<Unit filename="../../source/CHGEFont.h" />
+		<Unit filename="../../source/CHardwareInfo.cpp" />
+		<Unit filename="../../source/CHardwareInfo.h" />
+		<Unit filename="../../source/CImage.cpp" />
+		<Unit filename="../../source/CImage.h" />
+		<Unit filename="../../source/CImageGS.cpp" />
+		<Unit filename="../../source/CImageGS.h" />
+		<Unit filename="../../source/CImageSystem.cpp" />
+		<Unit filename="../../source/CImageSystem.h" />
+		<Unit filename="../../source/CImageSystemGS.cpp" />
+		<Unit filename="../../source/CImageSystemGS.h" />
+		<Unit filename="../../source/CInstance.cpp" />
+		<Unit filename="../../source/CInstance.h" />
+		<Unit filename="../../source/CInstanceGroup.cpp" />
+		<Unit filename="../../source/CInstanceGroup.h" />
+		<Unit filename="../../source/CLight.cpp" />
+		<Unit filename="../../source/CLight.h" />
+		<Unit filename="../../source/CMD2Factory.cpp" />
+		<Unit filename="../../source/CMD2Factory.h" />
+		<Unit filename="../../source/CMaterial.cpp" />
+		<Unit filename="../../source/CMaterial.h" />
+		<Unit filename="../../source/CMorfedMesh.cpp" />
+		<Unit filename="../../source/CMorfedMesh.h" />
+		<Unit filename="../../source/CMorfedMeshFactory.cpp" />
+		<Unit filename="../../source/CMorfedMeshFactory.h" />
+		<Unit filename="../../source/CPak.cpp" />
+		<Unit filename="../../source/CPak.h" />
+		<Unit filename="../../source/CParticleSystem.cpp" />
+		<Unit filename="../../source/CParticleSystem.h" />
+		<Unit filename="../../source/CPivot.cpp" />
+		<Unit filename="../../source/CPivot.h" />
+		<Unit filename="../../source/CPixMap.cpp" />
+		<Unit filename="../../source/CPixMap.h" />
+		<Unit filename="../../source/CPostEffect.cpp" />
+		<Unit filename="../../source/CPostEffect.h" />
+		<Unit filename="../../source/CRaySystem.cpp" />
+		<Unit filename="../../source/CRaySystem.h" />
+		<Unit filename="../../source/CRenderTarget.cpp" />
+		<Unit filename="../../source/CRenderTarget.h" />
+		<Unit filename="../../source/CScene.cpp" />
+		<Unit filename="../../source/CScene.h" />
+		<Unit filename="../../source/CShader.cpp" />
+		<Unit filename="../../source/CShader.h" />
+		<Unit filename="../../source/CShadowPass.cpp" />
+		<Unit filename="../../source/CShadowPass.h" />
+		<Unit filename="../../source/CShape.cpp" />
+		<Unit filename="../../source/CShape.h" />
+		<Unit filename="../../source/CSprite.cpp" />
+		<Unit filename="../../source/CSprite.h" />
+		<Unit filename="../../source/CSpriteSystem.cpp" />
+		<Unit filename="../../source/CSpriteSystem.h" />
+		<Unit filename="../../source/CStatistics.cpp" />
+		<Unit filename="../../source/CStatistics.h" />
+		<Unit filename="../../source/CSurface.cpp" />
+		<Unit filename="../../source/CSurface.h" />
+		<Unit filename="../../source/CTextCache.cpp" />
+		<Unit filename="../../source/CTextCache.h" />
+		<Unit filename="../../source/CTexture.cpp" />
+		<Unit filename="../../source/CTexture.h" />
+		<Unit filename="../../source/CTheora.cpp" />
+		<Unit filename="../../source/CTheora.h" />
+		<Unit filename="../../source/CTimer.h" />
+		<Unit filename="../../source/CWindowUnix.cpp" />
+		<Unit filename="../../source/CWindowUnix.h" />
+		<Unit filename="../../source/CWindowWin32.cpp" />
+		<Unit filename="../../source/CWindowWin32.h" />
+		<Unit filename="../../source/CZipArchive.cpp" />
+		<Unit filename="../../source/CZipArchive.h" />
+		<Unit filename="../../source/DiskFile.cpp" />
+		<Unit filename="../../source/DiskFile.h" />
+		<Unit filename="../../source/Engine.cpp" />
+		<Unit filename="../../source/File.cpp" />
+		<Unit filename="../../source/ImageFormat.cpp" />
+		<Unit filename="../../source/Input.cpp" />
+		<Unit filename="../../source/Keyboard.cpp" />
+		<Unit filename="../../source/Logger.cpp" />
+		<Unit filename="../../source/MemoryFile.cpp" />
+		<Unit filename="../../source/MemoryFile.h" />
+		<Unit filename="../../source/Mouse.cpp" />
+		<Unit filename="../../source/Pak.cpp" />
+		<Unit filename="../../source/PakFile.cpp" />
+		<Unit filename="../../source/PakFile.h" />
+		<Unit filename="../../source/RenderContext.cpp" />
+		<Unit filename="../../source/RenderContext.h" />
+		<Unit filename="../../source/RenderContextInfo.h" />
+		<Unit filename="../../source/Shapes.cpp" />
+		<Unit filename="../../source/ShellWin32.cpp" />
+		<Unit filename="../../source/StandartSceneGraph.cpp" />
+		<Unit filename="../../source/StandartSceneGraph.h" />
+		<Unit filename="../../source/StreamFile.cpp" />
+		<Unit filename="../../source/StreamFile.h" />
+		<Unit filename="../../source/Timer.cpp" />
+		<Unit filename="../../source/ZippedFile.cpp" />
+		<Unit filename="../../source/ZippedFile.h" />
+		<Unit filename="../../source/anorms.h" />
+		<Unit filename="../../source/axelynx.cpp" />
+		<Unit filename="../../source/cwrap.cpp" />
+		<Unit filename="../../source/dllmain.cpp" />
+		<Unit filename="../../source/gl/_gl.h" />
+		<Unit filename="../../source/gl/axext.cpp" />
+		<Unit filename="../../source/gl/axext.h" />
+		<Unit filename="../../source/gl/axgl.h" />
+		<Unit filename="../../source/gl/gl.h" />
+		<Unit filename="../../source/gl/gl2.h" />
+		<Unit filename="../../source/gl/gl2ext.h" />
+		<Unit filename="../../source/gl/gl2platform.h" />
+		<Unit filename="../../source/gl/gl3.h" />
+		<Unit filename="../../source/gl/glext.h" />
+		<Unit filename="../../source/gl/glx.h" />
+		<Unit filename="../../source/gl/glxext.h" />
+		<Unit filename="../../source/gl/khrplatform.h" />
+		<Unit filename="../../source/gl/wglext.h" />
+		<Unit filename="../../source/imageformats/BMPImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/BMPImageFormat.h" />
+		<Unit filename="../../source/imageformats/DDSImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/DDSImageFormat.h" />
+		<Unit filename="../../source/imageformats/DDSTextureLoader.cpp" />
+		<Unit filename="../../source/imageformats/JPEGImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/JPEGImageFormat.h" />
+		<Unit filename="../../source/imageformats/PCXImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/PCXImageFormat.h" />
+		<Unit filename="../../source/imageformats/PNGImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/PNGImageFormat.h" />
+		<Unit filename="../../source/imageformats/TGAImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/TGAImageFormat.h" />
+		<Unit filename="../../source/imageformats/_7BIImageFormat.cpp" />
+		<Unit filename="../../source/imageformats/_7BIImageFormat.h" />
+		<Unit filename="../../source/libs/bullet/Bullet-C-Api.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btAxisSweep3.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btBroadphaseInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btBroadphaseProxy.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDbvt.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDbvt.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDbvtBroadphase.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDispatcher.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btDispatcher.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btMultiSapBroadphase.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCache.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btQuantizedBvh.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/BroadphaseCollision/btSimpleBroadphase.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/SphereTriangleDetector.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/SphereTriangleDetector.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBox2dBox2dCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBoxBoxCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBoxBoxDetector.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btBoxBoxDetector.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionConfiguration.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionCreateFunc.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionDispatcher.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionObject.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionObject.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCollisionWorld.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btCompoundCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvex2dConvex2dAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexConcaveCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexConvexAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btConvexPlaneCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btDefaultCollisionConfiguration.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btEmptyCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btGhostObject.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btGhostObject.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btInternalEdgeUtility.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btInternalEdgeUtility.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btManifoldResult.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btManifoldResult.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSimulationIslandManager.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSimulationIslandManager.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereBoxCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereSphereCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btSphereTriangleCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btUnionFind.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionDispatch/btUnionFind.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBox2dShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBox2dShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBoxShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBoxShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCapsuleShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCapsuleShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCollisionMargin.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCollisionShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCollisionShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCompoundShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCompoundShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConcaveShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConcaveShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConeShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConeShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvex2dShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvex2dShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexHullShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexHullShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexInternalShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexInternalShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexPointCloudShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexPointCloudShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexPolyhedron.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btConvexTriangleMeshShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCylinderShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btCylinderShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btEmptyShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btEmptyShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btHeightfieldTerrainShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMaterial.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMinkowskiSumShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMinkowskiSumShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMultiSphereShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMultiSphereShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btMultimaterialTriangleMeshShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btOptimizedBvh.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btOptimizedBvh.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btPolyhedralConvexShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btScaledBvhTriangleMeshShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btShapeHull.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btShapeHull.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btSphereShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btSphereShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btStaticPlaneShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btStridingMeshInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTetrahedronShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTetrahedronShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleBuffer.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleBuffer.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleCallback.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleCallback.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexArray.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleIndexVertexMaterialArray.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleInfoMap.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleMesh.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleMesh.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleMeshShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btTriangleShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btUniformScalingShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/CollisionShapes/btUniformScalingShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btBoxCollision.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btClipPolygon.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btContactProcessing.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btContactProcessing.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactBvh.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactBvh.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactMassUtil.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactQuantizedBvh.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactQuantizedBvh.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactShape.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGImpactShape.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGenericPoolAllocator.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btGeometryOperations.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btQuantization.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btTriangleShapeEx.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/btTriangleShapeEx.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_array.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_basic_geometry_operations.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_bitset.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_box_collision.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_box_set.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_box_set.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_clip_polygon.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_contact.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_contact.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_geom_types.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_geometry.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_hash_table.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_linear_math.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_math.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_memory.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_memory.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_radixsort.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_tri_collision.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/Gimpact/gim_tri_collision.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btContinuousConvexCollision.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btConvexCast.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btConvexCast.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btConvexPenetrationDepthSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btDiscreteCollisionDetectorInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkConvexCast.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpa2.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpa2.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkEpaPenetrationDepthSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btManifoldPoint.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btMinkowskiPenetrationDepthSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btPersistentManifold.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btPointCollector.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btPolyhedralContactClipping.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btRaycastCallback.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btRaycastCallback.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btSubSimplexConvexCast.h" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletCollision/NarrowPhaseCollision/btVoronoiSimplexSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Character/btCharacterControllerInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Character/btKinematicCharacterController.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Character/btKinematicCharacterController.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btConeTwistConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btConstraintSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btContactConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btContactConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btContactSolverInfo.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btGeneric6DofSpringConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btHinge2Constraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btHingeConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btJacobianEntry.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btPoint2PointConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSliderConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSolve2LinearConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSolverBody.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btSolverConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btTypedConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/ConstraintSolver/btUniversalConstraint.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/Bullet-C-API.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btActionInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btDynamicsWorld.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btRigidBody.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btRigidBody.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Dynamics/btSimpleDynamicsWorld.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Vehicle/btRaycastVehicle.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Vehicle/btRaycastVehicle.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Vehicle/btVehicleRaycaster.h" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Vehicle/btWheelInfo.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletDynamics/Vehicle/btWheelInfo.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/CPU/btSoftBodySolverData.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/CPU/btSoftBodySolver_CPU.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverBuffer_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverLinkData_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverLinkData_DX11SIMDAware.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverTriangleData_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverVertexBuffer_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverVertexData_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolver_DX11.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolver_DX11SIMDAware.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/MiniCL/MiniCLTaskWrap.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverBuffer_OpenCL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverLinkData_OpenCL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverLinkData_OpenCLSIMDAware.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverOutputCLtoGL.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverOutputCLtoGL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverTriangleData_OpenCL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexBuffer_OpenGL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverVertexData_OpenCL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCL.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolver_OpenCLSIMDAware.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/HeapManager.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/PlatformDefinitions.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/PosixThreadSupport.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/PosixThreadSupport.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/PpuAddressSpace.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SequentialThreadSupport.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SequentialThreadSupport.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuCollisionObjectWrapper.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuCollisionObjectWrapper.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuCollisionTaskProcess.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuCollisionTaskProcess.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuContactManifoldCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuContactManifoldCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuDoubleBuffer.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuFakeDma.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuFakeDma.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuGatheringCollisionDispatcher.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuGatheringCollisionDispatcher.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuLibspe2Support.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuLibspe2Support.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/Box.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuCollisionShapes.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuContactResult.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuContactResult.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuConvexPenetrationDepthSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuGatheringCollisionTask.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuGatheringCollisionTask.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuLocalSupport.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuMinkowskiPenetrationDepthSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuMinkowskiPenetrationDepthSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/SpuPreferredPenetrationDirections.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuNarrowPhaseCollisionTask/boxBoxDistance.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuSampleTask/SpuSampleTask.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuSampleTask/SpuSampleTask.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuSampleTaskProcess.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuSampleTaskProcess.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/SpuSync.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/TrbDynBody.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/TrbStateVec.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/Win32ThreadSupport.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/Win32ThreadSupport.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpu3DGridBroadphase.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpu3DGridBroadphase.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedCode.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedDefs.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpu3DGridBroadphaseSharedTypes.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpuDefines.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpuUtilsSharedCode.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btGpuUtilsSharedDefs.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btParallelConstraintSolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btParallelConstraintSolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btThreadSupportInterface.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/btThreadSupportInterface.h" />
+		<Unit filename="../../source/libs/bullet/BulletMultiThreaded/vectormath2bullet.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btDefaultSoftBodySolver.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btDefaultSoftBodySolver.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBody.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBody.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyConcaveCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyData.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyHelpers.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyHelpers.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyInternals.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodyRigidBodyCollisionConfiguration.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodySolverVertexBuffer.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftBodySolvers.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftRigidCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftRigidCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftRigidDynamicsWorld.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftRigidDynamicsWorld.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftSoftCollisionAlgorithm.cpp" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSoftSoftCollisionAlgorithm.h" />
+		<Unit filename="../../source/libs/bullet/BulletSoftBody/btSparseSDF.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btAabbUtil2.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btAlignedAllocator.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btAlignedAllocator.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btAlignedObjectArray.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btConvexHull.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btConvexHull.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btConvexHullComputer.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btConvexHullComputer.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btDefaultMotionState.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btGeometryUtil.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btGeometryUtil.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btGrahamScan2dConvexHull.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btHashMap.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btIDebugDraw.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btList.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btMatrix3x3.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btMinMax.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btMotionState.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btPoolAllocator.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btQuadWord.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btQuaternion.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btQuickprof.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btQuickprof.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btRandom.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btScalar.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btSerializer.cpp" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btSerializer.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btStackAlloc.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btTransform.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btTransformUtil.h" />
+		<Unit filename="../../source/libs/bullet/LinearMath/btVector3.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/MiniCL.cpp" />
+		<Unit filename="../../source/libs/bullet/MiniCL/MiniCLTask/MiniCLTask.cpp" />
+		<Unit filename="../../source/libs/bullet/MiniCL/MiniCLTask/MiniCLTask.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/MiniCLTaskScheduler.cpp" />
+		<Unit filename="../../source/libs/bullet/MiniCL/MiniCLTaskScheduler.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/cl.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/cl_MiniCL_Defs.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/cl_gl.h" />
+		<Unit filename="../../source/libs/bullet/MiniCL/cl_platform.h" />
+		<Unit filename="../../source/libs/bullet/btBulletCollisionCommon.h" />
+		<Unit filename="../../source/libs/bullet/btBulletDynamicsCommon.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/boolInVec.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/floatInVec.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/mat_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/quat_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/vec_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/scalar/vectormath_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/boolInVec.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/floatInVec.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/mat_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/quat_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/vec_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/vecidx_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/sse/vectormath_aos.h" />
+		<Unit filename="../../source/libs/bullet/vectormath/vmInclude.h" />
+		<Unit filename="../../source/libs/freetype/freetype/config/ftconfig.h" />
+		<Unit filename="../../source/libs/freetype/freetype/config/ftheader.h" />
+		<Unit filename="../../source/libs/freetype/freetype/config/ftmodule.h" />
+		<Unit filename="../../source/libs/freetype/freetype/config/ftoption.h" />
+		<Unit filename="../../source/libs/freetype/freetype/config/ftstdlib.h" />
+		<Unit filename="../../source/libs/freetype/freetype/freetype.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftadvanc.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftbbox.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftbdf.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftbitmap.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftbzip2.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftcache.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftchapters.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftcid.h" />
+		<Unit filename="../../source/libs/freetype/freetype/fterrdef.h" />
+		<Unit filename="../../source/libs/freetype/freetype/fterrors.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftgasp.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftglyph.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftgxval.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftgzip.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftimage.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftincrem.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftlcdfil.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftlist.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftlzw.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftmac.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftmm.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftmodapi.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftmoderr.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftotval.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftoutln.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftpfr.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftrender.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftsizes.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftsnames.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftstroke.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftsynth.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftsystem.h" />
+		<Unit filename="../../source/libs/freetype/freetype/fttrigon.h" />
+		<Unit filename="../../source/libs/freetype/freetype/fttypes.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftwinfnt.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ftxf86.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/autohint.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftcalc.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftdebug.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftdriver.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftgloadr.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftmemory.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftobjs.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftpic.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftrfork.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftserv.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftstream.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/fttrace.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/ftvalid.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/internal.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/pcftypes.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/psaux.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/pshints.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svbdf.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svcid.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svgldict.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svgxval.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svkern.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svmm.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svotval.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svpfr.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svpostnm.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svpscmap.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svpsinfo.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svsfnt.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svttcmap.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svtteng.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svttglyf.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svwinfnt.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/services/svxf86nm.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/sfnt.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/t1types.h" />
+		<Unit filename="../../source/libs/freetype/freetype/internal/tttypes.h" />
+		<Unit filename="../../source/libs/freetype/freetype/t1tables.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ttnameid.h" />
+		<Unit filename="../../source/libs/freetype/freetype/tttables.h" />
+		<Unit filename="../../source/libs/freetype/freetype/tttags.h" />
+		<Unit filename="../../source/libs/freetype/freetype/ttunpat.h" />
+		<Unit filename="../../source/libs/freetype/ft2build.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afangles.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afcjk.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afdummy.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/aferrors.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afglobal.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afhints.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afindic.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/aflatin.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/aflatin2.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afloader.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afmodule.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afpic.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/aftypes.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/afwarp.h" />
+		<Unit filename="../../source/libs/freetype/src/autofit/autofit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/basepic.h" />
+		<Unit filename="../../source/libs/freetype/src/base/ftbase.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftbase.h" />
+		<Unit filename="../../source/libs/freetype/src/base/ftbbox.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftbitmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftdebug.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftfstype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftgasp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftglyph.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftgxval.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftinit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftlcdfil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftmm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftotval.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftpatent.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftpfr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftstroke.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftsynth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftsystem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/fttype1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftwinfnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/base/ftxf86.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/bdf/bdf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/bdf/bdf.h" />
+		<Unit filename="../../source/libs/freetype/src/bdf/bdfdrivr.h" />
+		<Unit filename="../../source/libs/freetype/src/bdf/bdferror.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcache.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/cache/ftccache.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftccback.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcerror.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcglyph.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcimage.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcmanag.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcmru.h" />
+		<Unit filename="../../source/libs/freetype/src/cache/ftcsbits.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/cff/cffcmap.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffdrivr.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cfferrs.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffgload.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffload.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffparse.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cffpic.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cfftoken.h" />
+		<Unit filename="../../source/libs/freetype/src/cff/cfftypes.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/ciderrs.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidgload.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidload.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidparse.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidriver.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/cidtoken.h" />
+		<Unit filename="../../source/libs/freetype/src/cid/type1cid.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvalid.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvcommn.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxverror.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvfeat.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvmod.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvmort.h" />
+		<Unit filename="../../source/libs/freetype/src/gxvalid/gxvmorx.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/ftgzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/gzip/infblock.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/infcodes.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/inffixed.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/inftrees.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/infutil.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/zconf.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/zlib.h" />
+		<Unit filename="../../source/libs/freetype/src/gzip/zutil.h" />
+		<Unit filename="../../source/libs/freetype/src/lzw/ftlzw.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/lzw/ftzopen.h" />
+		<Unit filename="../../source/libs/freetype/src/otvalid/otvalid.h" />
+		<Unit filename="../../source/libs/freetype/src/otvalid/otvcommn.h" />
+		<Unit filename="../../source/libs/freetype/src/otvalid/otverror.h" />
+		<Unit filename="../../source/libs/freetype/src/otvalid/otvgpos.h" />
+		<Unit filename="../../source/libs/freetype/src/otvalid/otvmod.h" />
+		<Unit filename="../../source/libs/freetype/src/pcf/pcf.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/pcf/pcf.h" />
+		<Unit filename="../../source/libs/freetype/src/pcf/pcfdrivr.h" />
+		<Unit filename="../../source/libs/freetype/src/pcf/pcferror.h" />
+		<Unit filename="../../source/libs/freetype/src/pcf/pcfread.h" />
+		<Unit filename="../../source/libs/freetype/src/pcf/pcfutil.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrcmap.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrdrivr.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrerror.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrgload.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrload.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrsbit.h" />
+		<Unit filename="../../source/libs/freetype/src/pfr/pfrtypes.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/afmparse.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/psaux.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/psaux/psauxerr.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/psauxmod.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/psconv.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/psobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/t1cmap.h" />
+		<Unit filename="../../source/libs/freetype/src/psaux/t1decode.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshalgo.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshglob.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshinter.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshmod.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshnterr.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshpic.h" />
+		<Unit filename="../../source/libs/freetype/src/pshinter/pshrec.h" />
+		<Unit filename="../../source/libs/freetype/src/psnames/psmodule.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/psnames/psmodule.h" />
+		<Unit filename="../../source/libs/freetype/src/psnames/psnamerr.h" />
+		<Unit filename="../../source/libs/freetype/src/psnames/pspic.h" />
+		<Unit filename="../../source/libs/freetype/src/psnames/pstables.h" />
+		<Unit filename="../../source/libs/freetype/src/raster/ftmisc.h" />
+		<Unit filename="../../source/libs/freetype/src/raster/ftraster.h" />
+		<Unit filename="../../source/libs/freetype/src/raster/ftrend1.h" />
+		<Unit filename="../../source/libs/freetype/src/raster/raster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/raster/rasterrs.h" />
+		<Unit filename="../../source/libs/freetype/src/raster/rastpic.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/sfdriver.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/sferrors.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/sfnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/sfnt/sfntpic.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/sfobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttbdf.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttcmap.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttcmapc.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttkern.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttload.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttmtx.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttpost.h" />
+		<Unit filename="../../source/libs/freetype/src/sfnt/ttsbit.h" />
+		<Unit filename="../../source/libs/freetype/src/smooth/ftgrays.h" />
+		<Unit filename="../../source/libs/freetype/src/smooth/ftsmerrs.h" />
+		<Unit filename="../../source/libs/freetype/src/smooth/ftsmooth.h" />
+		<Unit filename="../../source/libs/freetype/src/smooth/ftspic.h" />
+		<Unit filename="../../source/libs/freetype/src/smooth/smooth.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/truetype/truetype.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/truetype/ttdriver.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/tterrors.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttgload.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttgxvar.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttinterp.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttobjs.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttpic.h" />
+		<Unit filename="../../source/libs/freetype/src/truetype/ttpload.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1afm.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1driver.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1errors.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1gload.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1load.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1objs.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1parse.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/t1tokens.h" />
+		<Unit filename="../../source/libs/freetype/src/type1/type1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/type42/t42drivr.h" />
+		<Unit filename="../../source/libs/freetype/src/type42/t42error.h" />
+		<Unit filename="../../source/libs/freetype/src/type42/t42objs.h" />
+		<Unit filename="../../source/libs/freetype/src/type42/t42parse.h" />
+		<Unit filename="../../source/libs/freetype/src/type42/t42types.h" />
+		<Unit filename="../../source/libs/freetype/src/type42/type42.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/winfonts/fnterrs.h" />
+		<Unit filename="../../source/libs/freetype/src/winfonts/winfnt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/freetype/src/winfonts/winfnt.h" />
+		<Unit filename="../../source/libs/jpeg/JCHUFF.H" />
+		<Unit filename="../../source/libs/jpeg/JDCT.H" />
+		<Unit filename="../../source/libs/jpeg/JDHUFF.H" />
+		<Unit filename="../../source/libs/jpeg/JERROR.H" />
+		<Unit filename="../../source/libs/jpeg/JINCLUDE.H" />
+		<Unit filename="../../source/libs/jpeg/JMEMSYS.H" />
+		<Unit filename="../../source/libs/jpeg/TRANSUPP.H" />
+		<Unit filename="../../source/libs/jpeg/cderror.h" />
+		<Unit filename="../../source/libs/jpeg/cdjpeg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/cdjpeg.h" />
+		<Unit filename="../../source/libs/jpeg/jaricom.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jccoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jccolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcdctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jchuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcinit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcomapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jconfig.h" />
+		<Unit filename="../../source/libs/jpeg/jcparam.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcprepct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jcsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jctrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdapimin.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdapistd.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdarith.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdatadst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdatasrc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdcoefct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdcolor.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jddctmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdhuff.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdinput.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdmainct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdmarker.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdmaster.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdmerge.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdpostct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdsample.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jdtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jfdctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jfdctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jfdctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jidctflt.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jidctfst.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jidctint.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jmemmgr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jmemnobs.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jmorecfg.h" />
+		<Unit filename="../../source/libs/jpeg/jpeginit.h" />
+		<Unit filename="../../source/libs/jpeg/jpegint.h" />
+		<Unit filename="../../source/libs/jpeg/jpeglib.h" />
+		<Unit filename="../../source/libs/jpeg/jpegtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jquant1.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jquant2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jutils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/jversion.h" />
+		<Unit filename="../../source/libs/jpeg/rdbmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdcolmap.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdgif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdppm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdrle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdswitch.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/rdtarga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/transupp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/wrbmp.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/wrgif.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/wrppm.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/wrrle.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/jpeg/wrtarga.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/png.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/png.h" />
+		<Unit filename="../../source/libs/libpng/pngasmrd.h" />
+		<Unit filename="../../source/libs/libpng/pngconf.h" />
+		<Unit filename="../../source/libs/libpng/pngdebug.h" />
+		<Unit filename="../../source/libs/libpng/pngerror.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngerror.h" />
+		<Unit filename="../../source/libs/libpng/pngget.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pnginfo.h" />
+		<Unit filename="../../source/libs/libpng/pnglibconf.h" />
+		<Unit filename="../../source/libs/libpng/pngmem.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngpread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngpriv.h" />
+		<Unit filename="../../source/libs/libpng/pngread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngrio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngrtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngrutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngset.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngstruct.h" />
+		<Unit filename="../../source/libs/libpng/pngtrans.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngwio.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngwrite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngwtran.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/libpng/pngwutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/ogg/bitwise.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/ogg/framing.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/ogg/ogg/ogg.h" />
+		<Unit filename="../../source/libs/ogg/ogg/os_types.h" />
+		<Unit filename="../../source/libs/openal/EFX-Util.h" />
+		<Unit filename="../../source/libs/openal/al.h" />
+		<Unit filename="../../source/libs/openal/alc.h" />
+		<Unit filename="../../source/libs/openal/efx-creative.h" />
+		<Unit filename="../../source/libs/openal/efx.h" />
+		<Unit filename="../../source/libs/openal/xram.h" />
+		<Unit filename="../../source/libs/opencl/CL/cl.h" />
+		<Unit filename="../../source/libs/opencl/CL/cl_ext.h" />
+		<Unit filename="../../source/libs/opencl/CL/cl_gl.h" />
+		<Unit filename="../../source/libs/opencl/CL/cl_gl_ext.h" />
+		<Unit filename="../../source/libs/opencl/CL/cl_platform.h" />
+		<Unit filename="../../source/libs/opencl/opencl.h" />
+		<Unit filename="../../source/libs/theora/source/analyze.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/apiwrapper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/apiwrapper.h" />
+		<Unit filename="../../source/libs/theora/source/bitpack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/bitpack.h" />
+		<Unit filename="../../source/libs/theora/source/cpu.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/cpu.h" />
+		<Unit filename="../../source/libs/theora/source/dct.h" />
+		<Unit filename="../../source/libs/theora/source/decapiwrapper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/decinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/decint.h" />
+		<Unit filename="../../source/libs/theora/source/decode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/dequant.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/dequant.h" />
+		<Unit filename="../../source/libs/theora/source/encapiwrapper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/encfrag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/encinfo.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/encint.h" />
+		<Unit filename="../../source/libs/theora/source/encode.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/enquant.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/enquant.h" />
+		<Unit filename="../../source/libs/theora/source/fdct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/fragment.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/huffdec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/huffdec.h" />
+		<Unit filename="../../source/libs/theora/source/huffenc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/huffenc.h" />
+		<Unit filename="../../source/libs/theora/source/huffman.h" />
+		<Unit filename="../../source/libs/theora/source/idct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/info.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/internal.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/internal.h" />
+		<Unit filename="../../source/libs/theora/source/mathops.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/mathops.h" />
+		<Unit filename="../../source/libs/theora/source/mcenc.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/modedec.h" />
+		<Unit filename="../../source/libs/theora/source/ocintrin.h" />
+		<Unit filename="../../source/libs/theora/source/quant.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/quant.h" />
+		<Unit filename="../../source/libs/theora/source/rate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/state.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/state.h" />
+		<Unit filename="../../source/libs/theora/source/tokenize.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/x86/mmxencfrag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/x86/mmxfdct.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/x86/mmxfrag.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/theora/source/x86/mmxfrag.h" />
+		<Unit filename="../../source/libs/theora/source/x86/mmxidct.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxloop.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\mmxstate.c">
+		<Unit filename="../../source/libs/theora/source/x86/mmxloop.h" />
+		<Unit filename="../../source/libs/theora/source/x86/mmxstate.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\sse2encfrag.c">
+		<Unit filename="../../source/libs/theora/source/x86/sse2encfrag.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\sse2fdct.c">
+		<Unit filename="../../source/libs/theora/source/x86/sse2fdct.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\sse2idct.c">
+		<Unit filename="../../source/libs/theora/source/x86/sse2idct.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\sse2trans.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\x86cpu.c">
+		<Unit filename="../../source/libs/theora/source/x86/sse2trans.h" />
+		<Unit filename="../../source/libs/theora/source/x86/x86cpu.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\x86cpu.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\x86enc.c">
+		<Unit filename="../../source/libs/theora/source/x86/x86cpu.h" />
+		<Unit filename="../../source/libs/theora/source/x86/x86enc.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\x86enc.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\x86enquant.c">
+		<Unit filename="../../source/libs/theora/source/x86/x86enc.h" />
+		<Unit filename="../../source/libs/theora/source/x86/x86enquant.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86\x86int.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86\x86state.c">
+		<Unit filename="../../source/libs/theora/source/x86/x86int.h" />
+		<Unit filename="../../source/libs/theora/source/x86/x86state.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="..\..\source\libs\theora\source\x86_vc\mmxfrag.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86_vc\mmxloop.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86_vc\x86cpu.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86_vc\x86enc.h" />
-		<Unit filename="..\..\source\libs\theora\source\x86_vc\x86int.h" />
-		<Unit filename="..\..\source\libs\theora\theora\codec.h" />
-		<Unit filename="..\..\source\libs\theora\theora\theora.h" />
-		<Unit filename="..\..\source\libs\theora\theora\theoradec.h" />
-		<Unit filename="..\..\source\libs\theora\theora\theoraenc.h" />
-		<Unit filename="..\..\source\libs\tinyxml\tinystr.cpp" />
-		<Unit filename="..\..\source\libs\tinyxml\tinystr.h" />
-		<Unit filename="..\..\source\libs\tinyxml\tinyxml.cpp" />
-		<Unit filename="..\..\source\libs\tinyxml\tinyxml.h" />
-		<Unit filename="..\..\source\libs\tinyxml\tinyxmlerror.cpp" />
-		<Unit filename="..\..\source\libs\tinyxml\tinyxmlparser.cpp" />
-		<Unit filename="..\..\source\libs\unzip\crypt.h" />
-		<Unit filename="..\..\source\libs\unzip\ioapi.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\unzip\ioapi.h" />
-		<Unit filename="..\..\source\libs\unzip\iowin32.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\unzip\iowin32.h" />
-		<Unit filename="..\..\source\libs\unzip\mztools.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\unzip\mztools.h" />
-		<Unit filename="..\..\source\libs\unzip\unzip.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\unzip\unzip.h" />
-		<Unit filename="..\..\source\libs\unzip\zip.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\unzip\zip.h" />
-		<Unit filename="..\..\source\libs\zlib\adler32.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\compress.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\crc32.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\crc32.h" />
-		<Unit filename="..\..\source\libs\zlib\deflate.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\deflate.h" />
-		<Unit filename="..\..\source\libs\zlib\gzclose.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\gzguts.h" />
-		<Unit filename="..\..\source\libs\zlib\gzlib.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\gzread.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\gzwrite.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\infback.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\inffast.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\inffast.h" />
-		<Unit filename="..\..\source\libs\zlib\inffixed.h" />
-		<Unit filename="..\..\source\libs\zlib\inflate.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\inflate.h" />
-		<Unit filename="..\..\source\libs\zlib\inftrees.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\inftrees.h" />
-		<Unit filename="..\..\source\libs\zlib\trees.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\trees.h" />
-		<Unit filename="..\..\source\libs\zlib\uncompr.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\zconf.h" />
-		<Unit filename="..\..\source\libs\zlib\zlib.h" />
-		<Unit filename="..\..\source\libs\zlib\zutil.c">
-			<Option compilerVar="CC" />
-		</Unit>
-		<Unit filename="..\..\source\libs\zlib\zutil.h" />
-		<Unit filename="..\..\source\math\axmath.cpp" />
-		<Unit filename="..\..\source\math\frustum.cpp" />
-		<Unit filename="..\..\source\math\mat2.cpp" />
-		<Unit filename="..\..\source\math\mat3.cpp" />
-		<Unit filename="..\..\source\math\mat3x2.cpp" />
-		<Unit filename="..\..\source\math\mat4.cpp" />
-		<Unit filename="..\..\source\math\mat4x3.cpp" />
-		<Unit filename="..\..\source\math\quat.cpp" />
-		<Unit filename="..\..\source\math\vec2.cpp" />
-		<Unit filename="..\..\source\math\vec3.cpp" />
-		<Unit filename="..\..\source\math\vec4.cpp" />
-		<Unit filename="..\..\source\math\vectormath.cpp" />
-		<Unit filename="..\..\source\saSpec.cpp" />
-		<Unit filename="..\..\source\saSpec.h" />
-		<Unit filename="..\..\source\shaders\draw\PositionColor.cpp" />
-		<Unit filename="..\..\source\shaders\draw\PositionColorTexCoord.cpp" />
-		<Unit filename="..\..\source\shaders\render\BumpMapping.cpp" />
-		<Unit filename="..\..\source\shaders\render\Texturing.cpp" />
-		<Unit filename="..\..\source\surfaces\Cube.cpp" />
-		<Unit filename="..\..\source\utils\axstring.cpp" />
+		<Unit filename="../../source/libs/theora/source/x86_vc/mmxfrag.h" />
+		<Unit filename="../../source/libs/theora/source/x86_vc/mmxloop.h" />
+		<Unit filename="../../source/libs/theora/source/x86_vc/x86cpu.h" />
+		<Unit filename="../../source/libs/theora/source/x86_vc/x86enc.h" />
+		<Unit filename="../../source/libs/theora/source/x86_vc/x86int.h" />
+		<Unit filename="../../source/libs/theora/theora/codec.h" />
+		<Unit filename="../../source/libs/theora/theora/theora.h" />
+		<Unit filename="../../source/libs/theora/theora/theoradec.h" />
+		<Unit filename="../../source/libs/theora/theora/theoraenc.h" />
+		<Unit filename="../../source/libs/tinyxml/tinystr.cpp" />
+		<Unit filename="../../source/libs/tinyxml/tinystr.h" />
+		<Unit filename="../../source/libs/tinyxml/tinyxml.cpp" />
+		<Unit filename="../../source/libs/tinyxml/tinyxml.h" />
+		<Unit filename="../../source/libs/tinyxml/tinyxmlerror.cpp" />
+		<Unit filename="../../source/libs/tinyxml/tinyxmlparser.cpp" />
+		<Unit filename="../../source/libs/unzip/crypt.h" />
+		<Unit filename="../../source/libs/unzip/ioapi.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/unzip/ioapi.h" />
+		<Unit filename="../../source/libs/unzip/iowin32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/unzip/iowin32.h" />
+		<Unit filename="../../source/libs/unzip/mztools.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/unzip/mztools.h" />
+		<Unit filename="../../source/libs/unzip/unzip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/unzip/unzip.h" />
+		<Unit filename="../../source/libs/unzip/zip.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/unzip/zip.h" />
+		<Unit filename="../../source/libs/zlib/adler32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/compress.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/crc32.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/crc32.h" />
+		<Unit filename="../../source/libs/zlib/deflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/deflate.h" />
+		<Unit filename="../../source/libs/zlib/gzclose.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/gzguts.h" />
+		<Unit filename="../../source/libs/zlib/gzlib.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/gzread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/gzwrite.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/infback.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/inffast.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/inffast.h" />
+		<Unit filename="../../source/libs/zlib/inffixed.h" />
+		<Unit filename="../../source/libs/zlib/inflate.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/inflate.h" />
+		<Unit filename="../../source/libs/zlib/inftrees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/inftrees.h" />
+		<Unit filename="../../source/libs/zlib/trees.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/trees.h" />
+		<Unit filename="../../source/libs/zlib/uncompr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/zconf.h" />
+		<Unit filename="../../source/libs/zlib/zlib.h" />
+		<Unit filename="../../source/libs/zlib/zutil.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../source/libs/zlib/zutil.h" />
+		<Unit filename="../../source/math/axmath.cpp" />
+		<Unit filename="../../source/math/frustum.cpp" />
+		<Unit filename="../../source/math/mat2.cpp" />
+		<Unit filename="../../source/math/mat3.cpp" />
+		<Unit filename="../../source/math/mat3x2.cpp" />
+		<Unit filename="../../source/math/mat4.cpp" />
+		<Unit filename="../../source/math/mat4x3.cpp" />
+		<Unit filename="../../source/math/quat.cpp" />
+		<Unit filename="../../source/math/vec2.cpp" />
+		<Unit filename="../../source/math/vec3.cpp" />
+		<Unit filename="../../source/math/vec4.cpp" />
+		<Unit filename="../../source/math/vectormath.cpp" />
+		<Unit filename="../../source/saSpec.cpp" />
+		<Unit filename="../../source/saSpec.h" />
+		<Unit filename="../../source/shaders/draw/PositionColor.cpp" />
+		<Unit filename="../../source/shaders/draw/PositionColorTexCoord.cpp" />
+		<Unit filename="../../source/shaders/render/BumpMapping.cpp" />
+		<Unit filename="../../source/shaders/render/Texturing.cpp" />
+		<Unit filename="../../source/surfaces/Cube.cpp" />
+		<Unit filename="../../source/utils/axstring.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

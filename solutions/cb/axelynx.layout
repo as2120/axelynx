@@ -1,121 +1,124 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="ReleaseWin32" />
-	<File name="..\..\source\CFile.cpp" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2145" topLine="71" />
+	<ActiveTarget name="DebugLinux32" />
+	<File name="../../axelynx/Entity.h" open="0" top="0" tabpos="6">
+		<Cursor position="3026" topLine="124" />
 	</File>
-	<File name="..\..\source\CScene.cpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="15701" topLine="706" />
+	<File name="../../axelynx/File.h" open="1" top="0" tabpos="1">
+		<Cursor position="2374" topLine="79" />
 	</File>
-	<File name="..\..\axelynx\File.h" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2883" topLine="121" />
+	<File name="../../axelynx/cwrap.h" open="0" top="0" tabpos="20">
+		<Cursor position="120" topLine="0" />
 	</File>
-	<File name="..\..\source\CAnimEntity.cpp" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="437" topLine="14" />
+	<File name="../../source/CAnimEntity.cpp" open="0" top="0" tabpos="7">
+		<Cursor position="437" topLine="14" />
 	</File>
-	<File name="..\..\source\gl\glext.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="201937" topLine="5120" />
+	<File name="../../source/CAnimEntity.h" open="0" top="0" tabpos="1">
+		<Cursor position="16" topLine="0" />
 	</File>
-	<File name="..\..\source\gl\axext.cpp" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="306" topLine="0" />
+	<File name="../../source/CCanvas.cpp" open="1" top="0" tabpos="7">
+		<Cursor position="4136" topLine="189" />
 	</File>
-	<File name="..\..\source\imageformats\DDSTextureLoader.cpp" open="0" top="0" tabpos="21" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="17869" topLine="552" />
+	<File name="../../source/CEngine.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="24258" topLine="943" />
 	</File>
-	<File name="..\..\axelynx\cwrap.h" open="0" top="0" tabpos="20" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="120" topLine="0" />
+	<File name="../../source/CEntity.cpp" open="0" top="0" tabpos="11">
+		<Cursor position="5836" topLine="223" />
 	</File>
-	<File name="..\..\source\CMaterial.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="26" topLine="0" />
+	<File name="../../source/CFile.cpp" open="0" top="0" tabpos="13">
+		<Cursor position="2145" topLine="71" />
 	</File>
-	<File name="..\..\axelynx\Entity.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="3026" topLine="124" />
+	<File name="../../source/CFreeTypeFont.h" open="0" top="0" tabpos="8">
+		<Cursor position="104" topLine="0" />
 	</File>
-	<File name="..\..\source\CAnimEntity.h" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="16" topLine="0" />
+	<File name="../../source/CMaterial.h" open="0" top="0" tabpos="10">
+		<Cursor position="26" topLine="0" />
 	</File>
-	<File name="..\..\source\surfaces\Cube.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="83" topLine="21" />
+	<File name="../../source/CScene.cpp" open="1" top="0" tabpos="6">
+		<Cursor position="15701" topLine="683" />
 	</File>
-	<File name="..\..\source\libs\zlib\trees.c" open="0" top="0" tabpos="34" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="45240" topLine="1228" />
+	<File name="../../source/CSurface.h" open="1" top="0" tabpos="3">
+		<Cursor position="934" topLine="31" />
 	</File>
-	<File name="..\..\source\Logger.cpp" open="0" top="0" tabpos="17" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="3442" topLine="148" />
+	<File name="../../source/CTheora.cpp" open="0" top="0" tabpos="15">
+		<Cursor position="14200" topLine="368" />
 	</File>
-	<File name="..\..\source\libs\bullet\LinearMath\btScalar.h" open="0" top="0" tabpos="24" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="2271" topLine="63" />
+	<File name="../../source/CTheora.h" open="0" top="0" tabpos="9">
+		<Cursor position="29" topLine="0" />
 	</File>
-	<File name="..\..\source\CTheora.cpp" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="14200" topLine="368" />
+	<File name="../../source/CWindowWin32.cpp" open="0" top="0" tabpos="16">
+		<Cursor position="3743" topLine="118" />
 	</File>
-	<File name="..\..\source\gl\axgl.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="138" topLine="0" />
+	<File name="../../source/Logger.cpp" open="0" top="0" tabpos="17">
+		<Cursor position="3442" topLine="148" />
 	</File>
-	<File name="..\..\source\MemoryFile.cpp" open="0" top="0" tabpos="18" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="42" topLine="0" />
+	<File name="../../source/MemoryFile.cpp" open="0" top="0" tabpos="18">
+		<Cursor position="42" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\theora\source\encode.c" open="0" top="0" tabpos="32" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="0" topLine="0" />
+	<File name="../../source/cwrap.cpp" open="0" top="0" tabpos="19">
+		<Cursor position="47" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\ogg\bitwise.c" open="0" top="0" tabpos="28" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="15012" topLine="0" />
+	<File name="../../source/gl/axext.cpp" open="1" top="0" tabpos="10">
+		<Cursor position="45" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\OpenCL\btSoftBodySolverBuffer_OpenCL.h" open="0" top="0" tabpos="25" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1198" topLine="18" />
+	<File name="../../source/gl/axgl.h" open="1" top="1" tabpos="11">
+		<Cursor position="497" topLine="5" />
 	</File>
-	<File name="..\..\source\libs\bullet\LinearMath\btSerializer.cpp" open="0" top="0" tabpos="26" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="316" topLine="0" />
+	<File name="../../source/gl/glext.h" open="1" top="0" tabpos="9">
+		<Cursor position="201934" topLine="5123" />
 	</File>
-	<File name="..\..\source\CTheora.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="29" topLine="0" />
+	<File name="../../source/gl/glxext.h" open="1" top="0" tabpos="12">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="..\..\source\CEngine.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="24258" topLine="943" />
+	<File name="../../source/imageformats/DDSTextureLoader.cpp" open="0" top="0" tabpos="21">
+		<Cursor position="17869" topLine="552" />
 	</File>
-	<File name="..\..\source\libs\ogg\framing.c" open="0" top="0" tabpos="29" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="53029" topLine="75" />
+	<File name="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/DX11/btSoftBodySolverVertexBuffer_DX11.h" open="0" top="0" tabpos="22">
+		<Cursor position="1151" topLine="14" />
 	</File>
-	<File name="..\..\source\CFreeTypeFont.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="104" topLine="0" />
+	<File name="../../source/libs/bullet/BulletMultiThreaded/GpuSoftBodySolvers/OpenCL/btSoftBodySolverBuffer_OpenCL.h" open="0" top="0" tabpos="25">
+		<Cursor position="1198" topLine="18" />
 	</File>
-	<File name="..\..\source\CCanvas.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="4136" topLine="213" />
+	<File name="../../source/libs/bullet/BulletMultiThreaded/PpuAddressSpace.h" open="1" top="0" tabpos="4">
+		<Cursor position="1147" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\bullet\BulletMultiThreaded\SpuSampleTask\SpuSampleTask.cpp" open="0" top="0" tabpos="23" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1293" topLine="26" />
+	<File name="../../source/libs/bullet/BulletMultiThreaded/SpuSampleTask/SpuSampleTask.cpp" open="0" top="0" tabpos="23">
+		<Cursor position="1293" topLine="26" />
 	</File>
-	<File name="..\..\source\math\mat4.cpp" open="1" top="1" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="6802" topLine="184" />
+	<File name="../../source/libs/bullet/LinearMath/btScalar.h" open="0" top="0" tabpos="24">
+		<Cursor position="2271" topLine="63" />
 	</File>
-	<File name="..\..\source\libs\jpeg\jmemmgr.c" open="0" top="0" tabpos="33" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="11832" topLine="290" />
+	<File name="../../source/libs/bullet/LinearMath/btSerializer.cpp" open="0" top="0" tabpos="26">
+		<Cursor position="316" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\libpng\pngstruct.h" open="0" top="0" tabpos="31" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="982" topLine="19" />
+	<File name="../../source/libs/freetype/freetype/config/ftheader.h" open="0" top="0" tabpos="27">
+		<Cursor position="23965" topLine="745" />
 	</File>
-	<File name="..\..\source\CEntity.cpp" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="5836" topLine="223" />
+	<File name="../../source/libs/jpeg/jmemmgr.c" open="0" top="0" tabpos="33">
+		<Cursor position="11832" topLine="290" />
 	</File>
-	<File name="..\..\source\CSurface.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="934" topLine="31" />
+	<File name="../../source/libs/libpng/pngstruct.h" open="0" top="0" tabpos="31">
+		<Cursor position="982" topLine="19" />
 	</File>
-	<File name="..\..\source\libs\freetype\freetype\config\ftheader.h" open="0" top="0" tabpos="27" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="23965" topLine="745" />
+	<File name="../../source/libs/ogg/bitwise.c" open="0" top="0" tabpos="28">
+		<Cursor position="15012" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\zlib\inflate.c" open="0" top="0" tabpos="30" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="10049" topLine="558" />
+	<File name="../../source/libs/ogg/framing.c" open="0" top="0" tabpos="29">
+		<Cursor position="53029" topLine="75" />
 	</File>
-	<File name="..\..\source\cwrap.cpp" open="0" top="0" tabpos="19" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="47" topLine="0" />
+	<File name="../../source/libs/theora/source/encode.c" open="0" top="0" tabpos="32">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="..\..\source\libs\bullet\BulletMultiThreaded\GpuSoftBodySolvers\DX11\btSoftBodySolverVertexBuffer_DX11.h" open="0" top="0" tabpos="22" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1151" topLine="14" />
+	<File name="../../source/libs/zlib/inflate.c" open="0" top="0" tabpos="30">
+		<Cursor position="10049" topLine="558" />
 	</File>
-	<File name="..\..\source\libs\bullet\BulletMultiThreaded\PpuAddressSpace.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="1147" topLine="0" />
+	<File name="../../source/libs/zlib/trees.c" open="0" top="0" tabpos="34">
+		<Cursor position="45240" topLine="1228" />
 	</File>
-	<File name="..\..\source\CWindowWin32.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor1 position="3743" topLine="118" />
+	<File name="../../source/math/mat4.cpp" open="1" top="0" tabpos="8">
+		<Cursor position="6802" topLine="184" />
+	</File>
+	<File name="../../source/surfaces/Cube.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="83" topLine="21" />
 	</File>
 </CodeBlocks_layout_file>

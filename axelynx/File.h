@@ -6,6 +6,7 @@
 #include <string>
 #include <fstream>
 
+
 namespace axelynx
 {
 	class Pak;
@@ -26,18 +27,18 @@ namespace axelynx
 		public:
 			virtual bool Open() = 0;
 			virtual bool Create() = 0;
-			virtual unsigned __int64 Size()=0;
-			virtual unsigned __int64 Seek(__int64 delta, axelynx::File::SeekType ST = axelynx::File::ST_SET)=0;
-			virtual unsigned __int64 Pos()=0;
+			virtual __uint64_t Size()=0;
+			virtual __uint64_t Seek(__int64_t delta, axelynx::File::SeekType ST = axelynx::File::ST_SET)=0;
+			virtual __uint64_t Pos()=0;
 
-			virtual bool Write(const void *data, unsigned __int64 size)=0;
-			virtual bool Read(void *data, unsigned __int64 size)=0;
+			virtual bool Write(const void *data, __uint64_t size)=0;
+			virtual bool Read(void *data, __uint64_t size)=0;
 
 			virtual void* GetPointer()=0;
 			virtual bool Close()=0;
 			virtual ~FileImpl(){};
 
-			
+
 			virtual std::string ReadString()=0;
 			virtual std::wstring ReadWideString()=0;
 			virtual std::wstring GetFileName()=0;
@@ -92,22 +93,22 @@ namespace axelynx
 			return impl_->Create();
 		}
 
-		unsigned __int64 Size()
+		__uint64_t Size()
 		{
 			return impl_->Size();
 		}
 
-		unsigned __int64 Seek(unsigned __int64 delta, SeekType ST = ST_CUR)
+		__uint64_t Seek(__int64_t delta, SeekType ST = ST_CUR)
 		{
 			return impl_->Seek(delta,ST);
 		}
-		
-		bool Write(const void *data, unsigned __int64 size)
+
+		bool Write(const void *data, __uint64_t size)
 		{
 			return impl_->Write(data,size);
 		}
 
-		bool Read(void *data, unsigned __int64 size)
+		bool Read(void *data, __uint64_t size)
 		{
 			return impl_->Read(data,size);
 		}
