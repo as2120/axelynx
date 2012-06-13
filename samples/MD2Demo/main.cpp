@@ -7,7 +7,7 @@ int main()
 {
         Engine *eng = Engine::Init();
 
-        Window *wnd = eng->AddWindow();//(800,600,32,WM_WINDOWED,4);
+        Window *wnd = eng->AddWindow(800,600,32,WM_WINDOWED,8);
 
 		wnd->VSync(false);
 
@@ -30,7 +30,7 @@ int main()
 
 		Shader *shader = StandartShaders::Render::MorfedMeshTexturingLighting();
 
-		const int COUNT_TEAPOTS = 4096;
+		const int COUNT_TEAPOTS = 400;
 
 		AnimEntity* ents[COUNT_TEAPOTS];
 		quat rots[COUNT_TEAPOTS];
@@ -40,7 +40,7 @@ int main()
 			ents[i] = s->Add(mesh);
 			ents[i]->SetShader(shader);
 			ents[i]->SetTexture(diffuse);
-			ents[i]->SetPosition((i / 64)*8,0,(i % 64)*8);
+			ents[i]->SetPosition((i / 20)*8,0,(i % 20)*8);
 			ents[i]->SetOrientation(0,rnd(360),0);
 			ents[i]->SetScale(0.1);
 			ents[i]->SetFrame(rnd(0,mesh->CountFrames()));

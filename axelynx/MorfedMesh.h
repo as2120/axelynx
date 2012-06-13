@@ -29,6 +29,9 @@ namespace axelynx
 			virtual bool Resize(int count_vertices, int count_faces) = 0;
 
 			virtual float GetRadius() const = 0;
+			
+			virtual void RecalcTangents(int count_indices, unsigned short * indices) = 0;
+
 			virtual ~Frame()
 			{
 			}
@@ -55,6 +58,8 @@ namespace axelynx
 		{
 		}
 		
+		virtual void RecalcTangents() = 0;
+
 		virtual int CountFrames() const = 0;
 		virtual Frame& GetFrame(int index) = 0;
 		virtual const Frame& GetFrame(int index) const = 0;

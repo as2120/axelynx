@@ -14,4 +14,12 @@ namespace axelynx
 	AXELYNX_API void sincos(float a,float & s,float & c );
 
 	AXELYNX_API bool FAST_CALL LineSphereIntersect(const vec3& base, const vec3& dir, const vec4& sphere);
+
+
+
+	AXELYNX_API void CalcTriangleBasis( const axelynx::vec3& E, const axelynx::vec3& F, const axelynx::vec3& G, float sE,
+			float tE, float sF, float tF, float sG, float tG, axelynx::vec3& tangentX,
+			axelynx::vec3& tangentY );
+	AXELYNX_API axelynx::vec3 ClosestPointOnLine( const axelynx::vec3& a, const axelynx::vec3& b, const axelynx::vec3& p );
+	AXELYNX_API axelynx::vec3 Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 );
 }

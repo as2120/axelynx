@@ -85,6 +85,8 @@ public:
 			return sqrtf(max_radius);
 		}
 
+		virtual void RecalcTangents(int count_indices, unsigned short * indices);
+
 		~CMorfedFrame()
 		{
 			delete[] vertices_;
@@ -110,6 +112,8 @@ public:
 	}
 	private:
 	CMorfedFrame *frames_;
+
+	
 public:
 	CMorfedMesh(int count_frames, int count_vertices, int count_faces);
 
@@ -130,6 +134,8 @@ public:
 	virtual int CountTriangles() const;
 	virtual int CountVertices() const;
 	virtual float GetRadius() const;
+
+	virtual void RecalcTangents();
 
 	~CMorfedMesh();
 };

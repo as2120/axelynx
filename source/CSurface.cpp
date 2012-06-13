@@ -8,6 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
+#include <axelynx\math\axmath.h>
 
 static unsigned int gl_index_type[5] = {0,GL_UNSIGNED_BYTE,GL_UNSIGNED_SHORT,0,GL_UNSIGNED_INT};
 
@@ -680,82 +681,7 @@ bool CSurface::MakeVBO()
 }
 
 
-void CalcTriangleBasis( const axelynx::vec3& E, const axelynx::vec3& F, const axelynx::vec3& G, float sE,
-		float tE, float sF, float tF, float sG, float tG, axelynx::vec3& tangentX,
-		axelynx::vec3& tangentY )
-{
-	using namespace axelynx;
 
-	vec3 P = F - E;
-	vec3 Q = G - E;
-	float s1 = sF - sE;
-	float t1 = tF - tE;
-	float s2 = sG - sE;
-	float t2 = tG - tE;
-	float pqMatrix[2][3];
-	pqMatrix[0][0] = P[0];
-	pqMatrix[0][1] = P[1];
-	pqMatrix[0][2] = P[2];
-	pqMatrix[1][0] = Q[0];
-	pqMatrix[1][1] = Q[1];
-	pqMatrix[1][2] = Q[2];
-	float temp = 1.0f / ( s1 * t2 - s2 * t1);
-	float stMatrix[2][2];
-	stMatrix[0][0] =  t2 * temp;
-	stMatrix[0][1] = -t1 * temp;
-	stMatrix[1][0] = -s2 * temp;
-	stMatrix[1][1] =  s1 * temp;
-	float tbMatrix[2][3];
-	// stMatrix * pqMatrix
-	tbMatrix[0][0] = stMatrix[0][0] * pqMatrix[0][0] + stMatrix[0][1] * pqMatrix[1][0];
-	tbMatrix[0][1] = stMatrix[0][0] * pqMatrix[0][1] + stMatrix[0][1] * pqMatrix[1][1];
-	tbMatrix[0][2] = stMatrix[0][0] * pqMatrix[0][2] + stMatrix[0][1] * pqMatrix[1][2];
-	tbMatrix[1][0] = stMatrix[1][0] * pqMatrix[0][0] + stMatrix[1][1] * pqMatrix[1][0];
-	tbMatrix[1][1] = stMatrix[1][0] * pqMatrix[0][1] + stMatrix[1][1] * pqMatrix[1][1];
-	tbMatrix[1][2] = stMatrix[1][0] * pqMatrix[0][2] + stMatrix[1][1] * pqMatrix[1][2];
-
-	tangentX.x =  tbMatrix[0][0];
-	tangentX.y =  tbMatrix[0][1];
-	tangentX.z =  tbMatrix[0][2];
-
-
-	tangentY.x = tbMatrix[1][0];
-	tangentY.y = tbMatrix[1][1];
-	tangentY.z = tbMatrix[1][2];
-	tangentX.normalize();
-	tangentY.normalize();
-}
-
-axelynx::vec3 ClosestPointOnLine( const axelynx::vec3& a, const axelynx::vec3& b, const axelynx::vec3& p )
-{
-	using namespace axelynx;
-
-	vec3 c = p - a;
-	vec3 V = b - a;
-	float d = V.length();
-	V.normalize();
-	float t = V.dot(c);		// скалярное произведение векторов
- 
-	// проверка на выход за границы отрезка
-	if ( t < 0.0f )
-		return a;
-	if ( t > d )
-		return b;
- 
-	// Вернем точку между a и b
-	V *= t;
-	return ( a + V );
-}
-
-axelynx::vec3 Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 )
-{
-	using namespace axelynx;
-
-	vec3 v2ProjV1 = ClosestPointOnLine( v1, -v1, v2 );
-	vec3 res = v2 - v2ProjV1;
-	res.normalize();
-	return res;
-}
 
 bool CSurface::_recalcTangents()
 {
