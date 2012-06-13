@@ -20,6 +20,8 @@ class CMorfedMesh : public axelynx::MorfedMesh
 	bool locked_;
 
 	bool MakeVBO();
+
+	float radius_;
 public:
 	class CMorfedFrame : public axelynx::MorfedMesh::Frame
 	{
@@ -67,6 +69,21 @@ public:
 			return reinterpret_cast<float*>(vertices_);
 		}
 
+		virtual float GetRadius() const
+		{
+			float max_radius = 0;
+
+			for(int i=0;i<count_vertices_;++i)
+			{
+				float len = vertices_[i].position.sqlength();
+
+				if(len>max_radius)
+					max_radius = len;
+				
+			}
+
+			return sqrtf(max_radius);
+		}
 
 		~CMorfedFrame()
 		{

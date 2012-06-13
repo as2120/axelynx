@@ -119,6 +119,9 @@ axelynx::MorfedMesh * CMD2Factory::CreateFromFile(axelynx::File file)
 				int md2index = pTriList[j].triIndex[k];
 				int tcindex = pTriList[j].texCoordIndex[k];
 
+				assert(md2index >= 0 && md2index < md2header->numVertices);
+				assert(tcindex >= 0 && md2index < md2header->numTexCoords);
+
 				axelynx::MorfedMesh::Frame::Vertex& v = frame.GetVertex(vertex);
 
 				v.position = vec3(framedata->scale[0] * framedata->frameInfo[md2index].vertex[0] + framedata->translate[0]
@@ -128,12 +131,12 @@ axelynx::MorfedMesh * CMD2Factory::CreateFromFile(axelynx::File file)
 				int normalindex = framedata->frameInfo[md2index].normal;
 
 				v.normal = vec3(precalc_normal[normalindex][0]
-									,precalc_normal[normalindex][1]
-									,precalc_normal[normalindex][2]);
+									,precalc_normal[normalindex][2]
+									,precalc_normal[normalindex][1]);
 
 
 				v.texcoord = vec2(float(pTexList[tcindex].s) * delta_u
-					,float(pTexList[tcindex].t) * delta_v);
+					,1.0f - float(pTexList[tcindex].t) * delta_v);
 
 				vertex ++;
 			}

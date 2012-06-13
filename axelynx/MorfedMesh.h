@@ -28,6 +28,7 @@ namespace axelynx
 
 			virtual bool Resize(int count_vertices, int count_faces) = 0;
 
+			virtual float GetRadius() const = 0;
 			virtual ~Frame()
 			{
 			}

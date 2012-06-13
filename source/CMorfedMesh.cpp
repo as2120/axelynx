@@ -90,14 +90,24 @@ bool CMorfedMesh::MakeVBO()
 		std::cout<<"unpack"<<std::endl;
 		axelynx::MorfedMesh::Frame::Vertex *gpu = new axelynx::MorfedMesh::Frame::Vertex[count_vertices_ * count_frames_];
 	
+		
+		float max_radius = 0;
+
 		for(int i=0;i<count_frames_;++i)
 		{
 			void *dest = &gpu[i * count_vertices_];
 			const void *src = GetFrame(i).GetVertexPointer();
+
+			float len = GetFrame(i).GetRadius();
+			if(len>max_radius)
+				max_radius = len;
+
 			int size = count_vertices_ * sizeof(axelynx::MorfedMesh::Frame::Vertex);
 
 			memcpy(dest,src,size);
 		}
+
+		radius_ = max_radius;
 
 		const int framesize = count_vertices_ * sizeof(axelynx::MorfedMesh::Frame::Vertex);
 
@@ -214,5 +224,5 @@ int CMorfedMesh::CountVertices() const
 
 float CMorfedMesh::GetRadius() const
 {
-	return 1000.0f;
+	return radius_;
 }

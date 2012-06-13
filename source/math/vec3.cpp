@@ -14,6 +14,11 @@ float axelynx::vec3::length() const
 	return sqrtf(x*x + y*y + z*z);
 }
 
+float axelynx::vec3::sqlength() const
+{
+	return x*x + y*y + z*z;
+}
+
 axelynx::vec3 axelynx::vec3::normalize()
 {
 	float nval = length();

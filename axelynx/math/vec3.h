@@ -81,6 +81,7 @@ namespace axelynx
 			return x*other.x + y*other.y + z*other.z;
 		}
 		float FAST_CALL length() const;
+		float FAST_CALL sqlength() const;
 		vec3 FAST_CALL normalize();
 		vec3 FAST_CALL normalizedCopy() const
 		{

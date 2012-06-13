@@ -7,7 +7,7 @@ int main()
 {
         Engine *eng = Engine::Init();
 
-        Window *wnd = eng->AddWindow(800,600,32,WM_WINDOWED,4);
+        Window *wnd = eng->AddWindow();//(800,600,32,WM_WINDOWED,4);
 
 		wnd->VSync(false);
 
@@ -21,16 +21,16 @@ int main()
 
 		//cam->SetDrawMode(Camera::DM_WIREFRAME);
 
-        Surface *cube = StandartSurfaces::Grid(256,256,16,16,true);
-        Entity *body = s->Add(cube);
+        //Surface *cube = StandartSurfaces::Grid(256,256,16,16,true);
+        //Entity *body = s->Add(cube);
 		//body->SetScale(256);
 
 		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/solider.pcx",Texture::Desc().Anisotropic(16.0));
 		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/solider.md2");
 
-		Shader *shader = StandartShaders::Render::MorfedMeshTexturing();
+		Shader *shader = StandartShaders::Render::MorfedMeshTexturingLighting();
 
-		const int COUNT_TEAPOTS = 400;
+		const int COUNT_TEAPOTS = 4096;
 
 		AnimEntity* ents[COUNT_TEAPOTS];
 		quat rots[COUNT_TEAPOTS];
@@ -40,14 +40,12 @@ int main()
 			ents[i] = s->Add(mesh);
 			ents[i]->SetShader(shader);
 			ents[i]->SetTexture(diffuse);
-			ents[i]->SetPosition((i / 20)*8,0,(i % 20)*8);
+			ents[i]->SetPosition((i / 64)*8,0,(i % 64)*8);
 			ents[i]->SetOrientation(0,rnd(360),0);
 			ents[i]->SetScale(0.1);
 			ents[i]->SetFrame(rnd(0,mesh->CountFrames()));
 
 			rots[i] = quat(vec3(0,rnd(-0.5,0.5),0));
-
-
 		}
 
 		vec3 transl;
@@ -57,12 +55,13 @@ int main()
 		bool wire = false;
 
 		
-		Font::Desc desc(L"../../../../samples/media/CODE2000.ttf");	
+		Font::Desc desc(L"arial.ttf");	
 		desc.size = 16;
 		Font *fnt = eng->LoadFont(desc);
 		c->SetFont(fnt);
 
-		//shader->SetUniform("lightpos",vec3(-5.0,27.0,3.0));
+		
+		shader->SetUniform("lightpos",vec3(-5.0,27.0,3.0));
 
         while(wnd->isRunning())
         {
@@ -105,7 +104,7 @@ int main()
 			c->SetRotate(0);
 			c->SetScale(1);
 			c->SetPosition(10,10);
-			c->Print(L"FPS:%d",eng->GetStatistics()->GetFPS());
+			c->Print(L"FPS:%d, DIP`s:%d, tris: %d",eng->GetStatistics()->GetFPS(),eng->GetStatistics()->DIPs(),eng->GetStatistics()->TrisRendered());
 			//fnt->Draw(c,L"trtrt");
 			c->SetBlendMode(BM_NONE);
             wnd->Flip();
