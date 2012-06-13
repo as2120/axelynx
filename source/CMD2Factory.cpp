@@ -91,40 +91,73 @@ axelynx::MorfedMesh * CMD2Factory::CreateFromFile(axelynx::File file)
 
 	CMorfedMesh *mesh = new CMorfedMesh(md2header->numFrames,md2header->numTriangles * 3,md2header->numTriangles);
 	
+	int index = 0;
+
 	for(int j =0;j<md2header->numTriangles;++j)
 	{
-		auto face = mesh->GetFace(j);
-		face.i0 = pTriList[j].triIndex[0];
-		face.i1 = pTriList[j].triIndex[1];
-		face.i2 = pTriList[j].triIndex[2];
+		axelynx::MorfedMesh::Face& face = mesh->GetFace(j);
+		face.i0 = index++;
+		face.i1 = index++;
+		face.i2 = index++;
 	}
 
-	float delta_u = 1.0f / 288.0f;
-	float delta_v = 1.0f / 195.0f;
+	float delta_u = 1.0f / float(md2header->skinWidth);
+	float delta_v = 1.0f / float(md2header->skinHeight);
 
 	for(int i=0;i<md2header->numFrames;++i)
 	{
 		md2Frame *framedata = (md2Frame*)&buffer[md2header->offsetFrames + md2header->frameSize * i];
 
 		CMorfedMesh::CMorfedFrame& frame = mesh->GetFrame(i);
+
+		int vertex = 0;
+
 		for(int j =0;j<md2header->numTriangles;++j)
 		{
-			axelynx::MorfedMesh::Frame::Vertex& vertex = frame.GetVertex(j);
-			vertex.position = vec3(framedata->scale[0] * framedata->frameInfo[j].vertex[0] + framedata->translate[0]
-			,framedata->scale[2] * framedata->frameInfo[j].vertex[2] + framedata->translate[2]
-			,framedata->scale[1] * framedata->frameInfo[j].vertex[1] + framedata->translate[1]);
+			for(int k=0;k<3;++k)
+			{
+				int md2index = pTriList[j].triIndex[k];
+				int tcindex = pTriList[j].texCoordIndex[k];
 
-			int normalindex = framedata->frameInfo[j].normal;
+				axelynx::MorfedMesh::Frame::Vertex& v = frame.GetVertex(vertex);
 
-			vertex.normal = vec3(precalc_normal[normalindex][0]
-								,precalc_normal[normalindex][1]
-								,precalc_normal[normalindex][2]);
+				v.position = vec3(framedata->scale[0] * framedata->frameInfo[md2index].vertex[0] + framedata->translate[0]
+				,framedata->scale[2] * framedata->frameInfo[md2index].vertex[2] + framedata->translate[2]
+				,framedata->scale[1] * framedata->frameInfo[md2index].vertex[1] + framedata->translate[1]);
+
+				int normalindex = framedata->frameInfo[md2index].normal;
+
+				v.normal = vec3(precalc_normal[normalindex][0]
+									,precalc_normal[normalindex][1]
+									,precalc_normal[normalindex][2]);
 
 
-			vertex.texcoord = vec2(float(pTexList[pTriList[j].texCoordIndex[0]].s) * delta_u
-				,float(pTexList[pTriList[j].texCoordIndex[1]].s) * delta_v);
+				v.texcoord = vec2(float(pTexList[tcindex].s) * delta_u
+					,float(pTexList[tcindex].t) * delta_v);
+
+				vertex ++;
+			}
 
 		}
+
+		//for(int j =0;j<md2header->numTriangles;++j)
+		//{
+		//	axelynx::MorfedMesh::Frame::Vertex& vertex = frame.GetVertex(j);
+		//	vertex.position = vec3(framedata->scale[0] * framedata->frameInfo[j].vertex[0] + framedata->translate[0]
+		//	,framedata->scale[2] * framedata->frameInfo[j].vertex[2] + framedata->translate[2]
+		//	,framedata->scale[1] * framedata->frameInfo[j].vertex[1] + framedata->translate[1]);
+
+		//	int normalindex = framedata->frameInfo[j].normal;
+
+		//	vertex.normal = vec3(precalc_normal[normalindex][0]
+		//						,precalc_normal[normalindex][1]
+		//						,precalc_normal[normalindex][2]);
+
+
+		//	vertex.texcoord = vec2(float(pTexList[pTriList[j].texCoordIndex[0]].s) * delta_u
+		//		,float(pTexList[pTriList[j].texCoordIndex[1]].s) * delta_v);
+
+		//}
 	}
 
 	if(need_delete_buffer)

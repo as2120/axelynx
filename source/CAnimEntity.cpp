@@ -14,15 +14,25 @@ CAnimEntity::CAnimEntity(axelynx::Scene *scene_, const axelynx::AnimGeometry * g
 	:CEntity(scene_,geom)
 {
 	frame_ = 0;
+
+	maxframe_ = geom->CountFrames() -  1;
+	loop_ = true;
+	speedfactor_ = 1.0;
 }
 
 void CAnimEntity::SetSpeedFactor(float speedfactor)
 {
+	speedfactor_ = speedfactor;
 }
 
 CAnimEntity::~CAnimEntity()
 {
 //	CEntity::~CEntity();
+}
+
+void CAnimEntity::SetFrame(float frame)
+{
+	frame_ = frame;
 }
 
 bool CAnimEntity::Draw(const axelynx::Camera *camera)
@@ -44,6 +54,15 @@ bool CAnimEntity::Draw(const axelynx::Camera *camera)
 
 	bool CAnimEntity::Update(float twin)
 	{
-		frame_ += twin;
+		frame_ += twin * speedfactor_;
+
+		if(frame_>maxframe_)
+		{
+			if(loop_)
+				frame_ = ((int)frame_)%((int)maxframe_);
+			else
+				frame_ = maxframe_;
+		}
+
 		return false;
 	}

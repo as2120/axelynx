@@ -53,7 +53,7 @@ namespace axelynx
 		virtual ~MorfedMesh()
 		{
 		}
-
+		
 		virtual int CountFrames() const = 0;
 		virtual Frame& GetFrame(int index) = 0;
 		virtual const Frame& GetFrame(int index) const = 0;

@@ -7,6 +7,10 @@
 class CAnimEntity : public virtual axelynx::AnimEntity, public CEntity
 {
 	float frame_;
+	float maxframe_;
+	bool loop_;
+	float speedfactor_;
+
 public:
 	CAnimEntity(axelynx::Scene *scene_, const axelynx::AnimGeometry * geom);
 	virtual bool Draw(const axelynx::Camera *camera);
@@ -15,6 +19,7 @@ public:
 	virtual void SetSpeedFactor(float speedfactor);
 	virtual const axelynx::AnimGeometry *GetGeometry() const;
 	virtual bool Update(float twin = 1.0f);
+	virtual void SetFrame(float frame);
 		//wraping to CEntity
 		virtual std::wstring GetName() const
 		{

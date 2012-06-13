@@ -9,6 +9,7 @@ namespace axelynx
 	class AnimGeometry : public Geometry
 	{
 	public:
+		virtual int CountFrames() const = 0;
 		virtual bool Draw(float frame) const =0;
 
 		virtual bool Draw()

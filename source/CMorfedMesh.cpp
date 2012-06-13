@@ -8,7 +8,7 @@
 #include <iostream>
 #include <cmath>
 #include <vector>
-
+#include "saSpec.h"
 
 
 
@@ -164,11 +164,38 @@ bool CMorfedMesh::Draw(float frame) const
 	glBindBuffer(GL_ARRAY_BUFFER, vbo_);
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo_);
 
+	int iframe = (int)frame;
+	float scalar = frame - iframe;
+
+	if(axelynx::Shader::GetCurrent())
+	{
+		axelynx::Shader::GetCurrent()->SetUniform("scalar",scalar);
+	}
+
 	CStatistics::dips++;
 	CStatistics::tris_rendered += count_faces_;
 	CStatistics::vertices_rendered += count_vertices_;
 	OPENGL_CHECK_FOR_ERRORS();
-	glDrawRangeElements(GL_TRIANGLES,0,count_faces_ * 3 -1,count_faces_ * 3,GL_UNSIGNED_SHORT,0);
+
+	int framesize = count_vertices_ * sizeof(CMorfedMesh::CMorfedFrame::Vertex);
+
+	int firstframe = iframe;
+	int lastframe = iframe+1;
+	
+	if(lastframe>=count_frames_)
+		lastframe = 0;
+
+	glVertexAttribPointer(VA_POSITION, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(0+framesize * firstframe));
+	glVertexAttribPointer(VA_NORMAL, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(12+framesize * firstframe));
+	glVertexAttribPointer(VA_TANGENT, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(24+framesize * firstframe));
+	glVertexAttribPointer(VA_TEXCOORD0, 2, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(36+framesize * firstframe));
+
+	glVertexAttribPointer(VA_NEXT_POSITION, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(0+framesize * lastframe));
+	glVertexAttribPointer(VA_NEXT_NORMAL, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(12+framesize * lastframe));
+	glVertexAttribPointer(VA_NEXT_TANGENT, 3, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(24+framesize * lastframe));
+	glVertexAttribPointer(VA_NEXT_TEXCOORD0, 2, GL_FLOAT, GL_FALSE,sizeof(axelynx::MorfedMesh::Frame::Vertex), reinterpret_cast<const GLvoid*>(36+framesize * lastframe));
+
+	glDrawRangeElements(GL_TRIANGLES,0,count_faces_ * 3 -1,count_faces_ * 3,GL_UNSIGNED_SHORT,(void*)(0));
 	OPENGL_CHECK_FOR_ERRORS();
 	return true;
 

@@ -46,6 +46,7 @@ namespace axelynx
 			static AXELYNX_API Shader * Paralax();
 
 			static AXELYNX_API Shader * MorfedMeshTexturing();
+			static AXELYNX_API Shader * MorfedMeshTexturingLighting();
 		};
 
 		static AXELYNX_API Shader * FindByName(const char *shadername);

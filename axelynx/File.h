@@ -6,6 +6,10 @@
 #include <string>
 #include <fstream>
 
+#ifdef _WIN32
+typedef unsigned __int64 __uint64_t;
+typedef __int64 __int64_t;
+#endif
 
 namespace axelynx
 {

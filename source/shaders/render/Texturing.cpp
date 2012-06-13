@@ -481,6 +481,60 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::MorfedMeshTextur
 	const char *vs =	"uniform mat4 modelviewproj;\n"
 						"uniform float scalar;\n"
 						"in vec3 position;\n"
+						"in vec2 texcoord0;\n"
+						"in vec3 nextposition;\n"
+						"out vec2 fragmentuv;\n"
+						"void main(void) {\n"
+						"vec3 calcedpos = mix(position,nextposition,scalar);\n"
+						"gl_Position   = modelviewproj * vec4(calcedpos,1.0);\n"
+						"fragmentuv = texcoord0;\n"
+						"}\n";
+
+	const char *fs =	"uniform sampler2D texture0;\n"									
+						"in vec2 fragmentuv;\n"
+						"out vec4 color;\n"
+						"void main(void) {\n"
+						"color = texture(texture0,fragmentuv);\n"
+						"}\n";
+
+	shader->VertexSource(vs);
+	shader->FragmentSource(fs);
+
+	shader->BindAttribLocation(sysattribs[VA_POSITION].name,VA_POSITION);
+	shader->BindAttribLocation(sysattribs[VA_TEXCOORD0].name,VA_TEXCOORD0);
+	//shader->BindAttribLocation(sysattribs[VA_NORMAL].name,VA_NORMAL);
+	//shader->BindAttribLocation(sysattribs[VA_TANGENT].name,VA_TANGENT);
+
+	shader->BindAttribLocation(sysattribs[VA_NEXT_POSITION].name,VA_NEXT_POSITION);
+	//shader->BindAttribLocation(sysattribs[VA_NEXT_TEXCOORD0].name,VA_NEXT_TEXCOORD0);
+	//shader->BindAttribLocation(sysattribs[VA_NEXT_NORMAL].name,VA_NEXT_NORMAL);
+	//shader->BindAttribLocation(sysattribs[VA_NEXT_TANGENT].name,VA_NEXT_TANGENT);
+
+	shader->Compile();
+
+	//shader->Bind();
+
+
+	//shader->UnBind();
+
+	return shader;
+}
+
+
+AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::MorfedMeshTexturingLighting()
+{
+	static axelynx::Shader * shader=0;
+	if(shader)
+		return shader;
+
+	shader = axelynx::Shader::Create();
+
+	const char *vs =	"uniform mat4 modelviewproj;\n"
+						"uniform mat4 model;\n"
+						"uniform mat3 normalmatrix;\n"
+						"uniform float scalar;\n"
+						"uniform vec3 lightpos;\n"
+						"in vec3 position;\n"
 						"in vec3 normal;\n"
 						"in vec3 tangent;\n"
 						"in vec2 texcoord0;\n"
@@ -489,16 +543,23 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::MorfedMeshTextur
 						"in vec3 nexttangent;\n"
 						"in vec2 nexttexcoord0;\n"
 						"out vec2 fragmentuv;\n"
+						"out vec3 fragmentnormal;\n"
+						"out vec3 lightvec;\n"
 						"void main(void) {\n"
-						"gl_Position   = modelviewproj * vec4(position,1.0);\n"
+						"vec3 calcedpos = mix(position,nextposition,scalar);\n"
+						"gl_Position   = modelviewproj * vec4(calcedpos,1.0);\n"
+						"fragmentnormal = normalmatrix * mix(normal,nextnormal,scalar);\n"
 						"fragmentuv = texcoord0;\n"
+						"lightvec = (lightpos - (model * vec4(calcedpos,1.0)).xyz);\n"
 						"}\n";
 
-	const char *fs =	"uniform sampler2D texture0;\n"			
+	const char *fs =	"uniform sampler2D texture0;\n"									
 						"in vec2 fragmentuv;\n"
+						"in vec3 fragmentnormal;\n"
+						"in vec3 lightvec;\n"
 						"out vec4 color;\n"
 						"void main(void) {\n"
-						"color = vec4(1,1,1,1);\n"
+						"color = max(dot(normalize(fragmentnormal),normalize(lightvec)),0) * texture(texture0,fragmentuv);\n"
 						"}\n";
 
 	shader->VertexSource(vs);

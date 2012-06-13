@@ -30,9 +30,9 @@ int main()
 
 		Shader *shader = StandartShaders::Render::MorfedMeshTexturing();
 
-		const int COUNT_TEAPOTS = 1000;
+		const int COUNT_TEAPOTS = 400;
 
-		Entity* ents[COUNT_TEAPOTS];
+		AnimEntity* ents[COUNT_TEAPOTS];
 		quat rots[COUNT_TEAPOTS];
 
 		for(int i=0;i<COUNT_TEAPOTS;++i)
@@ -40,10 +40,14 @@ int main()
 			ents[i] = s->Add(mesh);
 			ents[i]->SetShader(shader);
 			ents[i]->SetTexture(diffuse);
-			ents[i]->SetPosition(rnd(-128,128),rnd(2,2),rnd(-128,128));
+			ents[i]->SetPosition((i / 20)*8,0,(i % 20)*8);
 			ents[i]->SetOrientation(0,rnd(360),0);
+			ents[i]->SetScale(0.1);
+			ents[i]->SetFrame(rnd(0,mesh->CountFrames()));
 
 			rots[i] = quat(vec3(0,rnd(-0.5,0.5),0));
+
+
 		}
 
 		vec3 transl;
@@ -58,13 +62,10 @@ int main()
 		Font *fnt = eng->LoadFont(desc);
 		c->SetFont(fnt);
 
+		//shader->SetUniform("lightpos",vec3(-5.0,27.0,3.0));
+
         while(wnd->isRunning())
         {
-			for(int i=0;i<COUNT_TEAPOTS;++i)
-			{
-				ents[i]->Turn(rots[i]);
-			}
-
 			if(KeyHit('R'))
 			{
 				wire = ! wire;
@@ -96,7 +97,7 @@ int main()
 			transl *= 0.9;
 
 			cam->Translate(transl * dt * 0.1);
-
+			s->Update(dt*0.01);
 			s->Render();
 			c->SetBlendMode(BM_ALPHA);
 			c->SetColor(1,1,1);
