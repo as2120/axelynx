@@ -111,12 +111,16 @@ void CMorfedMesh::CMorfedFrame::RecalcTangents(int count_indices, unsigned short
 
 void CMorfedMesh::RecalcTangents()
 {
+	Lock();
+
 	for(int i=0;i<count_frames_;++i)
 	{
 		frames_[i].RecalcTangents(count_faces_*3,(unsigned short*)faces_);
 	}
 
 	MakeVBO();
+
+	UnLock();
 }
 
 bool CMorfedMesh::MakeVBO()
@@ -127,16 +131,16 @@ bool CMorfedMesh::MakeVBO()
 	OPENGL_CHECK_FOR_ERRORS();
 	std::cout<<"MakeVBO"<<std::endl;
 
-	if(!vao_)
+	if(vao_)
 		glDeleteVertexArrays(1,&vao_);
 
-	if(!ibo_)
+	if(ibo_)
 		glDeleteBuffers(1,&ibo_);
 
-	if(!vbo_)
+	if(vbo_)
 		glDeleteBuffers(1,&vbo_);
 
-	if(!uabo_)
+	if(uabo_)
 		glDeleteBuffers(1,&uabo_);
 	OPENGL_CHECK_FOR_ERRORS();
 	glGenVertexArrays(1, &vao_);

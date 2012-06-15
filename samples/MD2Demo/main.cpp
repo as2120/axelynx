@@ -26,6 +26,7 @@ int main()
 		//body->SetScale(256);
 
 		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/solider.pcx",Texture::Desc().Anisotropic(16.0));
+		Texture *normalmap = eng->LoadTexture(L"../../../../samples/media/solider_nm.pcx",Texture::Desc().Anisotropic(16.0));
 		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/solider.md2");
 
 		Timer::Delta();
@@ -33,7 +34,7 @@ int main()
 		float a = Timer::Delta();
 		int b = 1;
 
-		Shader *shader = StandartShaders::Render::MorfedMeshTexturingLighting();
+		Shader *shader = StandartShaders::Render::MorfedMeshBumpMapping();
 
 		const int COUNT_TEAPOTS = 400;
 
@@ -44,7 +45,9 @@ int main()
 		{
 			ents[i] = s->Add(mesh);
 			ents[i]->SetShader(shader);
-			ents[i]->SetTexture(diffuse);
+			ents[i]->SetTexture(diffuse,0);
+			ents[i]->SetTexture(normalmap,1);
+
 			ents[i]->SetPosition((i / 20)*8,0,(i % 20)*8);
 			ents[i]->SetOrientation(0,rnd(360),0);
 			ents[i]->SetScale(0.1);

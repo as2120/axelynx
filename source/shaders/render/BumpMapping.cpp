@@ -345,32 +345,42 @@ static axelynx::Shader * shader=0;
 						"uniform mat4 modelview;\n"
 						"uniform mat3 normalmatrix;\n"
 						"uniform vec3 lightpos;\n"
+						"uniform float scalar;\n"
 
 						"in vec3 position;\n"
 						"in vec3 normal;\n"
 						"in vec3 tangent;\n"
 						"in vec2 texcoord0;\n"
-						
+					
+						"in vec3 nextposition;\n"
+						"in vec3 nextnormal;\n"
+						"in vec3 nexttangent;\n"
+						"in vec2 nexttexcoord0;\n"
+
 						"out vec3 lightVec;\n"
 						"out vec3 eyeVec;\n"
 						"out vec2 fragmentuv;\n"
 
 						"void main(void) {\n"
-						"gl_Position   = modelviewproj * vec4(position,1.0);\n"
+						"vec3 pos = mix(position,nextposition,scalar);\n"
+						"vec3 nrm = mix(normal,nextnormal,scalar);\n"
+						"vec3 tgt = mix(tangent,nexttangent,scalar);\n"
+
+						"gl_Position   = modelviewproj * vec4(pos,1.0);\n"
 						"fragmentuv =texcoord0;\n"
 
-						"vec3 n = normalize(normalmatrix * normal);\n"
-						"vec3 t = normalize(normalmatrix * tangent);\n"
+						"vec3 n = normalize(normalmatrix * nrm);\n"
+						"vec3 t = normalize(normalmatrix * tgt);\n"
 						"vec3 b = cross(n, t);\n"
 
-						"vec3 vVertex = vec3(model * vec4(position,1));\n"
+						"vec3 vVertex = vec3(model * vec4(pos,1));\n"
 						"vec3 tmpVec = lightpos - vVertex;\n"
 
 						"lightVec.x = dot(tmpVec, t);\n"
 						"lightVec.y = dot(tmpVec, b);\n"
 						"lightVec.z = dot(tmpVec, n);\n"
 						
-						"tmpVec = -vec3(modelview * vec4(position,1));\n"
+						"tmpVec = -vec3(modelview * vec4(pos,1));\n"
 						"eyeVec.x = dot(tmpVec, t);\n"
 						"eyeVec.y = dot(tmpVec, b);\n"
 						"eyeVec.z = dot(tmpVec, n);\n"
@@ -388,7 +398,7 @@ static axelynx::Shader * shader=0;
 
 						"void main(void) {\n"
 						"float distSqr = dot(lightVec, lightVec);\n"
-						"float att = clamp(1.0 - lightRadius * sqrt(distSqr), 0.0, 1.0);\n"
+						"float att = 1.0;//clamp(1.0 - lightRadius * sqrt(distSqr), 0.0, 1.0);\n"
 						"vec3 lVec = lightVec * inversesqrt(distSqr);\n"
 
 						"vec3 vVec = normalize(eyeVec);\n"
@@ -401,7 +411,7 @@ static axelynx::Shader * shader=0;
 												
 						"float specular = pow(clamp(dot(reflect(-lVec, bump), vVec), 0.0, 1.0), 8.0 );\n"
 							
-						"color = ((diffuse + specular)*base) * att;\n"
+						"color = texture2D(texture1, fragmentuv) * diffuse;// ((diffuse + specular)*base) * att;\n"
 						"}\n";
 
 
@@ -413,12 +423,17 @@ static axelynx::Shader * shader=0;
 	shader->BindAttribLocation(sysattribs[VA_TANGENT].name,VA_TANGENT);
 	shader->BindAttribLocation(sysattribs[VA_TEXCOORD0].name,VA_TEXCOORD0);
 
+	shader->BindAttribLocation(sysattribs[VA_NEXT_POSITION].name,VA_NEXT_POSITION);
+	shader->BindAttribLocation(sysattribs[VA_NEXT_TEXCOORD0].name,VA_NEXT_TEXCOORD0);
+	shader->BindAttribLocation(sysattribs[VA_NEXT_NORMAL].name,VA_NEXT_NORMAL);
+	shader->BindAttribLocation(sysattribs[VA_NEXT_TANGENT].name,VA_NEXT_TANGENT);
+
 	shader->SetUniform("lightRadius",1.0f / 100.0f);
 	shader->SetUniform("specular",0.1f);
 
 	shader->Compile();
 
-	shader->SetUniform(axelynx::Shader::SU_LIGHTPOS,axelynx::vec3(-100,200,-400));
+	shader->SetUniform(axelynx::Shader::SU_LIGHTPOS,axelynx::vec3(-10,20,-40));
 
 	return shader;
 
