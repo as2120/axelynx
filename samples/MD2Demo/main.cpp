@@ -28,6 +28,11 @@ int main()
 		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/solider.pcx",Texture::Desc().Anisotropic(16.0));
 		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/solider.md2");
 
+		Timer::Delta();
+		mesh->RecalcTangents();
+		float a = Timer::Delta();
+		int b = 1;
+
 		Shader *shader = StandartShaders::Render::MorfedMeshTexturingLighting();
 
 		const int COUNT_TEAPOTS = 400;

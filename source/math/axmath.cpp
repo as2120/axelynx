@@ -80,7 +80,7 @@ AXELYNX_API bool axelynx::LineSphereIntersect(const axelynx::vec3& base, const a
         return true;
 }
 
-void CalcTriangleBasis( const axelynx::vec3& E, const axelynx::vec3& F, const axelynx::vec3& G, float sE,
+AXELYNX_API void axelynx::CalcTriangleBasis( const axelynx::vec3& E, const axelynx::vec3& F, const axelynx::vec3& G, float sE,
 		float tE, float sF, float tF, float sG, float tG, axelynx::vec3& tangentX,
 		axelynx::vec3& tangentY )
 {
@@ -126,7 +126,7 @@ void CalcTriangleBasis( const axelynx::vec3& E, const axelynx::vec3& F, const ax
 	tangentY.normalize();
 }
 
-axelynx::vec3 ClosestPointOnLine( const axelynx::vec3& a, const axelynx::vec3& b, const axelynx::vec3& p )
+AXELYNX_API axelynx::vec3 axelynx::ClosestPointOnLine( const axelynx::vec3& a, const axelynx::vec3& b, const axelynx::vec3& p )
 {
 	using namespace axelynx;
 
@@ -147,7 +147,7 @@ axelynx::vec3 ClosestPointOnLine( const axelynx::vec3& a, const axelynx::vec3& b
 	return ( a + V );
 }
 
-axelynx::vec3 Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 )
+AXELYNX_API axelynx::vec3 axelynx::Ortogonalize( const axelynx::vec3& v1, const axelynx::vec3& v2 )
 {
 	using namespace axelynx;
 

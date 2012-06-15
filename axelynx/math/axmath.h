@@ -13,7 +13,7 @@ namespace axelynx
 
 	AXELYNX_API void sincos(float a,float & s,float & c );
 
-	AXELYNX_API bool FAST_CALL LineSphereIntersect(const vec3& base, const vec3& dir, const vec4& sphere);
+	AXELYNX_API bool LineSphereIntersect(const vec3& base, const vec3& dir, const vec4& sphere);
 
 
 

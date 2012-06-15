@@ -61,23 +61,22 @@ void CMorfedMesh::CMorfedFrame::RecalcTangents(int count_indices, unsigned short
 	register int i, j;
 	std::vector<vec3> ntangents;	// касательные вектора к треугольнику
  
-	unsigned short *raw_indices = static_cast<unsigned short*>(indices_);
-	for ( i = 0; i < count_indices_; i+=3 )
+	for ( i = 0; i < count_indices; i+=3 )
 	{
-		int ind0 = raw_indices[ i + 0];
-		int ind1 = raw_indices[i + 1];
-		int ind2 = raw_indices[i + 2];
+		int ind0 = indices[ i + 0];
+		int ind1 = indices[i + 1];
+		int ind2 = indices[i + 2];
  
-		vec3 v1 = positions[ind0];
-		vec3 v2 = positions[ind1];
-		vec3 v3 = positions[ind2];
+		vec3 v1 = vertices_[ind0].position;
+		vec3 v2 = vertices_[ind1].position;
+		vec3 v3 = vertices_[ind2].position;
 
-		float s1      = uv0[ind0].x;
-		float t1      = uv0[ind0].y;
-		float s2      = uv0[ind1].x;
-		float t2      = uv0[ind1].y;
-		float s3      = uv0[ind2].x;
-		float t3      = uv0[ind2].y;
+		float s1      = vertices_[ind0].texcoord.x;
+		float t1      = vertices_[ind0].texcoord.y;
+		float s2      = vertices_[ind1].texcoord.x;
+		float t2      = vertices_[ind1].texcoord.y;
+		float s3      = vertices_[ind2].texcoord.x;
+		float t3      = vertices_[ind2].texcoord.y;
  
 		vec3  t, b;
 		CalcTriangleBasis( v1, v2, v3, s1, t1, s2, t2, s3, t3, t, b );
@@ -89,9 +88,9 @@ void CMorfedMesh::CMorfedFrame::RecalcTangents(int count_indices, unsigned short
 	{
 		std::vector<vec3> rt;
 
-		for ( j = 0; j < count_indices_; j+=3 )
+		for ( j = 0; j < count_indices; j+=3 )
 		{
-			if ( raw_indices[ j + 0 ] == i || raw_indices[ j + 1] == i || raw_indices[ j + 2 ] == i )
+			if ( indices[ j + 0 ] == i || indices[ j + 1] == i || indices[ j + 2 ] == i )
 			{
 				rt.push_back( ntangents[ j / 3 ] );
 			}
@@ -104,18 +103,17 @@ void CMorfedMesh::CMorfedFrame::RecalcTangents(int count_indices, unsigned short
 		}
 
 		tangentRes *= (1.0f/float( rt.size() ));
-		tangentRes = Ortogonalize( normals[ i ], tangentRes );
-		tangents[i] =  tangentRes;
-	}
-
-	return true;	
+		tangentRes = Ortogonalize( vertices_[ i ].normal, tangentRes );
+		vertices_[i].tangent =  tangentRes;
+	}	
 }
+
 
 void CMorfedMesh::RecalcTangents()
 {
 	for(int i=0;i<count_frames_;++i)
 	{
-		frames_[i].RecalcTangents();
+		frames_[i].RecalcTangents(count_faces_*3,(unsigned short*)faces_);
 	}
 
 	MakeVBO();
