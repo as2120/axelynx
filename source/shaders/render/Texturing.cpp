@@ -584,3 +584,5 @@ AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Render::MorfedMeshTextur
 
 	return shader;
 }
+
+
