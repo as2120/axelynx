@@ -398,7 +398,7 @@ static axelynx::Shader * shader=0;
 
 						"void main(void) {\n"
 						"float distSqr = dot(lightVec, lightVec);\n"
-						"float att = 1.0;//clamp(1.0 - lightRadius * sqrt(distSqr), 0.0, 1.0);\n"
+						"float att = clamp(1.0 - lightRadius * sqrt(distSqr), 0.0, 1.0);\n"
 						"vec3 lVec = lightVec * inversesqrt(distSqr);\n"
 
 						"vec3 vVec = normalize(eyeVec);\n"
@@ -411,7 +411,7 @@ static axelynx::Shader * shader=0;
 												
 						"float specular = pow(clamp(dot(reflect(-lVec, bump), vVec), 0.0, 1.0), 8.0 );\n"
 							
-						"color = texture2D(texture1, fragmentuv) * diffuse;// ((diffuse + specular)*base) * att;\n"
+						"color = ((diffuse + specular)*base) * att;\n"
 						"}\n";
 
 
@@ -428,7 +428,7 @@ static axelynx::Shader * shader=0;
 	shader->BindAttribLocation(sysattribs[VA_NEXT_NORMAL].name,VA_NEXT_NORMAL);
 	shader->BindAttribLocation(sysattribs[VA_NEXT_TANGENT].name,VA_NEXT_TANGENT);
 
-	shader->SetUniform("lightRadius",1.0f / 100.0f);
+	shader->SetUniform("lightRadius",1.0f / 20.0f);
 	shader->SetUniform("specular",0.1f);
 
 	shader->Compile();
