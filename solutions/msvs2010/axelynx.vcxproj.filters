@@ -302,9 +302,6 @@
     <ClInclude Include="..\..\axelynx\Shader.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\axelynx\Shape.h">
-      <Filter>interface</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\axelynx\Shell.h">
       <Filter>interface</Filter>
     </ClInclude>
@@ -537,9 +534,6 @@
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\source\CShadowPass.h">
-      <Filter>source</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\source\CShape.h">
       <Filter>source</Filter>
     </ClInclude>
     <ClInclude Include="..\..\source\CSprite.h">
@@ -1575,6 +1569,18 @@
       <Filter>source\libs\bullet\BulletDynamics\Vehicle</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
+    <ClInclude Include="..\..\axelynx\Shape2D.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CShape2D.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Shape.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\Body.h">
+      <Filter>interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\CFile.cpp">
@@ -1742,9 +1748,6 @@
     <ClCompile Include="..\..\source\CShadowPass.cpp">
       <Filter>source</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\source\CShape.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
     <ClCompile Include="..\..\source\CSprite.cpp">
       <Filter>source</Filter>
     </ClCompile>
@@ -1797,9 +1800,6 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\saSpec.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\source\Shapes.cpp">
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\ShellWin32.cpp">
@@ -2821,6 +2821,12 @@
     </ClCompile>
     <ClCompile Include="..\..\source\surfaces\Cube.cpp">
       <Filter>source\surfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CShape2D.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\Shapes2D.cpp">
+      <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

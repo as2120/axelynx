@@ -103,7 +103,7 @@ bool CPostEffect::BindShader(axelynx::Shader *shader)
 	shader_->Bind();
 
 	if(!quad_)
-		quad_ = axelynx::Shape::Rect(width_, height_,false);
+		quad_ = axelynx::Shape2D::Rect(width_, height_,false);
 
 	shader_->UnBind();
 	return shader_->Valid();

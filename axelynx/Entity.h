@@ -11,6 +11,8 @@
 #include "Camera.h"
 #include "Material.h"
 
+#include "Body.h"
+
 #include <string>
 
 
@@ -195,6 +197,7 @@ namespace axelynx
 
 		virtual Material* GetMaterial() = 0;
 
+		virtual Body* GetBody() = 0;
 		int tag;
 	};
 }

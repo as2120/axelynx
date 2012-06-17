@@ -1,10 +1,10 @@
-#include "CShape.h"
+#include "CShape2D.h"
 
-AXELYNX_API axelynx::Shape* axelynx::Shape::Rect(int width_, int height_,bool centred)
+AXELYNX_API axelynx::Shape2D* axelynx::Shape2D::Rect(int width_, int height_,bool centred)
 {
 	float width = static_cast<float>(width_)*0.5f;
 	float height = static_cast<float>(height_)*0.5f;
-	CShape *shape = new CShape(2,4);
+	CShape2D *shape = new CShape2D(2,4);
 
 	if(centred)
 	{

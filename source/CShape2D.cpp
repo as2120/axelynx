@@ -1,44 +1,48 @@
 
 #include <iostream>
 
-#include "CShape.h"
+#include "CShape2D.h"
 #include "CCanvas.h"
 #include <string.h>
 #include "CStatistics.h"
 
-	CShape::CShape(int cnttris, int cntverts)
-		:vbo_(0)
-		,ibo_(0)
-		,vao_(0)
-		,positions_(0)
-		,colors_(0)
-		,uv_(0)
-		,uv_use_(true)
-		,color_use_(true)
-		,cntvertices_(cntverts)
-		,cntindices_(cnttris*3)
-		,drawmode_(GL_TRIANGLES)
-		,vertexsize_(0)
-		,vbuffer_(0)
+CShape2D::CShape2D(int cnttris, int cntverts)
+	:vbo_(0)
+	,ibo_(0)
+	,vao_(0)
+	,positions_(0)
+	,colors_(0)
+	,uv_(0)
+	,uv_use_(true)
+	,color_use_(true)
+	,cntvertices_(cntverts)
+	,cntindices_(cnttris*3)
+	,drawmode_(GL_TRIANGLES)
+	,vertexsize_(0)
+	,vbuffer_(0)
+{
+	indexsize_ = 1;
+
+	if(cntverts>255)
 	{
-		indexsize_ = 1;
+		indexsize_ =2;
 
-		if(cntverts>255)
-		{
-			indexsize_ =2;
-
-			if(cntverts>65535)
-				indexsize_ =4;
-		}
-
-		positions_ = new vec2[cntverts];
-		colors_ = new vec4[cntverts];
-		uv_ = new vec2[cntverts];
-
-		indices_ = new int[cnttris*3];
+		if(cntverts>65535)
+			indexsize_ =4;
 	}
 
-void CShape::Draw(const axelynx::Canvas *canvas) const
+	positions_ = new vec2[cntverts];
+	colors_ = new vec4[cntverts];
+	uv_ = new vec2[cntverts];
+
+	indices_ = new int[cnttris*3];
+}
+
+CShape2D::~CShape2D()
+{
+}
+
+void CShape2D::Draw(const axelynx::Canvas *canvas) const
 {
 	if(!vao_)
 		return;
@@ -61,7 +65,7 @@ void CShape::Draw(const axelynx::Canvas *canvas) const
 	OPENGL_CHECK_FOR_ERRORS();
 }
 
-bool CShape::Build()
+bool CShape2D::Build()
 {
 	if(!CShader::Current())
 		return false;
@@ -267,57 +271,57 @@ bool CShape::Build()
 	return true;
 }
 
-int CShape::TrianglesCount() const
+int CShape2D::TrianglesCount() const
 {
 	return cntindices_ / 3;
 }
 
-int CShape::VerticesCount() const
+int CShape2D::VerticesCount() const
 {
 	return cntvertices_ / 3;
 }
 
-vec2 CShape::GetPosition(int index) const
+vec2 CShape2D::GetPosition(int index) const
 {
 	return positions_[index];
 }
 
-vec4 CShape::GetColor(int index) const
+vec4 CShape2D::GetColor(int index) const
 {
 	return colors_[index];
 }
 
-vec2 CShape::GetTexCoords(int index) const
+vec2 CShape2D::GetTexCoords(int index) const
 {
 	return uv_[index];
 }
 
-int CShape::GetTrisIndex(int tris, int corner) const
+int CShape2D::GetTrisIndex(int tris, int corner) const
 {
 	return indices_[tris*3 + corner];
 }
 
-void CShape::SetPosition(int index, const vec2& position)
+void CShape2D::SetPosition(int index, const vec2& position)
 {
 	positions_[index] = position;
 }
 
-void CShape::SetColor(int index, const vec4& color)
+void CShape2D::SetColor(int index, const vec4& color)
 {
 	colors_[index] = color;
 }
 
-void CShape::SetTexCoords(int index, const vec2& uv)
+void CShape2D::SetTexCoords(int index, const vec2& uv)
 {
 	uv_[index] = uv;
 }
 
-void CShape::SetTrisIndex(int tris, int corner, int vertexindex)
+void CShape2D::SetTrisIndex(int tris, int corner, int vertexindex)
 {
 	indices_[tris*3 + corner] = vertexindex;
 }
 
-void CShape::SetTrisIndex(int tris, int corner0, int corner1, int corner2)
+void CShape2D::SetTrisIndex(int tris, int corner0, int corner1, int corner2)
 {
 	indices_[tris*3 + 0] = corner0;
 	indices_[tris*3 + 1] = corner1;

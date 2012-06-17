@@ -79,7 +79,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v110</PlatformToolset>
+    <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -197,13 +197,15 @@
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMD|x64'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
@@ -216,57 +218,66 @@
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)_d</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|Win32'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugMT|x64'">
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)_d</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|Win32'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMD|x64'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <TargetName>$(ProjectName)$(PlatformArchitecture)</TargetName>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|Win32'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseMT|x64'">
     <OutDir>$(SolutionDir)\..\..\lib\cl\$(PlatformName)\$(Configuration)\</OutDir>
     <IntDir>$(PlatformName)\$(Configuration)\</IntDir>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLL|x64'">
     <OutDir>$(SolutionDir)\..\..\bin\cl\$(PlatformName)\$(Configuration)\</OutDir>
@@ -291,7 +302,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -318,7 +329,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -345,7 +356,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
       <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
@@ -379,7 +390,7 @@
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -410,7 +421,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -438,7 +449,7 @@
       <EnableEnhancedInstructionSet>StreamingSIMDExtensions</EnableEnhancedInstructionSet>
       <FloatingPointModel>Fast</FloatingPointModel>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -469,7 +480,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <CallingConvention>Cdecl</CallingConvention>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -501,7 +512,7 @@
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <CallingConvention>Cdecl</CallingConvention>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -532,7 +543,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -566,7 +577,7 @@
       <CallingConvention>Cdecl</CallingConvention>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -601,7 +612,7 @@
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>Cdecl</CallingConvention>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -633,7 +644,7 @@
       <EnableFiberSafeOptimizations>true</EnableFiberSafeOptimizations>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <CallingConvention>Cdecl</CallingConvention>
-      <EnablePREfast>true</EnablePREfast>
+      <EnablePREfast>false</EnablePREfast>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -660,6 +671,7 @@
     <ClInclude Include="..\..\axelynx\axelynx.h" />
     <ClInclude Include="..\..\axelynx\AxelynxSystemShaders.h" />
     <ClInclude Include="..\..\axelynx\axlib.h" />
+    <ClInclude Include="..\..\axelynx\Body.h" />
     <ClInclude Include="..\..\axelynx\Bone.h" />
     <ClInclude Include="..\..\axelynx\BSPLevel.h" />
     <ClInclude Include="..\..\axelynx\Camera.h" />
@@ -712,6 +724,7 @@
     <ClInclude Include="..\..\axelynx\SceneGraph.h" />
     <ClInclude Include="..\..\axelynx\Shader.h" />
     <ClInclude Include="..\..\axelynx\Shape.h" />
+    <ClInclude Include="..\..\axelynx\Shape2D.h" />
     <ClInclude Include="..\..\axelynx\Shell.h" />
     <ClInclude Include="..\..\axelynx\Skeleton.h" />
     <ClInclude Include="..\..\axelynx\Skin.h" />
@@ -763,7 +776,7 @@
     <ClInclude Include="..\..\source\CScene.h" />
     <ClInclude Include="..\..\source\CShader.h" />
     <ClInclude Include="..\..\source\CShadowPass.h" />
-    <ClInclude Include="..\..\source\CShape.h" />
+    <ClInclude Include="..\..\source\CShape2D.h" />
     <ClInclude Include="..\..\source\CSprite.h" />
     <ClInclude Include="..\..\source\CSpriteSystem.h" />
     <ClInclude Include="..\..\source\CStatistics.h" />
@@ -1159,7 +1172,7 @@
     <ClCompile Include="..\..\source\CScene.cpp" />
     <ClCompile Include="..\..\source\CShader.cpp" />
     <ClCompile Include="..\..\source\CShadowPass.cpp" />
-    <ClCompile Include="..\..\source\CShape.cpp" />
+    <ClCompile Include="..\..\source\CShape2D.cpp" />
     <ClCompile Include="..\..\source\CSprite.cpp" />
     <ClCompile Include="..\..\source\CSpriteSystem.cpp" />
     <ClCompile Include="..\..\source\CStatistics.cpp" />
@@ -1689,7 +1702,7 @@
     <ClCompile Include="..\..\source\shaders\draw\PositionColorTexCoord.cpp" />
     <ClCompile Include="..\..\source\shaders\render\BumpMapping.cpp" />
     <ClCompile Include="..\..\source\shaders\render\Texturing.cpp" />
-    <ClCompile Include="..\..\source\Shapes.cpp" />
+    <ClCompile Include="..\..\source\Shapes2D.cpp" />
     <ClCompile Include="..\..\source\ShellWin32.cpp" />
     <ClCompile Include="..\..\source\StandartSceneGraph.cpp" />
     <ClCompile Include="..\..\source\StreamFile.cpp" />

@@ -1,13 +1,13 @@
 #pragma once
 
-#include "axelynx/Shape.h"
+#include "axelynx/Shape2D.h"
 #include "CShader.h"
 
 #include "gl/axgl.h"
 
 using namespace axelynx;
 
-class CShape : public axelynx::Shape
+class CShape2D : public axelynx::Shape2D
 {
 	GLuint vbo_;
 	GLuint ibo_;
@@ -34,7 +34,8 @@ class CShape : public axelynx::Shape
 
 	GLubyte *vbuffer_; //video card buffer (for VBO)
 public:
-	CShape(int cnttris, int cntverts);
+	CShape2D(int cnttris, int cntverts);
+	~CShape2D();
 	virtual void Draw(const axelynx::Canvas *canvas) const;
 
 	virtual int TrianglesCount() const;

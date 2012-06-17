@@ -7,7 +7,7 @@ int main()
 {
         Engine *eng = Engine::Init();
 
-        Window *wnd = eng->AddWindow(800,600,32,WM_WINDOWED,8);
+        Window *wnd = eng->AddWindow();
 
 		wnd->VSync(false);
 
@@ -25,9 +25,9 @@ int main()
         //Entity *body = s->Add(cube);
 		//body->SetScale(256);
 
-		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/solider.pcx",Texture::Desc().Anisotropic(16.0));
-		Texture *normalmap = eng->LoadTexture(L"../../../../samples/media/solider_nm.pcx",Texture::Desc().Anisotropic(16.0));
-		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/solider.md2");
+		Texture *diffuse = eng->LoadTexture(L"../../../../samples/media/drfreak.tga",Texture::Desc().Anisotropic(16.0));
+		Texture *normalmap = eng->LoadTexture(L"../../../../samples/media/drfreak_bump.tga",Texture::Desc().Anisotropic(16.0));
+		MorfedMesh *mesh = eng->LoadMorfedMesh(L"../../../../samples/media/drfreak.md2");
 
 		Timer::Delta();
 		mesh->RecalcTangents();

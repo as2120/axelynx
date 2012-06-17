@@ -2,7 +2,7 @@
 
 #include "axelynx/PostEffect.h"
 #include "axelynx/RenderTarget.h"
-#include "axelynx/Shape.h"
+#include "axelynx/Shape2D.h"
 #include <list>
 
 class CPostEffect : public axelynx::PostEffect
@@ -12,7 +12,7 @@ class CPostEffect : public axelynx::PostEffect
 	axelynx::Texture *depth_texture_;
 	axelynx::RenderTarget *RTT_;
 	axelynx::vec4 color_;
-	axelynx::Shape *quad_;
+	axelynx::Shape2D *quad_;
 	mutable bool binded_;
 
 	typedef std::list<axelynx::PostEffect*> Effects;

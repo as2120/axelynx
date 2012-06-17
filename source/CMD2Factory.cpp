@@ -120,7 +120,7 @@ axelynx::MorfedMesh * CMD2Factory::CreateFromFile(axelynx::File file)
 				int tcindex = pTriList[j].texCoordIndex[k];
 
 				assert(md2index >= 0 && md2index < md2header->numVertices);
-				assert(tcindex >= 0 && md2index < md2header->numTexCoords);
+				assert(tcindex >= 0 && tcindex < md2header->numTexCoords);
 
 				axelynx::MorfedMesh::Frame::Vertex& v = frame.GetVertex(vertex);
 
