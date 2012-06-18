@@ -461,6 +461,8 @@ axelynx::Texture* PNGImageFormat::LoadTexture(axelynx::File filename,axelynx::Te
 
 	tex->Build(t->texels,format,internalFormat);
 
+	free(t->texels);
+
     return tex;
 }
 

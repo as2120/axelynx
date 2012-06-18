@@ -669,7 +669,6 @@
     <ClInclude Include="..\..\axelynx\AnimEntity.h" />
     <ClInclude Include="..\..\axelynx\AnimGeometry.h" />
     <ClInclude Include="..\..\axelynx\axelynx.h" />
-    <ClInclude Include="..\..\axelynx\AxelynxSystemShaders.h" />
     <ClInclude Include="..\..\axelynx\axlib.h" />
     <ClInclude Include="..\..\axelynx\Body.h" />
     <ClInclude Include="..\..\axelynx\Bone.h" />
@@ -713,6 +712,7 @@
     <ClInclude Include="..\..\axelynx\Mouse.h" />
     <ClInclude Include="..\..\axelynx\Pak.h" />
     <ClInclude Include="..\..\axelynx\ParticleSystem.h" />
+    <ClInclude Include="..\..\axelynx\PhysicsContext.h" />
     <ClInclude Include="..\..\axelynx\Pivot.h" />
     <ClInclude Include="..\..\axelynx\PixMap.h" />
     <ClInclude Include="..\..\axelynx\plane.h" />
@@ -731,6 +731,8 @@
     <ClInclude Include="..\..\axelynx\SkinAnim.h" />
     <ClInclude Include="..\..\axelynx\Sprite.h" />
     <ClInclude Include="..\..\axelynx\SpriteSystem.h" />
+    <ClInclude Include="..\..\axelynx\StandartShaders.h" />
+    <ClInclude Include="..\..\axelynx\StandartShapes.h" />
     <ClInclude Include="..\..\axelynx\StandartSurfaces.h" />
     <ClInclude Include="..\..\axelynx\Statistics.h" />
     <ClInclude Include="..\..\axelynx\Surface.h" />
@@ -745,6 +747,7 @@
     <ClInclude Include="..\..\axelynx\Window.h" />
     <ClInclude Include="..\..\source\anorms.h" />
     <ClInclude Include="..\..\source\CAnimEntity.h" />
+    <ClInclude Include="..\..\source\CBody.h" />
     <ClInclude Include="..\..\source\CCamera.h" />
     <ClInclude Include="..\..\source\CCanvas.h" />
     <ClInclude Include="..\..\source\CEarlyZ.h" />
@@ -768,6 +771,7 @@
     <ClInclude Include="..\..\source\CMorfedMeshFactory.h" />
     <ClInclude Include="..\..\source\CPak.h" />
     <ClInclude Include="..\..\source\CParticleSystem.h" />
+    <ClInclude Include="..\..\source\CPhysicsContext.h" />
     <ClInclude Include="..\..\source\CPivot.h" />
     <ClInclude Include="..\..\source\CPixMap.h" />
     <ClInclude Include="..\..\source\CPostEffect.h" />
@@ -776,6 +780,7 @@
     <ClInclude Include="..\..\source\CScene.h" />
     <ClInclude Include="..\..\source\CShader.h" />
     <ClInclude Include="..\..\source\CShadowPass.h" />
+    <ClInclude Include="..\..\source\CShape.h" />
     <ClInclude Include="..\..\source\CShape2D.h" />
     <ClInclude Include="..\..\source\CSprite.h" />
     <ClInclude Include="..\..\source\CSpriteSystem.h" />
@@ -1141,6 +1146,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\source\axelynx.cpp" />
     <ClCompile Include="..\..\source\CAnimEntity.cpp" />
+    <ClCompile Include="..\..\source\CBody.cpp" />
     <ClCompile Include="..\..\source\CCamera.cpp" />
     <ClCompile Include="..\..\source\CCanvas.cpp" />
     <ClCompile Include="..\..\source\CEarlyZ.cpp" />
@@ -1164,6 +1170,7 @@
     <ClCompile Include="..\..\source\CMorfedMeshFactory.cpp" />
     <ClCompile Include="..\..\source\CPak.cpp" />
     <ClCompile Include="..\..\source\CParticleSystem.cpp" />
+    <ClCompile Include="..\..\source\CPhysicsContext.cpp" />
     <ClCompile Include="..\..\source\CPivot.cpp" />
     <ClCompile Include="..\..\source\CPixMap.cpp" />
     <ClCompile Include="..\..\source\CPostEffect.cpp" />
@@ -1172,9 +1179,11 @@
     <ClCompile Include="..\..\source\CScene.cpp" />
     <ClCompile Include="..\..\source\CShader.cpp" />
     <ClCompile Include="..\..\source\CShadowPass.cpp" />
+    <ClCompile Include="..\..\source\CShape.cpp" />
     <ClCompile Include="..\..\source\CShape2D.cpp" />
     <ClCompile Include="..\..\source\CSprite.cpp" />
     <ClCompile Include="..\..\source\CSpriteSystem.cpp" />
+    <ClCompile Include="..\..\source\CStandartShapes.cpp" />
     <ClCompile Include="..\..\source\CStatistics.cpp" />
     <ClCompile Include="..\..\source\CSurface.cpp" />
     <ClCompile Include="..\..\source\CTextCache.cpp" />

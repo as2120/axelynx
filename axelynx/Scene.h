@@ -5,6 +5,7 @@
 #include "Light.h"
 #include "Shape.h"
 #include "Body.h"
+#include "PhysicsContext.h"
 
 namespace axelynx
 {
@@ -24,7 +25,7 @@ namespace axelynx
 		virtual Entity* Add(const Geometry *geometry, int entity_group_id = 0)=0;
 		virtual AnimEntity* Add(const AnimGeometry *geometry, int entity_group_id = 0)=0;
 
-		virtual Body* AddBody(Entity *ent, Shape *shape) = 0;
+		virtual Body* AddBody(Shape *shape) = 0;
 
 		virtual bool Remove(axelynx::Pivot *pivot)=0;
 
@@ -49,5 +50,7 @@ namespace axelynx
 		virtual void SetVisibleGroup(int entity_group_id, bool visible)=0;
 
 		virtual bool SetSceneGraph(int entity_group_id, SceneGraph *sg=0)=0;
+
+		virtual bool InitializePhysics(PhysicsContext *context) = 0;
 	};
 }

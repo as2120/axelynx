@@ -179,9 +179,6 @@
     <ClInclude Include="..\..\axelynx\axelynx.h">
       <Filter>interface</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\axelynx\AxelynxSystemShaders.h">
-      <Filter>interface</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\axelynx\axlib.h">
       <Filter>interface</Filter>
     </ClInclude>
@@ -1581,6 +1578,24 @@
     <ClInclude Include="..\..\axelynx\Body.h">
       <Filter>interface</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\axelynx\StandartShaders.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\StandartShapes.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\axelynx\PhysicsContext.h">
+      <Filter>interface</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CShape.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CBody.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\source\CPhysicsContext.h">
+      <Filter>source</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\source\CFile.cpp">
@@ -2826,6 +2841,18 @@
       <Filter>source</Filter>
     </ClCompile>
     <ClCompile Include="..\..\source\Shapes2D.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CPhysicsContext.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CShape.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CBody.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\source\CStandartShapes.cpp">
       <Filter>source</Filter>
     </ClCompile>
   </ItemGroup>

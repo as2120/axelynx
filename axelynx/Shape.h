@@ -5,11 +5,15 @@
 #include "File.h"
 #include <string>
 
+
 namespace axelynx
 {
+	class Pivot;
+
 	class Shape
 	{
 	public:
+	
 		virtual int WriteBinary(File file) const
 		{
 			return 0;
@@ -22,7 +26,11 @@ namespace axelynx
 
 		virtual std::wstring GetClass() const
 		{
-			return L"unknow";
+			return L"shape";
+		}
+
+		virtual ~Shape()
+		{
 		}
 		//virtual void Bind() const = 0; //for instancing
 	};

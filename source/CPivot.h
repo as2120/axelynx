@@ -21,6 +21,8 @@ class axelynx::Pivot::CPivot
 	axelynx::Pivot *parent_;
 
 	mutable int scene_frame_;
+
+	axelynx::Body *body_;
 public:
 	CPivot();
 
@@ -62,4 +64,8 @@ public:
 		return recalc_;
 	}
 	virtual ~CPivot();
+
+	//Physics
+	virtual void SetBody(axelynx::Body *body);
+	virtual axelynx::Body * GetBody();
 };

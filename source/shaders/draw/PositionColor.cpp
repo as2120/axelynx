@@ -1,4 +1,4 @@
-#include <axelynx\AxelynxSystemShaders.h>
+#include <axelynx\StandartShaders.h>
 
 AXELYNX_API axelynx::Shader * axelynx::StandartShaders::Draw::PositionColor()
 {

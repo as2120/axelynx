@@ -197,7 +197,6 @@ namespace axelynx
 
 		virtual Material* GetMaterial() = 0;
 
-		virtual Body* GetBody() = 0;
 		int tag;
 	};
 }

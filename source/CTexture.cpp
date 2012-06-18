@@ -1,5 +1,5 @@
 
-
+#include <axelynx/ImageFormat.h>
 #include "CTexture.h"
 #include <cassert>
 #include "axelynx/Logger.h"
@@ -63,7 +63,7 @@ bool CTexture::Bind(int layer)
 
 }
 
-bool CTexture::UnBind(bool restore)
+bool CTexture::UnBind(bool restore) 
 {
 	OPENGL_CHECK_FOR_ERRORS();
 
@@ -331,7 +331,7 @@ void CTexture::Build(const void* data,GLuint format,GLuint internalFormat,const 
 
 AXELYNX_API axelynx::Texture * axelynx::Texture::Current()
 {
-	return CTexture::Current();
+	return const_cast<CTexture *>(CTexture::Current());
 }
 
 CTexture * CTexture::FromPixMap(const axelynx::PixMap *pm, axelynx::Texture::Desc desc)
@@ -494,6 +494,18 @@ bool CTexture::Save(axelynx::File file) const
 	return true;
 }
 
+
+bool CTexture::SaveAs(axelynx::File file,const wchar_t* format) const
+{
+	axelynx::ImageFormat *iformat = axelynx::ImageFormat::FindByExt(format);
+
+	if(!iformat)
+		return false;
+
+	iformat->SaveTexture(file,this);
+	return true;
+}
+
 CTexture::CTexture(axelynx::File file)
 {
 	file.Open();
@@ -634,4 +646,70 @@ void CTexture::SetRepeatMode(axelynx::Texture::RepeatMode repeat_mode)
 	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_S, gl_repeat_mode);
 	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_T, gl_repeat_mode); 
 	glTexParameteri(gl_type_, GL_TEXTURE_WRAP_R, gl_repeat_mode); 
+}
+
+void CTexture::GetData(void *data) const
+{
+	glBindTexture(gl_type_,handle_);
+
+	if(compressed_)
+	{
+		int image_size=0;
+		glGetTexLevelParameteriv(GL_TEXTURE_2D,0,GL_TEXTURE_COMPRESSED_IMAGE_SIZE,&image_size);
+
+		glGetCompressedTexImage(GL_TEXTURE_2D,0,data);
+	}
+	else
+	{
+		GLenum format;
+		GLenum internalformat;
+
+		GetGLTextures(format,internalformat,cpp_,bpc_);
+		
+		glGetTexImage(GL_TEXTURE_2D,0,format,GL_UNSIGNED_BYTE,data);
+	}
+}
+
+int CTexture::GetDataSize() const
+{
+	glBindTexture(gl_type_,handle_);
+
+	if(compressed_)
+	{
+		int image_size=0;
+		return image_size;
+	}
+	else
+	{
+
+		int image_size = width_ * height_ * depth_ * cpp_ * bpc_;
+		return image_size;			
+	}
+}
+
+CTexture::~CTexture()
+{
+	glDeleteTextures(1,&handle_);
+	//handle_
+}
+
+void CTexture::SetFilter(Filter filter)
+{
+	glBindTexture(gl_type_,handle_);
+
+	switch(filter)
+	{
+	case F_NEAREST:
+		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+		break;
+	case F_BILINEAR:
+		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+		break;
+	case F_TRILINEAR:
+		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		break;
+	};
 }

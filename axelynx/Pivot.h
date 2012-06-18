@@ -2,8 +2,9 @@
 #ifndef AXELYNX_PIVOT_H
 #define AXELYNX_PIVOT_H
 
-#include "axelynx/math/vectormath.h"
-#include "axelynx/File.h"
+#include <axelynx/math/vectormath.h>
+#include <axelynx/File.h>
+#include <axelynx/Body.h>
 
 #include <list>
 
@@ -37,6 +38,10 @@ namespace axelynx
 		virtual Pivot* Turn(const vec3& angles);
 		virtual Pivot* Turn(const quat& orient);
 		virtual Pivot* PointOn(const vec3& point);
+
+		//Physics
+		virtual void SetBody(Body *body);
+		virtual Body * GetBody();
 
 		//Extension Setters
 		Pivot* SetPosition(const Pivot* pivot)

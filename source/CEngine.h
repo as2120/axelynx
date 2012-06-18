@@ -4,6 +4,7 @@
 #include "axelynx/Logger.h"
 #include "axelynx/Window.h"
 #include "axelynx/Scene.h"
+#include "CPhysicsContext.h"
 
 #include "CTexture.h"
 
@@ -36,6 +37,8 @@ public:
 
 	virtual axelynx::Window* AddWindow_(int width, int height, int bpp, axelynx::WindowMode wm, int samples);
 	virtual axelynx::Window* ApplyWindow(axelynx::Window::SystemHandle *handle,int bpp, int samples);
+
+	virtual CBulletPhysicsContext* AddPhysicsContext();
 
 	virtual bool Free();
 	virtual bool Sync();

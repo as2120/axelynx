@@ -1,3 +1,5 @@
+#pragma once
+
 #include "axelynx/Camera.h"
 #include "axelynx/Scene.h"
 

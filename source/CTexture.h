@@ -38,6 +38,8 @@ public:
 	CTexture(axelynx::File file);
 	CTexture(GLuint handele,axelynx::Texture::Desc &desc);
 
+	~CTexture();
+
 	virtual void Build(const void* data,GLuint format,GLuint internalFormat,const void *data1=0,const void *data2=0,const void *data3=0,const void *data4=0,const void *data5=0);
 
 	virtual int GetWidth() const;
@@ -46,7 +48,7 @@ public:
 
 	virtual TextureType GetType() const;
 		
-	virtual bool Bind(int layer = 0);
+	virtual bool Bind(int layer = 0) ;
 	virtual bool UnBind(bool restore = false);
 
 	GLuint GetHandle()
@@ -80,6 +82,13 @@ public:
 	virtual void RegenerateMipmaps();
 
 	virtual void SetRepeatMode(axelynx::Texture::RepeatMode repeat_mode);
+
+	virtual bool SaveAs(axelynx::File file,const wchar_t* format) const;
+
+	virtual void GetData(void *data) const;
+	virtual int GetDataSize() const;
+
+	virtual void SetFilter(Filter filter);
 };
 
 

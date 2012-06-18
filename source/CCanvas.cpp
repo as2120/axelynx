@@ -4,7 +4,7 @@
 #include "gl/axgl.h"
 #include "CShader.h"
 
-#include "axelynx/AxelynxSystemShaders.h"
+#include "axelynx/StandartShaders.h"
 #include "axelynx/Logger.h"
 #include "axelynx/Font.h"
 

@@ -80,6 +80,11 @@ AXELYNX_API axelynx::Engine * axelynx::Engine::Init(int version)
 	return eng;
 }
 
+CBulletPhysicsContext* CEngine::AddPhysicsContext()
+{
+	return new CBulletPhysicsContext();
+}
+
 axelynx::Window* CEngine::AddWindow_(int width, int height, int bpp, axelynx::WindowMode wm, int samples)
 {
     #ifdef WIN32
@@ -378,7 +383,7 @@ axelynx::Texture* CEngine::CreateTexture(axelynx::Texture::Desc &desc)
 	GLenum format;
 	GLenum internalformat;
 	GetGLTextures(format,internalformat,desc.cpp,desc.bpc);
-	tex->Build(0,format,internalformat);
+	tex->Build(desc.data,format,internalformat);
 	return tex;
 }
 

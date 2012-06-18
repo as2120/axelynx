@@ -21,6 +21,8 @@
 #include "CShadowPass.h"
 #include "CAnimEntity.h"
 #include "StandartSceneGraph.h"
+#include "CPhysicsContext.h"
+#include "CBody.h"
 
 int CScene::frame_ = 0;
 CScene::CScene(axelynx::SceneGraph *scenegraph)
@@ -34,6 +36,8 @@ CScene::CScene(axelynx::SceneGraph *scenegraph)
 	scenegraph_[0] = scenegraph;
 	visible_groups_[0] = true;
 	zpassed = false;
+
+	physics_world_ = 0;
 }
 
 bool CScene::Render()
@@ -723,4 +727,33 @@ bool CScene::SetSceneGraph(int entity_group_id, axelynx::SceneGraph *sg)
 	scenegraph_[entity_group_id] = sg;
 
 	return true;
+}
+
+bool CScene::InitializePhysics(axelynx::PhysicsContext *context)
+{
+	if(!context)
+		return false;
+
+	CBulletPhysicsContext *bullet = dynamic_cast<CBulletPhysicsContext *>(context);
+
+	if(!bullet)
+		return false;
+
+	physics_world_ = bullet->CreateWorld();
+
+	return true;
+}
+
+axelynx::Body* CScene::AddBody(axelynx::Shape *shape)
+{
+	if(!physics_world_)
+		return 0;
+
+	CShape *cshape = dynamic_cast<CShape*>(shape);
+
+	CBody * body = new CBody(cshape,axelynx::vec3(0),axelynx::quat(),0);
+
+	//physics_world_
+
+	return body;
 }

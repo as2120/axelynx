@@ -562,7 +562,60 @@ axelynx::Texture* DDSImageFormat::LoadTexture(axelynx::File file,axelynx::Textur
     return tex;
 }
 
-bool DDSImageFormat::SaveTexture(axelynx::File filename, const axelynx::Texture *texture)
+bool DDSImageFormat::SaveTexture(axelynx::File file, const axelynx::Texture *texture)
 {
-    return false;
+	file.Create();
+
+	DWORD dds_magic = DDS_MAGIC;
+	file.Write(dds_magic);
+
+
+	DDS_HEADER dds_header;
+	ZeroMemory(&dds_header,sizeof(dds_header));
+
+	dds_header.dwSize = sizeof(dds_header);
+	dds_header.ddspf.dwSize = sizeof(dds_header.ddspf.dwSize);
+	dds_header.ddspf.dwFlags = DDS_FOURCC;
+	dds_header.dwMipMapCount = 0;
+	dds_header.ddspf.dwFourCC = MAKEFOURCC('D','X','T','1');
+	dds_header.dwCaps = 4096;
+
+	axelynx::Texture *tex = const_cast<axelynx::Texture *>(texture);
+
+	tex->Bind();
+	int image_size,image_width,image_height,image_depth=0;
+
+	glGetTexLevelParameteriv(GL_TEXTURE_2D,0,GL_TEXTURE_WIDTH,&image_width);
+	glGetTexLevelParameteriv(GL_TEXTURE_2D,0,GL_TEXTURE_WIDTH,&image_height);
+	glGetTexLevelParameteriv(GL_TEXTURE_2D,0,GL_TEXTURE_DEPTH,&image_depth);
+
+	
+	dds_header.dwWidth = image_width;
+	dds_header.dwHeight = image_height;
+	dds_header.dwDepth = image_depth;
+
+	file.Write(dds_header);
+
+	glGetTexLevelParameteriv(GL_TEXTURE_2D,0,GL_TEXTURE_COMPRESSED_IMAGE_SIZE,&image_size);
+
+
+	char * data = new char[image_size];
+	
+	
+	glGetCompressedTexImage(GL_TEXTURE_2D,0,data);
+
+	file.Write(data,image_size);
+
+	delete[] data;
+
+	tex->UnBind();
+
+	dds_header.dwWidth;
+	dds_header.dwHeight;
+	dds_header.dwDepth;
+
+	
+
+	file.Close();
+    return true;
 }

@@ -134,6 +134,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MD2Demo", "..\..\samples\MD
 		{55C623A9-0AB3-4671-B29A-C090F26B99E5} = {55C623A9-0AB3-4671-B29A-C090F26B99E5}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projects", "Projects", "{481F8DF5-FA02-4A63-A066-26E9EC8989F7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LansatConvertor", "C:\Users\holydel.Statviz-02\Documents\Visual Studio 2010\Projects\LansatConvertor\LansatConvertor\LansatConvertor.vcxproj", "{22733E2C-D01F-4568-AB0B-B78C24B2EED3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55C623A9-0AB3-4671-B29A-C090F26B99E5} = {55C623A9-0AB3-4671-B29A-C090F26B99E5}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -946,6 +953,36 @@ Global
 		{3778E053-529F-43B7-BC9D-C14B2B647DE7}.ReleaseMT|Win32.ActiveCfg = Release|x64
 		{3778E053-529F-43B7-BC9D-C14B2B647DE7}.ReleaseMT|x64.ActiveCfg = Release|x64
 		{3778E053-529F-43B7-BC9D-C14B2B647DE7}.ReleaseMT|x64.Build.0 = Release|x64
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Debug|Win32.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Debug|x64.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMD|Mixed Platforms.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMD|Mixed Platforms.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMD|Win32.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMD|Win32.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMD|x64.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMT|Mixed Platforms.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMT|Mixed Platforms.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMT|Win32.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMT|Win32.Build.0 = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.DebugMT|x64.ActiveCfg = Debug|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Release|Win32.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Release|Win32.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.Release|x64.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMD|Mixed Platforms.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMD|Mixed Platforms.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMD|Win32.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMD|Win32.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMD|x64.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMT|Mixed Platforms.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMT|Mixed Platforms.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMT|Win32.ActiveCfg = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMT|Win32.Build.0 = Release|Win32
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3}.ReleaseMT|x64.ActiveCfg = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -979,5 +1016,6 @@ Global
 		{305E485A-8461-42ED-96FA-F3E76CEAA255} = {4754CBD3-555D-46AE-B815-125583FE36D0}
 		{F68A1C05-E59D-4EC6-B3A8-55F36971EAC1} = {4754CBD3-555D-46AE-B815-125583FE36D0}
 		{2CF8E15D-00C8-4F6A-83B5-B2A3D8C4C748} = {7EDDD2EA-7F89-4034-BEAB-6D5413FBC48E}
+		{22733E2C-D01F-4568-AB0B-B78C24B2EED3} = {481F8DF5-FA02-4A63-A066-26E9EC8989F7}
 	EndGlobalSection
 EndGlobal

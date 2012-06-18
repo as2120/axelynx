@@ -15,7 +15,7 @@
 #include "Input.h"
 #include "ImageFormat.h"
 #include "math/axmath.h"
-#include "AxelynxSystemShaders.h"
+#include "StandartShaders.h"
 #include "StandartSurfaces.h"
 #include "Timer.h"
 #include "Shell.h"

@@ -11,6 +11,13 @@ namespace axelynx
 	class Texture
 	{
 	public:
+		enum Filter
+		{
+			F_NEAREST
+			,F_BILINEAR
+			,F_TRILINEAR
+		};
+
 		enum RepeatMode
 		{
 			RM_CLAMP_TO_EDGRE
@@ -75,8 +82,8 @@ namespace axelynx
 
 		virtual TextureType GetType() const =0;
 		
-		virtual bool Bind(int layer = 0)=0;
-		virtual bool UnBind(bool restore = false)=0;
+		virtual bool Bind(int layer = 0) =0;
+		virtual bool UnBind(bool restore = false) =0;
 
 		virtual bool Save(File file) const =0;
 
@@ -93,6 +100,13 @@ namespace axelynx
 
 		static AXELYNX_API Texture * Current();
 		virtual ~Texture(){};
+
+		virtual bool SaveAs(File file,const wchar_t* format) const = 0;
+
+		virtual void GetData(void *data) const = 0;
+		virtual int GetDataSize() const = 0;
+
+		virtual void SetFilter(Filter filter) = 0;
 	};
 }
 

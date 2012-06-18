@@ -3,7 +3,7 @@
 #include "axelynx/Scene.h"
 #include <list>
 #include "CEntity.h"
-
+#include <btBulletDynamicsCommon.h>
 
 class CScene : public axelynx::Scene
 {
@@ -24,7 +24,7 @@ class CScene : public axelynx::Scene
 	
 	axelynx::Shader *defShader_;
 
-
+	btDiscreteDynamicsWorld *physics_world_;
 
 public:
 
@@ -75,5 +75,7 @@ public:
 	virtual bool SetSceneGraph(int entity_group_id, axelynx::SceneGraph *sg=0);
 	virtual ~CScene(){};
 	
+	virtual bool InitializePhysics(axelynx::PhysicsContext *context);
 
+	axelynx::Body* AddBody(axelynx::Shape *shape);
 };

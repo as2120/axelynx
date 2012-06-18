@@ -100,7 +100,9 @@ AXELYNX_API char* axelynx::utils::WideCharToAnsi(const wchar_t* s, char* into)
 AXELYNX_API std::wstring axelynx::utils::GetExtension(std::wstring filename)
 {
 	int l = filename.find_last_of(L'.');
-	std::wstring ext =  filename.substr(l+1,filename.length() - l);
+	int size = filename.length() - l;
+
+	std::wstring ext =  filename.substr(l+1,size);
 
 	return ext;
 }

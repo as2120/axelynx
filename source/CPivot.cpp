@@ -9,9 +9,6 @@
 AXELYNX_API axelynx::Pivot::Pivot()
 {
 	pimpl = new axelynx::Pivot::CPivot();
-	pimpl->SetPosition(vec3(0));
-	pimpl->SetScale(vec3(1));
-	pimpl->SetOrientation(quat(vec3(0,0,0)));
 }
 
 axelynx::Pivot* axelynx::Pivot::SetParent(Pivot * parent)
@@ -160,15 +157,22 @@ axelynx::Pivot::~Pivot()
 {
 	delete pimpl;
 };
+
+void axelynx::Pivot::SetBody(axelynx::Body* body)
+{
+	pimpl->SetBody(body);
+}
+
+axelynx::Body* axelynx::Pivot::GetBody()
+{
+	return pimpl->GetBody();
+}
+
+
 //implementation
 axelynx::Pivot::CPivot::CPivot()
+	:position_(0),orientation_(),scale_(1.0f),parent_(0),childs_(0),scene_frame_(-1),body_(0),recalc_(true)
 {
-	position_ = axelynx::vec3(0);
-	orientation_ = axelynx::quat();
-	scale_ = axelynx::vec3(1);
-	parent_ = 0;
-	childs_ = 0;
-	scene_frame_ = -1;
 }
 
 void axelynx::Pivot::CPivot::SetParent(axelynx::Pivot * parent)
@@ -411,4 +415,14 @@ int axelynx::Pivot::WriteBinary(axelynx::File file) const
 {
 
 	return 0;
+}
+
+void axelynx::Pivot::CPivot::SetBody(axelynx::Body *body)
+{
+	body_ = body;
+}
+
+axelynx::Body * axelynx::Pivot::CPivot::GetBody()
+{
+	return body_;
 }

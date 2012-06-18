@@ -26,6 +26,8 @@
 #include "utils/axstring.h"
 #include "InstanceGroup.h"
 #include "MorfedMeshFactory.h"
+#include "PhysicsContext.h"
+#include "Shape2D.h"
 
 #include <string>
 
@@ -109,6 +111,8 @@ namespace axelynx
 		virtual Window* AddWindow_(int width, int height, int bpp, WindowMode wm, int samples) = 0;
 		virtual Window* ApplyWindow(Window::SystemHandle *handle,int bpp, int samples) = 0;
 
+		virtual PhysicsContext* AddPhysicsContext() = 0;
+		
 		static AXELYNX_API Engine *Init(int version = AXELYNX_VERSION);
 
 		virtual bool Free() = 0;
