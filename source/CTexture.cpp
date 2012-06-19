@@ -700,16 +700,41 @@ void CTexture::SetFilter(Filter filter)
 	switch(filter)
 	{
 	case F_NEAREST:
-		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
-		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+		if(use_mipmaps_)
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_NEAREST_MIPMAP_NEAREST);
+		}
+		else
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		}
 		break;
 	case F_BILINEAR:
-		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_NEAREST);
-		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+		if(use_mipmaps_)
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_NEAREST);
+		}
+		else
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		}
 		break;
 	case F_TRILINEAR:
-		glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-		glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		if(use_mipmaps_)
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		}
+		else
+		{
+			glTexParameteri(gl_type_, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+			glTexParameteri(gl_type_, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		}
+
 		break;
 	};
 }
