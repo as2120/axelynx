@@ -4,6 +4,8 @@
 #include <list>
 #include "CEntity.h"
 #include <btBulletDynamicsCommon.h>
+#include <BulletSoftBody\btSoftBody.h>
+#include <BulletSoftBody\btSoftRigidDynamicsWorld.h>
 #include "CBody.h"
 
 class CScene : public axelynx::Scene
@@ -25,7 +27,7 @@ class CScene : public axelynx::Scene
 	
 	axelynx::Shader *defShader_;
 
-	btDiscreteDynamicsWorld *physics_world_;
+	btSoftRigidDynamicsWorld *physics_world_;
 public:
 
 	CScene(axelynx::SceneGraph *scenegrah);

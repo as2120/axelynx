@@ -113,7 +113,15 @@ int main()
 			transl *= 0.9;
 
 			cam->Translate(transl * dt * 0.1);
-			s->Update(dt*0.001);
+
+			vec3 oldpos = cam->GetPosition(false);
+			if(oldpos.y < 2)
+			{
+				oldpos.y = 2;
+				cam->SetPosition(oldpos);
+			}
+
+			s->Update(1.0f / 60.0f);
 			s->Render();
 			c->SetBlendMode(BM_ALPHA);
 			c->SetColor(1,1,1);

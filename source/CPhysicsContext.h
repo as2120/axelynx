@@ -2,6 +2,9 @@
 
 #include <axelynx/PhysicsContext.h>
 #include <btBulletDynamicsCommon.h>
+#include <btBulletCollisionCommon.h>
+#include <BulletSoftBody\btSoftBody.h>
+#include <BulletSoftBody\btSoftRigidDynamicsWorld.h>
 
 class CBulletPhysicsContext : public axelynx::PhysicsContext
 {
@@ -11,12 +14,13 @@ class CBulletPhysicsContext : public axelynx::PhysicsContext
     btCollisionDispatcher* dispatcher_;
  
     btSequentialImpulseConstraintSolver* solver_;
+	btSoftBodySolver *softbodySolver_;
 public:
 	CBulletPhysicsContext();
 	~CBulletPhysicsContext();
 
 	
-	btDiscreteDynamicsWorld * CreateWorld();
+	btSoftRigidDynamicsWorld * CreateWorld();
 
 	virtual axelynx::Shape* AddInfinityPlane();
 	virtual axelynx::Shape* AddSphere(float radius);

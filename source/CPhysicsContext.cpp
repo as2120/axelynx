@@ -12,6 +12,8 @@ CBulletPhysicsContext::CBulletPhysicsContext()
  
     // The actual physics solver
     solver_ = new btSequentialImpulseConstraintSolver;
+
+	softbodySolver_ = 0;//new btSoftBodyDef();
 }
 
 
@@ -23,9 +25,10 @@ CBulletPhysicsContext::~CBulletPhysicsContext()
     delete broadphase_;
 }
 
-btDiscreteDynamicsWorld* CBulletPhysicsContext::CreateWorld()
+btSoftRigidDynamicsWorld* CBulletPhysicsContext::CreateWorld()
 {
-	btDiscreteDynamicsWorld* dynamicsWorld = new btDiscreteDynamicsWorld(dispatcher_,broadphase_,solver_,collisionConfiguration_);
+	
+	btSoftRigidDynamicsWorld* dynamicsWorld = new btSoftRigidDynamicsWorld(dispatcher_,broadphase_,solver_,collisionConfiguration_,softbodySolver_);
     dynamicsWorld->setGravity(btVector3(0,-10,0));
 
 	return dynamicsWorld;
