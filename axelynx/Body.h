@@ -21,6 +21,12 @@ namespace axelynx
 		virtual void RemovePivot(int index)=0;
 		virtual void RemovePivot(Pivot* pivot)=0;
 
+		virtual vec3 GetPosition() =0;
+		virtual quat GetOrientation() =0;
+
+		virtual void AddImpulse(const vec3& force) = 0;
+		virtual void AddForce(const vec3& force) = 0;
+
 		virtual int WriteBinary(File file) const
 		{
 			return 0;

@@ -25,7 +25,7 @@ namespace axelynx
 		virtual Entity* Add(const Geometry *geometry, int entity_group_id = 0)=0;
 		virtual AnimEntity* Add(const AnimGeometry *geometry, int entity_group_id = 0)=0;
 
-		virtual Body* AddBody(Shape *shape) = 0;
+		virtual Body* AddBody(Shape *shape,float mass = 0,const vec3& position = vec3(),const quat& orientation = quat()) = 0;
 
 		virtual bool Remove(axelynx::Pivot *pivot)=0;
 

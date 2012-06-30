@@ -18,6 +18,10 @@ namespace axelynx
 		quat(const vec3& angles);
 		quat(const vec3& axis, float angle);
 		quat(const mat3& rotatematrix);
+		quat(float x_, float y_, float z_, float w_)
+			:x(x_),y(y_),z(z_),w(w_)
+		{
+		}
 
 		mat3 ToMat3() const;
 		quat operator*(quat other) const;
