@@ -61,7 +61,7 @@ public:
 	void update(float twin)
 	{
 		ent_->Translate(vec3(0,-spd_ * twin,0));
-		s_ ->SetPosition(ent_->GetPosition(false));
+		s_ ->SetPosition(ent_->GetPosition(true));
 
 		s_ -> SetSize(sqrt(size_)+rnd(5.0));
 		s_ ->SetColor(rnd(0.8,1.0),rnd(0.7,0.8),rnd(0.5,0.7),1);
@@ -74,7 +74,7 @@ public:
 int main()
 {
 	Engine *eng = Engine::Init();
-    Window *wnd = eng->AddWindow(1280,720);
+    Window *wnd = eng->AddWindow();
 	//Window *wnd = eng->AddWindow(640,480);
 
 	wnd->VSync(false);
@@ -163,7 +163,7 @@ int main()
 
 	
 	StandartShaders::Draw::PositionUV()->Bind();
-	Shape *screensize_rect = Shape::Rect(wnd->GetWidth(),wnd->GetHeight(),false);
+	Shape2D *screensize_rect = Shape2D::Rect(wnd->GetWidth(),wnd->GetHeight(),false);
 
 	int cnt_lights = 1000;
 	std::list<DefferedLight*> def_lights;
