@@ -377,6 +377,12 @@ axelynx::Entity* CEntity::CastShadows(bool value, bool by_hierarhy)
 
 bool CEntity::Update(float twin)
 {
+	if(axelynx::Body *body = GetBody())
+	{
+		SetPosition(body->GetPosition());
+		SetOrientation(body->GetOrientation());
+	}
+
 	bool need_remove = false;
 
 	if(on_update_event_)

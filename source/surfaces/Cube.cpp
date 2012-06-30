@@ -335,7 +335,7 @@ AXELYNX_API axelynx::Surface * axelynx::StandartSurfaces::RegularGrid(int cellsx
 		for(int j=0;j<cellsz-1;++j)
 		{
 			surf->SetTriangle(triindex+0,(j*cellsx)+0+i,(j*cellsx)+1+i,(j*cellsx)+(cellsx)+i);
-			surf->SetTriangle(triindex+1,(j*cellsx)+1+i,(j*cellsx)+(cellsx)+i,(j*cellsx)+(cellsx+1)+i);
+			surf->SetTriangle(triindex+1,(j*cellsx)+1+i,(j*cellsx)+(cellsx+1)+i,(j*cellsx)+(cellsx)+i);
 
 			triindex +=2;
 		}

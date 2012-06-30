@@ -151,6 +151,9 @@ bool CScene::Update(float twin)
 			scenegraph_[i]->Update(twin);
 	}
 
+	if(physics_world_)
+		physics_world_->stepSimulation(twin,8);;
+
 //	scenegraph_->Update();
 	return true;
 }
@@ -744,16 +747,16 @@ bool CScene::InitializePhysics(axelynx::PhysicsContext *context)
 	return true;
 }
 
-axelynx::Body* CScene::AddBody(axelynx::Shape *shape)
+axelynx::Body* CScene::AddBody(axelynx::Shape *shape,float mass,const axelynx::vec3& position,const axelynx::quat& orientation)
 {
 	if(!physics_world_)
 		return 0;
 
 	CShape *cshape = dynamic_cast<CShape*>(shape);
 
-	CBody * body = new CBody(cshape,axelynx::vec3(0),axelynx::quat(),0);
+	CBody * body = new CBody(cshape,position,orientation,mass);
 
-	//physics_world_
+	physics_world_->addRigidBody(body->GetRigidBody());
 
 	return body;
 }

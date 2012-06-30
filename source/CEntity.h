@@ -3,6 +3,7 @@
 #include "axelynx/Entity.h"
 #include "axelynx/Scene.h"
 #include "axelynx/math/frustum.h"
+#include "CBody.h"
 
 class CEntity : public virtual axelynx::Entity
 {
@@ -35,7 +36,6 @@ class CEntity : public virtual axelynx::Entity
 
 	axelynx::vec4 entitycolor_;//
 	bool (*on_render_event_)(axelynx::Entity*);
-
 public:
 	CEntity(axelynx::Scene *scene_, const axelynx::Geometry * geom);
 	virtual axelynx::Entity* SetName(std::wstring name);

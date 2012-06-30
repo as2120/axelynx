@@ -4,6 +4,7 @@
 #include <list>
 #include "CEntity.h"
 #include <btBulletDynamicsCommon.h>
+#include "CBody.h"
 
 class CScene : public axelynx::Scene
 {
@@ -25,7 +26,6 @@ class CScene : public axelynx::Scene
 	axelynx::Shader *defShader_;
 
 	btDiscreteDynamicsWorld *physics_world_;
-
 public:
 
 	CScene(axelynx::SceneGraph *scenegrah);
@@ -77,5 +77,5 @@ public:
 	
 	virtual bool InitializePhysics(axelynx::PhysicsContext *context);
 
-	axelynx::Body* AddBody(axelynx::Shape *shape);
+	axelynx::Body* AddBody(axelynx::Shape *shape,float mass = 0,const axelynx::vec3& position = axelynx::vec3(),const axelynx::quat& orientation = axelynx::quat());
 };
